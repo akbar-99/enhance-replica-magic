@@ -37,34 +37,34 @@ const leadership = [
 
 export default function Company() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen page-bg-light">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-card to-background">
+      <section className="pt-32 pb-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="section-title text-foreground mb-4">
+          <h1 className="section-title text-slate-900 mb-4">
             About <span className="glow-text">Enhance Tech</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We're on a mission to protect the world's most sensitive data and enable organizations to embrace digital transformation with confidence.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 border-b border-border">
+      <section className="py-16 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="glass-card p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
-              <p className="text-muted-foreground">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
+              <p className="text-slate-600">
                 To provide organizations with the most advanced data security solutions that protect their most valuable assets while enabling innovation and growth.
               </p>
             </div>
-            <div className="glass-card p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
-              <p className="text-muted-foreground">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h2>
+              <p className="text-slate-600">
                 A world where organizations can operate without fear of data breaches, enabling them to focus on what matters most—serving their customers and growing their business.
               </p>
             </div>
@@ -73,17 +73,17 @@ export default function Company() {
       </section>
 
       {/* Values */}
-      <section className="py-16">
+      <section className="py-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Our Values</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Our Values</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {values.map((value) => (
-              <div key={value.title} className="glass-card p-6 text-center">
+              <div key={value.title} className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{value.title}</h3>
+                <p className="text-sm text-slate-600">{value.description}</p>
               </div>
             ))}
           </div>
@@ -91,23 +91,23 @@ export default function Company() {
       </section>
 
       {/* Leadership */}
-      <section className="py-16 bg-card">
+      <section className="py-16 page-section-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Leadership Team</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Leadership Team</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {leadership.map((leader) => (
               <div key={leader.name} className="text-center group cursor-pointer">
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-primary transition-all">
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-2 ring-slate-200 group-hover:ring-primary transition-all">
                   <img
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-slate-900 group-hover:text-primary transition-colors">
                   {leader.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{leader.role}</p>
+                <p className="text-sm text-slate-600">{leader.role}</p>
               </div>
             ))}
           </div>
@@ -115,15 +115,15 @@ export default function Company() {
       </section>
 
       {/* Offices */}
-      <section className="py-16">
+      <section className="py-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Global Offices</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Global Offices</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {offices.map((office) => (
-              <div key={office.city} className="glass-card p-6 text-center">
+              <div key={office.city} className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
                 <MapPin className="w-6 h-6 text-primary mx-auto mb-3" />
-                <h3 className="font-semibold text-foreground">{office.city}</h3>
-                <p className="text-sm text-muted-foreground">{office.country}</p>
+                <h3 className="font-semibold text-slate-900">{office.city}</h3>
+                <p className="text-sm text-slate-600">{office.country}</p>
                 <span className="text-xs text-primary mt-2 block">{office.type}</span>
               </div>
             ))}
@@ -132,10 +132,10 @@ export default function Company() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-background to-glow-cyan/10">
+      <section className="py-16 bg-gradient-to-r from-primary/10 via-white to-[hsl(var(--glow-cyan))]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Get in Touch</h2>
-          <p className="text-muted-foreground mb-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Get in Touch</h2>
+          <p className="text-slate-600 mb-6">
             Have questions? Our team is here to help.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -143,7 +143,7 @@ export default function Company() {
               Contact Us
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/company/careers" className="btn-secondary">
+            <Link to="/company/careers" className="btn-secondary border-slate-300 text-slate-900 hover:bg-slate-100">
               View Careers
               <ArrowRight className="w-4 h-4" />
             </Link>
