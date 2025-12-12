@@ -71,30 +71,30 @@ const featuredResources = [
 
 export default function Resources() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen page-bg-light">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-card to-background">
+      <section className="pt-32 pb-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="section-title text-foreground mb-4">
+          <h1 className="section-title text-slate-900 mb-4">
             Security <span className="glow-text">Resources</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Explore our library of resources to help you stay ahead of threats and maximize your security investment.
           </p>
         </div>
       </section>
 
       {/* Featured Resources */}
-      <section className="py-16 border-b border-border">
+      <section className="py-16 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8">Featured Resources</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8">Featured Resources</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {featuredResources.map((resource) => (
               <div
                 key={resource.title}
-                className="glass-card overflow-hidden hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+                className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-300 group cursor-pointer"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
@@ -107,10 +107,10 @@ export default function Resources() {
                   <span className="text-xs font-medium text-primary uppercase tracking-wider">
                     {resource.type}
                   </span>
-                  <h3 className="text-lg font-semibold text-foreground mt-2 mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-slate-900 mt-2 mb-2 group-hover:text-primary transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{resource.description}</p>
+                  <p className="text-sm text-slate-600">{resource.description}</p>
                 </div>
               </div>
             ))}
@@ -119,24 +119,24 @@ export default function Resources() {
       </section>
 
       {/* Resource Categories */}
-      <section className="py-16">
+      <section className="py-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8">Browse by Category</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8">Browse by Category</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resourceCategories.map((category) => (
               <Link
                 key={category.title}
                 to={category.link}
-                className="glass-card p-6 hover:border-primary/50 transition-all duration-300 group flex items-start gap-4"
+                className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group flex items-start gap-4"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <category.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-1 mb-2">{category.description}</p>
+                  <p className="text-sm text-slate-600 mt-1 mb-2">{category.description}</p>
                   <span className="text-xs text-primary font-medium">{category.count}</span>
                 </div>
               </Link>

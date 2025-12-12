@@ -35,23 +35,23 @@ const stats = [
 
 export default function Partners() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen page-bg-light">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-card to-background">
+      <section className="pt-32 pb-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="section-title text-foreground mb-4">
+          <h1 className="section-title text-slate-900 mb-4">
             Partner <span className="glow-text">Ecosystem</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Join our global network of partners and help organizations protect their most valuable assets.
           </p>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-12 border-b border-border">
+      <section className="py-12 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-8">
             {stats.map((stat) => (
@@ -60,7 +60,7 @@ export default function Partners() {
                   <stat.icon className="w-6 h-6 text-primary" />
                   <span className="text-3xl font-bold glow-text">{stat.value}</span>
                 </div>
-                <span className="text-muted-foreground text-sm">{stat.label}</span>
+                <span className="text-slate-600 text-sm">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -68,24 +68,24 @@ export default function Partners() {
       </section>
 
       {/* Partner Types */}
-      <section className="py-16">
+      <section className="py-16 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8">
             {partnerTypes.map((type) => (
               <div
                 key={type.title}
-                className="glass-card p-8 hover:border-primary/50 transition-all duration-300 group"
+                className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <type.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-primary transition-colors">
                   {type.title}
                 </h3>
-                <p className="text-muted-foreground mb-6">{type.description}</p>
+                <p className="text-slate-600 mb-6">{type.description}</p>
                 <ul className="space-y-2 mb-6">
                   {type.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <li key={benefit} className="flex items-center gap-2 text-sm text-slate-600">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {benefit}
                     </li>

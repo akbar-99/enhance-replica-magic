@@ -107,7 +107,7 @@ export default function HeroSection() {
               </div>
             )}
             <iframe
-              src="https://my.spline.design/cubeandballs-qGiqKSMcCceFgbEJ6pH3ipwD/"
+              src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/"
               frameBorder="0"
               width="100%"
               height="100%"
