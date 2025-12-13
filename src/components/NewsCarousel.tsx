@@ -44,7 +44,7 @@ export default function NewsCarousel() {
     setCurrentIndex(prev => (prev - 1 + newsItems.length) % newsItems.length);
   };
   const currentItem = newsItems[currentIndex];
-  return <section className="relative bg-gradient-to-r from-primary/20 via-primary/10 to-glow-cyan/20 py-8 my-0">
+  return <section className="relative py-8 my-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           {/* Previous Button */}

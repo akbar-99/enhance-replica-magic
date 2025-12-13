@@ -1,7 +1,6 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import NewsCarousel from '@/components/NewsCarousel';
-import TrustedBy from '@/components/TrustedBy';
+import NewsAndTrustedSection from '@/components/NewsAndTrustedSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import StatsSection from '@/components/StatsSection';
 import CTASection from '@/components/CTASection';
@@ -12,8 +11,7 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <NewsCarousel />
-      <TrustedBy />
+      <NewsAndTrustedSection />
       <FeaturesSection />
       <StatsSection />
       <CTASection />
