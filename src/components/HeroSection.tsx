@@ -81,7 +81,7 @@ export default function HeroSection() {
             {isSplineLoading && <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>}
-            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/" frameBorder="0" width="100%" height="100%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
+            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/?hideUI=true" frameBorder="0" width="100%" height="100%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
             opacity: isSplineLoading ? 0 : 1
           }} />
           </div>
