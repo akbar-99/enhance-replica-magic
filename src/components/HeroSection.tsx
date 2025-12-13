@@ -77,7 +77,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Spline 3D */}
-          <div className="lg:col-span-4 relative h-[450px] lg:h-[600px] flex items-center justify-center -mt-4 overflow-hidden">
+          <div className="lg:col-span-4 relative h-[500px] lg:h-[700px] flex items-center justify-center -mt-16 overflow-hidden">
             {isSplineLoading && <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>}
