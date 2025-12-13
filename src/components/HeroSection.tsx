@@ -77,13 +77,15 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Spline 3D */}
-          <div className="lg:col-span-4 relative h-[400px] lg:h-[500px] flex items-center justify-center -mt-8">
+          <div className="lg:col-span-4 relative h-[400px] lg:h-[500px] flex items-center justify-center -mt-8 overflow-hidden">
             {isSplineLoading && <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>}
-            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/?hideUI=true" frameBorder="0" width="100%" height="100%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
+            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/" frameBorder="0" width="100%" height="100%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
             opacity: isSplineLoading ? 0 : 1
           }} />
+            {/* Overlay to hide Spline watermark */}
+            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
