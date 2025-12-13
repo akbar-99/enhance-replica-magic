@@ -44,7 +44,7 @@ export default function HeroSection() {
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
 
   return (
-    <section className="relative min-h-screen pt-16 overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -53,54 +53,51 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Tabs */}
-            <div className="space-y-1 max-w-sm">
-              {heroTabs.map((tab, index) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`hero-tab w-full ${activeTab === tab.id ? 'active' : ''}`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {tab.label}
-                </button>
-              ))}
-              <Link
-                to="/use-cases"
-                className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80"
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40">
+        <div className="grid lg:grid-cols-12 gap-8 items-start">
+          {/* Left - Tabs */}
+          <div className="lg:col-span-3 space-y-2">
+            {heroTabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`hero-tab w-full text-left ${activeTab === tab.id ? 'active' : ''}`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                View All Use Cases
+                {tab.label}
+              </button>
+            ))}
+            <Link
+              to="/use-cases"
+              className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80 mt-4"
+            >
+              View All Use Cases
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Center - Hero Content */}
+          <div className="lg:col-span-5 space-y-6 animate-fade-up pt-8 lg:pt-16" key={activeTab}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              {currentTab.title}
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
+              {currentTab.description}
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link to="/demo" className="btn-primary">
+                Get Started
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
-
-            {/* Hero Content */}
-            <div className="space-y-6 animate-fade-up" key={activeTab}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                {currentTab.title}
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
-                {currentTab.description}
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link to="/demo" className="btn-primary">
-                  Get Started
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link to="/learn-more" className="btn-secondary">
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <Link to="/learn-more" className="btn-secondary">
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 
           {/* Right Side - Spline 3D */}
-          <div className="relative h-[400px] lg:h-[600px] flex items-center justify-center">
+          <div className="lg:col-span-4 relative h-[400px] lg:h-[500px] flex items-center justify-center -mt-8">
             {isSplineLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
