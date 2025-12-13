@@ -121,25 +121,41 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center">
-            <div className="flex items-center bg-secondary/30 px-0 py-px rounded-md">
-              {navItems.map(item => <div key={item.label} className="nav-item group" onMouseEnter={() => setActiveDropdown(item.label)} onMouseLeave={() => setActiveDropdown(null)}>
-                  <span className="flex items-center gap-1">
+            <div className="flex items-center border border-border/40 rounded-full px-2 py-1.5 bg-transparent">
+              {navItems.map(item => (
+                <div 
+                  key={item.label} 
+                  className="relative group" 
+                  onMouseEnter={() => setActiveDropdown(item.label)} 
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <span className="flex items-center px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                     {item.label}
-                    {item.dropdown && <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />}
                   </span>
 
                   {/* Dropdown */}
-                  {item.dropdown && <div className={`dropdown-menu ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : ''}`}>
+                  {item.dropdown && (
+                    <div className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                       <div className="p-2">
-                        {item.dropdown.map(subItem => <Link key={subItem.label} to={subItem.href} className="dropdown-item flex flex-col">
-                            <span className="font-medium">{subItem.label}</span>
-                            {subItem.description && <span className="text-xs text-muted-foreground mt-0.5">
+                        {item.dropdown.map(subItem => (
+                          <Link 
+                            key={subItem.label} 
+                            to={subItem.href} 
+                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors"
+                          >
+                            <span className="font-medium text-foreground">{subItem.label}</span>
+                            {subItem.description && (
+                              <span className="text-xs text-muted-foreground mt-0.5">
                                 {subItem.description}
-                              </span>}
-                          </Link>)}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
                       </div>
-                    </div>}
-                </div>)}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
