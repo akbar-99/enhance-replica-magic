@@ -12,7 +12,7 @@ const companies = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-12 bg-card border-y border-border/50">
+    <section className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
           {companies.map((company) => (
