@@ -77,7 +77,7 @@ export default function HeroSection() {
           </div>
 
           {/* Center - Hero Content */}
-          <div className="lg:col-span-5 space-y-6 animate-fade-up pt-8 lg:pt-16" key={activeTab}>
+          <div className="lg:col-span-5 space-y-6 animate-fade-up" key={activeTab}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
