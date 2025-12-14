@@ -5,37 +5,40 @@ import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, S
 
 const contactOptions = [
   {
-    icon: MessageSquare,
-    title: 'Sales Inquiries',
-    description: 'Talk to our sales team about your security needs.',
-    contact: 'sales@enhancetech.com',
-    type: 'email',
+    icon: Phone,
+    title: 'Call Us',
+    description: 'Speak directly with our team for immediate assistance.',
+    contact: '+97143296840',
+    type: 'phone',
     color: 'bg-blue-500',
   },
   {
-    icon: Headphones,
-    title: 'Customer Support',
-    description: 'Get help with your existing Enhance Tech products.',
-    contact: 'support@enhancetech.com',
+    icon: Mail,
+    title: 'Email Us',
+    description: 'Send us an email and we\'ll respond within 24 hours.',
+    contact: 'Info@itenhance.tech',
     type: 'email',
     color: 'bg-emerald-500',
   },
   {
-    icon: Building,
-    title: 'Partner Inquiries',
-    description: 'Interested in becoming a partner? Let us know.',
-    contact: 'partners@enhancetech.com',
-    type: 'email',
+    icon: MapPin,
+    title: 'Visit Us',
+    description: 'Come visit our office in Dubai.',
+    contact: 'AlDiyar Building, Sheikh Zayed Road, Dubai, UAE',
+    type: 'address',
     color: 'bg-purple-500',
   },
 ];
 
 const offices = [
-  { city: 'San Francisco', address: '123 Security Street', region: 'San Francisco, CA 94105', country: 'United States' },
-  { city: 'London', address: '456 Data Lane', region: 'London EC2A 2BB', country: 'United Kingdom' },
-  { city: 'Singapore', address: '789 Protection Ave', region: 'Singapore 018956', country: 'Singapore' },
-  { city: 'Sydney', address: '321 Secure Plaza', region: 'Sydney NSW 2000', country: 'Australia' },
+  { city: 'Dubai', address: 'AlDiyar Building, Sheikh Zayed Road', region: 'Dubai', country: 'UAE' },
 ];
+
+const companyContact = {
+  phone: '+97143296840',
+  email: 'Info@itenhance.tech',
+  address: 'AlDiyar Building, Sheikh Zayed Road, Dubai, UAE',
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -96,13 +99,28 @@ export default function Contact() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">{option.title}</h3>
                 <p className="text-slate-600 mb-5 leading-relaxed">{option.description}</p>
-                <a
-                  href={`mailto:${option.contact}`}
-                  className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
-                >
-                  <Mail className="w-4 h-4" />
-                  {option.contact}
-                </a>
+                {option.type === 'phone' ? (
+                  <a
+                    href={`tel:${option.contact}`}
+                    className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {option.contact}
+                  </a>
+                ) : option.type === 'email' ? (
+                  <a
+                    href={`mailto:${option.contact}`}
+                    className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
+                  >
+                    <Mail className="w-4 h-4" />
+                    {option.contact}
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm">
+                    <MapPin className="w-4 h-4" />
+                    {option.contact}
+                  </span>
+                )}
               </div>
             ))}
           </div>

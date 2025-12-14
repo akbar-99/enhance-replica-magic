@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Facebook } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from 'lucide-react';
 
 const footerLinks = {
   Products: [
@@ -54,9 +54,23 @@ export default function Footer() {
                 Enhance<span className="text-primary">Tech</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm mb-6">
+            <p className="text-muted-foreground text-sm mb-4">
               Protecting enterprise data with AI-native security solutions.
             </p>
+            <div className="space-y-2 text-sm text-muted-foreground mb-6">
+              <a href="tel:+97143296840" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                <Phone className="w-4 h-4" />
+                +97143296840
+              </a>
+              <a href="mailto:Info@itenhance.tech" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                <Mail className="w-4 h-4" />
+                Info@itenhance.tech
+              </a>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>AlDiyar Building, Sheikh Zayed Road, Dubai, UAE</span>
+              </div>
+            </div>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
