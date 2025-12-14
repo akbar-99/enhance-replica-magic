@@ -1,24 +1,45 @@
+import { lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import NewsAndTrustedSection from '@/components/NewsAndTrustedSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import ProtectDataSection from '@/components/ProtectDataSection';
-import FAQSection from '@/components/FAQSection';
-import StatsSection from '@/components/StatsSection';
-import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+
+// Lazy load below-the-fold sections
+const NewsAndTrustedSection = lazy(() => import('@/components/NewsAndTrustedSection'));
+const FeaturesSection = lazy(() => import('@/components/FeaturesSection'));
+const ProtectDataSection = lazy(() => import('@/components/ProtectDataSection'));
+const FAQSection = lazy(() => import('@/components/FAQSection'));
+const StatsSection = lazy(() => import('@/components/StatsSection'));
+const CTASection = lazy(() => import('@/components/CTASection'));
+
+const SectionLoader = () => (
+  <div className="py-20 flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
-      <NewsAndTrustedSection />
-      <FeaturesSection />
-      <ProtectDataSection />
-      <FAQSection />
-      <StatsSection />
-      <CTASection />
+      <Suspense fallback={<SectionLoader />}>
+        <NewsAndTrustedSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <FeaturesSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <ProtectDataSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <FAQSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <StatsSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <CTASection />
+      </Suspense>
       <Footer />
     </main>
   );
