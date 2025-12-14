@@ -62,8 +62,21 @@ export default function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary foreground tracking-wide mb-8">
-          We Resolve Your IT Challenges
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-8 group cursor-default">
+          <span className="inline-block transition-all duration-300 hover:scale-105">
+            <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
+          </span>{" "}
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:-rotate-1">
+            <span className="text-primary hover:text-accent transition-colors duration-300">Resolve</span>
+          </span>{" "}
+          <span className="inline-block transition-all duration-300 hover:scale-105">
+            <span className="text-primary hover:text-primary/80 transition-colors duration-300">Your</span>
+          </span>{" "}
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:rotate-1">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] hover:animate-[shimmer_2s_linear_infinite] bg-clip-text text-transparent transition-all duration-500">
+              IT Challenges
+            </span>
+          </span>
         </h2>
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left - Tabs */}
