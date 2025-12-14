@@ -9,19 +9,27 @@
     <meta name="author" content="Enhance Tech" />
     <link rel="canonical" href="https://itenhancetech.tech" />
     
-    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://my.spline.design">
     
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://itenhancetech.tech" />
 
     <meta name="twitter:card" content="summary_large_image" />
     
-    
-    
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/8e3Dr4G5BKT0sGCBq9wPqysomQx1/uploads/1765752405421-Enhance Tech_Logo.png">
     
-  
-  
+    <!-- Inline critical CSS for instant render -->
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:system-ui,-apple-system,sans-serif;background:#0a0f1a}
+      #root{min-height:100vh}
+      .init-loader{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0a0f1a}
+      .init-loader div{width:32px;height:32px;border:2px solid rgba(59,130,246,0.3);border-top-color:#3b82f6;border-radius:50%;animation:spin .6s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
   
   <meta property="og:title" content="Enhance Tech">
   <meta name="twitter:title" content="Enhance Tech">
@@ -32,7 +40,7 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="init-loader"><div></div></div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
