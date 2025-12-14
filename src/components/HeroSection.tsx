@@ -72,8 +72,8 @@ export default function HeroSection() {
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">Your</span>
           </span>{" "}
-          <span className="inline-block transition-all duration-300 hover:scale-105 hover:rotate-1 hover:[text-shadow:0_0_30px_hsl(var(--primary)/0.9),0_0_60px_hsl(var(--accent)/0.6),0_0_90px_hsl(var(--primary)/0.3)]">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] hover:animate-[shimmer_2s_linear_infinite] bg-clip-text text-transparent transition-all duration-500">
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:rotate-1 animate-glow-pulse">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
               IT Challenges
             </span>
           </span>
