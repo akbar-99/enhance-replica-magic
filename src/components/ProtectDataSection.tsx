@@ -43,7 +43,7 @@ const solutions = [{
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
   const rightColumn = solutions.slice(7);
-  return <section className="bg-background py-12 lg:py-16">
+  return <section className="py-12 lg:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/10">
           {/* Left Panel - Dark Gradient */}
@@ -73,34 +73,22 @@ const ProtectDataSection = () => {
             <div className="grid md:grid-cols-2 gap-x-6">
               {/* Left Column */}
               <div>
-                {leftColumn.map((solution, index) => (
-                  <Link 
-                    key={index} 
-                    to={solution.link} 
-                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200"
-                  >
+                {leftColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200">
                     <span className="text-slate-700 text-sm font-medium group-hover:text-primary transition-colors duration-200">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-                  </Link>
-                ))}
+                  </Link>)}
               </div>
 
               {/* Right Column */}
               <div>
-                {rightColumn.map((solution, index) => (
-                  <Link 
-                    key={index} 
-                    to={solution.link} 
-                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200"
-                  >
+                {rightColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200">
                     <span className="text-slate-700 text-sm font-medium group-hover:text-primary transition-colors duration-200">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-                  </Link>
-                ))}
+                  </Link>)}
               </div>
             </div>
           </div>
