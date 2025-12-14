@@ -66,7 +66,7 @@ export default function TrustedBy() {
           {[...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer"
             >
               <img
                 src={partner.logo}
