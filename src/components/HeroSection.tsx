@@ -40,15 +40,15 @@ const heroTabs: HeroTab[] = [
   },
 ];
 
-const AUTO_PLAY_INTERVAL = 5000;
+const AUTO_PLAY_INTERVAL = 3000;
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isSplineLoading, setIsSplineLoading] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  
+
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
-  
+
   const goToNextTab = useCallback(() => {
     const currentIndex = heroTabs.findIndex((tab) => tab.id === activeTab);
     const nextIndex = (currentIndex + 1) % heroTabs.length;
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isPaused) return;
-    
+
     const interval = setInterval(goToNextTab, AUTO_PLAY_INTERVAL);
     return () => clearInterval(interval);
   }, [goToNextTab, isPaused]);
@@ -92,7 +92,7 @@ export default function HeroSection() {
         </h2>
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left - Tabs */}
-          <div 
+          <div
             className="lg:col-span-3 space-y-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -107,7 +107,9 @@ export default function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-1 h-full min-h-[24px] rounded-full transition-all duration-300 ${activeTab === tab.id ? "bg-primary" : "bg-muted-foreground/30"}`} />
+                  <div
+                    className={`w-1 h-full min-h-[24px] rounded-full transition-all duration-300 ${activeTab === tab.id ? "bg-primary" : "bg-muted-foreground/30"}`}
+                  />
                   <span>{tab.label}</span>
                 </div>
                 {activeTab === tab.id && !isPaused && (
