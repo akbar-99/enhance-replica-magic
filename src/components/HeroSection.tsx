@@ -51,19 +51,6 @@ export default function HeroSection() {
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
   return (
     <section className="relative min-h-screen overflow-hidden py-0">
-      {/* Animated Background Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-primary/30 rounded-full animate-[float_6s_ease-in-out_infinite]" />
-        <div className="absolute top-40 right-20 w-3 h-3 bg-accent/20 rounded-full animate-[float_8s_ease-in-out_infinite_1s]" />
-        <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-primary/40 rounded-full animate-[float_7s_ease-in-out_infinite_2s]" />
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-accent/30 rounded-full animate-[float_5s_ease-in-out_infinite_0.5s]" />
-        <div className="absolute bottom-1/4 right-1/4 w-2.5 h-2.5 bg-primary/25 rounded-full animate-[float_9s_ease-in-out_infinite_1.5s]" />
-        
-        {/* Glowing orbs */}
-        <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-[pulse-glow_4s_ease-in-out_infinite]" />
-        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-[pulse-glow_6s_ease-in-out_infinite_2s]" />
-      </div>
-
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -76,16 +63,16 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-8 group cursor-default">
-          <span className="inline-block animate-[slide-up_0.6s_ease-out_forwards] opacity-0 [animation-delay:0.1s] transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
           </span>{" "}
-          <span className="inline-block animate-[slide-up_0.6s_ease-out_forwards] opacity-0 [animation-delay:0.2s] transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:[text-shadow:0_0_25px_hsl(var(--accent)/0.9),0_0_50px_hsl(var(--accent)/0.5)]">
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:[text-shadow:0_0_25px_hsl(var(--accent)/0.9),0_0_50px_hsl(var(--accent)/0.5)]">
             <span className="text-primary hover:text-accent transition-colors duration-300">Resolve</span>
           </span>{" "}
-          <span className="inline-block animate-[slide-up_0.6s_ease-out_forwards] opacity-0 [animation-delay:0.3s] transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">Your</span>
           </span>{" "}
-          <span className="inline-block animate-[slide-up_0.6s_ease-out_forwards] opacity-0 [animation-delay:0.4s] transition-all duration-300 hover:scale-105 hover:rotate-1 hover:[text-shadow:0_0_30px_hsl(var(--primary)/0.9),0_0_60px_hsl(var(--accent)/0.6),0_0_90px_hsl(var(--primary)/0.3)]">
+          <span className="inline-block transition-all duration-300 hover:scale-105 hover:rotate-1 hover:[text-shadow:0_0_30px_hsl(var(--primary)/0.9),0_0_60px_hsl(var(--accent)/0.6),0_0_90px_hsl(var(--primary)/0.3)]">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] hover:animate-[shimmer_2s_linear_infinite] bg-clip-text text-transparent transition-all duration-500">
               IT Challenges
             </span>
@@ -98,9 +85,9 @@ export default function HeroSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`hero-tab w-full text-left animate-[slide-in-left_0.5s_ease-out_forwards] opacity-0 ${activeTab === tab.id ? "active" : ""}`}
+                className={`hero-tab w-full text-left ${activeTab === tab.id ? "active" : ""}`}
                 style={{
-                  animationDelay: `${index * 100 + 500}ms`,
+                  animationDelay: `${index * 100}ms`,
                 }}
               >
                 {tab.label}
@@ -108,34 +95,33 @@ export default function HeroSection() {
             ))}
             <Link
               to="/use-cases"
-              className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80 mt-4 animate-[slide-in-left_0.5s_ease-out_forwards] opacity-0"
-              style={{ animationDelay: '1000ms' }}
+              className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80 mt-4"
             >
               View All Use Cases
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Center - Hero Content */}
-          <div className="lg:col-span-5 space-y-6" key={activeTab}>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight animate-[fade-in-up_0.5s_ease-out_forwards]">
+          <div className="lg:col-span-5 space-y-6 animate-fade-up" key={activeTab}>
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-lg animate-[fade-in-up_0.5s_ease-out_forwards_0.1s] opacity-0">{currentTab.description}</p>
-            <div className="flex flex-wrap gap-4 pt-4 animate-[fade-in-up_0.5s_ease-out_forwards_0.2s] opacity-0">
-              <Link to="/demo" className="btn-primary group">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link to="/demo" className="btn-primary">
                 Get Started
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/learn-more" className="btn-secondary group">
+              <Link to="/learn-more" className="btn-secondary">
                 Learn More
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
           {/* Right Side - Spline 3D */}
-          <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden animate-[scale-in_0.8s_ease-out_forwards_0.3s] opacity-0">
+          <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden">
             {isSplineLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
@@ -161,7 +147,7 @@ export default function HeroSection() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-muted-foreground/50 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-[scroll-dot_2s_ease-in-out_infinite]" />
+          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full" />
         </div>
       </div>
     </section>
