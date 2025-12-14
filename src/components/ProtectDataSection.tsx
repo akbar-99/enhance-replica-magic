@@ -2,43 +2,43 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const solutions = [{
   title: 'Prevent Data Loss',
-  link: '/solutions'
+  link: '/solutions#prevent-data-loss'
 }, {
   title: 'Data Access Governance',
-  link: '/solutions'
+  link: '/solutions#data-access-governance'
 }, {
   title: 'Compliance Readiness',
-  link: '/solutions'
+  link: '/solutions#compliance-readiness'
 }, {
   title: 'Insider Risk Protection',
-  link: '/solutions'
+  link: '/solutions#insider-risk-protection'
 }, {
   title: 'Data Security for AI',
-  link: '/solutions'
+  link: '/solutions#data-security-ai'
 }, {
   title: 'Comprehensive Email Security',
-  link: '/solutions'
+  link: '/solutions#email-security'
 }, {
   title: 'AI Data Classification',
-  link: '/solutions'
+  link: '/solutions#ai-data-classification'
 }, {
   title: 'BYOD Security',
-  link: '/solutions'
+  link: '/solutions#byod-security'
 }, {
   title: 'Unified Breach and Incident Readiness',
-  link: '/solutions'
+  link: '/solutions#breach-incident-readiness'
 }, {
   title: 'Secure Microsoft 365 and Copilot',
-  link: '/solutions'
+  link: '/solutions#microsoft-365-copilot'
 }, {
   title: 'Protect Data in ChatGPT',
-  link: '/solutions'
+  link: '/solutions#chatgpt-data-protection'
 }, {
   title: 'Data Risk Mitigation',
-  link: '/solutions'
+  link: '/solutions#data-risk-mitigation'
 }, {
   title: 'Stop Ransomware',
-  link: '/solutions'
+  link: '/solutions#stop-ransomware'
 }];
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
