@@ -11,10 +11,9 @@ interface HeroTab {
 const heroTabs: HeroTab[] = [
   {
     id: "ai-security",
-    label: "Unplanned Downtime & Revenue Impact ",
-    title: "Protecting Business Continuity and Brand Trust",
-    description:
-      "We architect resilient IT environments with proactive monitoring and redundancy to ensure uninterrupted business operations.",
+    label: "Lack of In-House IT Expertise",
+    title: "Expert Skills at a Lower Cost",
+    description: "Access a full team of certified specialists for a fraction of the cost of hiring internally.",
   },
   {
     id: "discovery",
