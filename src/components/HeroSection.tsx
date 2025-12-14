@@ -73,7 +73,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-25 lg:pt-30">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-12 group cursor-default">
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
