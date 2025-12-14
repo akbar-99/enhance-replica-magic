@@ -26,7 +26,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Title */}
@@ -48,12 +48,12 @@ const FAQSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-slate-900 rounded-xl border-none overflow-hidden group transition-all duration-300 hover:bg-slate-800"
+                  className="bg-white rounded-xl border border-slate-200 overflow-hidden group transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg data-[state=open]:shadow-primary/5"
                 >
-                  <AccordionTrigger className="px-6 py-5 text-white text-left font-medium text-base hover:no-underline [&[data-state=open]>svg]:rotate-180 [&>svg]:text-slate-400 [&>svg]:transition-transform [&>svg]:duration-300">
+                  <AccordionTrigger className="px-6 py-5 text-slate-800 text-left font-medium text-base hover:no-underline hover:text-primary [&[data-state=open]]:text-primary [&[data-state=open]>svg]:rotate-180 [&>svg]:text-primary/60 [&>svg]:transition-transform [&>svg]:duration-300">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-5 text-slate-300 text-sm leading-relaxed">
+                  <AccordionContent className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
