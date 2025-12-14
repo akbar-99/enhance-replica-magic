@@ -277,7 +277,7 @@ export default function NewsCarousel() {
         return <AnalyticsSlideContent slide={currentSlide} />;
     }
   };
-  return <section className="relative bg-gradient-to-b from-[hsl(210,40%,92%)] to-[hsl(210,50%,85%)] py-[10px]">
+  return <section className="relative bg-gradient-to-b from-[hsl(210,40%,92%)] to-[hsl(210,50%,85%)] py-px">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
         <div className="flex items-center gap-4 lg:gap-6 py-0">
           {/* Previous Button */}
