@@ -2,63 +2,77 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ArrowRight, Target, Users, Award, MapPin, Building2, Lightbulb, Heart, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const values = [
-  {
-    icon: Target,
-    title: 'Customer First',
-    description: 'We put our customers at the center of everything we do.',
-    color: 'bg-blue-500',
-  },
-  {
-    icon: Users,
-    title: 'Collaboration',
-    description: 'We believe in the power of teamwork and open communication.',
-    color: 'bg-emerald-500',
-  },
-  {
-    icon: Award,
-    title: 'Excellence',
-    description: 'We strive for excellence in every product and service we deliver.',
-    color: 'bg-purple-500',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Innovation',
-    description: 'We push boundaries and embrace new ideas to solve complex problems.',
-    color: 'bg-orange-500',
-  },
-  {
-    icon: Heart,
-    title: 'Integrity',
-    description: 'We act with honesty, transparency, and ethical responsibility.',
-    color: 'bg-rose-500',
-  },
-  {
-    icon: Building2,
-    title: 'Accountability',
-    description: 'We take ownership of our actions and deliver on our commitments.',
-    color: 'bg-cyan-500',
-  },
-];
-
-const offices = [
-  { city: 'San Francisco', country: 'USA', type: 'Headquarters', timezone: 'PST' },
-  { city: 'London', country: 'UK', type: 'EMEA HQ', timezone: 'GMT' },
-  { city: 'Singapore', country: 'Singapore', type: 'APAC HQ', timezone: 'SGT' },
-  { city: 'Sydney', country: 'Australia', type: 'Office', timezone: 'AEST' },
-];
-
-const leadership = [
-  { name: 'John Smith', role: 'Chief Executive Officer', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop' },
-  { name: 'Sarah Johnson', role: 'Chief Technology Officer', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop' },
-  { name: 'Michael Chen', role: 'Chief Security Officer', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop' },
-  { name: 'Emily Davis', role: 'Chief Revenue Officer', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop' },
-];
-
+const values = [{
+  icon: Target,
+  title: 'Customer First',
+  description: 'We put our customers at the center of everything we do.',
+  color: 'bg-blue-500'
+}, {
+  icon: Users,
+  title: 'Collaboration',
+  description: 'We believe in the power of teamwork and open communication.',
+  color: 'bg-emerald-500'
+}, {
+  icon: Award,
+  title: 'Excellence',
+  description: 'We strive for excellence in every product and service we deliver.',
+  color: 'bg-purple-500'
+}, {
+  icon: Lightbulb,
+  title: 'Innovation',
+  description: 'We push boundaries and embrace new ideas to solve complex problems.',
+  color: 'bg-orange-500'
+}, {
+  icon: Heart,
+  title: 'Integrity',
+  description: 'We act with honesty, transparency, and ethical responsibility.',
+  color: 'bg-rose-500'
+}, {
+  icon: Building2,
+  title: 'Accountability',
+  description: 'We take ownership of our actions and deliver on our commitments.',
+  color: 'bg-cyan-500'
+}];
+const offices = [{
+  city: 'San Francisco',
+  country: 'USA',
+  type: 'Headquarters',
+  timezone: 'PST'
+}, {
+  city: 'London',
+  country: 'UK',
+  type: 'EMEA HQ',
+  timezone: 'GMT'
+}, {
+  city: 'Singapore',
+  country: 'Singapore',
+  type: 'APAC HQ',
+  timezone: 'SGT'
+}, {
+  city: 'Sydney',
+  country: 'Australia',
+  type: 'Office',
+  timezone: 'AEST'
+}];
+const leadership = [{
+  name: 'John Smith',
+  role: 'Chief Executive Officer',
+  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop'
+}, {
+  name: 'Sarah Johnson',
+  role: 'Chief Technology Officer',
+  image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop'
+}, {
+  name: 'Michael Chen',
+  role: 'Chief Security Officer',
+  image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop'
+}, {
+  name: 'Emily Davis',
+  role: 'Chief Revenue Officer',
+  image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop'
+}];
 export default function Company() {
-  return (
-    <main className="min-h-screen page-bg-light">
+  return <main className="min-h-screen page-bg-light">
       <Navbar />
       
       {/* Hero */}
@@ -72,10 +86,14 @@ export default function Company() {
             <Building2 className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">About Us</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{
+          animationDelay: '0.1s'
+        }}>
             About <span className="glow-text">Enhance Tech</span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{
+          animationDelay: '0.2s'
+        }}>
             We're on a mission to protect the world's most sensitive data and enable organizations to embrace digital transformation with confidence.
           </p>
         </div>
@@ -117,53 +135,19 @@ export default function Company() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value, index) => (
-              <div 
-                key={value.title} 
-                className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
-              >
+            {values.map((value, index) => <div key={value.title} className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
                 <div className={`w-14 h-14 rounded-2xl ${value.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       {/* Leadership */}
-      <section className="py-20 page-section-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Leadership Team</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Meet the people driving our mission forward.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {leadership.map((leader, index) => (
-              <div key={leader.name} className="text-center group cursor-pointer">
-                <div className="relative mb-5">
-                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-slate-100 group-hover:ring-primary/30 transition-all duration-300 shadow-lg">
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h3 className="font-bold text-slate-900 text-lg group-hover:text-primary transition-colors duration-300">
-                  {leader.name}
-                </h3>
-                <p className="text-sm text-slate-600 mt-1">{leader.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Offices */}
       <section className="py-20 page-section-blue">
@@ -175,11 +159,7 @@ export default function Company() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {offices.map((office, index) => (
-              <div 
-                key={office.city} 
-                className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
-              >
+            {offices.map((office, index) => <div key={office.city} className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                   <MapPin className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
@@ -188,8 +168,7 @@ export default function Company() {
                 <span className="inline-flex items-center gap-1 mt-3 px-3 py-1 bg-primary/10 rounded-full text-xs font-semibold text-primary">
                   {office.type}
                 </span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -215,6 +194,5 @@ export default function Company() {
       </section>
 
       <Footer />
-    </main>
-  );
+    </main>;
 }
