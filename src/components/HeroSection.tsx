@@ -46,9 +46,9 @@ export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isSplineLoading, setIsSplineLoading] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  
+
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
-  
+
   const goToNextTab = useCallback(() => {
     const currentIndex = heroTabs.findIndex((tab) => tab.id === activeTab);
     const nextIndex = (currentIndex + 1) % heroTabs.length;
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (isPaused) return;
-    
+
     const interval = setInterval(goToNextTab, AUTO_PLAY_INTERVAL);
     return () => clearInterval(interval);
   }, [goToNextTab, isPaused]);
@@ -73,7 +73,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-25 lg:pt-30">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-12 group cursor-default">
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
@@ -92,7 +92,7 @@ export default function HeroSection() {
         </h2>
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left - Tabs */}
-          <div 
+          <div
             className="lg:col-span-3 space-y-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -107,7 +107,9 @@ export default function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-1 h-full min-h-[24px] rounded-full transition-all duration-300 ${activeTab === tab.id ? "bg-primary" : "bg-muted-foreground/30"}`} />
+                  <div
+                    className={`w-1 h-full min-h-[24px] rounded-full transition-all duration-300 ${activeTab === tab.id ? "bg-primary" : "bg-muted-foreground/30"}`}
+                  />
                   <span>{tab.label}</span>
                 </div>
                 {activeTab === tab.id && !isPaused && (
