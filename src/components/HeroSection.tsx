@@ -58,20 +58,12 @@ export default function HeroSection() {
           backgroundImage: `url(${heroBackground})`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 animate-fade-up">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Enterprise IT Solutions
-        </div>
-        
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <span className="text-foreground">We Resolve Your </span>
-          <span className="glow-text">IT Challenges</span>
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary foreground tracking-wide mb-8">
+          We Resolve Your IT Challenges
         </h2>
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left - Tabs */}
@@ -102,22 +94,15 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">{currentTab.description}</p>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link 
-                to="/demo" 
-                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-glow-cyan text-primary-foreground font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-105"
-              >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-glow-cyan opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
-                <span className="relative">Get Started</span>
-                <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Link to="/demo" className="btn-primary">
+                Get Started
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link 
-                to="/learn-more" 
-                className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-foreground/20 text-foreground font-semibold rounded-full hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-              >
+              <Link to="/learn-more" className="btn-secondary">
                 Learn More
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

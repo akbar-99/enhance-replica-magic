@@ -53,14 +53,8 @@ export default function TrustedBy() {
   }, [isPaused]);
 
   return (
-    <section className="py-16 overflow-hidden relative">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-muted-foreground text-sm font-medium mb-8 uppercase tracking-wider">
-          Trusted by Industry Leaders
-        </p>
+    <section className="py-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={scrollRef}
           className="flex items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden"
