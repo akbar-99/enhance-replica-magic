@@ -24,24 +24,17 @@ const heroTabs: HeroTab[] = [
   },
   {
     id: "enhance",
-    label: "IT Skill Gaps & Leadership Bandwidth Constraints",
-    title: "Extending Your IT Leadership Capability",
+    label: "Frequent Downtime?",
+    title: "Ensure Business Continuity",
     description:
-      "Executive teams should focus on strategy—not day-to-day IT firefighting. We augment your organization with senior-level technical expertise and advisory support, reducing internal strain and improving execution.",
+      "Proactive maintenance and 24 X 7 monitoring to identify and resolve potential issues before they disrupt your operations.",
   },
   {
     id: "Enhance 3",
-    label: "Operational Inconsistency Across Locations",
-    title: "Standardized Control Across the Enterprise",
+    label: "Security & Compliance Gaps? ",
+    title: "Fortify Your Infrastructure",
     description:
-      "Fragmented IT environments increase cost and risk. We unify systems, policies, and service delivery to ensure consistent performance, security, and governance across all business units and locations.",
-  },
-  {
-    id: "Enhance 4",
-    label: "Scalability Constraints Limiting Growth",
-    title: "IT That Evolves with the Business",
-    description:
-      "Legacy systems inhibit expansion and agility. We design scalable, cloud-ready infrastructures that support mergers, expansion, and future growth without operational friction.red data.",
+      "Implement robust defense strategies that safeguard your sensitive data and ensure adherence to industry standards.",
   },
 ];
 export default function HeroSection() {
