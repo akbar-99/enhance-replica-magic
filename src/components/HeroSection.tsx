@@ -87,10 +87,10 @@ export default function HeroSection() {
             ))}
             <Link
               to="/use-cases"
-              className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80 mt-4"
+              className="hero-tab w-full flex items-center gap-2 text-primary hover:text-primary/80 mt-4 transition-all duration-300 hover:[text-shadow:0_0_15px_hsl(var(--primary)/0.8),0_0_30px_hsl(var(--primary)/0.4)]"
             >
               Explore More Solutions
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.8)]" />
             </Link>
           </div>
 
