@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, ArrowRight, Shield, Eye, Users, Globe, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -66,20 +66,36 @@ const newsItems: NewsItem[] = [
 
 export default function NewsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex(prev => (prev + 1) % newsItems.length);
-  };
+  }, []);
 
   const prevSlide = () => {
     setCurrentIndex(prev => (prev - 1 + newsItems.length) % newsItems.length);
   };
 
+  // Auto-play functionality
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused, nextSlide]);
+
   const currentItem = newsItems[currentIndex];
 
   return (
     <section className="relative py-12 bg-gradient-to-b from-[hsl(210,50%,95%)] to-[hsl(210,60%,90%)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="flex items-center gap-4 lg:gap-8">
           {/* Previous Button */}
           <button 
