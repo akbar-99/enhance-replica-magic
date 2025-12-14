@@ -66,6 +66,8 @@ export default {
         glow: {
           blue: "hsl(var(--glow-blue))",
           cyan: "hsl(var(--glow-cyan))",
+          purple: "hsl(var(--glow-purple))",
+          pink: "hsl(var(--glow-pink))",
         },
       },
       borderRadius: {
