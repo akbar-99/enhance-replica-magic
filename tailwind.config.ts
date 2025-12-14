@@ -98,6 +98,14 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "glow-pulse": {
+          "0%, 100%": { 
+            textShadow: "0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--accent) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)" 
+          },
+          "50%": { 
+            textShadow: "0 0 30px hsl(var(--primary) / 0.9), 0 0 60px hsl(var(--accent) / 0.7), 0 0 90px hsl(var(--primary) / 0.4)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -106,6 +114,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.4s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
