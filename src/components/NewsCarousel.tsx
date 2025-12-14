@@ -134,7 +134,7 @@ function LightTabletSlideContent({
 }) {
   return <div className="relative bg-gradient-to-r from-[hsl(210,30%,96%)] via-[hsl(200,40%,92%)] to-[hsl(185,50%,85%)] rounded-xl overflow-hidden min-h-[200px] lg:min-h-[240px]">
       {/* Content */}
-      <div className="relative z-10 p-8 lg:p-10 lg:pr-72 flex flex-col justify-center h-full min-h-[200px] lg:min-h-[240px]">
+      <div className="relative z-10 p-8 lg:p-10 lg:pr-72 flex flex-col justify-center h-full min-h-[200px] lg:min-h-[240px] py-[37px]">
         <h3 className="text-xl lg:text-2xl xl:text-[26px] font-normal text-[hsl(215,30%,25%)] leading-snug">
           {slide.titleStart}{' '}
           <span className="font-bold text-[hsl(310,70%,40%)]">{slide.titleHighlight}</span>
