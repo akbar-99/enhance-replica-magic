@@ -1,7 +1,34 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense, memo } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
+
+// Lazy load Spline embed
+const SplineEmbed = memo(() => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  return (
+    <>
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Loader2 className="w-8 h-8 text-primary animate-spin" />
+        </div>
+      )}
+      <iframe
+        src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/"
+        frameBorder="0"
+        width="150%"
+        height="150%"
+        className="rounded-2xl"
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        style={{ opacity: isLoaded ? 1 : 0 }}
+      />
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+    </>
+  );
+});
+SplineEmbed.displayName = 'SplineEmbed';
 
 interface HeroTab {
   id: string;
@@ -42,10 +69,10 @@ const heroTabs: HeroTab[] = [
 
 const AUTO_PLAY_INTERVAL = 3000;
 
-export default function HeroSection() {
+function HeroSection() {
   const [activeTab, setActiveTab] = useState("ai-security");
-  const [isSplineLoading, setIsSplineLoading] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [showSpline, setShowSpline] = useState(false);
 
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
 
@@ -61,6 +88,12 @@ export default function HeroSection() {
     const interval = setInterval(goToNextTab, AUTO_PLAY_INTERVAL);
     return () => clearInterval(interval);
   }, [goToNextTab, isPaused]);
+
+  // Delay Spline loading for faster initial render
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSpline(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <section className="relative min-h-screen overflow-hidden py-0">
       {/* Background Image */}
@@ -146,24 +179,11 @@ export default function HeroSection() {
 
           {/* Right Side - Spline 3D */}
           <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden">
-            {isSplineLoading && (
+            {showSpline ? <SplineEmbed /> : (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>
             )}
-            <iframe
-              src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/"
-              frameBorder="0"
-              width="150%"
-              height="150%"
-              className="rounded-2xl"
-              onLoad={() => setIsSplineLoading(false)}
-              style={{
-                opacity: isSplineLoading ? 0 : 1,
-              }}
-            />
-            {/* Overlay to hide Spline watermark */}
-            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
@@ -177,3 +197,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+export default memo(HeroSection);
