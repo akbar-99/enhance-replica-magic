@@ -43,9 +43,9 @@ const solutions = [{
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
   const rightColumn = solutions.slice(7);
-  return <section className="py-8 bg-white">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/10">
+  return <section className="py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/20">
           {/* Left Panel - Dark Gradient */}
           <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 lg:p-14 flex items-center min-h-[420px] mx-0">
             {/* Decorative gradient overlay */}
