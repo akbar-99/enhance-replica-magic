@@ -8,6 +8,7 @@ const NewsAndTrustedSection = lazy(() => import('@/components/NewsAndTrustedSect
 const FeaturesSection = lazy(() => import('@/components/FeaturesSection'));
 const ProtectDataSection = lazy(() => import('@/components/ProtectDataSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
+const BlogSection = lazy(() => import('@/components/BlogSection'));
 const StatsSection = lazy(() => import('@/components/StatsSection'));
 const CTASection = lazy(() => import('@/components/CTASection'));
 
@@ -33,6 +34,9 @@ const Index = () => {
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <FAQSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <BlogSection />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <StatsSection />
