@@ -108,7 +108,7 @@ export default function Navbar() {
   const location = useLocation();
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-glow-cyan rounded-lg flex items-center justify-center">
@@ -120,7 +120,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-8">
             <div className="flex items-center border border-border/40 rounded-full px-2 py-1.5 bg-transparent">
               {navItems.map(item => (
                 <div 
@@ -160,7 +160,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 ml-auto">
             <button className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Globe className="w-4 h-4" />
               <span>EN</span>
