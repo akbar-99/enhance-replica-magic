@@ -48,7 +48,7 @@ export default function HeroSection() {
     </div>
 
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40">
-      <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary uppercase tracking-wide mb-8">
+      <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-foreground tracking-wide mb-8">
         We Resolve Your IT Challenges
       </h2>
       <div className="grid lg:grid-cols-12 gap-8 items-start">
