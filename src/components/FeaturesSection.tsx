@@ -2,7 +2,7 @@ import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye } from 'lucide-reac
 import { Link } from 'react-router-dom';
 const features = [{
   icon: Shield,
-  title: 'Data Security Platform',
+  title: 'Managed IT Services',
   description: 'Comprehensive protection for your most sensitive data across all environments.',
   link: '/products/data-security',
   iconBg: 'bg-primary',
