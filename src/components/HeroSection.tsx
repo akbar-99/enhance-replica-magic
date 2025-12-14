@@ -10,26 +10,32 @@ interface HeroTab {
 }
 const heroTabs: HeroTab[] = [{
   id: 'ai-security',
-  label: 'AI-Native Data Security',
-  title: 'Self-Aware Data Security',
-  description: 'Know when data hits AI. Adapt to risk automatically. Protect at scale.'
+  label: 'Unplanned Downtime & Revenue Impact ',
+  title: 'Protecting Business Continuity and Brand Trust',
+  description: 'We architect resilient IT environments with proactive monitoring and redundancy to ensure uninterrupted business operations.'
 }, {
   id: 'discovery',
-  label: 'Discovery and Classification',
-  title: 'Find and Tag Any Sensitive Data',
-  description: 'Get visibility and control over structured and unstructured data.'
+  label: 'Cyber Risk & Regulatory Exposure',
+  title: 'Reducing Enterprise-Level Risk',
+  description: 'We implement enterprise security frameworks that protect critical assets, reduce exposure to cyber threats.'
 }, {
-  id: 'prevent-loss',
-  label: 'Prevent Data Loss',
-  title: 'Prevent Breaches. Everywhere.',
-  description: 'Secure sensitive data across AI, cloud, web, email, and endpoints.'
-}, {
-  id: 'compliance',
-  label: 'Compliance and Governance',
-  title: 'Control Access. Minimize Risk.',
-  description: 'Enforce least privilege. Find over-permissioned files. Audit access.'
-}];
-export default function HeroSection() {
+  id: 'enhance',
+  label: 'IT Skill Gaps & Leadership Bandwidth Constraints',
+  title: 'Extending Your IT Leadership Capability',
+  description: 'Executive teams should focus on strategy—not day-to-day IT firefighting. We augment your organization with senior-level technical expertise and advisory support, reducing internal strain and improving execution.'
+},{
+  id: 'Enhance 3',
+  label: 'Operational Inconsistency Across Locations',
+  title: 'Standardized Control Across the Enterprise',
+  description: 'Fragmented IT environments increase cost and risk. We unify systems, policies, and service delivery to ensure consistent performance, security, and governance across all business units and locations.'
+},
+{
+  id: 'Enhance 4',
+  label: 'Scalability Constraints Limiting Growth',
+  title: 'IT That Evolves with the Business',
+  description: 'Legacy systems inhibit expansion and agility. We design scalable, cloud-ready infrastructures that support mergers, expansion, and future growth without operational friction.red data.'
+}] ; 
+ export default function HeroSection() {
   const [activeTab, setActiveTab] = useState('ai-security');
   const [isSplineLoading, setIsSplineLoading] = useState(true);
   const currentTab = heroTabs.find(tab => tab.id === activeTab) || heroTabs[0];
@@ -42,6 +48,9 @@ export default function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary uppercase tracking-wide mb-8">
+          We Solve The IT Headaches
+        </h2>
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left - Tabs */}
           <div className="lg:col-span-3 space-y-2">
@@ -58,7 +67,7 @@ export default function HeroSection() {
 
           {/* Center - Hero Content */}
           <div className="lg:col-span-5 space-y-6 animate-fade-up" key={activeTab}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
@@ -77,11 +86,11 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Spline 3D */}
-          <div className="lg:col-span-4 relative h-[500px] lg:h-[700px] flex items-center justify-center -mt-16 overflow-hidden">
+          <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden">
             {isSplineLoading && <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>}
-            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/" frameBorder="0" width="100%" height="100%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
+            <iframe src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/" frameBorder="0" width="150%" height="150%" className="rounded-2xl" onLoad={() => setIsSplineLoading(false)} style={{
             opacity: isSplineLoading ? 0 : 1
           }} />
             {/* Overlay to hide Spline watermark */}

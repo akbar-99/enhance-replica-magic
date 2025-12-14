@@ -4,7 +4,7 @@ import blueWhiteBg from '@/assets/blue-white-bg.png';
 
 export default function NewsAndTrustedSection() {
   return (
-    <section 
+    <section
       className="relative bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${blueWhiteBg})` }}
     >
