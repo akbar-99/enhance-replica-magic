@@ -135,7 +135,7 @@ export default function Navbar() {
 
                   {/* Dropdown */}
                   {item.dropdown && (
-                    <div className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-2xl shadow-black/30 z-50 transition-all duration-200 ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                    <div className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? 'opacity-85 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                       <div className="p-2">
                         {item.dropdown.map(subItem => (
                           <Link 
