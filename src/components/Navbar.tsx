@@ -129,7 +129,7 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown(item.label)} 
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <span className="flex items-center px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                  <span className="flex items-center px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-full transition-all duration-200 cursor-pointer">
                     {item.label}
                   </span>
 
