@@ -106,6 +106,10 @@ export default {
             textShadow: "0 0 30px hsl(var(--primary) / 0.9), 0 0 60px hsl(var(--accent) / 0.7), 0 0 90px hsl(var(--primary) / 0.4)" 
           },
         },
+        "progress": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +119,7 @@ export default {
         "slide-in-right": "slide-in-right 0.4s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "progress": "progress 5s linear forwards",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

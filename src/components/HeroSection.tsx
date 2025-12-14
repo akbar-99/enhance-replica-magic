@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
+
 interface HeroTab {
   id: string;
   label: string;
   title: string;
   description: string;
 }
+
 const heroTabs: HeroTab[] = [
   {
     id: "ai-security",
@@ -37,10 +39,28 @@ const heroTabs: HeroTab[] = [
       "Implement robust defense strategies that safeguard your sensitive data and ensure adherence to industry standards.",
   },
 ];
+
+const AUTO_PLAY_INTERVAL = 5000;
+
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isSplineLoading, setIsSplineLoading] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
+  
+  const goToNextTab = useCallback(() => {
+    const currentIndex = heroTabs.findIndex((tab) => tab.id === activeTab);
+    const nextIndex = (currentIndex + 1) % heroTabs.length;
+    setActiveTab(heroTabs[nextIndex].id);
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(goToNextTab, AUTO_PLAY_INTERVAL);
+    return () => clearInterval(interval);
+  }, [goToNextTab, isPaused]);
   return (
     <section className="relative min-h-screen overflow-hidden py-0">
       {/* Background Image */}
@@ -72,17 +92,27 @@ export default function HeroSection() {
         </h2>
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Left - Tabs */}
-          <div className="lg:col-span-3 space-y-2">
+          <div 
+            className="lg:col-span-3 space-y-2"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {heroTabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`hero-tab w-full text-left ${activeTab === tab.id ? "active" : ""}`}
+                className={`hero-tab w-full text-left transition-all duration-300 ${activeTab === tab.id ? "active" : ""}`}
                 style={{
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                {tab.label}
+                <div className="flex items-center gap-3">
+                  <div className={`w-1 h-full min-h-[24px] rounded-full transition-all duration-300 ${activeTab === tab.id ? "bg-primary" : "bg-muted-foreground/30"}`} />
+                  <span>{tab.label}</span>
+                </div>
+                {activeTab === tab.id && !isPaused && (
+                  <div className="absolute bottom-0 left-0 h-0.5 bg-primary animate-progress" />
+                )}
               </button>
             ))}
             <Link
