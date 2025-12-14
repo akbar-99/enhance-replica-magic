@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const features = [{
   icon: Shield,
   title: 'Data Security Platform',
@@ -43,9 +44,11 @@ const features = [{
   iconBg: 'bg-indigo-500',
   iconColor: 'text-white'
 }];
+
 export default function FeaturesSection() {
-  return <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[3px]">
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-slate-800">Complete Security</span>{' '}
@@ -57,9 +60,13 @@ export default function FeaturesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => <Link key={feature.title} to={feature.link} className="bg-white rounded-2xl p-8 border border-slate-200 transition-all duration-300 group hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1" style={{
-          animationDelay: `${index * 100}ms`
-        }}>
+          {features.map((feature, index) => (
+            <Link 
+              key={feature.title} 
+              to={feature.link} 
+              className="bg-white rounded-2xl p-8 border border-slate-200 transition-all duration-300 group hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               {/* Icon container */}
               <div className={`w-14 h-14 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 <feature.icon className={`w-7 h-7 ${feature.iconColor}`} strokeWidth={2} />
@@ -80,8 +87,10 @@ export default function FeaturesSection() {
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-            </Link>)}
+            </Link>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
