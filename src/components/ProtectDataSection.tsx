@@ -1,28 +1,49 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const solutions = [
-  { title: 'Prevent Data Loss', link: '/solutions' },
-  { title: 'Data Access Governance', link: '/solutions' },
-  { title: 'Compliance Readiness', link: '/solutions' },
-  { title: 'Insider Risk Protection', link: '/solutions' },
-  { title: 'Data Security for AI', link: '/solutions' },
-  { title: 'Comprehensive Email Security', link: '/solutions' },
-  { title: 'AI Data Classification', link: '/solutions' },
-  { title: 'BYOD Security', link: '/solutions' },
-  { title: 'Unified Breach and Incident Readiness', link: '/solutions' },
-  { title: 'Secure Microsoft 365 and Copilot', link: '/solutions' },
-  { title: 'Protect Data in ChatGPT', link: '/solutions' },
-  { title: 'Data Risk Mitigation', link: '/solutions' },
-  { title: 'Stop Ransomware', link: '/solutions' },
-];
-
+const solutions = [{
+  title: 'Prevent Data Loss',
+  link: '/solutions'
+}, {
+  title: 'Data Access Governance',
+  link: '/solutions'
+}, {
+  title: 'Compliance Readiness',
+  link: '/solutions'
+}, {
+  title: 'Insider Risk Protection',
+  link: '/solutions'
+}, {
+  title: 'Data Security for AI',
+  link: '/solutions'
+}, {
+  title: 'Comprehensive Email Security',
+  link: '/solutions'
+}, {
+  title: 'AI Data Classification',
+  link: '/solutions'
+}, {
+  title: 'BYOD Security',
+  link: '/solutions'
+}, {
+  title: 'Unified Breach and Incident Readiness',
+  link: '/solutions'
+}, {
+  title: 'Secure Microsoft 365 and Copilot',
+  link: '/solutions'
+}, {
+  title: 'Protect Data in ChatGPT',
+  link: '/solutions'
+}, {
+  title: 'Data Risk Mitigation',
+  link: '/solutions'
+}, {
+  title: 'Stop Ransomware',
+  link: '/solutions'
+}];
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
   const rightColumn = solutions.slice(7);
-
-  return (
-    <section className="py-20 bg-background">
+  return <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 rounded-2xl overflow-hidden shadow-xl">
           {/* Left Panel - Dark Gradient */}
@@ -49,41 +70,27 @@ const ProtectDataSection = () => {
             <div className="grid md:grid-cols-2 gap-x-8">
               {/* Left Column */}
               <div className="space-y-0">
-                {leftColumn.map((solution, index) => (
-                  <Link
-                    key={index}
-                    to={solution.link}
-                    className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors"
-                  >
+                {leftColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors">
                     <span className="text-slate-800 font-medium group-hover:text-primary transition-colors">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-5 h-5 text-primary opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </Link>
-                ))}
+                  </Link>)}
               </div>
 
               {/* Right Column */}
               <div className="space-y-0">
-                {rightColumn.map((solution, index) => (
-                  <Link
-                    key={index}
-                    to={solution.link}
-                    className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors"
-                  >
+                {rightColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors">
                     <span className="text-slate-800 font-medium group-hover:text-primary transition-colors">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-5 h-5 text-primary opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </Link>
-                ))}
+                  </Link>)}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProtectDataSection;
