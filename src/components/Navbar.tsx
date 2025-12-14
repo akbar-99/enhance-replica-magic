@@ -1,6 +1,21 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Search, Globe, Menu, X, ArrowRight } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+
 interface NavItem {
   label: string;
   href?: string;
@@ -10,6 +25,15 @@ interface NavItem {
     description?: string;
   }[];
 }
+
+const languages = [
+  { code: 'EN', label: 'English' },
+  { code: 'ES', label: 'Español' },
+  { code: 'FR', label: 'Français' },
+  { code: 'DE', label: 'Deutsch' },
+  { code: 'AR', label: 'العربية' },
+];
+
 const navItems: NavItem[] = [{
   label: 'Products',
   dropdown: [{
@@ -102,10 +126,31 @@ const navItems: NavItem[] = [{
     description: 'Latest announcements'
   }]
 }];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState('EN');
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Navigate to search results or handle search
+      console.log('Searching for:', searchQuery);
+      setSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
@@ -161,14 +206,56 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center gap-4 ml-auto">
-            <button className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <Globe className="w-4 h-4" />
-              <span>EN</span>
-              <ChevronDown className="w-3 h-3" />
-            </button>
-            <button className="p-2 text-muted-foreground hover:text-foreground transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
+            {/* Language Selector Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors outline-none">
+                <Globe className="w-4 h-4" />
+                <span>{selectedLanguage}</span>
+                <ChevronDown className="w-3 h-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-popover border border-border min-w-[140px]">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setSelectedLanguage(lang.code)}
+                    className={`cursor-pointer ${selectedLanguage === lang.code ? 'bg-secondary/50' : ''}`}
+                  >
+                    <span className="font-medium">{lang.code}</span>
+                    <span className="ml-2 text-muted-foreground">{lang.label}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Search Dialog */}
+            <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
+              <DialogTrigger asChild>
+                <button className="p-2 text-muted-foreground hover:text-foreground transition-colors">
+                  <Search className="w-5 h-5" />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[500px]">
+                <DialogHeader>
+                  <DialogTitle>Search</DialogTitle>
+                </DialogHeader>
+                <form onSubmit={handleSearch} className="mt-4">
+                  <div className="flex gap-2">
+                    <Input
+                      ref={searchInputRef}
+                      type="text"
+                      placeholder="Search products, solutions, resources..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="flex-1"
+                    />
+                    <button type="submit" className="btn-primary px-4">
+                      <Search className="w-4 h-4" />
+                    </button>
+                  </div>
+                </form>
+              </DialogContent>
+            </Dialog>
+
             <Link to="/demo" className="btn-primary text-sm">
               Book a Meeting
               <ArrowRight className="w-4 h-4" />
