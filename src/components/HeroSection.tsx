@@ -17,10 +17,10 @@ const heroTabs: HeroTab[] = [
   },
   {
     id: "discovery",
-    label: "Cyber Risk & Regulatory Exposure",
-    title: "Reducing Enterprise-Level Risk",
+    label: "Inefficient IT Projects and Rollouts",
+    title: "Strategic Project Management",
     description:
-      "We implement enterprise security frameworks that protect critical assets, reduce exposure to cyber threats.",
+      "Streamline your execution with precision planning that keeps every rollout on track and cost-effective.",
   },
   {
     id: "enhance",
