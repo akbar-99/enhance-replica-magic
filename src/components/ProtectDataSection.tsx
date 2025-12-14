@@ -67,7 +67,7 @@ const ProtectDataSection = () => {
           </div>
 
           {/* Right Panel - Solutions List */}
-          <div className="bg-slate-50 p-6 lg:p-10">
+          <div className="bg-slate-50 p-6 lg:p-10 py-[102px]">
             <p className="text-slate-500 text-base font-medium mb-6 uppercase tracking-wider">Explore our solutions for:</p>
             
             <div className="grid md:grid-cols-2 gap-x-6">
