@@ -46,8 +46,10 @@ const blogPosts = [{
 const BlogSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleCards, setVisibleCards] = useState(3);
+  
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth < 640) {
@@ -62,12 +64,31 @@ const BlogSection = () => {
     window.addEventListener('resize', updateVisibleCards);
     return () => window.removeEventListener('resize', updateVisibleCards);
   }, []);
+
   const maxIndex = Math.max(0, blogPosts.length - visibleCards);
+
+  // Auto-play rolling effect
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => {
+        if (prev >= maxIndex) {
+          return 0; // Loop back to start
+        }
+        return prev + 1;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, maxIndex]);
+
   const handlePrev = () => {
-    setCurrentIndex(prev => Math.max(0, prev - 1));
+    setCurrentIndex(prev => (prev === 0 ? maxIndex : prev - 1));
   };
+  
   const handleNext = () => {
-    setCurrentIndex(prev => Math.min(maxIndex, prev + 1));
+    setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
   };
   return <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +121,7 @@ const BlogSection = () => {
           </button>
 
           {/* Cards Container */}
-          <div ref={containerRef} className="overflow-hidden mx-8 lg:mx-0">
+          <div ref={containerRef} className="overflow-hidden mx-8 lg:mx-0" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
             <div className="flex gap-8 transition-transform duration-700 ease-out" style={{
             transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
           }}>
