@@ -6,10 +6,8 @@ import ProtectDataSection from '@/components/ProtectDataSection';
 import StatsSection from '@/components/StatsSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-
 const Index = () => {
-  return (
-    <main className="min-h-screen bg-background">
+  return <main className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
       <NewsAndTrustedSection />
@@ -18,8 +16,6 @@ const Index = () => {
       <StatsSection />
       <CTASection />
       <Footer />
-    </main>
-  );
+    </main>;
 };
-
 export default Index;
