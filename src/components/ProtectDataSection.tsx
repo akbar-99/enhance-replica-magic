@@ -43,49 +43,64 @@ const solutions = [{
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
   const rightColumn = solutions.slice(7);
-  return <section className="bg-white py-[60px]">
+  return <section className="bg-background py-12 lg:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 rounded-2xl overflow-hidden shadow-xl">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/10">
           {/* Left Panel - Dark Gradient */}
-          <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-12 lg:p-16 flex items-center min-h-[500px]">
+          <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 lg:p-14 flex items-center min-h-[420px]">
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-600/30 via-pink-500/20 to-cyan-400/20 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-2xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-purple-600/25 via-pink-500/15 to-cyan-400/15 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-blue-500/15 to-purple-500/15 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-bl from-cyan-400/10 to-transparent rounded-full blur-xl" />
             </div>
             
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight">
                 Protect Your Data.
                 <br />
-                Protect Your Business.
+                <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text">
+                  Protect Your Business.
+                </span>
               </h2>
             </div>
           </div>
 
           {/* Right Panel - Solutions List */}
-          <div className="bg-slate-50 p-8 lg:p-12">
-            <p className="text-slate-600 text-lg mb-8">Explore our solutions for:</p>
+          <div className="bg-slate-50 p-6 lg:p-10">
+            <p className="text-slate-500 text-base font-medium mb-6 uppercase tracking-wider">Explore our solutions for:</p>
             
-            <div className="grid md:grid-cols-2 gap-x-8">
+            <div className="grid md:grid-cols-2 gap-x-6">
               {/* Left Column */}
-              <div className="space-y-0">
-                {leftColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors">
-                    <span className="text-slate-800 font-medium group-hover:text-primary transition-colors">
+              <div>
+                {leftColumn.map((solution, index) => (
+                  <Link 
+                    key={index} 
+                    to={solution.link} 
+                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200"
+                  >
+                    <span className="text-slate-700 text-sm font-medium group-hover:text-primary transition-colors duration-200">
                       {solution.title}
                     </span>
-                    <ArrowRight className="w-5 h-5 text-primary opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </Link>)}
+                    <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
+                  </Link>
+                ))}
               </div>
 
               {/* Right Column */}
-              <div className="space-y-0">
-                {rightColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary/50 transition-colors">
-                    <span className="text-slate-800 font-medium group-hover:text-primary transition-colors">
+              <div>
+                {rightColumn.map((solution, index) => (
+                  <Link 
+                    key={index} 
+                    to={solution.link} 
+                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200"
+                  >
+                    <span className="text-slate-700 text-sm font-medium group-hover:text-primary transition-colors duration-200">
                       {solution.title}
                     </span>
-                    <ArrowRight className="w-5 h-5 text-primary opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </Link>)}
+                    <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
