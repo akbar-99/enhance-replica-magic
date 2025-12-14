@@ -10,11 +10,30 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+
+// Flatten all nav items for search
+const getAllSearchItems = () => {
+  const items: { label: string; href: string; description?: string; category: string }[] = [];
+  navItems.forEach(nav => {
+    if (nav.dropdown) {
+      nav.dropdown.forEach(item => {
+        items.push({
+          label: item.label,
+          href: item.href,
+          description: item.description,
+          category: nav.label,
+        });
+      });
+    }
+  });
+  return items;
+};
 
 interface NavItem {
   label: string;
@@ -136,20 +155,26 @@ export default function Navbar() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
 
+  const searchItems = getAllSearchItems();
+  
+  const filteredResults = searchQuery.trim()
+    ? searchItems.filter(item =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results or handle search
-      console.log('Searching for:', searchQuery);
-      setSearchOpen(false);
-      setSearchQuery('');
-    }
+  const handleSearchItemClick = (href: string) => {
+    setSearchOpen(false);
+    setSearchQuery('');
+    window.location.href = href;
   };
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -237,22 +262,56 @@ export default function Navbar() {
               <DialogContent className="sm:max-w-[500px]">
                 <DialogHeader>
                   <DialogTitle>Search</DialogTitle>
+                  <DialogDescription>
+                    Search across products, solutions, and resources
+                  </DialogDescription>
                 </DialogHeader>
-                <form onSubmit={handleSearch} className="mt-4">
-                  <div className="flex gap-2">
+                <div className="mt-4">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <Input
                       ref={searchInputRef}
                       type="text"
-                      placeholder="Search products, solutions, resources..."
+                      placeholder="Type to search..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="flex-1"
+                      className="pl-10"
                     />
-                    <button type="submit" className="btn-primary px-4">
-                      <Search className="w-4 h-4" />
-                    </button>
                   </div>
-                </form>
+                  
+                  {/* Search Results */}
+                  {searchQuery.trim() && (
+                    <div className="mt-4 max-h-[300px] overflow-y-auto">
+                      {filteredResults.length > 0 ? (
+                        <div className="space-y-1">
+                          {filteredResults.map((item) => (
+                            <button
+                              key={item.href}
+                              onClick={() => handleSearchItemClick(item.href)}
+                              className="w-full text-left px-3 py-2 rounded-md hover:bg-secondary/50 transition-colors"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="font-medium text-foreground">{item.label}</span>
+                                <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                                  {item.category}
+                                </span>
+                              </div>
+                              {item.description && (
+                                <p className="text-sm text-muted-foreground mt-0.5">
+                                  {item.description}
+                                </p>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-center text-muted-foreground py-4">
+                          No results found for "{searchQuery}"
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
               </DialogContent>
             </Dialog>
 
