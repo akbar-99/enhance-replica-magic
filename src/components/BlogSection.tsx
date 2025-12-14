@@ -1,46 +1,53 @@
 import { useState, useRef, useEffect } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import 3D character images
+import blogChar1 from '@/assets/blog/blog-character-1.jpg';
+import blogChar2 from '@/assets/blog/blog-character-2.png';
+import blogChar3 from '@/assets/blog/blog-character-3.png';
+import blogChar4 from '@/assets/blog/blog-character-4.png';
+import blogChar5 from '@/assets/blog/blog-character-5.png';
+
 const blogPosts = [
   {
     id: 1,
     badge: "EnhanceTech",
     title: "Benefits of Microsoft's \"Hand Off\" Feature in Windows 11",
     headline: "Key Benefits Of Using Microsoft's Hand Off Feature In Windows 11",
-    gradient: "from-purple-600 to-purple-400",
-    accent: "bg-purple-500",
+    image: blogChar1,
+    bgColor: "bg-amber-400",
   },
   {
     id: 2,
     badge: "EnhanceTech",
     title: "Benefits of IT Managed Services Plans for Growth",
     headline: "5 Powerful Benefits Of IT Managed Services Plans For Growth",
-    gradient: "from-cyan-400 to-cyan-300",
-    accent: "bg-cyan-500",
+    image: blogChar2,
+    bgColor: "bg-sky-500",
   },
   {
     id: 3,
     badge: "EnhanceTech",
     title: "Revolutionary Cloud Computing Trends to Watch in 2025",
     headline: "Revolutionary Cloud Computing Trends To Watch In 2025",
-    gradient: "from-orange-200 to-orange-100",
-    accent: "bg-orange-400",
+    image: blogChar3,
+    bgColor: "bg-purple-500",
   },
   {
     id: 4,
     badge: "EnhanceTech",
     title: "Cybersecurity Best Practices for Small Businesses",
     headline: "Essential Cybersecurity Best Practices For Small Businesses",
-    gradient: "from-emerald-500 to-emerald-300",
-    accent: "bg-emerald-500",
+    image: blogChar4,
+    bgColor: "bg-emerald-500",
   },
   {
     id: 5,
     badge: "EnhanceTech",
     title: "How AI is Transforming IT Support Services",
     headline: "How AI Is Revolutionizing Modern IT Support Services",
-    gradient: "from-blue-500 to-indigo-400",
-    accent: "bg-blue-500",
+    image: blogChar5,
+    bgColor: "bg-indigo-600",
   },
 ];
 
@@ -77,22 +84,22 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-12">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium w-fit">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-start gap-8">
+            <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-semibold tracking-wide w-fit shadow-lg shadow-primary/25">
               OUR BLOG
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
-              Stories, Ideas <span className="text-primary">&</span>
+            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+              Stories, Ideas <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
               <br />
-              <span className="text-primary">Inspiration</span>
+              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Inspiration</span>
             </h2>
           </div>
-          <p className="text-slate-600 max-w-md lg:text-right">
-            Find inspirational contents and expert advice on how to get the most out of your digital world
+          <p className="text-slate-600 max-w-sm lg:text-right text-lg leading-relaxed">
+            Find inspirational content and expert advice on how to get the most out of your digital world
           </p>
         </div>
 
@@ -102,23 +109,23 @@ const BlogSection = () => {
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-16 z-10 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-110 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-7 h-7" />
           </button>
           
           <button
             onClick={handleNext}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-16 z-10 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-110 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-7 h-7" />
           </button>
 
           {/* Cards Container */}
-          <div ref={containerRef} className="overflow-hidden mx-4 lg:mx-0">
+          <div ref={containerRef} className="overflow-hidden mx-8 lg:mx-0">
             <div
-              className="flex gap-6 transition-transform duration-500 ease-out"
+              className="flex gap-8 transition-transform duration-700 ease-out"
               style={{
                 transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
               }}
@@ -127,35 +134,42 @@ const BlogSection = () => {
                 <div
                   key={post.id}
                   className="flex-shrink-0"
-                  style={{ width: `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 24 / visibleCards}px)` }}
+                  style={{ width: `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 32 / visibleCards}px)` }}
                   onMouseEnter={() => setIsHovered(index)}
                   onMouseLeave={() => setIsHovered(null)}
                 >
                   <div className="group cursor-pointer">
-                    {/* Card Image */}
-                    <div className={`relative rounded-3xl overflow-hidden mb-4 aspect-[4/3] bg-gradient-to-br ${post.gradient} p-6 transition-all duration-500 ${isHovered === index ? 'scale-[1.02] shadow-2xl' : 'shadow-lg'}`}>
+                    {/* Card Image Container */}
+                    <div className={`relative rounded-[2rem] overflow-hidden mb-6 aspect-[4/3] ${post.bgColor} transition-all duration-500 ${isHovered === index ? 'scale-[1.02] shadow-2xl' : 'shadow-xl'}`}>
                       {/* Glass border effect */}
-                      <div className="absolute inset-0 rounded-3xl border-2 border-white/20" />
+                      <div className="absolute inset-0 rounded-[2rem] border-4 border-white/20 z-10" />
+                      <div className="absolute inset-[3px] rounded-[1.8rem] border border-white/30 z-10" />
+                      
+                      {/* 3D Character Image */}
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? 'scale-110' : 'scale-100'}`}
+                      />
+                      
+                      {/* Gradient overlay for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
                       
                       {/* Badge */}
-                      <div className="inline-flex items-center px-3 py-1.5 rounded-md bg-slate-900/80 backdrop-blur-sm text-white text-sm font-medium mb-4">
-                        <span className="w-2 h-2 rounded-full bg-primary mr-2" />
+                      <div className="absolute top-5 left-5 z-20 inline-flex items-center px-4 py-2 rounded-lg bg-slate-900/90 backdrop-blur-md text-white text-sm font-semibold shadow-lg">
+                        <span className="w-2.5 h-2.5 rounded-full bg-primary mr-2.5 animate-pulse" />
                         {post.badge}
                       </div>
                       
-                      {/* Title */}
-                      <h3 className="text-white text-xl font-bold leading-tight mb-auto">
-                        {post.title}
-                      </h3>
-                      
-                      {/* Website */}
-                      <div className="absolute bottom-6 left-6 flex items-center text-white/80 text-sm">
-                        <span className="w-4 h-4 rounded-full bg-white/30 mr-2" />
-                        www.enhancetech.ae
+                      {/* Title on image */}
+                      <div className="absolute bottom-5 left-5 right-5 z-20">
+                        <h3 className="text-white text-lg font-bold leading-tight drop-shadow-lg">
+                          {post.title}
+                        </h3>
                       </div>
                       
-                      {/* Decorative element */}
-                      <div className={`absolute top-1/2 right-6 w-20 h-20 rounded-full ${post.accent} opacity-30 blur-xl transition-all duration-500 ${isHovered === index ? 'scale-150' : ''}`} />
+                      {/* Hover glow effect */}
+                      <div className={`absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-500 ${isHovered === index ? 'opacity-100' : ''}`} />
                     </div>
                     
                     {/* Card Footer */}
@@ -163,8 +177,8 @@ const BlogSection = () => {
                       <h4 className="text-lg font-semibold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
                         {post.headline}
                       </h4>
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
-                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
@@ -175,15 +189,15 @@ const BlogSection = () => {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-3 mt-12">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`h-3 rounded-full transition-all duration-500 ${
                 currentIndex === index
-                  ? 'bg-primary w-6'
-                  : 'bg-slate-300 hover:bg-slate-400'
+                  ? 'bg-gradient-to-r from-primary to-cyan-500 w-10 shadow-lg shadow-primary/30'
+                  : 'bg-slate-300 w-3 hover:bg-slate-400'
               }`}
             />
           ))}
