@@ -61,7 +61,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary foreground tracking-wide mb-8">
           We Resolve Your IT Challenges
         </h2>
