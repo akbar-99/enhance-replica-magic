@@ -127,10 +127,10 @@ export default function Solutions() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {detailedSolutions.map((solution, index) => (
-              <div
+              <Link
                 key={solution.id}
-                id={solution.id}
-                className="group relative bg-white border border-slate-200/80 rounded-3xl p-8 hover:border-transparent hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden scroll-mt-32"
+                to={`/solutions/${solution.id}`}
+                className="group relative bg-white border border-slate-200/80 rounded-3xl p-8 hover:border-transparent hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
               >
                 {/* Hover gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-[hsl(var(--glow-cyan))]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -142,9 +142,13 @@ export default function Solutions() {
                   <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">
                     {solution.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{solution.description}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">{solution.description}</p>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm font-semibold">
+                    Learn More
+                    <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
