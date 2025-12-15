@@ -163,19 +163,13 @@ const BlogSection = () => {
                       <div className="absolute inset-[3px] rounded-[1.8rem] border border-white/30 z-10" />
                       
                       {/* 3D Character Image */}
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        loading="lazy"
-                        decoding="async"
-                        className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? 'scale-110' : 'scale-100'}`} 
-                      />
+                      <img src={post.image} alt={post.title} loading="lazy" decoding="async" className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? 'scale-110' : 'scale-100'}`} />
                       
                       {/* Gradient overlay for text readability */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
                       
                       {/* Badge */}
-                      <div className="absolute top-5 left-5 z-20 inline-flex items-center backdrop-blur-md text-white text-sm font-semibold shadow-lg bg-transparent py-[3px] px-0 border-none rounded-sm mx-[168px] my-[90px]">
+                      <div className="absolute top-5 left-5 z-20 inline-flex items-center backdrop-blur-md text-white text-sm font-semibold shadow-lg bg-transparent px-0 border-none rounded-sm mx-[168px] py-0 my-[114px]">
                         <span className="w-2.5 h-2.5 rounded-full bg-primary mr-2.5 animate-pulse" />
                         {post.badge}
                       </div>
