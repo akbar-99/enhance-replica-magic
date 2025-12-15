@@ -13,6 +13,8 @@ import Company from '@/pages/Company';
 import Demo from '@/pages/Demo';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
+import ITAMCQuote from '@/pages/ITAMCQuote';
+import ServiceLocation from '@/pages/ServiceLocation';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -38,6 +40,8 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/use-cases" element={<PageTransition><Solutions /></PageTransition>} />
         <Route path="/learn-more" element={<PageTransition><Products /></PageTransition>} />
+        <Route path="/it-amc-quote" element={<PageTransition><ITAMCQuote /></PageTransition>} />
+        <Route path="/services/:slug" element={<PageTransition><ServiceLocation /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
