@@ -121,13 +121,24 @@ const BlogSection = () => {
           </button>
 
           {/* Cards Container */}
-          <div ref={containerRef} className="overflow-hidden mx-8 lg:mx-0" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-            <div className="flex gap-8 transition-transform duration-700 ease-out" style={{
-            transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
-          }}>
-              {blogPosts.map((post, index) => <div key={post.id} className="flex-shrink-0" style={{
-              width: `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 32 / visibleCards}px)`
-            }} onMouseEnter={() => setIsHovered(index)} onMouseLeave={() => setIsHovered(null)}>
+          <div ref={containerRef} className="overflow-hidden mx-12 sm:mx-8 lg:mx-0" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+            <div 
+              className="flex transition-transform duration-700 ease-out" 
+              style={{
+                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+                gap: visibleCards === 1 ? '0px' : '32px'
+              }}
+            >
+              {blogPosts.map((post, index) => (
+                <div 
+                  key={post.id} 
+                  className="flex-shrink-0 px-1 sm:px-0" 
+                  style={{
+                    width: visibleCards === 1 ? '100%' : `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 32 / visibleCards}px)`
+                  }} 
+                  onMouseEnter={() => setIsHovered(index)} 
+                  onMouseLeave={() => setIsHovered(null)}
+                >
                   <div className="group cursor-pointer">
                     {/* Card Image Container */}
                     <div className={`relative rounded-[2rem] overflow-hidden mb-6 aspect-[4/3] ${post.bgColor} transition-all duration-500 ${isHovered === index ? 'scale-[1.02] shadow-2xl' : 'shadow-xl'}`}>
@@ -168,7 +179,8 @@ const BlogSection = () => {
                       </div>
                     </div>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
