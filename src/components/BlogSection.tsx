@@ -126,9 +126,8 @@ const BlogSection = () => {
             <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-semibold tracking-wide w-fit shadow-lg shadow-primary/25">
               ​Tech Hub 
             </span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">​
-Latest news, updates &
-​strategies for your business.                                                                                                   <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
+            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+              ​Latest news, updates    <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
               <br />
               <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">​strategies for your business.                                                                                                   </span>
             </h2>
