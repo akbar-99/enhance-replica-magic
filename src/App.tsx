@@ -10,6 +10,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 const Index = lazy(() => import("./pages/Index"));
 const Products = lazy(() => import("./pages/Products"));
 const Solutions = lazy(() => import("./pages/Solutions"));
+const SolutionDetail = lazy(() => import("./pages/SolutionDetail"));
 const Resources = lazy(() => import("./pages/Resources"));
 const Partners = lazy(() => import("./pages/Partners"));
 const Company = lazy(() => import("./pages/Company"));
@@ -38,7 +39,7 @@ const App = () => (
             <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<Products />} />
             <Route path="/solutions" element={<Solutions />} />
-            <Route path="/solutions/:slug" element={<Solutions />} />
+            <Route path="/solutions/:slug" element={<SolutionDetail />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/:slug" element={<Resources />} />
             <Route path="/partners" element={<Partners />} />

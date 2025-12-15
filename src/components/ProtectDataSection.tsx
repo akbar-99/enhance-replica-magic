@@ -2,34 +2,34 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const solutions = [{
   title: 'Secure Your Network',
-  link: '/solutions#secure-network'
+  link: '/solutions/secure-network'
 }, {
   title: 'Prevent Data Loss',
-  link: '/solutions#prevent-data-loss'
+  link: '/solutions/prevent-data-loss'
 }, {
   title: 'Modernize Meeting Spaces',
-  link: '/solutions#meeting-spaces'
+  link: '/solutions/meeting-spaces'
 }, {
   title: 'Enhance Physical Security',
-  link: '/solutions#physical-security'
+  link: '/solutions/physical-security'
 }, {
   title: 'Optimize Cloud Operations',
-  link: '/solutions#cloud-operations'
+  link: '/solutions/cloud-operations'
 }, {
   title: 'Stop Cyber Threats',
-  link: '/solutions#cyber-threats'
+  link: '/solutions/cyber-threats'
 }, {
   title: 'Upgrade Enterprise Hardware',
-  link: '/solutions#enterprise-hardware'
+  link: '/solutions/enterprise-hardware'
 }, {
   title: 'Streamline IT Support',
-  link: '/solutions#it-support'
+  link: '/solutions/it-support'
 }, {
   title: 'Strengthen Infrastructure',
-  link: '/solutions#infrastructure'
+  link: '/solutions/infrastructure'
 }, {
   title: 'Manage Microsoft 365',
-  link: '/solutions#microsoft-365'
+  link: '/solutions/microsoft-365'
 }];
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
