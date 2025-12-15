@@ -77,8 +77,8 @@ export default function FeaturesSection() {
           animationDelay: `${index * 100}ms`
         }}>
               {/* Icon container */}
-              <div className={`w-14 h-14 rounded-xl ${feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                <feature.icon className={`w-7 h-7 ${feature.iconColor}`} strokeWidth={2} />
+              <div className={`w-full h-40 rounded-2xl ${feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 shadow-lg`}>
+                <feature.icon className={`w-16 h-16 ${feature.iconColor}`} strokeWidth={1.5} />
               </div>
               
               {/* Title */}
