@@ -96,13 +96,18 @@ function HeroSection() {
   }, []);
   return (
     <section className="relative min-h-screen overflow-hidden py-0">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-        }}
-      >
+      {/* Preload hero background for LCP */}
+      <link rel="preload" as="image" href={heroBackground} />
+      
+      {/* Background Image with priority loading */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroBackground}
+          alt=""
+          fetchPriority="high"
+          decoding="sync"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
 
