@@ -127,14 +127,12 @@ const BlogSection = () => {
               ​Tech Hub 
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
-              Stories, Ideas <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
+              ​Latest news, updates    <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Inspiration</span>
+              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">​strategies for your business.                                                                                                   </span>
             </h2>
           </div>
-          <p className="text-slate-600 max-w-sm lg:text-right text-lg leading-relaxed">
-            Find inspirational content and expert advice on how to get the most out of your digital world
-          </p>
+          
         </div>
 
         {/* Carousel */}
