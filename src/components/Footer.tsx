@@ -30,6 +30,14 @@ const footerLinks = {
     { label: 'News', href: '/company/news' },
     { label: 'Partners', href: '/partners' },
   ],
+  'Quick Link': [
+    { label: 'Get IT AMC Quote', href: '/it-amc-quote' },
+    { label: 'IT Support in Dubai', href: '/services/it-support-dubai' },
+    { label: 'IT Support in Sharjah', href: '/services/it-support-sharjah' },
+    { label: 'IT Support in DIFC', href: '/services/it-support-difc' },
+    { label: 'IT Support in Qatar', href: '/services/it-support-qatar' },
+    { label: 'IT Consulting in Dubai', href: '/services/it-consulting-dubai' },
+  ],
 };
 
 const socialLinks = [
@@ -43,7 +51,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -90,13 +98,19 @@ export default function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-semibold text-foreground mb-4">{category}</h4>
+              <h4 className={`font-semibold mb-4 ${category === 'Quick Link' ? 'text-primary' : 'text-foreground'}`}>
+                {category === 'Quick Link' ? (
+                  <span className="underline decoration-primary underline-offset-4">{category.toUpperCase()}</span>
+                ) : (
+                  category
+                )}
+              </h4>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       to={link.href}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                      className="text-muted-foreground hover:text-primary text-sm transition-colors hover:translate-x-1 inline-block"
                     >
                       {link.label}
                     </Link>
