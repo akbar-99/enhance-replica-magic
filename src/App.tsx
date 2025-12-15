@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import WhatsAppButton from "./components/WhatsAppButton";
 import AnimatedRoutes from "./components/AnimatedRoutes";
+import PromoBanner from "./components/PromoBanner";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PromoBanner />
         <AnimatedRoutes />
         <WhatsAppButton />
       </BrowserRouter>
