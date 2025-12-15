@@ -1,55 +1,109 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from 'lucide-react';
-
 const footerLinks = {
-  Products: [
-    { label: 'Data Security Platform', href: '/products/data-security' },
-    { label: 'Cloud Security', href: '/products/cloud-security' },
-    { label: 'Network Security', href: '/products/network-security' },
-    { label: 'Endpoint Security', href: '/products/endpoint-security' },
-    { label: 'All Products', href: '/products' },
-  ],
-  Solutions: [
-    { label: 'Enterprise Security', href: '/solutions/enterprise' },
-    { label: 'AI & ML Security', href: '/solutions/ai-security' },
-    { label: 'Compliance', href: '/solutions/compliance' },
-    { label: 'Zero Trust', href: '/solutions/zero-trust' },
-    { label: 'All Solutions', href: '/solutions' },
-  ],
-  Resources: [
-    { label: 'Blog', href: '/resources/blog' },
-    { label: 'Case Studies', href: '/resources/case-studies' },
-    { label: 'Whitepapers', href: '/resources/whitepapers' },
-    { label: 'Webinars', href: '/resources/webinars' },
-    { label: 'Documentation', href: '/resources/docs' },
-  ],
-  Company: [
-    { label: 'About Us', href: '/company/about' },
-    { label: 'Careers', href: '/company/careers' },
-    { label: 'Contact', href: '/company/contact' },
-    { label: 'News', href: '/company/news' },
-    { label: 'Partners', href: '/partners' },
-  ],
-  'Quick Link': [
-    { label: 'Get IT AMC Quote', href: '/it-amc-quote' },
-    { label: 'IT Support in Dubai', href: '/services/it-support-dubai' },
-    { label: 'IT Support in Sharjah', href: '/services/it-support-sharjah' },
-    { label: 'IT Support in DIFC', href: '/services/it-support-difc' },
-    { label: 'IT Support in Qatar', href: '/services/it-support-qatar' },
-    { label: 'IT Consulting in Dubai', href: '/services/it-consulting-dubai' },
-  ],
+  Products: [{
+    label: 'Data Security Platform',
+    href: '/products/data-security'
+  }, {
+    label: 'Cloud Security',
+    href: '/products/cloud-security'
+  }, {
+    label: 'Network Security',
+    href: '/products/network-security'
+  }, {
+    label: 'Endpoint Security',
+    href: '/products/endpoint-security'
+  }, {
+    label: 'All Products',
+    href: '/products'
+  }],
+  Solutions: [{
+    label: 'Enterprise Security',
+    href: '/solutions/enterprise'
+  }, {
+    label: 'AI & ML Security',
+    href: '/solutions/ai-security'
+  }, {
+    label: 'Compliance',
+    href: '/solutions/compliance'
+  }, {
+    label: 'Zero Trust',
+    href: '/solutions/zero-trust'
+  }, {
+    label: 'All Solutions',
+    href: '/solutions'
+  }],
+  Resources: [{
+    label: 'Blog',
+    href: '/resources/blog'
+  }, {
+    label: 'Case Studies',
+    href: '/resources/case-studies'
+  }, {
+    label: 'Whitepapers',
+    href: '/resources/whitepapers'
+  }, {
+    label: 'Webinars',
+    href: '/resources/webinars'
+  }, {
+    label: 'Documentation',
+    href: '/resources/docs'
+  }],
+  Company: [{
+    label: 'About Us',
+    href: '/company/about'
+  }, {
+    label: 'Careers',
+    href: '/company/careers'
+  }, {
+    label: 'Contact',
+    href: '/company/contact'
+  }, {
+    label: 'News',
+    href: '/company/news'
+  }, {
+    label: 'Partners',
+    href: '/partners'
+  }],
+  'Quick Link': [{
+    label: 'Get IT AMC Quote',
+    href: '/it-amc-quote'
+  }, {
+    label: 'IT Support in Dubai',
+    href: '/services/it-support-dubai'
+  }, {
+    label: 'IT Support in Sharjah',
+    href: '/services/it-support-sharjah'
+  }, {
+    label: 'IT Support in DIFC',
+    href: '/services/it-support-difc'
+  }, {
+    label: 'IT Support in Qatar',
+    href: '/services/it-support-qatar'
+  }, {
+    label: 'IT Consulting in Dubai',
+    href: '/services/it-consulting-dubai'
+  }]
 };
-
-const socialLinks = [
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
-  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-];
-
+const socialLinks = [{
+  icon: Linkedin,
+  href: 'https://linkedin.com',
+  label: 'LinkedIn'
+}, {
+  icon: Twitter,
+  href: 'https://twitter.com',
+  label: 'Twitter'
+}, {
+  icon: Youtube,
+  href: 'https://youtube.com',
+  label: 'YouTube'
+}, {
+  icon: Facebook,
+  href: 'https://facebook.com',
+  label: 'Facebook'
+}];
 export default function Footer() {
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Logo & Description */}
@@ -80,45 +134,25 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
-                  aria-label={social.label}
-                >
+              {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors" aria-label={social.label}>
                   <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
 
           {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(footerLinks).map(([category, links]) => <div key={category}>
               <h4 className={`font-semibold mb-4 ${category === 'Quick Link' ? 'text-primary' : 'text-foreground'}`}>
-                {category === 'Quick Link' ? (
-                  <span className="underline decoration-primary underline-offset-4">{category.toUpperCase()}</span>
-                ) : (
-                  category
-                )}
+                {category === 'Quick Link' ? <span className="underline decoration-primary underline-offset-4 text-white">{category.toUpperCase()}</span> : category}
               </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-muted-foreground hover:text-primary text-sm transition-colors hover:translate-x-1 inline-block"
-                    >
+                {links.map(link => <li key={link.label}>
+                    <Link to={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors hover:translate-x-1 inline-block">
                       {link.label}
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Bottom Bar */}
@@ -139,6 +173,5 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
