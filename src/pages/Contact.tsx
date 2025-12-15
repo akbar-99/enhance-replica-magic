@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { organizationSchema } from '@/components/SEO';
 import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle } from 'lucide-react';
 
 const contactOptions = [
@@ -61,8 +62,21 @@ export default function Contact() {
     });
   };
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": organizationSchema
+  };
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="Contact Us | ENHANCE TECH Dubai"
+        description="Get in touch with ENHANCE TECH. Contact us for IT solutions, cybersecurity services, and enterprise technology support in Dubai, UAE. Phone: +97143296840"
+        keywords="contact ENHANCE TECH, IT support Dubai, cybersecurity contact, technology consultation UAE"
+        canonicalUrl="https://itenhance.tech/contact"
+        structuredData={contactSchema}
+      />
       <Navbar />
       
       {/* Hero */}

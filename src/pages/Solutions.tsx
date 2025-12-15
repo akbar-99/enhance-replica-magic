@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, ChevronRight, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -92,8 +93,20 @@ export default function Solutions() {
     }
   }, [location.hash]);
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Solutions', url: 'https://itenhance.tech/solutions' },
+  ]);
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="IT Security Solutions | ENHANCE TECH Dubai"
+        description="Comprehensive IT security solutions including network security, data protection, cloud optimization, physical security, and managed IT support services in Dubai, UAE."
+        keywords="IT solutions Dubai, security solutions, network security, data protection, cloud services, physical security, managed IT UAE"
+        canonicalUrl="https://itenhance.tech/solutions"
+        structuredData={breadcrumbSchema}
+      />
       <Navbar />
       
       {/* Hero */}

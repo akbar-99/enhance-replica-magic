@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote } from 'lucide-react';
 
 const benefits = [
@@ -44,6 +45,12 @@ export default function Demo() {
   if (submitted) {
     return (
       <main className="min-h-screen page-bg-light">
+        <SEO
+          title="Request Demo | ENHANCE TECH"
+          description="Schedule a personalized demo with ENHANCE TECH. See our IT solutions, cybersecurity platforms, and enterprise technology in action."
+          keywords="demo request, IT solutions demo, cybersecurity demo, enterprise technology demonstration"
+          canonicalUrl="https://itenhance.tech/demo"
+        />
         <Navbar />
         <section className="pt-32 pb-20">
           <div className="max-w-xl mx-auto px-4 text-center">
@@ -67,6 +74,12 @@ export default function Demo() {
 
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="Request Demo | ENHANCE TECH"
+        description="Schedule a personalized demo with ENHANCE TECH. See our IT solutions, cybersecurity platforms, and enterprise technology in action."
+        keywords="demo request, IT solutions demo, cybersecurity demo, enterprise technology demonstration"
+        canonicalUrl="https://itenhance.tech/demo"
+      />
       <Navbar />
       
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
