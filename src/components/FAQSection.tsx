@@ -7,20 +7,34 @@ import {
 
 const faqs = [
   {
-    question: "IT support helps you meet your business goals",
-    answer: "We take time to understand how you work, how you use technology, and we make business recommendations to ensure technology helps you to succeed."
+    question: "Boost Efficiency",
+    tagline: "Streamline Your Operations",
+    answer: "Eliminate IT bottlenecks and downtime with proactive monitoring and optimized systems that keep your teams working without interruption."
   },
   {
-    question: "Fast response time",
-    answer: "Our dedicated support team ensures rapid response to all your IT issues. With 24/7 monitoring and quick escalation procedures, we minimize downtime and keep your business running smoothly."
+    question: "Enable Scalability",
+    tagline: "Grow Without Limits",
+    answer: "Implement flexible cloud and infrastructure solutions that easily adapt and expand as your business evolves, ensuring you never outgrow your tech."
   },
   {
-    question: "We ensure you are cyber secure",
-    answer: "Our comprehensive security solutions protect your business from evolving cyber threats. We implement multi-layered security measures, regular audits, and employee training to keep your data safe."
+    question: "Ensure Compliance",
+    tagline: "Meet Industry Standards",
+    answer: "Navigate complex regulations with confidence. We align your IT infrastructure with global standards to minimize risk and avoid penalties."
   },
   {
-    question: "Certified and experienced IT Support provider",
-    answer: "Our team consists of certified professionals with years of experience across various industries. We hold certifications from Microsoft, Cisco, AWS, and other leading technology providers."
+    question: "Strengthen Security",
+    tagline: "Fortify Your Defenses",
+    answer: "Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business."
+  },
+  {
+    question: "Stay Competitive",
+    tagline: "Leverage Modern Technology",
+    answer: "Stay ahead of the curve by adopting the latest digital tools and strategies that drive innovation and give you a market advantage."
+  },
+  {
+    question: "Optimize Cost",
+    tagline: "Maximize Your ROI",
+    answer: "Reduce unnecessary hardware and maintenance expenses with predictable pricing models and efficient resource management."
   }
 ];
 
@@ -32,13 +46,15 @@ const FAQSection = () => {
           {/* Left Side - Title */}
           <div className="lg:sticky lg:top-24">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-              Asked Questions
+              Why Choose Us
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-              Why partner with<br />
-              Enhance Tech for your<br />
-              IT support?
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Why Leading Businesses<br />
+              Choose Us
             </h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational inefficiencies through strategic, scalable, and locally delivered IT solutions.
+            </p>
           </div>
 
           {/* Right Side - Accordion */}
@@ -51,7 +67,10 @@ const FAQSection = () => {
                   className="bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 shadow-[0_0_1px_1px_rgba(255,255,255,0.8),0_4px_24px_-4px_rgba(0,0,0,0.05)] overflow-hidden group transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)] data-[state=open]:border-primary/30 data-[state=open]:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)]"
                 >
                   <AccordionTrigger className="px-6 py-5 text-slate-800 text-left font-medium text-base hover:no-underline hover:text-primary [&[data-state=open]]:text-primary [&[data-state=open]>svg]:rotate-180 [&>svg]:text-primary/60 [&>svg]:transition-transform [&>svg]:duration-300">
-                    {faq.question}
+                    <div className="flex flex-col items-start gap-1">
+                      <span className="font-bold text-lg">{faq.question}</span>
+                      <span className="text-sm text-slate-500 font-normal">{faq.tagline}</span>
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
                     {faq.answer}
