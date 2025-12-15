@@ -49,14 +49,13 @@ const BlogSection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleCards, setVisibleCards] = useState(3);
-  
+
   // Touch/swipe state
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  
+
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
-  
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth < 640) {
@@ -71,13 +70,11 @@ const BlogSection = () => {
     window.addEventListener('resize', updateVisibleCards);
     return () => window.removeEventListener('resize', updateVisibleCards);
   }, []);
-
   const maxIndex = Math.max(0, blogPosts.length - visibleCards);
 
   // Auto-play rolling effect
   useEffect(() => {
     if (isPaused) return;
-    
     const interval = setInterval(() => {
       setCurrentIndex(prev => {
         if (prev >= maxIndex) {
@@ -86,16 +83,13 @@ const BlogSection = () => {
         return prev + 1;
       });
     }, 3000);
-
     return () => clearInterval(interval);
   }, [isPaused, maxIndex]);
-
   const handlePrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? maxIndex : prev - 1));
+    setCurrentIndex(prev => prev === 0 ? maxIndex : prev - 1);
   };
-  
   const handleNext = () => {
-    setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+    setCurrentIndex(prev => prev >= maxIndex ? 0 : prev + 1);
   };
 
   // Touch handlers for swipe gestures
@@ -104,27 +98,22 @@ const BlogSection = () => {
     setTouchStart(e.targetTouches[0].clientX);
     setIsPaused(true);
   };
-
   const onTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) {
       setIsPaused(false);
       return;
     }
-    
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    
     if (isLeftSwipe) {
       handleNext();
     } else if (isRightSwipe) {
       handlePrev();
     }
-    
     setTouchStart(null);
     setTouchEnd(null);
     setIsPaused(false);
@@ -135,7 +124,7 @@ const BlogSection = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-16">
           <div className="flex flex-col sm:flex-row sm:items-start gap-8">
             <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-semibold tracking-wide w-fit shadow-lg shadow-primary/25">
-              OUR BLOG
+              ​Tech Hub 
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
               Stories, Ideas <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
@@ -160,32 +149,14 @@ const BlogSection = () => {
           </button>
 
           {/* Cards Container */}
-          <div 
-            ref={containerRef} 
-            className="overflow-hidden mx-12 sm:mx-8 lg:mx-0 touch-pan-y" 
-            onMouseEnter={() => setIsPaused(true)} 
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            <div 
-              className="flex transition-transform duration-700 ease-out" 
-              style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
-                gap: visibleCards === 1 ? '0px' : '32px'
-              }}
-            >
-              {blogPosts.map((post, index) => (
-                <div 
-                  key={post.id} 
-                  className="flex-shrink-0 px-1 sm:px-0" 
-                  style={{
-                    width: visibleCards === 1 ? '100%' : `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 32 / visibleCards}px)`
-                  }} 
-                  onMouseEnter={() => setIsHovered(index)} 
-                  onMouseLeave={() => setIsHovered(null)}
-                >
+          <div ref={containerRef} className="overflow-hidden mx-12 sm:mx-8 lg:mx-0 touch-pan-y" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            <div className="flex transition-transform duration-700 ease-out" style={{
+            transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+            gap: visibleCards === 1 ? '0px' : '32px'
+          }}>
+              {blogPosts.map((post, index) => <div key={post.id} className="flex-shrink-0 px-1 sm:px-0" style={{
+              width: visibleCards === 1 ? '100%' : `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 32 / visibleCards}px)`
+            }} onMouseEnter={() => setIsHovered(index)} onMouseLeave={() => setIsHovered(null)}>
                   <div className="group cursor-pointer">
                     {/* Card Image Container */}
                     <div className={`relative rounded-[2rem] overflow-hidden mb-6 aspect-[4/3] ${post.bgColor} transition-all duration-500 ${isHovered === index ? 'scale-[1.02] shadow-2xl' : 'shadow-xl'}`}>
@@ -226,8 +197,7 @@ const BlogSection = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
