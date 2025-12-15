@@ -50,6 +50,13 @@ const BlogSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleCards, setVisibleCards] = useState(3);
   
+  // Touch/swipe state
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+  
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth < 640) {
@@ -90,6 +97,38 @@ const BlogSection = () => {
   const handleNext = () => {
     setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
   };
+
+  // Touch handlers for swipe gestures
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsPaused(false);
+      return;
+    }
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+    setIsPaused(false);
+  };
   return <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -121,7 +160,15 @@ const BlogSection = () => {
           </button>
 
           {/* Cards Container */}
-          <div ref={containerRef} className="overflow-hidden mx-12 sm:mx-8 lg:mx-0" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+          <div 
+            ref={containerRef} 
+            className="overflow-hidden mx-12 sm:mx-8 lg:mx-0 touch-pan-y" 
+            onMouseEnter={() => setIsPaused(true)} 
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className="flex transition-transform duration-700 ease-out" 
               style={{
