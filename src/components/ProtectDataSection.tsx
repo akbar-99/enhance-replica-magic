@@ -1,44 +1,35 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const solutions = [{
+  title: 'Secure Your Network',
+  link: '/solutions#secure-network'
+}, {
   title: 'Prevent Data Loss',
   link: '/solutions#prevent-data-loss'
 }, {
-  title: 'Data Access Governance',
-  link: '/solutions#data-access-governance'
+  title: 'Modernize Meeting Spaces',
+  link: '/solutions#meeting-spaces'
 }, {
-  title: 'Compliance Readiness',
-  link: '/solutions#compliance-readiness'
+  title: 'Enhance Physical Security',
+  link: '/solutions#physical-security'
 }, {
-  title: 'Insider Risk Protection',
-  link: '/solutions#insider-risk-protection'
+  title: 'Optimize Cloud Operations',
+  link: '/solutions#cloud-operations'
 }, {
-  title: 'Data Security for AI',
-  link: '/solutions#data-security-ai'
+  title: 'Stop Cyber Threats',
+  link: '/solutions#cyber-threats'
 }, {
-  title: 'Comprehensive Email Security',
-  link: '/solutions#email-security'
+  title: 'Upgrade Enterprise Hardware',
+  link: '/solutions#enterprise-hardware'
 }, {
-  title: 'AI Data Classification',
-  link: '/solutions#ai-data-classification'
+  title: 'Streamline IT Support',
+  link: '/solutions#it-support'
 }, {
-  title: 'BYOD Security',
-  link: '/solutions#byod-security'
+  title: 'Strengthen Infrastructure',
+  link: '/solutions#infrastructure'
 }, {
-  title: 'Unified Breach and Incident Readiness',
-  link: '/solutions#breach-incident-readiness'
-}, {
-  title: 'Secure Microsoft 365 and Copilot',
-  link: '/solutions#microsoft-365-copilot'
-}, {
-  title: 'Protect Data in ChatGPT',
-  link: '/solutions#chatgpt-data-protection'
-}, {
-  title: 'Data Risk Mitigation',
-  link: '/solutions#data-risk-mitigation'
-}, {
-  title: 'Stop Ransomware',
-  link: '/solutions#stop-ransomware'
+  title: 'Manage Microsoft 365',
+  link: '/solutions#microsoft-365'
 }];
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 7);
