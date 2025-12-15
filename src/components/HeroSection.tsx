@@ -6,7 +6,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 // Lazy load Spline embed
 const SplineEmbed = memo(() => {
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   return (
     <>
       {!isLoaded && (
@@ -28,7 +28,7 @@ const SplineEmbed = memo(() => {
     </>
   );
 });
-SplineEmbed.displayName = 'SplineEmbed';
+SplineEmbed.displayName = "SplineEmbed";
 
 interface HeroTab {
   id: string;
@@ -53,14 +53,14 @@ const heroTabs: HeroTab[] = [
   },
   {
     id: "enhance",
-    label: "Frequent Downtime?",
+    label: "Frequent Downtime",
     title: "Ensure Business Continuity",
     description:
       "Proactive maintenance and 24 X 7 monitoring to identify and resolve potential issues before they disrupt your operations.",
   },
   {
     id: "Enhance 3",
-    label: "Security & Compliance Gaps? ",
+    label: "Security & Compliance Gaps",
     title: "Fortify Your Infrastructure",
     description:
       "Implement robust defense strategies that safeguard your sensitive data and ensure adherence to industry standards.",
@@ -98,10 +98,10 @@ function HeroSection() {
     <section className="relative min-h-screen overflow-hidden py-0">
       {/* Preload hero background for LCP */}
       <link rel="preload" as="image" href={heroBackground} />
-      
+
       {/* Background Image with priority loading */}
       <div className="absolute inset-0">
-        <img 
+        <img
           src={heroBackground}
           alt=""
           fetchPriority="high"
@@ -184,7 +184,9 @@ function HeroSection() {
 
           {/* Right Side - Spline 3D */}
           <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden">
-            {showSpline ? <SplineEmbed /> : (
+            {showSpline ? (
+              <SplineEmbed />
+            ) : (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>
