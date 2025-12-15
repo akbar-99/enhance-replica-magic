@@ -69,7 +69,13 @@ export default function TrustedBy() {
       }}>
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer">
-              <img src={partner.logo} alt={`${partner.name} logo`} className="h-10 md:h-12 lg:h-14 w-auto object-contain" />
+              <img 
+                src={partner.logo} 
+                alt={`${partner.name} logo`} 
+                loading="lazy"
+                decoding="async"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain" 
+              />
             </div>)}
         </div>
       </div>

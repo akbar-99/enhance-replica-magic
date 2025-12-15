@@ -163,7 +163,13 @@ const BlogSection = () => {
                       <div className="absolute inset-[3px] rounded-[1.8rem] border border-white/30 z-10" />
                       
                       {/* 3D Character Image */}
-                      <img src={post.image} alt={post.title} className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? 'scale-110' : 'scale-100'}`} />
+                      <img 
+                        src={post.image} 
+                        alt={post.title} 
+                        loading="lazy"
+                        decoding="async"
+                        className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? 'scale-110' : 'scale-100'}`} 
+                      />
                       
                       {/* Gradient overlay for text readability */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
