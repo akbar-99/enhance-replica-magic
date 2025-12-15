@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings, LucideIcon } from 'lucide-react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 
@@ -319,8 +320,22 @@ export default function SolutionDetail() {
 
   const IconComponent = solution.icon;
 
+  const serviceSchema = createServiceSchema(solution.title, solution.description);
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Solutions', url: 'https://itenhance.tech/solutions' },
+    { name: solution.title, url: `https://itenhance.tech/solutions/${solution.id}` },
+  ]);
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title={`${solution.title} | ENHANCE TECH Solutions`}
+        description={solution.description}
+        keywords={`${solution.title}, IT solutions Dubai, ${solution.features.slice(0, 3).join(', ')}, enterprise security UAE`}
+        canonicalUrl={`https://itenhance.tech/solutions/${solution.id}`}
+        structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
+      />
       <Navbar />
       
       {/* Hero */}

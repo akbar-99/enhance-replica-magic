@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, BookOpen, FileText, Video, Download, Calendar, Newspaper, ChevronRight, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -79,8 +80,20 @@ const featuredResources = [
 ];
 
 export default function Resources() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Resources', url: 'https://itenhance.tech/resources' },
+  ]);
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="Security Resources | ENHANCE TECH Knowledge Center"
+        description="Explore ENHANCE TECH's library of security resources including blog articles, case studies, whitepapers, webinars, and industry events."
+        keywords="IT security resources, cybersecurity blog, security whitepapers, webinars, case studies, IT knowledge base"
+        canonicalUrl="https://itenhance.tech/resources"
+        structuredData={breadcrumbSchema}
+      />
       <Navbar />
       
       {/* Hero */}

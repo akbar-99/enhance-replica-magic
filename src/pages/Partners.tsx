@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, Handshake, Search, Cpu, Award, Users, Globe, ChevronRight, CheckCircle, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -44,8 +45,20 @@ const partnerLogos = [
 ];
 
 export default function Partners() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Partners', url: 'https://itenhance.tech/partners' },
+  ]);
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="Partner Program | ENHANCE TECH - Technology Partners Dubai"
+        description="Join ENHANCE TECH's partner ecosystem. Explore partnership opportunities, find certified partners, and discover our technology alliances with Microsoft, AWS, and more."
+        keywords="IT partners Dubai, technology partners, partner program, reseller program, Microsoft partner, AWS partner UAE"
+        canonicalUrl="https://itenhance.tech/partners"
+        structuredData={breadcrumbSchema}
+      />
       <Navbar />
       
       {/* Hero */}

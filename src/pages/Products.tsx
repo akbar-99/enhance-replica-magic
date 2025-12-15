@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye, Server, Globe, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -71,8 +72,20 @@ const products = [
 ];
 
 export default function Products() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Products', url: 'https://itenhance.tech/products' },
+  ]);
+
   return (
     <main className="min-h-screen page-bg-light">
+      <SEO
+        title="Security Products | ENHANCE TECH - Enterprise IT Solutions"
+        description="Explore our comprehensive security products including data security platforms, cloud security, network protection, threat prevention, and endpoint security solutions."
+        keywords="security products, data security platform, cloud security, network security, endpoint protection, threat prevention Dubai"
+        canonicalUrl="https://itenhance.tech/products"
+        structuredData={breadcrumbSchema}
+      />
       <Navbar />
       
       {/* Hero */}

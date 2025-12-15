@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SEO, { organizationSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, Target, Users, Award, MapPin, Building2, Lightbulb, Heart, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const values = [{
@@ -72,7 +73,19 @@ const leadership = [{
   image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop'
 }];
 export default function Company() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: 'https://itenhance.tech' },
+    { name: 'Company', url: 'https://itenhance.tech/company' },
+  ]);
+
   return <main className="min-h-screen page-bg-light">
+      <SEO
+        title="About ENHANCE TECH | IT Solutions Company Dubai"
+        description="Learn about ENHANCE TECH's mission, vision, and values. We're a leading IT solutions provider in Dubai, UAE, committed to delivering enterprise-grade technology solutions."
+        keywords="about ENHANCE TECH, IT company Dubai, technology company UAE, IT solutions provider, enterprise technology"
+        canonicalUrl="https://itenhance.tech/company"
+        structuredData={{ "@graph": [organizationSchema, breadcrumbSchema] }}
+      />
       <Navbar />
       
       {/* Hero */}
