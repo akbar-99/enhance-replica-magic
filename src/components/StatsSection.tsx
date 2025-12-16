@@ -12,7 +12,7 @@ const stats = [{
   label: 'Global Support'
 }];
 export default function StatsSection() {
-  return <section className="bg-gradient-to-b from-card to-background py-[25px] my-[2px]">
+  return <section className="bg-gradient-to-b from-card to-background py-[25px] my-[2px] border-amber-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => <div key={stat.label} className="text-center" style={{
