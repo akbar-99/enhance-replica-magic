@@ -9,21 +9,21 @@ const faqs = [
   },
   {
     question: "Enable Scalability",
-    tagline: "Grow Without Limits",
+    tagline: "",
     answer:
-      "Implement flexible cloud and infrastructure solutions that easily adapt and expand as your business evolves, ensuring you never outgrow your tech.",
+      " Grow Without Limits Implement flexible cloud and infrastructure solutions that easily adapt and expand as your business evolves, ensuring you never outgrow your tech.",
   },
   {
     question: "Ensure Compliance",
-    tagline: "Meet Industry Standards",
+    tagline: "",
     answer:
-      "Navigate complex regulations with confidence. We align your IT infrastructure with global standards to minimize risk and avoid penalties.",
+      " Meet Industry Standards Navigate complex regulations with confidence. We align your IT infrastructure with global standards to minimize risk and avoid penalties.",
   },
   {
     question: "Strengthen Security",
-    tagline: "Fortify Your Defenses",
+    tagline: "",
     answer:
-      "Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business.",
+      "Fortify Your Defenses <br /> Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business.",
   },
   {
     question: "Stay Competitive",
