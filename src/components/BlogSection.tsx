@@ -135,6 +135,16 @@ const BlogSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            Latest news, updates{" "}
+            <span className="text-primary">&</span>
+            <br />
+            <span className="text-primary">strategies for your business.</span>
+          </h2>
+        </div>
+
         {/* Carousel */}
         <div className="relative">
           {/* Navigation Arrows */}
