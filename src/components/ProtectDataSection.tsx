@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import blueBackground from "@/assets/blue-white-bg.png";
+import heroBackground from "@/assets/hero-background.jpg";
 const solutions = [
   {
     title: "Secure Your Network",
@@ -50,14 +50,14 @@ const ProtectDataSection = () => {
     <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/20">
-          <div 
-            className="relative p-10 lg:p-14 flex items-center min-h-[420px] mx-0"
-            style={{
-              backgroundImage: `url(${blueBackground})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
+          {/* Left Panel - Dark Gradient */}
+          <div className="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 lg:p-14 flex items-center min-h-[420px] mx-0">
+            {/* Decorative gradient overlay */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-purple-600/25 via-pink-500/15 to-cyan-400/15 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-blue-500/15 to-purple-500/15 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-bl from-cyan-400/10 to-transparent rounded-full blur-xl" />
+            </div>
 
             <div className="relative z-10">
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight">
