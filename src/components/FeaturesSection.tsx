@@ -38,7 +38,6 @@ const features = [
     iconBg: "bg-cyan-500",
     iconColor: "text-white",
   },
-  {
 ];
 
 export default function FeaturesSection() {
