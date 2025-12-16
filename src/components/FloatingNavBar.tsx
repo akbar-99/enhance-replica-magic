@@ -49,12 +49,12 @@ const FloatingNavBar = () => {
               </div>
 
               {/* Icon button */}
-              <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 cursor-pointer bg-primary/20 ${isHovered ? "bg-primary/30" : ""}`}>
-                {/* Glow effect - always visible */}
-                <div className="absolute inset-0 rounded-full bg-primary/30 blur-lg opacity-100 scale-110 transition-all duration-300" />
+              <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 cursor-pointer bg-primary/20 ${isHovered ? "bg-primary/30 scale-110" : ""}`}>
+                {/* Glow effect - always visible with pulse */}
+                <div className="absolute inset-0 rounded-full bg-primary/30 blur-lg opacity-100 scale-110 animate-pulse" />
 
                 {/* Icon - always glowing */}
-                <Icon className="relative z-10 w-5 h-5 transition-all duration-300 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />
+                <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))] ${isHovered ? "scale-110" : ""}`} />
               </div>
             </div>;
         if (item.isExternal) {
