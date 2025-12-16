@@ -95,7 +95,7 @@ function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <section className="relative min-h-screen overflow-hidden py-0">
+    <section className="relative min-h-screen overflow-hidden py-0 pb-32 lg:pb-40">
       {/* Preload hero background for LCP */}
       <link rel="preload" as="image" href={heroBackground} />
 

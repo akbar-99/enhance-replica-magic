@@ -277,9 +277,9 @@ export default function NewsCarousel() {
         return <AnalyticsSlideContent slide={currentSlide} />;
     }
   };
-  return <section className="relative bg-gradient-to-b from-[hsl(210,40%,92%)] to-[hsl(210,50%,85%)] py-px">
+  return <section className="relative z-20 -mt-24 lg:-mt-32 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-        <div className="flex items-center gap-4 lg:gap-6 py-0">
+        <div className="flex items-center gap-4 lg:gap-6 py-0 [&>div]:shadow-2xl [&>div]:drop-shadow-xl">
           {/* Previous Button */}
           <button onClick={prevSlide} className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-full border-2 border-[hsl(215,70%,30%)] flex items-center justify-center text-[hsl(215,70%,30%)] hover:bg-[hsl(215,70%,30%)] hover:text-white transition-all duration-300 bg-white/50">
             <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6" />
