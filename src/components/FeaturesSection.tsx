@@ -1,9 +1,11 @@
 import { ArrowRight, Monitor, ShieldCheck, Server, Network, Code, Cloud, Headphones, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import managedServicesImg from "@/assets/features/managed-services.png";
 
 const features = [
   {
     icon: Monitor,
+    image: managedServicesImg,
     title: "Managed Services",
     description:
       "Boost efficiency with reliable Managed IT Services. Proactive monitoring, 24/7 support & tailored solutions for your business growth.",
@@ -65,11 +67,15 @@ export default function FeaturesSection() {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {/* Icon container */}
+              {/* Icon/Image container */}
               <div
-                className={`w-full h-40 rounded-2xl ${feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 shadow-lg`}
+                className={`w-full h-40 rounded-2xl ${feature.image ? 'bg-white' : feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 ${feature.image ? '' : 'shadow-lg'} overflow-hidden`}
               >
-                <feature.icon className={`w-16 h-16 ${feature.iconColor}`} strokeWidth={1.5} />
+                {feature.image ? (
+                  <img src={feature.image} alt={feature.title} className="w-full h-full object-contain" />
+                ) : (
+                  <feature.icon className={`w-16 h-16 ${feature.iconColor}`} strokeWidth={1.5} />
+                )}
               </div>
 
               {/* Title */}
