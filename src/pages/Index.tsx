@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import NewsCarousel from '@/components/NewsCarousel';
 import Footer from '@/components/Footer';
 import NewsAndTrustedSection from '@/components/NewsAndTrustedSection';
 import FeaturesSection from '@/components/FeaturesSection';
@@ -28,7 +29,15 @@ const Index = () => {
         structuredData={homeSchema}
       />
       <Navbar />
-      <HeroSection />
+
+      {/* Hero + overlapping News Carousel */}
+      <div className="relative">
+        <HeroSection />
+        <div className="absolute inset-x-0 bottom-0 translate-y-1/2 z-30">
+          <NewsCarousel />
+        </div>
+      </div>
+
       <NewsAndTrustedSection />
       <FeaturesSection />
       <ProtectDataSection />
