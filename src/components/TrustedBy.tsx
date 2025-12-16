@@ -62,7 +62,7 @@ export default function TrustedBy() {
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
-  return <section className="overflow-hidden py-[16px]">
+  return <section className="overflow-hidden px-[4px] py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[7px]">
         <div ref={scrollRef} className="flex items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
         scrollBehavior: 'auto'
