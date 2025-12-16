@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBackground from "@/assets/hero-background.jpg";
+import protectData Background from "@/assets/hero-background.jpg";
 const solutions = [
   {
     title: "Secure Your Network",
