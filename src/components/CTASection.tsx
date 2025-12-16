@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import ctaBackground from "@/assets/cta-background.jpg";
 // Floating particle component
 const FloatingParticle = ({
   delay,
@@ -93,7 +93,7 @@ export default function CTASection() {
     left: "5%",
     top: "55%"
   }];
-  return <section className="relative overflow-hidden py-16 bg-primary-foreground">
+  return <section className="relative overflow-hidden py-16" style={{ backgroundImage: `url(${ctaBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Floating particles background */}
       <div className="absolute inset-0 pointer-events-none">
         {particles.map((particle, index) => <FloatingParticle key={index} {...particle} />)}
