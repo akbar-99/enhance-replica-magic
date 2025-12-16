@@ -31,7 +31,7 @@ const features = [
   },
   {
     icon: Network,
-    title: "Software Development",
+    title: "Web & App Development",
     description:
       "Intelligently integrated network solutions that secure connectivity and enhance your business operations.",
     link: "/products/network",
@@ -39,37 +39,6 @@ const features = [
     iconColor: "text-white",
   },
   {
-    icon: Code,
-    title: "Software Solutions",
-    description: "Advanced software solutions designed to streamline your operations and drive digital transformation.",
-    link: "/products/software",
-    iconBg: "bg-orange-500",
-    iconColor: "text-white",
-  },
-  {
-    icon: Cloud,
-    title: "AWS Cloud Services",
-    description: "Expert AWS cloud services to help you scale, optimize costs, and accelerate innovation in the cloud.",
-    link: "/products/aws-cloud",
-    iconBg: "bg-indigo-500",
-    iconColor: "text-white",
-  },
-  {
-    icon: Headphones,
-    title: "Unified Communications",
-    description: "Reliable and seamless communication solutions that keep your team connected across all channels.",
-    link: "/products/unified-communications",
-    iconBg: "bg-rose-500",
-    iconColor: "text-white",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Procurement Services",
-    description: "Professional procurement services to help you source the right technology at the best value.",
-    link: "/products/procurement",
-    iconBg: "bg-teal-500",
-    iconColor: "text-white",
-  },
 ];
 
 export default function FeaturesSection() {
