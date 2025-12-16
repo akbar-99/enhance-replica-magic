@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-react";
 
 // Import 3D character images
 import blogChar1 from "@/assets/blog/blog-character-1.jpg";
@@ -7,51 +7,52 @@ import blogChar2 from "@/assets/blog/blog-character-2.png";
 import blogChar3 from "@/assets/blog/blog-character-3.png";
 import blogChar4 from "@/assets/blog/blog-character-4.png";
 import blogChar5 from "@/assets/blog/blog-character-5.png";
+
 const blogPosts = [
   {
     id: 1,
-    badge: "EnhanceTech",
-    title: 'Benefits of Microsoft\'s "Hand Off" Feature in Windows 11',
-    headline: "Key Benefits Of Using Microsoft's Hand Off Feature In Windows 11",
+    title: "Key Benefits Of Using Microsofts Hand Off Feature In Windows 11",
+    description: "Discover how Microsoft's upcoming Hand Off feature in Windows 11 allows seamless work transitions between phone and PC.",
     image: blogChar1,
-    bgColor: "bg-amber-400",
+    author: "EnhanceTech",
+    date: "October 10, 2025",
   },
   {
     id: 2,
-    badge: "EnhanceTech",
-    title: "Benefits of IT Managed Services Plans for Growth",
-    headline: "5 Powerful Benefits Of IT Managed Services Plans For Growth",
+    title: "5 Powerful Benefits Of IT Managed Services Plans For Growth",
+    description: "Discover the top 5 benefits of IT Managed Services Plans and how they can boost productivity, enhance security, and reduce costs.",
     image: blogChar2,
-    bgColor: "bg-sky-500",
+    author: "EnhanceTech",
+    date: "April 3, 2025",
   },
   {
     id: 3,
-    badge: "EnhanceTech",
-    title: "Revolutionary Cloud Computing Trends to Watch in 2025",
-    headline: "Revolutionary Cloud Computing Trends To Watch In 2025",
+    title: "Revolutionary Cloud Computing Trends To Watch In 2025",
+    description: "Discover the top cloud computing trends to Watch in 2025, including edge computing, hybrid cloud, serverless technology, and enhanced security.",
     image: blogChar3,
-    bgColor: "bg-purple-500",
+    author: "EnhanceTech",
+    date: "March 26, 2025",
   },
   {
     id: 4,
-    badge: "EnhanceTech",
-    title: "Cybersecurity Best Practices for Small Businesses",
-    headline: "Essential Cybersecurity Best Practices For Small Businesses",
+    title: "Cybersecurity Best Practices For Small Businesses",
+    description: "Learn essential cybersecurity strategies to protect your small business from threats and ensure data safety in an evolving digital landscape.",
     image: blogChar4,
-    bgColor: "bg-emerald-500",
+    author: "EnhanceTech",
+    date: "February 15, 2025",
   },
   {
     id: 5,
-    badge: "EnhanceTech",
-    title: "How AI is Transforming IT Support Services",
-    headline: "How AI Is Revolutionizing Modern IT Support Services",
+    title: "How AI Is Revolutionizing Modern IT Support Services",
+    description: "Explore how artificial intelligence is transforming IT support with automated solutions, predictive maintenance, and enhanced user experiences.",
     image: blogChar5,
-    bgColor: "bg-indigo-600",
+    author: "EnhanceTech",
+    date: "January 20, 2025",
   },
 ];
+
 const BlogSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleCards, setVisibleCards] = useState(3);
@@ -62,6 +63,7 @@ const BlogSection = () => {
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
+
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth < 640) {
@@ -76,6 +78,7 @@ const BlogSection = () => {
     window.addEventListener("resize", updateVisibleCards);
     return () => window.removeEventListener("resize", updateVisibleCards);
   }, []);
+
   const maxIndex = Math.max(0, blogPosts.length - visibleCards);
 
   // Auto-play rolling effect
@@ -84,16 +87,18 @@ const BlogSection = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => {
         if (prev >= maxIndex) {
-          return 0; // Loop back to start
+          return 0;
         }
         return prev + 1;
       });
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [isPaused, maxIndex]);
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
   };
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
@@ -104,9 +109,11 @@ const BlogSection = () => {
     setTouchStart(e.targetTouches[0].clientX);
     setIsPaused(true);
   };
+
   const onTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
+
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) {
       setIsPaused(false);
@@ -124,50 +131,31 @@ const BlogSection = () => {
     setTouchEnd(null);
     setIsPaused(false);
   };
-  return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-16">
-          <div className="flex flex-col sm:flex-row sm:items-start gap-8">
-            <span className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-semibold tracking-wide w-fit shadow-lg shadow-primary/25">
-              ​Tech Hub
-            </span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
-              ​Latest news, updates{" "}
-              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">&</span>
-              <br />
-              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
-                ​strategies for your business.                                                                         
-                                         
-              </span>
-            </h2>
-          </div>
-        </div>
 
+  return (
+    <section className="py-20 lg:py-28 bg-slate-950 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Carousel */}
         <div className="relative">
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-16 z-10 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-110 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="absolute left-0 top-[140px] -translate-x-2 lg:-translate-x-14 z-10 w-12 h-12 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 hover:border-slate-500 transition-all duration-300"
           >
-            <ChevronLeft className="w-7 h-7" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={handleNext}
-            disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-16 z-10 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary hover:scale-110 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="absolute right-0 top-[140px] translate-x-2 lg:translate-x-14 z-10 w-12 h-12 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 hover:border-slate-500 transition-all duration-300"
           >
-            <ChevronRight className="w-7 h-7" />
+            <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Cards Container */}
           <div
             ref={containerRef}
-            className="overflow-hidden mx-12 sm:mx-8 lg:mx-0 touch-pan-y"
+            className="overflow-hidden mx-8 lg:mx-0 touch-pan-y"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={onTouchStart}
@@ -178,68 +166,60 @@ const BlogSection = () => {
               className="flex transition-transform duration-700 ease-out"
               style={{
                 transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
-                gap: visibleCards === 1 ? "0px" : "32px",
+                gap: visibleCards === 1 ? "0px" : "24px",
               }}
             >
-              {blogPosts.map((post, index) => (
+              {blogPosts.map((post) => (
                 <div
                   key={post.id}
-                  className="flex-shrink-0 px-1 sm:px-0"
+                  className="flex-shrink-0"
                   style={{
                     width:
                       visibleCards === 1
                         ? "100%"
-                        : `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 32) / visibleCards}px)`,
+                        : `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 24) / visibleCards}px)`,
                   }}
-                  onMouseEnter={() => setIsHovered(index)}
-                  onMouseLeave={() => setIsHovered(null)}
                 >
                   <div className="group cursor-pointer">
                     {/* Card Image Container */}
-                    <div
-                      className={`relative rounded-[2rem] overflow-hidden mb-6 aspect-[4/3] ${post.bgColor} transition-all duration-500 ${isHovered === index ? "scale-[1.02] shadow-2xl" : "shadow-xl"}`}
-                    >
-                      {/* Glass border effect */}
-                      <div className="absolute inset-0 rounded-[2rem] border-4 border-white/20 z-10" />
-                      <div className="absolute inset-[3px] rounded-[1.8rem] border border-white/30 z-10" />
-
-                      {/* 3D Character Image */}
+                    <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] bg-slate-800 border border-slate-700/50 transition-all duration-500 group-hover:border-slate-600">
                       <img
                         src={post.image}
                         alt={post.title}
                         loading="lazy"
                         decoding="async"
-                        className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ${isHovered === index ? "scale-110" : "scale-100"}`}
-                      />
-
-                      {/* Gradient overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
-
-                      {/* Badge */}
-                      <div className="absolute top-5 left-5 z-20 inline-flex items-center backdrop-blur-md text-white text-sm font-semibold shadow-lg bg-transparent px-0 border-none rounded-sm mx-[168px] py-0 my-[114px]">
-                        <span className="w-2.5 h-2.5 rounded-full bg-primary mr-2.5 animate-pulse" />
-                        {post.badge}
-                      </div>
-
-                      {/* Title on image */}
-                      <div className="absolute bottom-5 left-5 right-5 z-20">
-                        <h3 className="text-white text-lg font-bold leading-tight drop-shadow-lg">{post.title}</h3>
-                      </div>
-
-                      {/* Hover glow effect */}
-                      <div
-                        className={`absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-500 ${isHovered === index ? "opacity-100" : ""}`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
 
-                    {/* Card Footer */}
-                    <div className="flex items-start justify-between gap-4 px-2">
-                      <h4 className="text-lg font-semibold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
-                        {post.headline}
-                      </h4>
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
-                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    {/* Card Content */}
+                    <div className="space-y-4">
+                      {/* Title with Arrow */}
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-lg lg:text-xl font-bold text-white leading-tight group-hover:text-primary transition-colors duration-300">
+                          {post.title}
+                        </h3>
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </div>
                       </div>
+
+                      {/* Author & Date */}
+                      <div className="flex items-center gap-4 text-sm">
+                        <span className="flex items-center gap-1.5 text-fuchsia-400">
+                          <Globe className="w-4 h-4" />
+                          {post.author}
+                        </span>
+                        <span className="flex items-center gap-1.5 text-fuchsia-400">
+                          <Calendar className="w-4 h-4" />
+                          {post.date}
+                        </span>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+                        {post.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -247,21 +227,9 @@ const BlogSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-12">
-          {Array.from({
-            length: maxIndex + 1,
-          }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-3 rounded-full transition-all duration-500 ${currentIndex === index ? "bg-gradient-to-r from-primary to-cyan-500 w-10 shadow-lg shadow-primary/30" : "bg-slate-300 w-3 hover:bg-slate-400"}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
 };
+
 export default BlogSection;
