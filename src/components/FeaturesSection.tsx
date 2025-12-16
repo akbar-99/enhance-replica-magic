@@ -72,7 +72,7 @@ export default function FeaturesSection() {
                 className={`w-full ${feature.image ? 'h-52' : 'h-40'} rounded-2xl ${feature.image ? 'bg-gradient-to-br from-primary/10 via-cyan-50 to-blue-100' : feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 ${feature.image ? 'shadow-md shadow-primary/10' : 'shadow-lg'} overflow-hidden`}
               >
                 {feature.image ? (
-                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover scale-150" />
+                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover scale-110" />
                 ) : (
                   <feature.icon className={`w-16 h-16 ${feature.iconColor}`} strokeWidth={1.5} />
                 )}
