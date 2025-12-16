@@ -1,25 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Search, Globe, Menu, X, ArrowRight } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 
 // Flatten all nav items for search
 const getAllSearchItems = () => {
-  const items: { label: string; href: string; description?: string; category: string }[] = [];
+  const items: {
+    label: string;
+    href: string;
+    description?: string;
+    category: string;
+  }[] = [];
   navItems.forEach(nav => {
     if (nav.dropdown) {
       nav.dropdown.forEach(item => {
@@ -27,14 +20,13 @@ const getAllSearchItems = () => {
           label: item.label,
           href: item.href,
           description: item.description,
-          category: nav.label,
+          category: nav.label
         });
       });
     }
   });
   return items;
 };
-
 interface NavItem {
   label: string;
   href?: string;
@@ -44,15 +36,22 @@ interface NavItem {
     description?: string;
   }[];
 }
-
-const languages = [
-  { code: 'EN', label: 'English' },
-  { code: 'ES', label: 'Español' },
-  { code: 'FR', label: 'Français' },
-  { code: 'DE', label: 'Deutsch' },
-  { code: 'AR', label: 'العربية' },
-];
-
+const languages = [{
+  code: 'EN',
+  label: 'English'
+}, {
+  code: 'ES',
+  label: 'Español'
+}, {
+  code: 'FR',
+  label: 'Français'
+}, {
+  code: 'DE',
+  label: 'Deutsch'
+}, {
+  code: 'AR',
+  label: 'العربية'
+}];
 const navItems: NavItem[] = [{
   label: 'Products',
   dropdown: [{
@@ -145,7 +144,6 @@ const navItems: NavItem[] = [{
     description: 'Latest announcements'
   }]
 }];
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -154,23 +152,13 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
-
   const searchItems = getAllSearchItems();
-  
-  const filteredResults = searchQuery.trim()
-    ? searchItems.filter(item =>
-        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : [];
-
+  const filteredResults = searchQuery.trim() ? searchItems.filter(item => item.label.toLowerCase().includes(searchQuery.toLowerCase()) || item.description?.toLowerCase().includes(searchQuery.toLowerCase()) || item.category.toLowerCase().includes(searchQuery.toLowerCase())) : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
-
   const handleSearchItemClick = (href: string) => {
     setSearchOpen(false);
     setSearchQuery('');
@@ -192,40 +180,23 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center ml-8">
             <div className="flex items-center border border-border/40 rounded-full px-2 py-1.5 bg-transparent">
-              {navItems.map(item => (
-                <div 
-                  key={item.label} 
-                  className="relative group" 
-                  onMouseEnter={() => setActiveDropdown(item.label)} 
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
+              {navItems.map(item => <div key={item.label} className="relative group" onMouseEnter={() => setActiveDropdown(item.label)} onMouseLeave={() => setActiveDropdown(null)}>
                   <span className="flex items-center px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-full transition-all duration-200 cursor-pointer">
                     {item.label}
                   </span>
 
                   {/* Dropdown */}
-                  {item.dropdown && (
-                    <div className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? 'opacity-85 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  {item.dropdown && <div className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? 'opacity-85 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                       <div className="p-2">
-                        {item.dropdown.map(subItem => (
-                          <Link 
-                            key={subItem.label} 
-                            to={subItem.href} 
-                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors"
-                          >
+                        {item.dropdown.map(subItem => <Link key={subItem.label} to={subItem.href} className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors">
                             <span className="font-medium text-foreground">{subItem.label}</span>
-                            {subItem.description && (
-                              <span className="text-xs text-muted-foreground mt-0.5">
+                            {subItem.description && <span className="text-xs text-muted-foreground mt-0.5">
                                 {subItem.description}
-                              </span>
-                            )}
-                          </Link>
-                        ))}
+                              </span>}
+                          </Link>)}
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    </div>}
+                </div>)}
             </div>
           </div>
 
@@ -239,16 +210,10 @@ export default function Navbar() {
                 <ChevronDown className="w-3 h-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-popover border border-border min-w-[140px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => setSelectedLanguage(lang.code)}
-                    className={`cursor-pointer ${selectedLanguage === lang.code ? 'bg-secondary/50' : ''}`}
-                  >
+                {languages.map(lang => <DropdownMenuItem key={lang.code} onClick={() => setSelectedLanguage(lang.code)} className={`cursor-pointer ${selectedLanguage === lang.code ? 'bg-secondary/50' : ''}`}>
                     <span className="font-medium">{lang.code}</span>
                     <span className="ml-2 text-muted-foreground">{lang.label}</span>
-                  </DropdownMenuItem>
-                ))}
+                  </DropdownMenuItem>)}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -269,54 +234,33 @@ export default function Navbar() {
                 <div className="mt-4">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      ref={searchInputRef}
-                      type="text"
-                      placeholder="Type to search..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10"
-                    />
+                    <Input ref={searchInputRef} type="text" placeholder="Type to search..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10" />
                   </div>
                   
                   {/* Search Results */}
-                  {searchQuery.trim() && (
-                    <div className="mt-4 max-h-[300px] overflow-y-auto">
-                      {filteredResults.length > 0 ? (
-                        <div className="space-y-1">
-                          {filteredResults.map((item) => (
-                            <button
-                              key={item.href}
-                              onClick={() => handleSearchItemClick(item.href)}
-                              className="w-full text-left px-3 py-2 rounded-md hover:bg-secondary/50 transition-colors"
-                            >
+                  {searchQuery.trim() && <div className="mt-4 max-h-[300px] overflow-y-auto">
+                      {filteredResults.length > 0 ? <div className="space-y-1">
+                          {filteredResults.map(item => <button key={item.href} onClick={() => handleSearchItemClick(item.href)} className="w-full text-left px-3 py-2 rounded-md hover:bg-secondary/50 transition-colors">
                               <div className="flex items-center justify-between">
                                 <span className="font-medium text-foreground">{item.label}</span>
                                 <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                                   {item.category}
                                 </span>
                               </div>
-                              {item.description && (
-                                <p className="text-sm text-muted-foreground mt-0.5">
+                              {item.description && <p className="text-sm text-muted-foreground mt-0.5">
                                   {item.description}
-                                </p>
-                              )}
-                            </button>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-center text-muted-foreground py-4">
+                                </p>}
+                            </button>)}
+                        </div> : <p className="text-center text-muted-foreground py-4">
                           No results found for "{searchQuery}"
-                        </p>
-                      )}
-                    </div>
-                  )}
+                        </p>}
+                    </div>}
                 </div>
               </DialogContent>
             </Dialog>
 
             <Link to="/demo" className="btn-primary text-sm">
-              Book a Meeting
+              ​Talk to an Expert     
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
