@@ -18,6 +18,11 @@ import hpeLogo from '@/assets/partners/hpe-logo.png';
 import qnapLogo from '@/assets/partners/qnap-logo.png';
 import vertivLogo from '@/assets/partners/vertiv-logo.png';
 import logitechLogo from '@/assets/partners/logitech-logo.png';
+import yealinkLogo from '@/assets/partners/yealink-logo.png';
+import vircomLogo from '@/assets/partners/vircom-logo.png';
+import dropsuiteLogo from '@/assets/partners/dropsuite-logo.png';
+import veriatoLogo from '@/assets/partners/veriato-logo.png';
+import sorbsecurityLogo from '@/assets/partners/sorbsecurity-logo.png';
 
 const partners = [
   { name: 'Microsoft', logo: microsoftLogo },
@@ -39,6 +44,11 @@ const partners = [
   { name: 'QNAP', logo: qnapLogo },
   { name: 'Vertiv', logo: vertivLogo },
   { name: 'Logitech', logo: logitechLogo },
+  { name: 'Yealink', logo: yealinkLogo },
+  { name: 'Vircom', logo: vircomLogo },
+  { name: 'Dropsuite', logo: dropsuiteLogo },
+  { name: 'Veriato', logo: veriatoLogo },
+  { name: 'SorbSecurity', logo: sorbsecurityLogo },
 ];
 
 export default function TrustedBy() {
