@@ -49,12 +49,12 @@ const FloatingNavBar = () => {
               </div>
 
               {/* Icon button */}
-              <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 cursor-pointer ${isActive || isHovered ? "bg-primary/20" : "bg-transparent hover:bg-white/5"}`}>
-                {/* Glow effect */}
-                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive || isHovered ? "bg-primary/30 blur-lg opacity-100 scale-110" : "opacity-0 scale-100"}`} />
+              <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 cursor-pointer ${isActive ? "bg-primary/20" : isHovered ? "bg-white/10" : "bg-transparent"}`}>
+                {/* Glow effect - only for active state */}
+                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? "bg-primary/30 blur-lg opacity-100 scale-110" : "opacity-0 scale-100"}`} />
 
                 {/* Icon */}
-                <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 ${isActive || isHovered ? "text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" : "text-muted-foreground"}`} />
+                <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 ${isActive ? "text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" : isHovered ? "text-foreground" : "text-muted-foreground/70"}`} />
               </div>
             </div>;
         if (item.isExternal) {
