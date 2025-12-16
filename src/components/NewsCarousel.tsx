@@ -277,7 +277,7 @@ export default function NewsCarousel() {
         return <AnalyticsSlideContent slide={currentSlide} />;
     }
   };
-  return <section className="relative z-20 -mt-24 lg:-mt-32 pb-8">
+  return <section className="relative z-20 -mt-40 lg:-mt-[160px] pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
         <div className="flex items-center gap-4 lg:gap-6 py-0 [&>div]:shadow-2xl [&>div]:drop-shadow-xl">
           {/* Previous Button */}
