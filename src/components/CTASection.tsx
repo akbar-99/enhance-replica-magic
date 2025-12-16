@@ -93,7 +93,7 @@ export default function CTASection() {
     left: '5%',
     top: '55%'
   }];
-  return <section className="bg-background relative overflow-hidden py-[35px]">
+  return <section className="relative overflow-hidden py-[35px] bg-white">
       {/* Floating particles background */}
       <div className="absolute inset-0 pointer-events-none">
         {particles.map((particle, index) => <FloatingParticle key={index} {...particle} />)}
