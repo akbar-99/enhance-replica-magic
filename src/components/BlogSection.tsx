@@ -133,21 +133,21 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-950 overflow-hidden">
+    <section className="py-20 lg:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Carousel */}
         <div className="relative">
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-[140px] -translate-x-2 lg:-translate-x-14 z-10 w-12 h-12 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 hover:border-slate-500 transition-all duration-300"
+            className="absolute left-0 top-[140px] -translate-x-2 lg:-translate-x-14 z-10 w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-[140px] translate-x-2 lg:translate-x-14 z-10 w-12 h-12 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 hover:border-slate-500 transition-all duration-300"
+            className="absolute right-0 top-[140px] translate-x-2 lg:translate-x-14 z-10 w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -180,9 +180,9 @@ const BlogSection = () => {
                         : `calc(${100 / visibleCards}% - ${((visibleCards - 1) * 24) / visibleCards}px)`,
                   }}
                 >
-                  <div className="group cursor-pointer">
+                  <div className="group cursor-pointer p-4 rounded-3xl border-2 border-slate-100 bg-white hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
                     {/* Card Image Container */}
-                    <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] bg-slate-800 border border-slate-700/50 transition-all duration-500 group-hover:border-slate-600">
+                    <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] border border-slate-200 group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-lg">
                       <img
                         src={post.image}
                         alt={post.title}
@@ -190,34 +190,36 @@ const BlogSection = () => {
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
+                      {/* Hover overlay effect */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
                     {/* Card Content */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 px-2">
                       {/* Title with Arrow */}
                       <div className="flex items-start justify-between gap-4">
-                        <h3 className="text-lg lg:text-xl font-bold text-white leading-tight group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
                           {post.title}
                         </h3>
-                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 border-2 border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-white group-hover:bg-primary transition-all duration-300">
                           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
                         </div>
                       </div>
 
                       {/* Author & Date */}
                       <div className="flex items-center gap-4 text-sm">
-                        <span className="flex items-center gap-1.5 text-fuchsia-400">
+                        <span className="flex items-center gap-1.5 text-primary font-medium">
                           <Globe className="w-4 h-4" />
                           {post.author}
                         </span>
-                        <span className="flex items-center gap-1.5 text-fuchsia-400">
+                        <span className="flex items-center gap-1.5 text-primary font-medium">
                           <Calendar className="w-4 h-4" />
                           {post.date}
                         </span>
                       </div>
 
                       {/* Description */}
-                      <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+                      <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
                         {post.description}
                       </p>
                     </div>
