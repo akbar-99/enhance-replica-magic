@@ -258,7 +258,7 @@ export default function Contact() {
               Visit us at one of our global locations.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {offices.map((office, index) => (
               <div 
                 key={office.city} 

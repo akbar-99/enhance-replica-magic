@@ -112,7 +112,7 @@ function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-8 group cursor-default">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-6 sm:mb-8 group cursor-default">
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
             <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
           </span>{" "}
@@ -128,7 +128,7 @@ function HeroSection() {
             </span>
           </span>
         </h2>
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Left - Tabs */}
           <div
             className="lg:col-span-3 space-y-2"
@@ -165,11 +165,11 @@ function HeroSection() {
           </div>
 
           {/* Center - Hero Content */}
-          <div className="lg:col-span-5 space-y-6 animate-fade-up" key={activeTab}>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6 animate-fade-up" key={activeTab}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/demo" className="btn-primary">
                 Get Started
@@ -182,8 +182,8 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Right Side - Spline 3D */}
-          <div className="lg:col-span-4 relative h-[500px] lg:h-[600px] flex items-center justify-center -mt-24 overflow-hidden">
+          {/* Right Side - Spline 3D (hidden on mobile for performance) */}
+          <div className="hidden lg:flex lg:col-span-4 relative h-[600px] items-center justify-center -mt-24 overflow-hidden">
             {showSpline ? (
               <SplineEmbed />
             ) : (
