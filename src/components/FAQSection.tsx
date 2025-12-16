@@ -5,8 +5,7 @@ const faqs = [
     question: "Boost Efficiency",
     tagline: "",
     answer:
-      "Streamline Your Operations
-       Eliminate IT bottlenecks and downtime with proactive monitoring and optimized systems that keep your teams working without interruption.",
+      "Streamline Your Operations Eliminate IT bottlenecks and downtime with proactive monitoring and optimized systems that keep your teams working without interruption.",
   },
   {
     question: "Enable Scalability",
