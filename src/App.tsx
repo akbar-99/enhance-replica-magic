@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
-import WhatsAppButton from "./components/WhatsAppButton";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import PromoBanner from "./components/PromoBanner";
 
@@ -17,7 +16,6 @@ const App = () => (
       <BrowserRouter>
         <PromoBanner />
         <AnimatedRoutes />
-        <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
