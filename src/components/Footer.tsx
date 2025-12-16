@@ -120,9 +120,9 @@ export default function Footer() {
               Protecting enterprise data with AI-native security solutions.
             </p>
             <div className="space-y-2 text-sm text-muted-foreground mb-6">
-              <a href="tel:+97143296840" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <a className="flex items-center gap-2 hover:text-foreground transition-colors" href="tel:+971 4 329 6840">
                 <Phone className="w-4 h-4" />
-                +97143296840
+                +971 4 329 6840
               </a>
               <a href="mailto:Info@itenhance.tech" className="flex items-center gap-2 hover:text-foreground transition-colors">
                 <Mail className="w-4 h-4" />
