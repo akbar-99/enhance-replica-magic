@@ -46,9 +46,7 @@ const FAQSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Title */}
           <div className="lg:sticky lg:top-24">
-            <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-              Why Choose Us
-            </span>
+            <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block"></span>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
               Why Leading Businesses
               <br />
