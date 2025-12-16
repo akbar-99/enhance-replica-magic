@@ -9,6 +9,15 @@ import acronisLogo from '@/assets/partners/acronis-logo.png';
 import coreviewLogo from '@/assets/partners/coreview-logo.png';
 import avepointLogo from '@/assets/partners/avepoint-logo.png';
 import haloitsmLogo from '@/assets/partners/haloitsm-logo.png';
+import hikvisionLogo from '@/assets/partners/hikvision-logo.png';
+import dahuaLogo from '@/assets/partners/dahua-logo.png';
+import zktecoLogo from '@/assets/partners/zkteco-logo.png';
+import lenovoLogo from '@/assets/partners/lenovo-logo.png';
+import hpLogo from '@/assets/partners/hp-logo.png';
+import hpeLogo from '@/assets/partners/hpe-logo.png';
+import qnapLogo from '@/assets/partners/qnap-logo.png';
+import vertivLogo from '@/assets/partners/vertiv-logo.png';
+import logitechLogo from '@/assets/partners/logitech-logo.png';
 
 const partners = [
   { name: 'Microsoft', logo: microsoftLogo },
@@ -21,6 +30,15 @@ const partners = [
   { name: 'CoreView', logo: coreviewLogo },
   { name: 'AvePoint', logo: avepointLogo },
   { name: 'HaloITSM', logo: haloitsmLogo },
+  { name: 'Hikvision', logo: hikvisionLogo },
+  { name: 'Dahua', logo: dahuaLogo },
+  { name: 'ZKTeco', logo: zktecoLogo },
+  { name: 'Lenovo', logo: lenovoLogo },
+  { name: 'HP', logo: hpLogo },
+  { name: 'HPE', logo: hpeLogo },
+  { name: 'QNAP', logo: qnapLogo },
+  { name: 'Vertiv', logo: vertivLogo },
+  { name: 'Logitech', logo: logitechLogo },
 ];
 
 export default function TrustedBy() {
