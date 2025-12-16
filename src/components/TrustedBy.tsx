@@ -23,45 +23,113 @@ import vircomLogo from "@/assets/partners/vircom-logo.png";
 import dropsuiteLogo from "@/assets/partners/dropsuite-logo.png";
 import veriatoLogo from "@/assets/partners/veriato-logo.png";
 import sorbsecurityLogo from "@/assets/partners/sorbsecurity-logo.png";
-
 const partners = [
-  { name: "Microsoft", logo: microsoftLogo },
-  { name: "Dell", logo: dellLogo },
-  { name: "Fortinet", logo: fortinetLogo },
-  { name: "SonicWall", logo: sonicwallLogo },
-  { name: "Sangfor", logo: sangforLogo },
-  { name: "Bitdefender", logo: bitdefenderLogo },
-  { name: "Acronis", logo: acronisLogo },
-  { name: "CoreView", logo: coreviewLogo },
-  { name: "AvePoint", logo: avepointLogo },
-  { name: "HaloITSM", logo: haloitsmLogo },
-  { name: "Hikvision", logo: hikvisionLogo },
-  { name: "Dahua", logo: dahuaLogo },
-  { name: "ZKTeco", logo: zktecoLogo },
-  { name: "Lenovo", logo: lenovoLogo },
-  { name: "HP", logo: hpLogo },
-  { name: "HPE", logo: hpeLogo },
-  { name: "QNAP", logo: qnapLogo },
-  { name: "Vertiv", logo: vertivLogo },
-  { name: "Logitech", logo: logitechLogo },
-  { name: "Yealink", logo: yealinkLogo },
-  { name: "Vircom", logo: vircomLogo },
-  { name: "Dropsuite", logo: dropsuiteLogo },
-  { name: "Veriato", logo: veriatoLogo },
-  { name: "SorbSecurity", logo: sorbsecurityLogo },
+  {
+    name: "Microsoft",
+    logo: microsoftLogo,
+  },
+  {
+    name: "Dell",
+    logo: dellLogo,
+  },
+  {
+    name: "Fortinet",
+    logo: fortinetLogo,
+  },
+  {
+    name: "SonicWall",
+    logo: sonicwallLogo,
+  },
+  {
+    name: "Sangfor",
+    logo: sangforLogo,
+  },
+  {
+    name: "Bitdefender",
+    logo: bitdefenderLogo,
+  },
+  {
+    name: "Acronis",
+    logo: acronisLogo,
+  },
+  {
+    name: "CoreView",
+    logo: coreviewLogo,
+  },
+  {
+    name: "AvePoint",
+    logo: avepointLogo,
+  },
+  {
+    name: "HaloITSM",
+    logo: haloitsmLogo,
+  },
+  {
+    name: "Hikvision",
+    logo: hikvisionLogo,
+  },
+  {
+    name: "Dahua",
+    logo: dahuaLogo,
+  },
+  {
+    name: "ZKTeco",
+    logo: zktecoLogo,
+  },
+  {
+    name: "Lenovo",
+    logo: lenovoLogo,
+  },
+  {
+    name: "HP",
+    logo: hpLogo,
+  },
+  {
+    name: "HPE",
+    logo: hpeLogo,
+  },
+  {
+    name: "QNAP",
+    logo: qnapLogo,
+  },
+  {
+    name: "Vertiv",
+    logo: vertivLogo,
+  },
+  {
+    name: "Logitech",
+    logo: logitechLogo,
+  },
+  {
+    name: "Yealink",
+    logo: yealinkLogo,
+  },
+  {
+    name: "Vircom",
+    logo: vircomLogo,
+  },
+  {
+    name: "Dropsuite",
+    logo: dropsuiteLogo,
+  },
+  {
+    name: "Veriato",
+    logo: veriatoLogo,
+  },
+  {
+    name: "SorbSecurity",
+    logo: sorbsecurityLogo,
+  },
 ];
-
 export default function TrustedBy() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
     let animationId: number;
     let scrollPosition = 0;
     const speed = 0.5;
-
     const scroll = () => {
       if (!isPaused && scrollContainer) {
         scrollPosition += speed;
@@ -72,33 +140,33 @@ export default function TrustedBy() {
       }
       animationId = requestAnimationFrame(scroll);
     };
-
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
-
   return (
-    <section className="overflow-hidden bg-white py-6 border-b border-border/10">
-      <div className="max-w-full mx-auto">
+    <section className="overflow-hidden px-[0px] py-0">
+      <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0">
         <div
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          style={{ scrollBehavior: "auto" }}
-          className="flex items-center gap-10 md:gap-14 lg:gap-16 overflow-hidden py-2"
+          style={{
+            scrollBehavior: "auto",
+          }}
+          className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[16px]"
         >
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 hover:opacity-100 transition-all duration-300 cursor-pointer opacity-60 hover:scale-105"
+              className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer"
             >
               <img
                 src={partner.logo}
                 alt={`${partner.name} logo`}
                 loading="lazy"
                 decoding="async"
-                className="h-6 md:h-7 lg:h-8 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-20 md:h-24 lg:h-28 w-auto object-contain"
               />
             </div>
           ))}
