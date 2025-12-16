@@ -1,41 +1,42 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
   {
     question: "Boost Efficiency",
-    tagline: "Streamline Your Operations",
-    answer: "Eliminate IT bottlenecks and downtime with proactive monitoring and optimized systems that keep your teams working without interruption."
+    tagline: "",
+    answer:
+      "Streamline Your Operations <br> Eliminate IT bottlenecks and downtime with proactive monitoring and optimized systems that keep your teams working without interruption.",
   },
   {
     question: "Enable Scalability",
     tagline: "Grow Without Limits",
-    answer: "Implement flexible cloud and infrastructure solutions that easily adapt and expand as your business evolves, ensuring you never outgrow your tech."
+    answer:
+      "Implement flexible cloud and infrastructure solutions that easily adapt and expand as your business evolves, ensuring you never outgrow your tech.",
   },
   {
     question: "Ensure Compliance",
     tagline: "Meet Industry Standards",
-    answer: "Navigate complex regulations with confidence. We align your IT infrastructure with global standards to minimize risk and avoid penalties."
+    answer:
+      "Navigate complex regulations with confidence. We align your IT infrastructure with global standards to minimize risk and avoid penalties.",
   },
   {
     question: "Strengthen Security",
     tagline: "Fortify Your Defenses",
-    answer: "Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business."
+    answer:
+      "Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business.",
   },
   {
     question: "Stay Competitive",
     tagline: "Leverage Modern Technology",
-    answer: "Stay ahead of the curve by adopting the latest digital tools and strategies that drive innovation and give you a market advantage."
+    answer:
+      "Stay ahead of the curve by adopting the latest digital tools and strategies that drive innovation and give you a market advantage.",
   },
   {
     question: "Optimize Cost",
     tagline: "Maximize Your ROI",
-    answer: "Reduce unnecessary hardware and maintenance expenses with predictable pricing models and efficient resource management."
-  }
+    answer:
+      "Reduce unnecessary hardware and maintenance expenses with predictable pricing models and efficient resource management.",
+  },
 ];
 
 const FAQSection = () => {
@@ -49,11 +50,13 @@ const FAQSection = () => {
               Why Choose Us
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
-              Why Leading Businesses<br />
+              Why Leading Businesses
+              <br />
               Choose Us
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
-              We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational inefficiencies through strategic, scalable, and locally delivered IT solutions.
+              We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational
+              inefficiencies through strategic, scalable, and locally delivered IT solutions.
             </p>
           </div>
 
