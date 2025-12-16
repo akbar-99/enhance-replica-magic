@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import PromoBanner from "./components/PromoBanner";
+import FloatingNavBar from "./components/FloatingNavBar";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <BrowserRouter>
         <PromoBanner />
         <AnimatedRoutes />
+        <FloatingNavBar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
