@@ -259,7 +259,7 @@ export default function Navbar() {
               </DialogContent>
             </Dialog>
 
-            <Link to="/demo" className="btn-primary text-sm">
+            <Link to="/demo" className="btn-primary text-sm px-[13px]">
               ​Talk to an Expert     
               <ArrowRight className="w-4 h-4" />
             </Link>
