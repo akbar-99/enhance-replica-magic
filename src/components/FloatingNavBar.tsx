@@ -36,9 +36,9 @@ const navItems = [{
 const FloatingNavBar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const location = useLocation();
-  return <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+  return <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50">
       {/* Glass container */}
-      <div className="relative flex items-center gap-6 rounded-full backdrop-blur-xl border border-white/10 shadow-2xl py-[5px] px-[52px] bg-primary-foreground opacity-90">
+      <div className="relative flex items-center gap-3 sm:gap-6 rounded-full backdrop-blur-xl border border-white/10 shadow-2xl py-[5px] px-6 sm:px-[52px] bg-primary-foreground opacity-90">
         {/* Background glow */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 opacity-50" />
 
@@ -58,7 +58,7 @@ const FloatingNavBar = () => {
               </div>
 
               {/* Icon button */}
-              <div className={`relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 cursor-pointer bg-primary/20 ${isHovered ? "bg-primary/30 scale-110" : ""}`}>
+              <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all duration-300 cursor-pointer bg-primary/20 ${isHovered ? "bg-primary/30 scale-110" : ""}`}>
                 {/* Glow effect - always visible with pulse */}
                 <div className="absolute inset-0 rounded-full bg-primary/30 blur-lg opacity-100 scale-110 animate-pulse" />
 

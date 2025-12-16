@@ -84,7 +84,7 @@ export default function Partners() {
       {/* Stats */}
       <section className="py-16 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={stat.label} className="text-center group">
                 <div className="flex items-center justify-center gap-3 mb-3">

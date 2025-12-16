@@ -171,7 +171,7 @@ export default function Company() {
               With offices around the world, we're always close to our customers.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {offices.map((office, index) => <div key={office.city} className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                   <MapPin className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />

@@ -35,7 +35,7 @@ const Index = () => {
       {/* Hero + overlapping News Carousel */}
       <div className="relative">
         <HeroSection />
-        <div className="absolute inset-x-0 bottom-0 translate-y-1/2 z-30">
+        <div className="relative sm:absolute sm:inset-x-0 sm:bottom-0 sm:translate-y-1/2 z-30 mt-8 sm:mt-0">
           <NewsCarousel />
         </div>
       </div>
