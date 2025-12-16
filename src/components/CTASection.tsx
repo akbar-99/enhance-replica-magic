@@ -266,10 +266,22 @@ export default function CTASection() {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] group/btn"
+                className="relative inline-flex items-center gap-3 px-10 py-4 rounded-full font-semibold text-white overflow-hidden group/btn transition-all duration-300 hover:scale-105"
               >
-                Talk to an Expert
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                {/* Glass gradient background */}
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-glow-cyan to-accent rounded-full opacity-90" />
+                
+                {/* Glass overlay */}
+                <span className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full" />
+                
+                {/* Glow effect on hover */}
+                <span className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 shadow-[0_0_40px_hsl(var(--glow-cyan)/0.6),inset_0_0_20px_hsl(var(--primary)/0.3)]" />
+                
+                {/* Border glow */}
+                <span className="absolute inset-0 rounded-full border border-white/20 group-hover/btn:border-white/40 transition-colors duration-300" />
+                
+                <span className="relative z-10">Book Now</span>
+                <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
               </Link>
             </motion.div>
           </div>
