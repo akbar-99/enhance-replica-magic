@@ -120,7 +120,7 @@ export default function CTASection() {
           <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/50 via-glow-cyan/60 to-primary/50 rounded-3xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Card content */}
-          <div className="relative bg-card backdrop-blur-sm rounded-3xl border border-border/40 px-8 text-center overflow-hidden py-[26px] md:px-[63px]">
+          <div className="relative bg-card backdrop-blur-sm rounded-3xl border border-border/40 px-8 text-center overflow-hidden md:px-[63px] py-[19px]">
             {/* Inner card particles */}
             <div className="absolute inset-0 pointer-events-none opacity-50">
               <motion.div className="absolute w-2 h-2 bg-glow-cyan/40 rounded-full" style={{
