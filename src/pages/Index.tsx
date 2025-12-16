@@ -10,6 +10,7 @@ import BlogSection from '@/components/BlogSection';
 import StatsSection from '@/components/StatsSection';
 import CTASection from '@/components/CTASection';
 import SEO, { organizationSchema } from '@/components/SEO';
+import FloatingNavBar from '@/components/FloatingNavBar';
 
 const Index = () => {
   const homeSchema = {
@@ -46,6 +47,7 @@ const Index = () => {
       <BlogSection />
       <CTASection />
       <Footer />
+      <FloatingNavBar />
     </main>
   );
 };
