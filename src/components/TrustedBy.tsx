@@ -63,19 +63,13 @@ export default function TrustedBy() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
   return <section className="overflow-hidden py-[16px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[7px]">
         <div ref={scrollRef} className="flex items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
         scrollBehavior: 'auto'
       }}>
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer">
-              <img 
-                src={partner.logo} 
-                alt={`${partner.name} logo`} 
-                loading="lazy"
-                decoding="async"
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain" 
-              />
+              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-10 md:h-12 lg:h-14 w-auto object-contain" />
             </div>)}
         </div>
       </div>
