@@ -38,7 +38,7 @@ const FloatingNavBar = () => {
   const location = useLocation();
   return <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
       {/* Glass container */}
-      <div className="relative flex items-center gap-6 rounded-full backdrop-blur-xl border border-white/10 shadow-2xl bg-[#dbdbdb] opacity-95 py-[5px] px-[52px]">
+      <div className="relative flex items-center gap-6 rounded-full backdrop-blur-xl border border-white/10 shadow-2xl py-[5px] px-[52px] bg-primary-foreground opacity-75">
         {/* Background glow */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 opacity-50" />
 
