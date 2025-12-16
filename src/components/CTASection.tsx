@@ -117,7 +117,7 @@ export default function CTASection() {
         duration: 0.6
       }} className="relative group">
           {/* Animated corner glows */}
-          <motion.div className="absolute -top-2 -left-2 w-32 h-32 bg-amber-400/60 rounded-full blur-2xl" animate={{
+          <motion.div className="absolute -top-2 -left-2 w-32 h-32 bg-glow-cyan/60 rounded-full blur-2xl" animate={{
           opacity: [0.4, 0.7, 0.4],
           scale: [1, 1.2, 1]
         }} transition={{
@@ -125,7 +125,7 @@ export default function CTASection() {
           repeat: Infinity,
           ease: "easeInOut"
         }} />
-          <motion.div className="absolute -bottom-2 -right-2 w-32 h-32 bg-amber-400/60 rounded-full blur-2xl" animate={{
+          <motion.div className="absolute -bottom-2 -right-2 w-32 h-32 bg-glow-cyan/60 rounded-full blur-2xl" animate={{
           opacity: [0.4, 0.7, 0.4],
           scale: [1, 1.2, 1]
         }} transition={{
@@ -188,7 +188,7 @@ export default function CTASection() {
             repeat: Infinity,
             ease: "easeInOut"
           }} />
-            <motion.div className="absolute w-4 h-4 bg-amber-400/30 rounded-full blur-sm" style={{
+            <motion.div className="absolute w-4 h-4 bg-white/30 rounded-full blur-sm" style={{
             right: "15%",
             top: "30%"
           }} animate={{
