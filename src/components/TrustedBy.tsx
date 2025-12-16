@@ -118,7 +118,7 @@ export default function TrustedBy() {
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
-  return <section className="bg-gradient-to-b from-background to-muted/30 bg-white py-0">
+  return <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-white text-primary-foreground">
           Trusted by <span className="text-primary">Industry Leaders</span>
