@@ -93,7 +93,11 @@ export default function CTASection() {
     left: "5%",
     top: "55%"
   }];
-  return <section className="relative overflow-hidden py-16" style={{ backgroundImage: `url(${ctaBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+  return <section className="relative overflow-hidden py-16" style={{
+    backgroundImage: `url(${ctaBackground})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}>
       {/* Floating particles background */}
       <div className="absolute inset-0 pointer-events-none">
         {particles.map((particle, index) => <FloatingParticle key={index} {...particle} />)}
@@ -151,7 +155,7 @@ export default function CTASection() {
         }} />
 
           {/* Card content */}
-          <div className="relative bg-[#0a1628]/95 backdrop-blur-xl rounded-3xl border border-white/10 px-8 text-center overflow-hidden md:px-16 py-12 group-hover:border-white/20 transition-colors duration-500">
+          <div className="relative bg-[#0a1628]/95 backdrop-blur-xl rounded-3xl border border-white/10 px-8 text-center overflow-hidden md:px-16 py-12 group-hover:border-white/20 transition-colors duration-500 opacity-80 shadow-none">
             {/* Inner animated light streaks */}
             <motion.div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-glow-cyan/20 to-transparent" animate={{
             opacity: [0, 0.5, 0],
