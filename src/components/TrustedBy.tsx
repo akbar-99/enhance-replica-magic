@@ -166,7 +166,7 @@ export default function TrustedBy() {
                 alt={`${partner.name} logo`}
                 loading="lazy"
                 decoding="async"
-                className="h-18 md:h-20 lg:h-24 w-auto object-contain"
+                className="h-20 md:h-24 lg:h-28 w-auto object-contain"
               />
             </div>
           ))}
