@@ -23,19 +23,19 @@ const faqs = [
     question: "Strengthen Security",
     tagline: "",
     answer:
-      "Fortify Your Defenses <br /> Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business.",
+      "Fortify Your Defenses Protect your critical assets with enterprise-grade cybersecurity that detects, prevents, and neutralizes threats before they impact your business.",
   },
   {
     question: "Stay Competitive",
-    tagline: "Leverage Modern Technology",
+    tagline: "",
     answer:
-      "Stay ahead of the curve by adopting the latest digital tools and strategies that drive innovation and give you a market advantage.",
+      "Leverage Modern Technology Stay ahead of the curve by adopting the latest digital tools and strategies that drive innovation and give you a market advantage.",
   },
   {
     question: "Optimize Cost",
-    tagline: "Maximize Your ROI",
+    tagline: "",
     answer:
-      "Reduce unnecessary hardware and maintenance expenses with predictable pricing models and efficient resource management.",
+      "Maximize Your ROI Reduce unnecessary hardware and maintenance expenses with predictable pricing models and efficient resource management.",
   },
 ];
 
