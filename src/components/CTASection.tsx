@@ -289,7 +289,7 @@ export default function CTASection() {
                 <span className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 shadow-[0_0_40px_hsl(var(--glow-cyan)/0.6),inset_0_0_20px_hsl(var(--glow-cyan)/0.3)]" />
 
                 {/* Border */}
-                <span className="absolute inset-0 rounded-full border border-white/30 group-hover/btn:border-white/50 transition-colors duration-300" />
+                <span className="absolute inset-0 rounded-full border border-white/30 group-hover/btn:border-white/50 transition-colors duration-300 bg-primary" />
 
                 <span className="relative z-10 font-semibold">Book Now</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
