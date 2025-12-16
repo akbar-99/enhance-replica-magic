@@ -142,10 +142,6 @@ const BlogSection = () => {
                                          
               </span>
             </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              Protect your organization with our comprehensive suite of security solutions designed for the modern
-              enterprise.
-            </p>
           </div>
         </div>
 
