@@ -144,7 +144,7 @@ export default function TrustedBy() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
   return (
-    <section 
+    <section className="overflow-hidden px-[0px] py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         <div
           ref={scrollRef}
@@ -153,7 +153,7 @@ export default function TrustedBy() {
           style={{
             scrollBehavior: "auto",
           }}
-          className="flex items-center gap-12 md:gap-16 overflow-hidden py-[48px] bg-white lg:gap-[26px]"
+          className="flex items-center gap-12 md:gap-16 overflow-hidden py-[0px] bg-white lg:gap-[26px]"
         >
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => (
