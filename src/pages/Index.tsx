@@ -42,8 +42,8 @@ const Index = () => {
       <FeaturesSection />
       <ProtectDataSection />
       <FAQSection />
-      <BlogSection />
       <StatsSection />
+      <BlogSection />
       <CTASection />
       <Footer />
     </main>
