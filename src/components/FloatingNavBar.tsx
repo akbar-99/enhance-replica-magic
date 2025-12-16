@@ -30,7 +30,7 @@ const navItems = [{
 }, {
   icon: WhatsAppIcon,
   label: "WhatsApp",
-  path: "https://wa.me/971567215617",
+  path: "https://wa.me/97143296840",
   isExternal: true
 }];
 const FloatingNavBar = () => {
