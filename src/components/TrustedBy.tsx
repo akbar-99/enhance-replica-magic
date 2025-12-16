@@ -144,7 +144,7 @@ export default function TrustedBy() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
   return (
-    <section className="overflow-hidden  py-0">
+    <section className="overflow-hidden px-[1px] py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         <div
           ref={scrollRef}
