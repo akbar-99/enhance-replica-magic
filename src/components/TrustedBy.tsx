@@ -145,7 +145,7 @@ export default function TrustedBy() {
   }, [isPaused]);
   return (
     <section className="overflow-hidden px-[0px] py-0">
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-0">
+      <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0">
         <div
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
