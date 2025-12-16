@@ -120,7 +120,7 @@ export default function TrustedBy() {
   }, [isPaused]);
   return <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-white text-primary-foreground my-[33px] py-[16px]">
+        <h2 className="text-2xl md:text-3xl font-bold text-center bg-white text-primary-foreground my-[33px] py-[16px] lg:text-5xl">
           Trusted by <span className="text-primary">Industry Leaders</span>
         </h2>
       </div>
