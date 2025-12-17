@@ -75,22 +75,52 @@ const navItems: NavItem[] = [
     label: "Products",
     dropdown: [
       {
-        label: "Data Security Platform",
+        label: "Cloud Services",
         href: "/products/data-security",
         description: "Comprehensive data protection",
       },
       {
-        label: "Cloud Security",
+        label: "Compute and Storage",
         href: "/products/cloud-security",
         description: "Secure cloud environments",
       },
       {
-        label: "Network Security",
+        label: "Firewall & Network Security",
         href: "/products/network-security",
         description: "Advanced network protection",
       },
       {
-        label: "Endpoint Security",
+        label: "Cybersecurity Solutions",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "Backup & Disaster Recovery",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "IT Service Management (ITSM) ",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "Microsoft 365 Governance & Management ",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "Physical Security ",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "Meeting Room  ",
+        href: "/products/endpoint-security",
+        description: "Device-level protection",
+      },
+      {
+        label: "Network & Infrastructure  ",
         href: "/products/endpoint-security",
         description: "Device-level protection",
       },
