@@ -32,9 +32,9 @@ const FAQSection = () => {
           <div className="lg:sticky lg:top-24">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block"></span>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
-              Why Leading Businesses
+              ​What makes us Enhance Tech  
               <br />
-              Choose Us
+              ​ 
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
               We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational
