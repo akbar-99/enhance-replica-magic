@@ -100,29 +100,29 @@ const navItems: NavItem[] = [
     label: "Solutions",
     dropdown: [
       {
-        label: "Enterprise Security",
+        label: "Streamline IT Support",
         href: "/solutions/enterprise",
         description: "For large organizations",
       },
       {
-        label: "AI & ML Security",
+        label: "Stop Cyber Threats",
         href: "/solutions/ai-security",
         description: "Protect AI workflows",
       },
       {
-        label: "Compliance",
+        label: "Prevent Data Loss",
         href: "/solutions/compliance",
         description: "Meet regulatory requirements",
       },
       {
-        label: "Zero Trust",
+        label: "Optimize Cloud Operations",
         href: "/solutions/zero-trust",
         description: "Modern security framework",
       },
       {
-        label: "Zero Trust",
-        href: "/solutions/zero-trust",
-        description: "Modern security framework",
+        label: "Manage Microsoft 365",
+        href: "/solutions/enterprise",
+        description: "For large organizations",
       },
     ],
   },
