@@ -37,10 +37,10 @@ const features = [
 ];
 
 const cardColors = [
-  { border: "from-cyan-400 via-sky-400 to-blue-400", imageBg: "#00B4D8", glow: "shadow-cyan-200/50" },
-  { border: "from-purple-400 via-violet-400 to-fuchsia-400", imageBg: "#A855F7", glow: "shadow-purple-200/50" },
-  { border: "from-emerald-400 via-green-400 to-teal-400", imageBg: "#22C55E", glow: "shadow-emerald-200/50" },
-  { border: "from-orange-400 via-amber-400 to-yellow-400", imageBg: "#F97316", glow: "shadow-orange-200/50" },
+  { border: "from-blue-400 via-cyan-400 to-primary", bg: "from-blue-50 via-cyan-50 to-primary/5", glow: "shadow-blue-200/50" },
+  { border: "from-orange-400 via-amber-400 to-yellow-400", bg: "from-orange-50 via-amber-50 to-yellow-50", glow: "shadow-orange-200/50" },
+  { border: "from-emerald-400 via-teal-400 to-cyan-400", bg: "from-emerald-50 via-teal-50 to-cyan-50", glow: "shadow-emerald-200/50" },
+  { border: "from-purple-400 via-indigo-400 to-blue-400", bg: "from-purple-50 via-indigo-50 to-blue-50", glow: "shadow-purple-200/50" },
 ];
 
 export default function FeaturesSection() {
@@ -75,10 +75,7 @@ export default function FeaturesSection() {
               {/* Card content */}
               <div className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 group-hover:shadow-2xl ${cardColors[index].glow}`}>
                 {/* 3D Isometric Image container */}
-                <div 
-                  className="w-full h-48 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20"
-                  style={{ backgroundColor: cardColors[index].imageBg }}
-                >
+                <div className={`w-full h-48 rounded-2xl bg-gradient-to-br ${cardColors[index].bg} flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20`}>
                   <img 
                     src={feature.image} 
                     alt={feature.title} 
