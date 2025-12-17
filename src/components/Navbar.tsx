@@ -119,6 +119,11 @@ const navItems: NavItem[] = [
         href: "/solutions/zero-trust",
         description: "Modern security framework",
       },
+      {
+        label: "Zero Trust",
+        href: "/solutions/zero-trust",
+        description: "Modern security framework",
+      },
     ],
   },
   {
