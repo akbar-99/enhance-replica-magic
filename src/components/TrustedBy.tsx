@@ -124,7 +124,7 @@ export default function TrustedBy() {
           ​We're proud to be certified by and partnered with <span className="text-primary">Industry Leaders</span>
         </h2>
         <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
-          Our strategic partnerships with world-renowned technology providers enable us to deliver cutting-edge solutions and exceptional service to businesses across the region.
+          ​We maintain strategic alliances and hold certifications from premier industry organizations.
         </p>
       </div>
       <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
