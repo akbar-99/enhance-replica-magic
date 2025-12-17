@@ -48,10 +48,10 @@ const ProtectDataSection = () => {
             </div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight">
-                Secure Your Data, Secure Your Future.
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight">
+                <span className="text-white">Secure Your Data,</span>
                 <br />
-                <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text">​</span>
+                <span className="text-primary">Secure Your Future.</span>
               </h2>
             </div>
           </div>
