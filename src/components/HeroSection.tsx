@@ -182,8 +182,8 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Right Side - Spline 3D (hidden on mobile for performance) */}
-          <div className="hidden lg:flex lg:col-span-4 relative h-[600px] items-center justify-center -mt-24 overflow-hidden">
+          {/* Right Side - Spline 3D */}
+          <div className="col-span-full lg:col-span-4 relative h-[300px] sm:h-[400px] lg:h-[600px] flex items-center justify-center mt-4 lg:-mt-24 overflow-hidden">
             {showSpline ? (
               <SplineEmbed />
             ) : (
