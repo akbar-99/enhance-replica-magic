@@ -75,7 +75,7 @@ export default function FeaturesSection() {
               {/* Card content */}
               <div className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 group-hover:shadow-2xl ${cardColors[index].glow}`}>
                 {/* 3D Isometric Image container */}
-                <div className={`w-full h-48 rounded-2xl bg-gradient-to-br ${cardColors[index].bg} flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20`}>
+                <div className="w-full h-48 rounded-2xl bg-[#00B4D8] flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20">
                   <img 
                     src={feature.image} 
                     alt={feature.title} 
