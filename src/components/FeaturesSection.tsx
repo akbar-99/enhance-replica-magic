@@ -48,8 +48,8 @@ export default function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-slate-800">​Scalable Solutions for the </span>{" "}
-            <span className="text-primary">​Modern Enterprise</span>
+            <span className="text-slate-900">Scalable Solutions for the</span>{" "}
+            <span className="text-primary">Modern Enterprise</span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Protect your organization with our comprehensive suite of security solutions designed for the modern

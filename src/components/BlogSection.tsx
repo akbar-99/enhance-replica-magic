@@ -121,8 +121,8 @@ const BlogSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-left mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight">
-            Latest news, updates{" "}
+          <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
+            <span className="text-slate-900">Latest news, updates</span>{" "}
             <span className="text-primary">&</span>
             <br />
             <span className="text-primary">strategies for your business.</span>
