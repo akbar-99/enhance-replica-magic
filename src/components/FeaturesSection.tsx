@@ -37,10 +37,26 @@ const features = [
 ];
 
 const cardColors = [
-  { border: "from-blue-400 via-cyan-400 to-primary", bg: "from-blue-50 via-cyan-50 to-primary/5", glow: "shadow-blue-200/50" },
-  { border: "from-orange-400 via-amber-400 to-yellow-400", bg: "from-orange-50 via-amber-50 to-yellow-50", glow: "shadow-orange-200/50" },
-  { border: "from-emerald-400 via-teal-400 to-cyan-400", bg: "from-emerald-50 via-teal-50 to-cyan-50", glow: "shadow-emerald-200/50" },
-  { border: "from-purple-400 via-indigo-400 to-blue-400", bg: "from-purple-50 via-indigo-50 to-blue-50", glow: "shadow-purple-200/50" },
+  {
+    border: "from-blue-400 via-cyan-400 to-primary",
+    bg: "from-blue-50 via-cyan-50 to-primary/5",
+    glow: "shadow-blue-200/50",
+  },
+  {
+    border: "from-blue-400 via-cyan-400 to-primary",
+    bg: "from-blue-50 via-cyan-50 to-primary/5",
+    glow: "shadow-blue-200/50",
+  },
+  {
+    border: "from-emerald-400 via-teal-400 to-cyan-400",
+    bg: "from-emerald-50 via-teal-50 to-cyan-50",
+    glow: "shadow-emerald-200/50",
+  },
+  {
+    border: "from-purple-400 via-indigo-400 to-blue-400",
+    bg: "from-purple-50 via-indigo-50 to-blue-50",
+    glow: "shadow-purple-200/50",
+  },
 ];
 
 export default function FeaturesSection() {
@@ -68,18 +84,26 @@ export default function FeaturesSection() {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {/* Gradient border wrapper - always visible */}
-              <div className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 blur-sm`} />
-              <div className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
-              
+              {/* Gradient border wrapper */}
+              <div
+                className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm`}
+              />
+              <div
+                className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-30 group-hover:opacity-100 transition-opacity duration-300`}
+              />
+
               {/* Card content */}
-              <div className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 shadow-lg group-hover:shadow-2xl ${cardColors[index].glow}`}>
+              <div
+                className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 group-hover:shadow-2xl ${cardColors[index].glow}`}
+              >
                 {/* 3D Isometric Image container */}
-                <div className={`w-full h-48 rounded-2xl bg-gradient-to-br ${cardColors[index].bg} flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20`}>
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title} 
-                    className="w-full h-full object-contain p-3 animate-float group-hover:scale-110 transition-transform duration-500" 
+                <div
+                  className={`w-full h-48 rounded-2xl bg-gradient-to-br ${cardColors[index].bg} flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20`}
+                >
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-contain p-3 animate-float group-hover:scale-110 transition-transform duration-500"
                     style={{ animationDelay: `${index * 0.5}s` }}
                   />
                 </div>
@@ -93,7 +117,9 @@ export default function FeaturesSection() {
                 <p className="text-slate-500 mb-5 leading-relaxed text-sm">{feature.description}</p>
 
                 {/* Learn More link */}
-                <span className={`inline-flex items-center gap-2 bg-gradient-to-r ${cardColors[index].border} bg-clip-text text-transparent font-semibold text-sm tracking-wide group-hover:gap-3 transition-all duration-300`}>
+                <span
+                  className={`inline-flex items-center gap-2 bg-gradient-to-r ${cardColors[index].border} bg-clip-text text-transparent font-semibold text-sm tracking-wide group-hover:gap-3 transition-all duration-300`}
+                >
                   Learn More
                   <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
