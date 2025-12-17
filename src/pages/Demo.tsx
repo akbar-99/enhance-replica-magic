@@ -1,8 +1,29 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SEO from '@/components/SEO';
+import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote } from 'lucide-react';
+
+const demoSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    createBreadcrumbSchema([
+      { name: 'Home', url: 'https://itenhance.tech' },
+      { name: 'Request Demo', url: 'https://itenhance.tech/demo' },
+    ]),
+    {
+      "@type": "WebPage",
+      "name": "Request a Demo - ENHANCE TECH",
+      "description": "Schedule a personalized demo with ENHANCE TECH security experts",
+      "mainEntity": {
+        "@type": "Service",
+        "name": "Product Demo",
+        "provider": organizationSchema,
+        "serviceType": "Product Demonstration"
+      }
+    }
+  ]
+};
 
 const benefits = [
   { icon: Shield, text: 'See our platform in action', description: 'Live demonstration of key features' },
@@ -50,6 +71,7 @@ export default function Demo() {
           description="Schedule a personalized demo with ENHANCE TECH. See our IT solutions, cybersecurity platforms, and enterprise technology in action."
           keywords="demo request, IT solutions demo, cybersecurity demo, enterprise technology demonstration"
           canonicalUrl="https://itenhance.tech/demo"
+          structuredData={demoSchema}
         />
         <Navbar />
         <section className="pt-32 pb-20">
@@ -79,6 +101,7 @@ export default function Demo() {
         description="Schedule a personalized demo with ENHANCE TECH. See our IT solutions, cybersecurity platforms, and enterprise technology in action."
         keywords="demo request, IT solutions demo, cybersecurity demo, enterprise technology demonstration"
         canonicalUrl="https://itenhance.tech/demo"
+        structuredData={demoSchema}
       />
       <Navbar />
       

@@ -64,8 +64,37 @@ export default function Contact() {
 
   const contactSchema = {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": organizationSchema
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "mainEntity": organizationSchema
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://itenhance.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://itenhance.tech/contact" }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "ENHANCE TECH",
+        "telephone": "+97143296840",
+        "email": "Info@itenhance.tech",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "AlDiyar Building, Sheikh Zayed Road",
+          "addressLocality": "Dubai",
+          "addressCountry": "UAE"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      }
+    ]
   };
 
   return (

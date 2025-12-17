@@ -85,6 +85,34 @@ export default function Resources() {
     { name: 'Resources', url: 'https://itenhance.tech/resources' },
   ]);
 
+  const resourcesSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema,
+      {
+        "@type": "CollectionPage",
+        "name": "ENHANCE TECH Knowledge Center",
+        "description": "Security resources, articles, case studies, and whitepapers",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ENHANCE TECH"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": resourceCategories.map((category, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": category.title,
+              "description": category.description
+            }
+          }))
+        }
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen page-bg-light">
       <SEO
@@ -92,7 +120,7 @@ export default function Resources() {
         description="Explore ENHANCE TECH's library of security resources including blog articles, case studies, whitepapers, webinars, and industry events."
         keywords="IT security resources, cybersecurity blog, security whitepapers, webinars, case studies, IT knowledge base"
         canonicalUrl="https://itenhance.tech/resources"
-        structuredData={breadcrumbSchema}
+        structuredData={resourcesSchema}
       />
       <Navbar />
       

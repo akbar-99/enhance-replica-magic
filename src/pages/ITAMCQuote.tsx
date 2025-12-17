@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SEO from '@/components/SEO';
+import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText } from 'lucide-react';
 
 const amcFeatures = [
@@ -46,6 +46,28 @@ const amcPlans = [
   },
 ];
 
+const amcSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    createBreadcrumbSchema([
+      { name: 'Home', url: 'https://itenhance.tech' },
+      { name: 'IT AMC Quote', url: 'https://itenhance.tech/it-amc-quote' },
+    ]),
+    createServiceSchema("IT Annual Maintenance Contract", "Comprehensive IT AMC services including hardware maintenance, security updates, 24/7 monitoring, and priority support in Dubai, UAE."),
+    {
+      "@type": "Product",
+      "name": "IT Annual Maintenance Contract",
+      "description": "Comprehensive IT support and maintenance services",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock",
+        "offerCount": "3"
+      }
+    }
+  ]
+};
+
 export default function ITAMCQuote() {
   const [formData, setFormData] = useState({
     name: '',
@@ -77,6 +99,7 @@ export default function ITAMCQuote() {
         description="Get a customized IT Annual Maintenance Contract (AMC) quote for your business. Comprehensive IT support, hardware maintenance, and 24/7 monitoring services in Dubai, UAE."
         keywords="IT AMC quote Dubai, annual maintenance contract, IT support contract, hardware maintenance UAE, IT services pricing"
         canonicalUrl="https://itenhance.tech/it-amc-quote"
+        structuredData={amcSchema}
       />
       <Navbar />
       

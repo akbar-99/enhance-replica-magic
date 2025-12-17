@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SEO, { createBreadcrumbSchema } from '@/components/SEO';
+import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, ChevronRight, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -98,6 +98,23 @@ export default function Solutions() {
     { name: 'Solutions', url: 'https://itenhance.tech/solutions' },
   ]);
 
+  const solutionsSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema,
+      {
+        "@type": "ItemList",
+        "name": "ENHANCE TECH IT Solutions",
+        "description": "Comprehensive IT security and infrastructure solutions",
+        "itemListElement": detailedSolutions.map((solution, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": createServiceSchema(solution.title, solution.description)
+        }))
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen page-bg-light">
       <SEO
@@ -105,7 +122,7 @@ export default function Solutions() {
         description="Comprehensive IT security solutions including network security, data protection, cloud optimization, physical security, and managed IT support services in Dubai, UAE."
         keywords="IT solutions Dubai, security solutions, network security, data protection, cloud services, physical security, managed IT UAE"
         canonicalUrl="https://itenhance.tech/solutions"
-        structuredData={breadcrumbSchema}
+        structuredData={solutionsSchema}
       />
       <Navbar />
       
