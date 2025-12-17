@@ -119,10 +119,13 @@ export default function TrustedBy() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
   return <section className="bg-white py-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center bg-white text-primary-foreground my-[33px] py-[16px] lg:text-4xl">
-          ​We're proud to be certified by and partnered with  <span className="text-primary">Industry Leaders</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground my-[33px] py-[16px] lg:text-4xl">
+          ​We're proud to be certified by and partnered with <span className="text-primary">Industry Leaders</span>
         </h2>
+        <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
+          Our strategic partnerships with world-renowned technology providers enable us to deliver cutting-edge solutions and exceptional service to businesses across the region.
+        </p>
       </div>
       <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
         <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
