@@ -66,7 +66,7 @@ const ProtectDataSection = () => {
               {/* Left Column */}
               <div>
                 {leftColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200 font-bold">
-                    <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 text-lg font-bold">
+                    <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 font-bold text-sm">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
@@ -76,7 +76,7 @@ const ProtectDataSection = () => {
               {/* Right Column */}
               <div>
                 {rightColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200">
-                    <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 text-lg font-bold">
+                    <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 font-bold text-sm">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
