@@ -128,10 +128,10 @@ function HeroSection() {
             </span>
           </span>
         </h2>
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-          {/* Left - Tabs */}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+          {/* Left - Tabs (hidden on mobile, shown on desktop) */}
           <div
-            className="lg:col-span-3 space-y-2"
+            className="hidden lg:block lg:col-span-3 space-y-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -165,25 +165,25 @@ function HeroSection() {
           </div>
 
           {/* Center - Hero Content */}
-          <div className="lg:col-span-5 space-y-4 sm:space-y-6 animate-fade-up" key={activeTab}>
+          <div className="order-1 lg:order-none lg:col-span-5 space-y-4 sm:space-y-6 animate-fade-up" key={activeTab}>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/demo" className="btn-primary">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
+            <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <Link to="/demo" className="btn-primary text-sm sm:text-base">
                 Get Started
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/learn-more" className="btn-secondary">
+              <Link to="/learn-more" className="btn-secondary text-sm sm:text-base">
                 Learn More
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* Right Side - Spline 3D */}
-          <div className="col-span-full lg:col-span-4 relative h-[300px] sm:h-[400px] lg:h-[600px] flex items-center justify-center mt-4 lg:-mt-24 overflow-hidden">
+          {/* Right Side - Spline 3D (below content on mobile) */}
+          <div className="order-2 lg:order-none w-full lg:col-span-4 relative h-[250px] sm:h-[350px] lg:h-[600px] flex items-center justify-center lg:-mt-24 overflow-hidden">
             {showSpline ? (
               <SplineEmbed />
             ) : (
