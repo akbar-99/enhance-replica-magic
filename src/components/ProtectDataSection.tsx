@@ -70,7 +70,7 @@ const ProtectDataSection = () => {
 
           {/* Right Panel - Solutions List */}
           <div className="bg-slate-50 p-6 lg:p-10 py-[102px]">
-            <p className="text-slate-500 text-base font-medium mb-6 uppercase tracking-wider">
+            <p className="text-slate-500 text-base font-medium mb-6 foreground tracking-wider">
               Explore our solutions to:
             </p>
 
