@@ -3,19 +3,43 @@ import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucid
 const footerLinks = {
   Products: [
     {
-      label: "Data Security Platform",
+      label: "Cloud Services",
       href: "/products/data-security",
     },
     {
-      label: "Cloud Security",
+      label: "Compute and Storage",
       href: "/products/cloud-security",
     },
     {
-      label: "Network Security",
+      label: "Firewall & Network Security",
       href: "/products/network-security",
     },
     {
-      label: "Endpoint Security",
+      label: "Cybersecurity Solutions",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "Backup & Disaster Recovery",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "IT Service Management (ITSM) ",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "Microsoft 365 Governance & Management ",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "Physical Security ",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "Meeting Room ",
+      href: "/products/endpoint-security",
+    },
+    {
+      label: "Network & Infrastructure ",
       href: "/products/endpoint-security",
     },
     {
