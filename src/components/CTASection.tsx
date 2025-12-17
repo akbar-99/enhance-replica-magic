@@ -237,7 +237,7 @@ export default function CTASection() {
                 {/* Glow effect under text */}
                 <span className="absolute inset-0 blur-lg bg-glow-cyan/30 -z-10" />
               </motion.span>
-              <span className="text-white">?</span>
+              <span className="text-white"></span>
             </motion.h2>
 
             <motion.p initial={{
