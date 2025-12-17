@@ -68,12 +68,12 @@ export default function FeaturesSection() {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {/* Gradient border wrapper */}
-              <div className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm`} />
-              <div className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-30 group-hover:opacity-100 transition-opacity duration-300`} />
+              {/* Gradient border wrapper - always visible */}
+              <div className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 blur-sm`} />
+              <div className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Card content */}
-              <div className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 group-hover:shadow-2xl ${cardColors[index].glow}`}>
+              <div className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 shadow-lg group-hover:shadow-2xl ${cardColors[index].glow}`}>
                 {/* 3D Isometric Image container */}
                 <div className={`w-full h-48 rounded-2xl bg-gradient-to-br ${cardColors[index].bg} flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-all duration-500 overflow-hidden border-2 border-transparent group-hover:border-primary/20`}>
                   <img 
