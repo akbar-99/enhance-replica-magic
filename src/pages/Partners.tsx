@@ -50,6 +50,30 @@ export default function Partners() {
     { name: 'Partners', url: 'https://itenhance.tech/partners' },
   ]);
 
+  const partnersSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema,
+      {
+        "@type": "WebPage",
+        "name": "ENHANCE TECH Partner Program",
+        "description": "Join our partner ecosystem and technology alliances",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2"]
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "ENHANCE TECH",
+        "memberOf": partnerLogos.map(logo => ({
+          "@type": "Organization",
+          "name": logo
+        }))
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen page-bg-light">
       <SEO
@@ -57,7 +81,7 @@ export default function Partners() {
         description="Join ENHANCE TECH's partner ecosystem. Explore partnership opportunities, find certified partners, and discover our technology alliances with Microsoft, AWS, and more."
         keywords="IT partners Dubai, technology partners, partner program, reseller program, Microsoft partner, AWS partner UAE"
         canonicalUrl="https://itenhance.tech/partners"
-        structuredData={breadcrumbSchema}
+        structuredData={partnersSchema}
       />
       <Navbar />
       

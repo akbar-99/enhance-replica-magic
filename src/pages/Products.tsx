@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SEO, { createBreadcrumbSchema } from '@/components/SEO';
+import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye, Server, Globe, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -77,6 +77,29 @@ export default function Products() {
     { name: 'Products', url: 'https://itenhance.tech/products' },
   ]);
 
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema,
+      {
+        "@type": "ItemList",
+        "name": "ENHANCE TECH Security Products",
+        "description": "Enterprise security products and solutions",
+        "itemListElement": products.map((product, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Product",
+            "name": product.title,
+            "description": product.description,
+            "brand": organizationSchema,
+            "category": "IT Security Software"
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen page-bg-light">
       <SEO
@@ -84,7 +107,7 @@ export default function Products() {
         description="Explore our comprehensive security products including data security platforms, cloud security, network protection, threat prevention, and endpoint security solutions."
         keywords="security products, data security platform, cloud security, network security, endpoint protection, threat prevention Dubai"
         canonicalUrl="https://itenhance.tech/products"
-        structuredData={breadcrumbSchema}
+        structuredData={productsSchema}
       />
       <Navbar />
       
