@@ -65,7 +65,7 @@ const footerLinks = {
     label: 'Partners',
     href: '/partners'
   }],
-   Quick Link: [{
+   'Quick Link: [{
     label: 'Get IT AMC Quote',
     href: '/it-amc-quote'
   }, {
