@@ -285,16 +285,16 @@ export default function Navbar() {
                   {/* Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`absolute top-full left-0 mt-2 min-w-[240px] bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-85 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
+                      className={`absolute top-full ${item.label === "Products" ? "left-1/2 -translate-x-1/2 w-[700px]" : "left-0 min-w-[240px]"} mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
-                      <div className="p-2">
+                      <div className={`p-4 ${item.label === "Products" ? "grid grid-cols-2 gap-2" : ""}`}>
                         {item.dropdown.map((subItem) => (
                           <Link
                             key={subItem.label}
                             to={subItem.href}
-                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors"
+                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
                           >
-                            <span className="font-medium text-foreground">{subItem.label}</span>
+                            <span className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.label}</span>
                             {subItem.description && (
                               <span className="text-xs text-muted-foreground mt-0.5">{subItem.description}</span>
                             )}
