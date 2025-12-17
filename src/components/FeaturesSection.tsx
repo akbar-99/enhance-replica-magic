@@ -43,19 +43,19 @@ const cardColors = [
     glow: "shadow-blue-200/50",
   },
   {
-    border: "from-orange-400 via-amber-400 to-yellow-400",
-    bg: "from-orange-50 via-amber-50 to-yellow-50",
-    glow: "shadow-orange-200/50",
-  },
-  {
     border: "from-blue-400 via-cyan-400 to-primary",
     bg: "from-blue-50 via-cyan-50 to-primary/5",
     glow: "shadow-blue-200/50",
   },
   {
-    border: "from-blue-400 via-cyan-400 to-primary",
-    bg: "from-blue-50 via-cyan-50 to-primary/5",
-    glow: "shadow-blue-200/50",
+    border: "from-emerald-400 via-teal-400 to-cyan-400",
+    bg: "from-emerald-50 via-teal-50 to-cyan-50",
+    glow: "shadow-emerald-200/50",
+  },
+  {
+    border: "from-purple-400 via-indigo-400 to-blue-400",
+    bg: "from-purple-50 via-indigo-50 to-blue-50",
+    glow: "shadow-purple-200/50",
   },
 ];
 
