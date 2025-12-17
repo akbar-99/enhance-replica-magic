@@ -150,10 +150,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[32px] pt-[32px]">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
           {/* Logo & Description */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-glow-cyan rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">E</span>
@@ -162,37 +162,37 @@ export default function Footer() {
                 Enhance<span className="text-primary">Tech</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Protecting enterprise data with AI-native security solutions.
             </p>
-            <div className="space-y-2 text-sm text-muted-foreground mb-6">
+            <div className="space-y-2.5 text-sm text-muted-foreground mb-6">
               <a className="flex items-center gap-2 hover:text-foreground transition-colors" href="tel:+971 4 329 6840">
-                <Phone className="w-4 h-4" />
-                +971 4 329 6840
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>+971 4 329 6840</span>
               </a>
               <a
                 href="mailto:Info@itenhance.tech"
                 className="flex items-center gap-2 hover:text-foreground transition-colors"
               >
-                <Mail className="w-4 h-4" />
-                Info@itenhance.tech
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>Info@itenhance.tech</span>
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>AlDiyar Building, Sheikh Zayed Road, Dubai, UAE</span>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
+                  className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -200,17 +200,17 @@ export default function Footer() {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className={`font-semibold mb-4 ${category === "Quick Link" ? "text-primary" : "text-foreground"}`}>
+            <div key={category} className="flex flex-col">
+              <h4 className={`font-semibold mb-4 text-sm ${category === "Quick Link" ? "text-primary" : "text-foreground"}`}>
                 {category === "Quick Link" ? (
-                  <span className="underline decoration-primary underline-offset-4 text-white">
+                  <span className="underline decoration-primary underline-offset-4 text-foreground">
                     {category.toUpperCase()}
                   </span>
                 ) : (
                   category
                 )}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
