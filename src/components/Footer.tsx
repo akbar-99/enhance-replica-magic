@@ -23,26 +23,6 @@ const footerLinks = {
       href: "/products/endpoint-security",
     },
     {
-      label: "IT Service Management (ITSM) ",
-      href: "/products/endpoint-security",
-    },
-    {
-      label: "Microsoft 365 Governance & Management ",
-      href: "/products/endpoint-security",
-    },
-    {
-      label: "Physical Security ",
-      href: "/products/endpoint-security",
-    },
-    {
-      label: "Meeting Room ",
-      href: "/products/endpoint-security",
-    },
-    {
-      label: "Network & Infrastructure ",
-      href: "/products/endpoint-security",
-    },
-    {
       label: "All Products",
       href: "/products",
     },
