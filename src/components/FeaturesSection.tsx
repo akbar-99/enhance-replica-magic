@@ -1,44 +1,38 @@
-import { ArrowRight, Monitor, ShieldCheck, Server, Network, Code, Cloud, Headphones, ShoppingCart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import managedServicesImg from "@/assets/features/managed-services.png";
+import infrastructureHardwareImg from "@/assets/features/infrastructure-hardware.png";
+import modernWorkplaceImg from "@/assets/features/modern-workplace.png";
+import webDevelopmentImg from "@/assets/features/web-development.png";
 
 const features = [
   {
-    icon: Monitor,
     image: managedServicesImg,
     title: "Managed Services",
     description:
       "Boost efficiency with reliable Managed IT Services. Proactive monitoring, 24/7 support & tailored solutions for your business growth.",
     link: "/products/managed-it",
-    iconBg: "bg-primary",
-    iconColor: "text-white",
   },
   {
-    icon: ShieldCheck,
+    image: infrastructureHardwareImg,
     title: "Infrastructure & Hardware",
     description:
       "Our security solutions help improve collaboration, enhance user experience, and increase productivity with comprehensive protection.",
     link: "/products/security",
-    iconBg: "bg-purple-500",
-    iconColor: "text-white",
   },
   {
-    icon: Server,
+    image: modernWorkplaceImg,
     title: "Modern Workplace & Projects",
     description:
       "Reduce costs and complexity by investing in systems that handle your infrastructure needs efficiently.",
     link: "/products/server-storage",
-    iconBg: "bg-emerald-500",
-    iconColor: "text-white",
   },
   {
-    icon: Network,
+    image: webDevelopmentImg,
     title: "Web & App Development",
     description:
       "Intelligently integrated network solutions that secure connectivity and enhance your business operations.",
     link: "/products/network",
-    iconBg: "bg-cyan-500",
-    iconColor: "text-white",
   },
 ];
 
@@ -67,15 +61,13 @@ export default function FeaturesSection() {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {/* Icon/Image container */}
-              <div
-                className={`w-full ${feature.image ? 'h-52' : 'h-40'} rounded-2xl ${feature.image ? 'bg-gradient-to-br from-primary/10 via-cyan-50 to-blue-100' : feature.iconBg} flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 ${feature.image ? 'shadow-md shadow-primary/10' : 'shadow-lg'} overflow-hidden`}
-              >
-                {feature.image ? (
-                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover scale-110" />
-                ) : (
-                  <feature.icon className={`w-16 h-16 ${feature.iconColor}`} strokeWidth={1.5} />
-                )}
+              {/* 3D Isometric Image container */}
+              <div className="w-full h-52 rounded-2xl bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center mb-6 group-hover:scale-[1.02] transition-transform duration-300 shadow-md shadow-primary/10 overflow-hidden border border-slate-100">
+                <img 
+                  src={feature.image} 
+                  alt={feature.title} 
+                  className="w-full h-full object-contain p-2" 
+                />
               </div>
 
               {/* Title */}
