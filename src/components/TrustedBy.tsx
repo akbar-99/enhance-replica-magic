@@ -121,7 +121,7 @@ export default function TrustedBy() {
   return <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground my-[33px] py-[16px] lg:text-4xl">
-          ​We're proud to be certified by and partnered with <span className="text-primary">Industry Leaders</span>
+          ​ Partnered with the best  <span className="text-primary">​to deliver the best.</span>
         </h2>
         <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
           ​We maintain strategic alliances and hold certifications from premier industry organizations.
