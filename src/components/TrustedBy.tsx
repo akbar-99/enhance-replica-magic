@@ -120,35 +120,35 @@ export default function TrustedBy() {
   }, [isPaused]);
   return <section className="bg-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Animated border container */}
-        <div className="group relative rounded-3xl p-[2px] overflow-hidden">
-          {/* Animated gradient border */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 via-purple-500 via-pink-500 to-primary bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite] rounded-3xl" />
-          
-          {/* Inner content with white background */}
-          <div className="relative bg-white rounded-3xl py-8 px-6">
-            <div className="text-center mb-8">
+        {/* Animated border container - only around text */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <div className="group relative rounded-2xl p-[2px] overflow-hidden">
+            {/* Animated gradient border */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 via-purple-500 via-pink-500 to-primary bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite] rounded-2xl" />
+            
+            {/* Inner content with white background */}
+            <div className="relative bg-white rounded-2xl py-8 px-6 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 lg:text-4xl">
                 <span className="text-slate-900">Partnered with the best</span>{" "}
                 <span className="text-primary">to deliver the best.</span>
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
+              <p className="text-muted-foreground text-base md:text-lg">
                 We maintain strategic alliances and hold certifications from premier industry organizations.
               </p>
             </div>
-            
-            <div className="overflow-hidden rounded-2xl">
-              <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
-                scrollBehavior: "auto"
-              }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-gradient-to-r from-slate-50 via-white to-slate-50 lg:gap-[26px] py-8">
-                {/* Duplicate partners for seamless infinite scroll */}
-                {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer group/logo">
-                    <div className="p-4 rounded-xl hover:bg-primary/5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
-                      <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-28 md:h-32 lg:h-36 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-                    </div>
-                  </div>)}
-              </div>
-            </div>
+          </div>
+        </div>
+        
+        {/* Logo carousel - no border */}
+        <div className="overflow-hidden">
+          <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
+            scrollBehavior: "auto"
+          }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-6">
+            {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 cursor-pointer">
+                <div className="p-4 rounded-xl hover:bg-primary/5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                  <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-28 md:h-32 lg:h-36 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+                </div>
+              </div>)}
           </div>
         </div>
       </div>
