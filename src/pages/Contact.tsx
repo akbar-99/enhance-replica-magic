@@ -1,52 +1,50 @@
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import SEO, { organizationSchema } from '@/components/SEO';
-import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle } from 'lucide-react';
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SEO, { organizationSchema } from "@/components/SEO";
+import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle } from "lucide-react";
 
 const contactOptions = [
   {
     icon: Phone,
-    title: 'Call Us',
-    description: 'Speak directly with our team for immediate assistance.',
-    contact: '+97143296840',
-    type: 'phone',
-    color: 'bg-blue-500',
+    title: "Call Us",
+    description: "Speak directly with our team for immediate assistance.",
+    contact: "+971 4 329 6840",
+    type: "phone",
+    color: "bg-blue-500",
   },
   {
     icon: Mail,
-    title: 'Email Us',
-    description: 'Send us an email and we\'ll respond within 24 hours.',
-    contact: 'Info@itenhance.tech',
-    type: 'email',
-    color: 'bg-emerald-500',
+    title: "Email Us",
+    description: "Send us an email and we'll respond within 24 hours.",
+    contact: "Info@itenhance.tech",
+    type: "email",
+    color: "bg-emerald-500",
   },
   {
     icon: MapPin,
-    title: 'Visit Us',
-    description: 'Come visit our office in Dubai.',
-    contact: 'AlDiyar Building, Sheikh Zayed Road, Dubai, UAE',
-    type: 'address',
-    color: 'bg-purple-500',
+    title: "Visit Us",
+    description: "Come visit our office in Dubai.",
+    contact: "AlDiyar Building, Sheikh Zayed Road, Dubai, UAE",
+    type: "address",
+    color: "bg-purple-500",
   },
 ];
 
-const offices = [
-  { city: 'Dubai', address: 'AlDiyar Building, Sheikh Zayed Road', region: 'Dubai', country: 'UAE' },
-];
+const offices = [{ city: "Dubai", address: "AlDiyar Building, Sheikh Zayed Road", region: "Dubai", country: "UAE" }];
 
 const companyContact = {
-  phone: '+97143296840',
-  email: 'Info@itenhance.tech',
-  address: 'AlDiyar Building, Sheikh Zayed Road, Dubai, UAE',
+  phone: "+971 4 329 6840",
+  email: "Info@itenhance.tech",
+  address: "AlDiyar Building, Sheikh Zayed Road, Dubai, UAE",
 };
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -64,37 +62,8 @@ export default function Contact() {
 
   const contactSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ContactPage",
-        "mainEntity": organizationSchema
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://itenhance.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://itenhance.tech/contact" }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "ENHANCE TECH",
-        "telephone": "+97143296840",
-        "email": "Info@itenhance.tech",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "AlDiyar Building, Sheikh Zayed Road",
-          "addressLocality": "Dubai",
-          "addressCountry": "UAE"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      }
-    ]
+    "@type": "ContactPage",
+    mainEntity: organizationSchema,
   };
 
   return (
@@ -107,22 +76,25 @@ export default function Contact() {
         structuredData={contactSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-1/3 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <Mail className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Get in Touch</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Contact <span className="glow-text">Us</span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <p
+            className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             Have questions? We're here to help. Reach out to our team and we'll get back to you as soon as possible.
           </p>
         </div>
@@ -133,16 +105,20 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
             {contactOptions.map((option, index) => (
-              <div 
-                key={option.title} 
+              <div
+                key={option.title}
                 className="group bg-white border border-slate-200/80 rounded-3xl p-8 text-center hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
               >
-                <div className={`w-14 h-14 rounded-2xl ${option.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <div
+                  className={`w-14 h-14 rounded-2xl ${option.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                >
                   <option.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">{option.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors duration-300">
+                  {option.title}
+                </h3>
                 <p className="text-slate-600 mb-5 leading-relaxed">{option.description}</p>
-                {option.type === 'phone' ? (
+                {option.type === "phone" ? (
                   <a
                     href={`tel:${option.contact}`}
                     className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
@@ -150,7 +126,7 @@ export default function Contact() {
                     <Phone className="w-4 h-4" />
                     {option.contact}
                   </a>
-                ) : option.type === 'email' ? (
+                ) : option.type === "email" ? (
                   <a
                     href={`mailto:${option.contact}`}
                     className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
@@ -183,10 +159,7 @@ export default function Contact() {
                 <p className="text-slate-600 mb-8">
                   Thank you for reaching out. We'll get back to you within 24 hours.
                 </p>
-                <button 
-                  onClick={() => setSubmitted(false)}
-                  className="btn-primary"
-                >
+                <button onClick={() => setSubmitted(false)} className="btn-primary">
                   Send Another Message
                 </button>
               </div>
@@ -283,20 +256,20 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Offices</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Visit us at one of our global locations.
-            </p>
+            <p className="text-slate-600 max-w-2xl mx-auto">Visit us at one of our global locations.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {offices.map((office, index) => (
-              <div 
-                key={office.city} 
+              <div
+                key={office.city}
                 className="group bg-white border border-slate-200/80 rounded-3xl p-8 hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                   <MapPin className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-primary transition-colors duration-300">{office.city}</h3>
+                <h3 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-primary transition-colors duration-300">
+                  {office.city}
+                </h3>
                 <div className="text-slate-600 text-sm space-y-1">
                   <p>{office.address}</p>
                   <p>{office.region}</p>
