@@ -25,21 +25,26 @@ const footerLinks = {
   ],
   Solutions: [
     {
-      label: "Enterprise Security",
+      label: "Streamline IT Support",
       href: "/solutions/enterprise",
     },
     {
-      label: "AI & ML Security",
+      label: "Stop Cyber Threats",
       href: "/solutions/ai-security",
     },
     {
-      label: "Compliance",
+      label: "Prevent Data Loss",
       href: "/solutions/compliance",
     },
     {
-      label: "Zero Trust",
+      label: "Optimize Cloud Operations",
       href: "/solutions/zero-trust",
     },
+    {
+      label: "Manage Microsoft 365",
+      href: "/solutions/zero-trust",
+    },
+
     {
       label: "All Solutions",
       href: "/solutions",
