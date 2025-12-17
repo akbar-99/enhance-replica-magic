@@ -79,7 +79,8 @@ export default function FeaturesSection() {
                   <img 
                     src={feature.image} 
                     alt={feature.title} 
-                    className="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-contain p-3 animate-float group-hover:scale-110 transition-transform duration-500" 
+                    style={{ animationDelay: `${index * 0.5}s` }}
                   />
                 </div>
 
