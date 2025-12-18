@@ -51,8 +51,8 @@ export default function FeaturesSection() {
             <span className="text-primary"> We Do </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-1xl mx-auto leading-relaxed">
-            Protect your organization with our comprehensive suite of security solutions designed for the modern
-            enterprise.
+            ​Enhance your organization with our comprehensive suite of technology services tailored for both SMEs and large enterprises.
+              
           </p>
         </div>
 
