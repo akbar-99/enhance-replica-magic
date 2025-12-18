@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import PromoBanner from "./components/PromoBanner";
 import FloatingNavBar from "./components/FloatingNavBar";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <PromoBanner />
         <AnimatedRoutes />
         <FloatingNavBar />
