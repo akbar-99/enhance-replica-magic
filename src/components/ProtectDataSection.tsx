@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 const solutions = [
   {
-    title: "Optimize Cloud Operations",
+    title: "Secure Your Network",
     link: "/solutions/secure-network",
   },
   {
@@ -11,35 +11,35 @@ const solutions = [
     link: "/solutions/prevent-data-loss",
   },
   {
-    title: "Stop Cyber Threats",
+    title: "Modernize Meeting Spaces",
     link: "/solutions/meeting-spaces",
   },
   {
-    title: "Manage Microsoft 365",
+    title: "Enhance Physical Security",
     link: "/solutions/physical-security",
   },
   {
-    title: "Streamline IT Operations",
+    title: "Optimize Cloud Operations",
     link: "/solutions/cloud-operations",
   },
   {
-    title: "Network Security",
+    title: "Stop Cyber Threats",
     link: "/solutions/cyber-threats",
   },
   {
-    title: "Networking & Infrastructure",
+    title: "Upgrade Enterprise Hardware",
     link: "/solutions/enterprise-hardware",
   },
   {
-    title: "Physical Security & Surveillance",
+    title: "Streamline IT Support",
     link: "/solutions/it-support",
   },
   {
-    title: "Smart Meeting Rooms",
+    title: "Strengthen Infrastructure",
     link: "/solutions/infrastructure",
   },
   {
-    title: "Compute & Storage",
+    title: "Manage Microsoft 365",
     link: "/solutions/microsoft-365",
   },
 ];
@@ -71,7 +71,7 @@ const ProtectDataSection = () => {
           {/* Right Panel - Solutions List */}
           <div className="bg-slate-50 p-6 lg:p-10 py-[102px]">
             <p className="font-medium mb-6 foreground tracking-wider text-2xl text-primary-foreground">
-              Explore our solutions to:
+              Explore Our Solutions To:
             </p>
 
             <div className="grid md:grid-cols-2 gap-x-6">
