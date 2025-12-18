@@ -1,41 +1,53 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
-const solutions = [{
-  title: "Secure Your Network",
-  link: "/solutions/secure-network"
-}, {
-  title: "Prevent Data Loss",
-  link: "/solutions/prevent-data-loss"
-}, {
-  title: "Modernize Meeting Spaces",
-  link: "/solutions/meeting-spaces"
-}, {
-  title: "Enhance Physical Security",
-  link: "/solutions/physical-security"
-}, {
-  title: "Optimize Cloud Operations",
-  link: "/solutions/cloud-operations"
-}, {
-  title: "Stop Cyber Threats",
-  link: "/solutions/cyber-threats"
-}, {
-  title: "Upgrade Enterprise Hardware",
-  link: "/solutions/enterprise-hardware"
-}, {
-  title: "Streamline IT Support",
-  link: "/solutions/it-support"
-}, {
-  title: "Strengthen Infrastructure",
-  link: "/solutions/infrastructure"
-}, {
-  title: "Manage Microsoft 365",
-  link: "/solutions/microsoft-365"
-}];
+const solutions = [
+  {
+    title: "Optimize Cloud Operations",
+    link: "/solutions/secure-network",
+  },
+  {
+    title: "Prevent Data Loss",
+    link: "/solutions/prevent-data-loss",
+  },
+  {
+    title: "Stop Cyber Threats",
+    link: "/solutions/meeting-spaces",
+  },
+  {
+    title: "Manage Microsoft 365",
+    link: "/solutions/physical-security",
+  },
+  {
+    title: "Streamline IT Operations",
+    link: "/solutions/cloud-operations",
+  },
+  {
+    title: "Network Security",
+    link: "/solutions/cyber-threats",
+  },
+  {
+    title: "Networking & Infrastructure",
+    link: "/solutions/enterprise-hardware",
+  },
+  {
+    title: "Physical Security & Surveillance",
+    link: "/solutions/it-support",
+  },
+  {
+    title: "Smart Meeting Rooms",
+    link: "/solutions/infrastructure",
+  },
+  {
+    title: "Compute & Storage",
+    link: "/solutions/microsoft-365",
+  },
+];
 const ProtectDataSection = () => {
   const leftColumn = solutions.slice(0, 5);
   const rightColumn = solutions.slice(5, 10);
-  return <section className="bg-white py-0">
+  return (
+    <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-border/20">
           {/* Left Panel - Dark Gradient */}
@@ -65,27 +77,40 @@ const ProtectDataSection = () => {
             <div className="grid md:grid-cols-2 gap-x-6">
               {/* Left Column */}
               <div>
-                {leftColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200 font-bold">
+                {leftColumn.map((solution, index) => (
+                  <Link
+                    key={index}
+                    to={solution.link}
+                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200 font-bold"
+                  >
                     <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 font-bold text-sm">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-                  </Link>)}
+                  </Link>
+                ))}
               </div>
 
               {/* Right Column */}
               <div>
-                {rightColumn.map((solution, index) => <Link key={index} to={solution.link} className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200">
+                {rightColumn.map((solution, index) => (
+                  <Link
+                    key={index}
+                    to={solution.link}
+                    className="group flex items-center justify-between py-3 border-b border-slate-200/80 hover:border-primary/40 transition-all duration-200"
+                  >
                     <span className="text-slate-700 group-hover:text-primary transition-colors duration-200 font-bold text-sm">
                       {solution.title}
                     </span>
                     <ArrowRight className="w-4 h-4 text-primary/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-                  </Link>)}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default ProtectDataSection;
