@@ -116,18 +116,16 @@ function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-6 sm:mb-8 group cursor-default">
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
-            <span className="text-primary hover:text-primary/80 transition-colors duration-300">We</span>
+            <span className="text-primary hover:text-primary/80 transition-colors duration-300"></span>
           </span>{" "}
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:[text-shadow:0_0_25px_hsl(var(--accent)/0.9),0_0_50px_hsl(var(--accent)/0.5)]">
-            <span className="text-primary hover:text-accent transition-colors duration-300">Resolve</span>
+            <span className="text-primary hover:text-accent transition-colors duration-300"></span>
           </span>{" "}
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:[text-shadow:0_0_20px_hsl(var(--primary)/0.8),0_0_40px_hsl(var(--primary)/0.4)]">
-            <span className="text-primary hover:text-primary/80 transition-colors duration-300">Your</span>
+            <span className="text-primary hover:text-primary/80 transition-colors duration-300"></span>
           </span>{" "}
           <span className="inline-block transition-all duration-300 hover:scale-105 hover:rotate-1 animate-glow-pulse">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
-              IT Challenges
-            </span>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent"></span>
           </span>
         </h2>
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -171,14 +169,16 @@ function HeroSection() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               {currentTab.title}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-lg">
+              {currentTab.description}
+            </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Link to="/demo" className="btn-primary text-sm sm:text-base">
-                {t('hero.getStarted')}
+                {t("hero.getStarted")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/learn-more" className="btn-secondary text-sm sm:text-base">
-                {t('hero.learnMore')}
+                {t("hero.learnMore")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
