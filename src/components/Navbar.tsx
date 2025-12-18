@@ -2,20 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Search, Globe, Menu, X, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
 // Flatten all nav items for search
@@ -26,14 +14,14 @@ const getAllSearchItems = () => {
     description?: string;
     category: string;
   }[] = [];
-  navItems.forEach((nav) => {
+  navItems.forEach(nav => {
     if (nav.dropdown) {
-      nav.dropdown.forEach((item) => {
+      nav.dropdown.forEach(item => {
         items.push({
           label: item.label,
           href: item.href,
           description: item.description,
-          category: nav.label,
+          category: nav.label
         });
       });
     }
@@ -49,197 +37,156 @@ interface NavItem {
     description?: string;
   }[];
 }
-const languages = [
-  {
-    code: "EN",
-    i18nCode: "en",
-    label: "English",
-  },
-  {
-    code: "ES",
-    i18nCode: "es",
-    label: "Español",
-  },
-  {
-    code: "FR",
-    i18nCode: "fr",
-    label: "Français",
-  },
-  {
-    code: "DE",
-    i18nCode: "de",
-    label: "Deutsch",
-  },
-  {
-    code: "IT",
-    i18nCode: "it",
-    label: "Italiano",
-  },
-  {
-    code: "AR",
-    i18nCode: "ar",
-    label: "العربية",
-  },
-];
-const navItems: NavItem[] = [
-  {
-    label: "Products",
-    dropdown: [
-      {
-        label: "Cloud Services",
-        href: "/products/data-security",
-        description: "Comprehensive data protection",
-      },
-      {
-        label: "Compute and Storage",
-        href: "/products/cloud-security",
-        description: "Secure cloud environments",
-      },
-      {
-        label: "Firewall & Network Security",
-        href: "/products/network-security",
-        description: "Advanced network protection",
-      },
-      {
-        label: "Cybersecurity Solutions",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "Backup & Disaster Recovery",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "IT Service Management (ITSM) ",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "Microsoft 365 Governance & Management ",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "Physical Security ",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "Meeting Room  ",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-      {
-        label: "Network & Infrastructure  ",
-        href: "/products/endpoint-security",
-        description: "Device-level protection",
-      },
-    ],
-  },
-  {
-    label: "Solutions",
-    dropdown: [
-      {
-        label: "Streamline IT Support",
-        href: "/solutions/enterprise",
-        description: "For large organizations",
-      },
-      {
-        label: "Stop Cyber Threats",
-        href: "/solutions/ai-security",
-        description: "Protect AI workflows",
-      },
-      {
-        label: "Prevent Data Loss",
-        href: "/solutions/compliance",
-        description: "Meet regulatory requirements",
-      },
-      {
-        label: "Optimize Cloud Operations",
-        href: "/solutions/zero-trust",
-        description: "Modern security framework",
-      },
-      {
-        label: "Manage Microsoft 365",
-        href: "/solutions/enterprise",
-        description: "For large organizations",
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    dropdown: [
-      {
-        label: "Blog",
-        href: "/resources/blog",
-        description: "Latest insights",
-      },
-      {
-        label: "Case Studies",
-        href: "/resources/case-studies",
-        description: "Success stories",
-      },
-      {
-        label: "Whitepapers",
-        href: "/resources/whitepapers",
-        description: "In-depth research",
-      },
-      {
-        label: "Webinars",
-        href: "/resources/webinars",
-        description: "Expert sessions",
-      },
-    ],
-  },
-  {
-    label: "Partners",
-    dropdown: [
-      {
-        label: "Partner Program",
-        href: "/partners/program",
-        description: "Join our ecosystem",
-      },
-      {
-        label: "Find a Partner",
-        href: "/partners/find",
-        description: "Local expertise",
-      },
-      {
-        label: "Technology Partners",
-        href: "/partners/technology",
-        description: "Integration partners",
-      },
-    ],
-  },
-  {
-    label: "Company",
-    dropdown: [
-      {
-        label: "About Us",
-        href: "/company/about",
-        description: "Our mission & values",
-      },
-      {
-        label: "Careers",
-        href: "/company/careers",
-        description: "Join our team",
-      },
-      {
-        label: "Contact",
-        href: "/company/contact",
-        description: "Get in touch",
-      },
-      {
-        label: "News",
-        href: "/company/news",
-        description: "Latest announcements",
-      },
-    ],
-  },
-];
+const languages = [{
+  code: "EN",
+  i18nCode: "en",
+  label: "English"
+}, {
+  code: "ES",
+  i18nCode: "es",
+  label: "Español"
+}, {
+  code: "FR",
+  i18nCode: "fr",
+  label: "Français"
+}, {
+  code: "DE",
+  i18nCode: "de",
+  label: "Deutsch"
+}, {
+  code: "IT",
+  i18nCode: "it",
+  label: "Italiano"
+}, {
+  code: "AR",
+  i18nCode: "ar",
+  label: "العربية"
+}];
+const navItems: NavItem[] = [{
+  label: "Products",
+  dropdown: [{
+    label: "Cloud Services",
+    href: "/products/data-security",
+    description: "Comprehensive data protection"
+  }, {
+    label: "Compute and Storage",
+    href: "/products/cloud-security",
+    description: "Secure cloud environments"
+  }, {
+    label: "Firewall & Network Security",
+    href: "/products/network-security",
+    description: "Advanced network protection"
+  }, {
+    label: "Cybersecurity Solutions",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "Backup & Disaster Recovery",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "IT Service Management (ITSM) ",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "Microsoft 365 Governance & Management ",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "Physical Security ",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "Meeting Room  ",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }, {
+    label: "Network & Infrastructure  ",
+    href: "/products/endpoint-security",
+    description: "Device-level protection"
+  }]
+}, {
+  label: "Solutions",
+  dropdown: [{
+    label: "Streamline IT Support",
+    href: "/solutions/enterprise",
+    description: "For large organizations"
+  }, {
+    label: "Stop Cyber Threats",
+    href: "/solutions/ai-security",
+    description: "Protect AI workflows"
+  }, {
+    label: "Prevent Data Loss",
+    href: "/solutions/compliance",
+    description: "Meet regulatory requirements"
+  }, {
+    label: "Optimize Cloud Operations",
+    href: "/solutions/zero-trust",
+    description: "Modern security framework"
+  }, {
+    label: "Manage Microsoft 365",
+    href: "/solutions/enterprise",
+    description: "For large organizations"
+  }]
+}, {
+  label: "Resources",
+  dropdown: [{
+    label: "Blog",
+    href: "/resources/blog",
+    description: "Latest insights"
+  }, {
+    label: "Case Studies",
+    href: "/resources/case-studies",
+    description: "Success stories"
+  }, {
+    label: "Whitepapers",
+    href: "/resources/whitepapers",
+    description: "In-depth research"
+  }, {
+    label: "Webinars",
+    href: "/resources/webinars",
+    description: "Expert sessions"
+  }]
+}, {
+  label: "Partners",
+  dropdown: [{
+    label: "Partner Program",
+    href: "/partners/program",
+    description: "Join our ecosystem"
+  }, {
+    label: "Find a Partner",
+    href: "/partners/find",
+    description: "Local expertise"
+  }, {
+    label: "Technology Partners",
+    href: "/partners/technology",
+    description: "Integration partners"
+  }]
+}, {
+  label: "Company",
+  dropdown: [{
+    label: "About Us",
+    href: "/company/about",
+    description: "Our mission & values"
+  }, {
+    label: "Careers",
+    href: "/company/careers",
+    description: "Join our team"
+  }, {
+    label: "Contact",
+    href: "/company/contact",
+    description: "Get in touch"
+  }, {
+    label: "News",
+    href: "/company/news",
+    description: "Latest announcements"
+  }]
+}];
 export default function Navbar() {
-  const { t, i18n } = useTranslation();
+  const {
+    t,
+    i18n
+  } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
@@ -251,34 +198,24 @@ export default function Navbar() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
   const searchItems = getAllSearchItems();
-  const filteredResults = searchQuery.trim()
-    ? searchItems.filter(
-        (item) =>
-          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.category.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    : [];
+  const filteredResults = searchQuery.trim() ? searchItems.filter(item => item.label.toLowerCase().includes(searchQuery.toLowerCase()) || item.description?.toLowerCase().includes(searchQuery.toLowerCase()) || item.category.toLowerCase().includes(searchQuery.toLowerCase())) : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
-
   const handleLanguageChange = (lang: typeof languages[0]) => {
     setSelectedLanguage(lang.code);
     i18n.changeLanguage(lang.i18nCode);
     // Set document direction for RTL languages
     document.documentElement.dir = lang.i18nCode === 'ar' ? 'rtl' : 'ltr';
   };
-
   const handleSearchItemClick = (href: string) => {
     setSearchOpen(false);
     setSearchQuery("");
     window.location.href = href;
   };
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
+  return <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           {/* Logo */}
@@ -294,40 +231,21 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center ml-8">
             <div className="flex items-center border border-border/40 rounded-full px-2 py-1.5 bg-transparent">
-              {navItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="relative group"
-                  onMouseEnter={() => setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <span className="flex items-center px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/40 rounded-full transition-all duration-200 cursor-pointer">
+              {navItems.map(item => <div key={item.label} className="relative group" onMouseEnter={() => setActiveDropdown(item.label)} onMouseLeave={() => setActiveDropdown(null)}>
+                  <span className="flex items-center px-4 py-1.5 text-sm hover:bg-secondary/40 rounded-full transition-all duration-200 cursor-pointer text-white">
                     {item.label}
                   </span>
 
                   {/* Dropdown */}
-                  {item.dropdown && (
-                    <div
-                      className={`absolute top-full ${item.label === "Products" ? "left-1/2 -translate-x-1/2 w-[700px]" : "left-0 min-w-[240px]"} mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
-                    >
+                  {item.dropdown && <div className={`absolute top-full ${item.label === "Products" ? "left-1/2 -translate-x-1/2 w-[700px]" : "left-0 min-w-[240px]"} mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
                       <div className={`p-4 ${item.label === "Products" ? "grid grid-cols-2 gap-2" : ""}`}>
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            to={subItem.href}
-                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
-                          >
+                        {item.dropdown.map(subItem => <Link key={subItem.label} to={subItem.href} className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group">
                             <span className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.label}</span>
-                            {subItem.description && (
-                              <span className="text-xs text-muted-foreground mt-0.5">{subItem.description}</span>
-                            )}
-                          </Link>
-                        ))}
+                            {subItem.description && <span className="text-xs text-muted-foreground mt-0.5">{subItem.description}</span>}
+                          </Link>)}
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    </div>}
+                </div>)}
             </div>
           </div>
 
@@ -341,16 +259,10 @@ export default function Navbar() {
                 <ChevronDown className="w-3 h-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-popover border border-border min-w-[140px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang)}
-                    className={`cursor-pointer ${selectedLanguage === lang.code ? "bg-secondary/50" : ""}`}
-                  >
+                {languages.map(lang => <DropdownMenuItem key={lang.code} onClick={() => handleLanguageChange(lang)} className={`cursor-pointer ${selectedLanguage === lang.code ? "bg-secondary/50" : ""}`}>
                     <span className="font-medium">{lang.code}</span>
                     <span className="ml-2 text-muted-foreground">{lang.label}</span>
-                  </DropdownMenuItem>
-                ))}
+                  </DropdownMenuItem>)}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -369,44 +281,23 @@ export default function Navbar() {
                 <div className="mt-4">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input
-                      ref={searchInputRef}
-                      type="text"
-                      placeholder="Type to search..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10"
-                    />
+                    <Input ref={searchInputRef} type="text" placeholder="Type to search..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10" />
                   </div>
 
                   {/* Search Results */}
-                  {searchQuery.trim() && (
-                    <div className="mt-4 max-h-[300px] overflow-y-auto">
-                      {filteredResults.length > 0 ? (
-                        <div className="space-y-1">
-                          {filteredResults.map((item) => (
-                            <button
-                              key={item.href}
-                              onClick={() => handleSearchItemClick(item.href)}
-                              className="w-full text-left px-3 py-2 rounded-md hover:bg-secondary/50 transition-colors"
-                            >
+                  {searchQuery.trim() && <div className="mt-4 max-h-[300px] overflow-y-auto">
+                      {filteredResults.length > 0 ? <div className="space-y-1">
+                          {filteredResults.map(item => <button key={item.href} onClick={() => handleSearchItemClick(item.href)} className="w-full text-left px-3 py-2 rounded-md hover:bg-secondary/50 transition-colors">
                               <div className="flex items-center justify-between">
                                 <span className="font-medium text-foreground">{item.label}</span>
                                 <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                                   {item.category}
                                 </span>
                               </div>
-                              {item.description && (
-                                <p className="text-sm text-muted-foreground mt-0.5">{item.description}</p>
-                              )}
-                            </button>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-center text-muted-foreground py-4">No results found for "{searchQuery}"</p>
-                      )}
-                    </div>
-                  )}
+                              {item.description && <p className="text-sm text-muted-foreground mt-0.5">{item.description}</p>}
+                            </button>)}
+                        </div> : <p className="text-center text-muted-foreground py-4">No results found for "{searchQuery}"</p>}
+                    </div>}
                 </div>
               </DialogContent>
             </Dialog>
@@ -425,71 +316,36 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-popover border-t border-border animate-fade-in">
+      {mobileMenuOpen && <div className="lg:hidden bg-popover border-t border-border animate-fade-in">
           <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
-              <div key={item.label}>
-                <button
-                  className="flex items-center justify-between w-full py-2 text-foreground font-medium"
-                  onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
-                >
+            {navItems.map(item => <div key={item.label}>
+                <button className="flex items-center justify-between w-full py-2 text-foreground font-medium" onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}>
                   {item.label}
-                  {item.dropdown && (
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? "rotate-180" : ""}`}
-                    />
-                  )}
+                  {item.dropdown && <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? "rotate-180" : ""}`} />}
                 </button>
-                {item.dropdown && activeDropdown === item.label && (
-                  <div className="pl-4 mt-2 space-y-2 animate-slide-in">
-                    {item.dropdown.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        to={subItem.href}
-                        className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
+                {item.dropdown && activeDropdown === item.label && <div className="pl-4 mt-2 space-y-2 animate-slide-in">
+                    {item.dropdown.map(subItem => <Link key={subItem.label} to={subItem.href} className="block py-2 text-muted-foreground hover:text-foreground transition-colors" onClick={() => setMobileMenuOpen(false)}>
                         {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                      </Link>)}
+                  </div>}
+              </div>)}
             {/* Mobile Language Selector */}
             <div className="border-t border-border pt-4 mt-2">
               <p className="text-sm text-muted-foreground mb-2">{t('nav.language')}</p>
               <div className="flex flex-wrap gap-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      handleLanguageChange(lang);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-1.5 rounded-full text-sm transition-colors ${
-                      selectedLanguage === lang.code
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
+                {languages.map(lang => <button key={lang.code} onClick={() => {
+              handleLanguageChange(lang);
+              setMobileMenuOpen(false);
+            }} className={`px-3 py-1.5 rounded-full text-sm transition-colors ${selectedLanguage === lang.code ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"}`}>
                     {lang.code}
-                  </button>
-                ))}
+                  </button>)}
               </div>
             </div>
-            <Link
-              to="/demo"
-              className="btn-primary w-full justify-center mt-4"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <Link to="/demo" className="btn-primary w-full justify-center mt-4" onClick={() => setMobileMenuOpen(false)}>
               {t('nav.bookMeeting')}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </div>
-      )}
-    </nav>
-  );
+        </div>}
+    </nav>;
 }
