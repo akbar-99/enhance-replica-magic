@@ -122,7 +122,7 @@ export default function TrustedBy() {
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
-  return <section className="bg-white py-0">
+  return <section className="bg-white py-[3px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold py-[16px] lg:text-4xl my-0">
           <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
