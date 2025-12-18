@@ -24,79 +24,104 @@ import vircomLogo from "@/assets/partners/vircom-logo.png";
 import dropsuiteLogo from "@/assets/partners/dropsuite-logo.png";
 import veriatoLogo from "@/assets/partners/veriato-logo.png";
 import sorbsecurityLogo from "@/assets/partners/sorbsecurity-logo.png";
-const partners = [{
-  name: "Microsoft",
-  logo: microsoftLogo
-}, {
-  name: "Dell",
-  logo: dellLogo
-}, {
-  name: "Fortinet",
-  logo: fortinetLogo
-}, {
-  name: "SonicWall",
-  logo: sonicwallLogo
-}, {
-  name: "Sangfor",
-  logo: sangforLogo
-}, {
-  name: "Bitdefender",
-  logo: bitdefenderLogo
-}, {
-  name: "Acronis",
-  logo: acronisLogo
-}, {
-  name: "CoreView",
-  logo: coreviewLogo
-}, {
-  name: "AvePoint",
-  logo: avepointLogo
-}, {
-  name: "HaloITSM",
-  logo: haloitsmLogo
-}, {
-  name: "Hikvision",
-  logo: hikvisionLogo
-}, {
-  name: "Dahua",
-  logo: dahuaLogo
-}, {
-  name: "ZKTeco",
-  logo: zktecoLogo
-}, {
-  name: "Lenovo",
-  logo: lenovoLogo
-}, {
-  name: "HP",
-  logo: hpLogo
-}, {
-  name: "HPE",
-  logo: hpeLogo
-}, {
-  name: "QNAP",
-  logo: qnapLogo
-}, {
-  name: "Vertiv",
-  logo: vertivLogo
-}, {
-  name: "Logitech",
-  logo: logitechLogo
-}, {
-  name: "Yealink",
-  logo: yealinkLogo
-}, {
-  name: "Vircom",
-  logo: vircomLogo
-}, {
-  name: "Dropsuite",
-  logo: dropsuiteLogo
-}, {
-  name: "Veriato",
-  logo: veriatoLogo
-}, {
-  name: "SorbSecurity",
-  logo: sorbsecurityLogo
-}];
+const partners = [
+  {
+    name: "Microsoft",
+    logo: microsoftLogo,
+  },
+  {
+    name: "Dell",
+    logo: dellLogo,
+  },
+  {
+    name: "Fortinet",
+    logo: fortinetLogo,
+  },
+  {
+    name: "SonicWall",
+    logo: sonicwallLogo,
+  },
+  {
+    name: "Sangfor",
+    logo: sangforLogo,
+  },
+  {
+    name: "Bitdefender",
+    logo: bitdefenderLogo,
+  },
+  {
+    name: "Acronis",
+    logo: acronisLogo,
+  },
+  {
+    name: "CoreView",
+    logo: coreviewLogo,
+  },
+  {
+    name: "AvePoint",
+    logo: avepointLogo,
+  },
+  {
+    name: "HaloITSM",
+    logo: haloitsmLogo,
+  },
+  {
+    name: "Hikvision",
+    logo: hikvisionLogo,
+  },
+  {
+    name: "Dahua",
+    logo: dahuaLogo,
+  },
+  {
+    name: "ZKTeco",
+    logo: zktecoLogo,
+  },
+  {
+    name: "Lenovo",
+    logo: lenovoLogo,
+  },
+  {
+    name: "HP",
+    logo: hpLogo,
+  },
+  {
+    name: "HPE",
+    logo: hpeLogo,
+  },
+  {
+    name: "QNAP",
+    logo: qnapLogo,
+  },
+  {
+    name: "Vertiv",
+    logo: vertivLogo,
+  },
+  {
+    name: "Logitech",
+    logo: logitechLogo,
+  },
+  {
+    name: "Yealink",
+    logo: yealinkLogo,
+  },
+  {
+    name: "Vircom",
+    logo: vircomLogo,
+  },
+  {
+    name: "Dropsuite",
+    logo: dropsuiteLogo,
+  },
+  {
+    name: "Veriato",
+    logo: veriatoLogo,
+  },
+  {
+    name: "SorbSecurity",
+    logo: sorbsecurityLogo,
+  },
+];
 export default function TrustedBy() {
   const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -120,25 +145,44 @@ export default function TrustedBy() {
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
-  return <section className="bg-white py-0">
+  return (
+    <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold my-[33px] py-[16px] lg:text-4xl">
-          <span className="text-slate-900 text-5xl">{t('trusted.title')} </span>
-          <span className="text-primary text-5xl">{t('trusted.titleHighlight')}</span>
+          <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
+          <span className="text-primary text-5xl">{t("trusted.titleHighlight")}</span>
         </h2>
-        <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
+        <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto">
           ​We maintain strategic alliances and hold certifications from premier industry organizations.
         </p>
       </div>
       <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
-        <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
-        scrollBehavior: "auto"
-      }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]">
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          style={{
+            scrollBehavior: "auto",
+          }}
+          className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]"
+        >
           {/* Duplicate partners for seamless infinite scroll */}
-          {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer">
-              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-contain" />
-            </div>)}
+          {[...partners, ...partners].map((partner, index) => (
+            <div
+              key={`${partner.name}-${index}`}
+              className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer"
+            >
+              <img
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                loading="lazy"
+                decoding="async"
+                className="h-32 md:h-36 lg:h-40 w-auto object-contain"
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
