@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "products": "Produkte",
+    "solutions": "Lösungen",
+    "resources": "Ressourcen",
+    "partners": "Partner",
+    "company": "Unternehmen",
+    "talkToExpert": "Mit Experten Sprechen",
+    "bookMeeting": "Meeting Buchen",
+    "search": "Suchen",
+    "searchPlaceholder": "Produkte, Lösungen suchen..."
+  },
+  "hero": {
+    "title": "IT-Lösungen die Ihr",
+    "titleHighlight": "Unternehmen Stärken",
+    "description": "Transformieren Sie Ihr Unternehmen mit modernsten Technologielösungen. Von Managed IT Services bis Cybersicherheit bieten wir Enterprise-Lösungen, die Wachstum und Effizienz fördern.",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr Erfahren",
+    "watchDemo": "Demo Ansehen"
+  },
+  "features": {
+    "title": "Skalierbare Lösungen für",
+    "titleHighlight": "Moderne Unternehmen",
+    "description": "Umfassende IT-Services zur Transformation Ihrer Geschäftsabläufe und digitalen Erfolg.",
+    "managedIT": "Managed IT Services",
+    "managedITDesc": "Proaktives IT-Management und Support für 24/7 Geschäftsbetrieb.",
+    "security": "Sicherheitslösungen",
+    "securityDesc": "Umfassende Cybersicherheitslösungen zum Schutz Ihrer Daten und Infrastruktur.",
+    "server": "Server- und Speicherlösungen",
+    "serverDesc": "Enterprise-Server- und Speicherinfrastruktur für optimale Leistung.",
+    "network": "Netzwerklösungen",
+    "networkDesc": "Robustes Netzwerkdesign, Implementierung und Management.",
+    "software": "Softwarelösungen",
+    "softwareDesc": "Kundenspezifische Softwareentwicklung und Integration.",
+    "cloud": "AWS Cloud Services",
+    "cloudDesc": "Cloud-Migration, Management und Optimierung auf AWS.",
+    "communications": "Unified Communications",
+    "communicationsDesc": "Moderne Kollaborations- und Kommunikationslösungen.",
+    "procurement": "Beschaffungsdienste",
+    "procurementDesc": "Strategische IT-Beschaffung und Lieferantenmanagement."
+  },
+  "trusted": {
+    "title": "Partner der Besten",
+    "titleHighlight": "um das Beste zu liefern."
+  },
+  "stats": {
+    "clients": "Zufriedene Kunden",
+    "projects": "Abgeschlossene Projekte",
+    "support": "Support Verfügbar",
+    "experience": "Jahre Erfahrung"
+  },
+  "solutions": {
+    "title": "Umfassende Lösungen für",
+    "titleHighlight": "Jede Herausforderung",
+    "description": "Entdecken Sie, wie unsere maßgeschneiderten IT-Lösungen Ihre spezifischen Anforderungen erfüllen.",
+    "secureNetwork": "Netzwerk Sichern",
+    "preventDataLoss": "Datenverlust Verhindern",
+    "modernizeMeetings": "Meetingräume Modernisieren",
+    "physicalSecurity": "Physische Sicherheit Verbessern",
+    "cloudOperations": "Cloud-Operationen Optimieren",
+    "cyberThreats": "Cyberbedrohungen Stoppen",
+    "enterpriseHardware": "Enterprise-Hardware Upgraden",
+    "itSupport": "IT-Support Optimieren",
+    "infrastructure": "Infrastruktur Stärken",
+    "microsoft365": "Microsoft 365 Verwalten"
+  },
+  "cta": {
+    "title": "Bereit Ihre IT-",
+    "titleHighlight": "Infrastruktur zu Transformieren?",
+    "description": "Starten Sie mit einer kostenlosen Beratung und erfahren Sie, wie wir Ihrem Unternehmen helfen können.",
+    "getStarted": "Heute Starten",
+    "contactUs": "Kontaktieren Sie Uns"
+  },
+  "faq": {
+    "title": "Häufig Gestellte",
+    "titleHighlight": "Fragen"
+  },
+  "blog": {
+    "title": "Neueste Nachrichten und",
+    "titleHighlight": "Strategien für Ihr Unternehmen",
+    "description": "Technologie entwickelt sich schnell—wir helfen Ihnen Schritt zu halten. Entdecken Sie einfache Erklärungen und intelligente Strategien.",
+    "readMore": "Mehr Lesen"
+  },
+  "footer": {
+    "description": "Schutz von Unternehmensdaten mit KI-nativen Sicherheitslösungen.",
+    "products": "Produkte",
+    "solutions": "Lösungen",
+    "resources": "Ressourcen",
+    "company": "Unternehmen",
+    "quickLinks": "Schnelllinks",
+    "copyright": "© 2024 EnhanceTech. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie Uns",
+    "description": "Fragen? Wir freuen uns von Ihnen zu hören.",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht Senden"
+  },
+  "common": {
+    "learnMore": "Mehr Erfahren",
+    "getStarted": "Loslegen",
+    "contactUs": "Kontaktieren Sie Uns",
+    "readMore": "Mehr Lesen",
+    "viewAll": "Alle Anzeigen"
+  }
+}

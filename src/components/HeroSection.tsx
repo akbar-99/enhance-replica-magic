@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, lazy, Suspense, memo } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import heroBackground from "@/assets/hero-background.jpg";
 
 // Lazy load Spline embed
@@ -70,6 +71,7 @@ const heroTabs: HeroTab[] = [
 const AUTO_PLAY_INTERVAL = 3000;
 
 function HeroSection() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isPaused, setIsPaused] = useState(false);
   const [showSpline, setShowSpline] = useState(false);
@@ -172,11 +174,11 @@ function HeroSection() {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-lg">{currentTab.description}</p>
             <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Link to="/demo" className="btn-primary text-sm sm:text-base">
-                Get Started
+                {t('hero.getStarted')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/learn-more" className="btn-secondary text-sm sm:text-base">
-                Learn More
+                {t('hero.learnMore')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

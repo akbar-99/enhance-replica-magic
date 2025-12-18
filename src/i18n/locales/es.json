@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "products": "Productos",
+    "solutions": "Soluciones",
+    "resources": "Recursos",
+    "partners": "Socios",
+    "company": "Empresa",
+    "talkToExpert": "Hablar con un Experto",
+    "bookMeeting": "Reservar Reunión",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar productos, soluciones..."
+  },
+  "hero": {
+    "title": "Soluciones TI que",
+    "titleHighlight": "Impulsan tu Negocio",
+    "description": "Transforma tu negocio con soluciones tecnológicas de vanguardia. Desde servicios TI gestionados hasta ciberseguridad, ofrecemos soluciones empresariales que impulsan el crecimiento y la eficiencia.",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más",
+    "watchDemo": "Ver Demo"
+  },
+  "features": {
+    "title": "Soluciones Escalables para",
+    "titleHighlight": "Empresas Modernas",
+    "description": "Servicios TI completos diseñados para transformar las operaciones de tu negocio e impulsar el éxito digital.",
+    "managedIT": "Servicios TI Gestionados",
+    "managedITDesc": "Gestión y soporte TI proactivo para mantener tu negocio funcionando 24/7.",
+    "security": "Soluciones de Seguridad",
+    "securityDesc": "Soluciones integrales de ciberseguridad para proteger tus datos e infraestructura.",
+    "server": "Soluciones de Servidor y Almacenamiento",
+    "serverDesc": "Infraestructura empresarial de servidores y almacenamiento para un rendimiento óptimo.",
+    "network": "Soluciones de Red",
+    "networkDesc": "Diseño, implementación y gestión de redes robustas.",
+    "software": "Soluciones de Software",
+    "softwareDesc": "Desarrollo e integración de software personalizado.",
+    "cloud": "Servicios Cloud AWS",
+    "cloudDesc": "Migración, gestión y optimización en la nube AWS.",
+    "communications": "Comunicaciones Unificadas",
+    "communicationsDesc": "Soluciones modernas de colaboración y comunicación.",
+    "procurement": "Servicios de Adquisición",
+    "procurementDesc": "Adquisición estratégica de TI y gestión de proveedores."
+  },
+  "trusted": {
+    "title": "Asociados con los mejores",
+    "titleHighlight": "para ofrecer lo mejor."
+  },
+  "stats": {
+    "clients": "Clientes Satisfechos",
+    "projects": "Proyectos Completados",
+    "support": "Soporte Disponible",
+    "experience": "Años de Experiencia"
+  },
+  "solutions": {
+    "title": "Soluciones Integrales para",
+    "titleHighlight": "Cada Desafío",
+    "description": "Descubre cómo nuestras soluciones TI personalizadas pueden abordar tus necesidades específicas.",
+    "secureNetwork": "Asegura tu Red",
+    "preventDataLoss": "Previene Pérdida de Datos",
+    "modernizeMeetings": "Moderniza Espacios de Reunión",
+    "physicalSecurity": "Mejora la Seguridad Física",
+    "cloudOperations": "Optimiza Operaciones Cloud",
+    "cyberThreats": "Detén Amenazas Cibernéticas",
+    "enterpriseHardware": "Actualiza Hardware Empresarial",
+    "itSupport": "Optimiza Soporte TI",
+    "infrastructure": "Fortalece la Infraestructura",
+    "microsoft365": "Gestiona Microsoft 365"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu",
+    "titleHighlight": "Infraestructura TI?",
+    "description": "Comienza con una consulta gratuita y descubre cómo podemos ayudar a tu negocio a prosperar.",
+    "getStarted": "Comienza Hoy",
+    "contactUs": "Contáctanos"
+  },
+  "faq": {
+    "title": "Preguntas",
+    "titleHighlight": "Frecuentes"
+  },
+  "blog": {
+    "title": "Últimas noticias, actualizaciones y",
+    "titleHighlight": "estrategias para tu negocio",
+    "description": "La tecnología avanza rápido—te ayudamos a mantenerte al día. Explora nuestros artículos para encontrar explicaciones simples de tecnología compleja y estrategias inteligentes.",
+    "readMore": "Leer Más"
+  },
+  "footer": {
+    "description": "Protegiendo datos empresariales con soluciones de seguridad nativas de IA.",
+    "products": "Productos",
+    "solutions": "Soluciones",
+    "resources": "Recursos",
+    "company": "Empresa",
+    "quickLinks": "Enlaces Rápidos",
+    "copyright": "© 2024 EnhanceTech. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "description": "¿Tienes preguntas? Nos encantaría escucharte.",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todo"
+  }
+}

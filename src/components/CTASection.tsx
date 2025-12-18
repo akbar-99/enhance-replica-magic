@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import ctaBackground from "@/assets/cta-background.jpg";
 // Floating particle component
 const FloatingParticle = ({
@@ -32,6 +33,7 @@ const FloatingParticle = ({
   ease: "easeInOut"
 }} />;
 export default function CTASection() {
+  const { t } = useTranslation();
   const particles = [{
     delay: 0,
     duration: 4,
@@ -226,18 +228,17 @@ export default function CTASection() {
             duration: 0.5,
             delay: 0.2
           }} className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 relative">
-              <span className="text-white">Ready to Transform Your </span>
+              <span className="text-white">{t('cta.title')} </span>
               <motion.span className="text-glow-cyan relative inline-block" whileHover={{
               scale: 1.05
             }} transition={{
               type: "spring",
               stiffness: 300
             }}>
-                IT Infrastructure
+                {t('cta.titleHighlight')}
                 {/* Glow effect under text */}
                 <span className="absolute inset-0 blur-lg bg-glow-cyan/30 -z-10" />
               </motion.span>
-              <span className="text-white"></span>
             </motion.h2>
 
             <motion.p initial={{
@@ -252,8 +253,7 @@ export default function CTASection() {
             duration: 0.5,
             delay: 0.3
           }} className="text-lg text-gray-300/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Book a free consultation with our experts and discover how we can help your business grow with
-              cutting-edge technology solutions.
+              {t('cta.description')}
             </motion.p>
 
             <motion.div initial={{
@@ -291,7 +291,7 @@ export default function CTASection() {
                 {/* Border */}
                 <span className="absolute inset-0 rounded-full border border-white/30 group-hover/btn:border-white/50 transition-colors duration-300 bg-primary" />
 
-                <span className="relative z-10 font-semibold">Book Now</span>
+                <span className="relative z-10 font-semibold">{t('cta.getStarted')}</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
               </Link>
             </motion.div>
