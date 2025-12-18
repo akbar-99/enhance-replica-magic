@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import microsoftLogo from "@/assets/partners/microsoft-logo.png";
 import dellLogo from "@/assets/partners/dell-logo.png";
 import fortinetLogo from "@/assets/partners/fortinet-logo.png";
@@ -97,6 +98,7 @@ const partners = [{
   logo: sorbsecurityLogo
 }];
 export default function TrustedBy() {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   useEffect(() => {
@@ -121,8 +123,8 @@ export default function TrustedBy() {
   return <section className="bg-white py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold my-[33px] py-[16px] lg:text-4xl">
-          <span className="text-slate-900 text-5xl">Partnered with the best</span>{" "}
-          <span className="text-primary text-5xl">to deliver the best.</span>
+          <span className="text-slate-900 text-5xl">{t('trusted.title')} </span>
+          <span className="text-primary text-5xl">{t('trusted.titleHighlight')}</span>
         </h2>
         <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
           ​We maintain strategic alliances and hold certifications from premier industry organizations.
