@@ -48,7 +48,7 @@ export default function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-slate-900">​What     </span>{" "}
-            <span className="text-primary">Modern Enterprise</span>
+            <span className="text-primary"> We Do </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-1xl mx-auto leading-relaxed">
             Protect your organization with our comprehensive suite of security solutions designed for the modern
