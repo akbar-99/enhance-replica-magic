@@ -128,7 +128,7 @@ export default function TrustedBy() {
           <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
           <span className="text-primary text-5xl">{t("trusted.titleHighlight")}</span>
         </h2>
-        <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-0">
+        <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-px">
           ​We maintain strategic alliances and hold certifications from premier industry organizations.
         </p>
       </div>
