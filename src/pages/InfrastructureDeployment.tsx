@@ -115,27 +115,27 @@ export default function InfrastructureDeployment() {
                                     We design intelligent network architectures that eliminate dead zones and ensure seamless roaming. Whether you are a small office or a large campus, we deploy high-performance switching and Wi-Fi solutions.
                                 </p>
 
-                                <Accordion type="single" collapsible className="w-full">
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger>Enterprise Wi-Fi Deployment</AccordionTrigger>
+                                <Accordion type="single" collapsible className="w-full space-y-4">
+                                    <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-green-600 hover:no-underline font-semibold text-left">Enterprise Wi-Fi Deployment</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Indoor and outdoor wireless access points (Wi-Fi 6/7) using leaders like Aruba and Ruijie.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-2">
-                                        <AccordionTrigger>Switching & Routing</AccordionTrigger>
+                                    <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-green-600 hover:no-underline font-semibold text-left">Switching & Routing</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Managed switches and core routers to optimize traffic flow and reduce latency.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-3">
-                                        <AccordionTrigger>SD-WAN & Edge Networking</AccordionTrigger>
+                                    <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-green-600 hover:no-underline font-semibold text-left">SD-WAN & Edge Networking</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Modernizing your wide-area network for better cloud application performance.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-4">
-                                        <AccordionTrigger>Network Security Hardware</AccordionTrigger>
+                                    <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-green-600 hover:no-underline font-semibold text-left">Network Security Hardware</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Installation of next-gen firewalls (Fortinet/SonicWall) at the gateway level.
                                         </AccordionContent>

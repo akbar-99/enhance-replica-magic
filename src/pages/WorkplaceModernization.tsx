@@ -116,27 +116,27 @@ export default function WorkplaceModernization() {
                                     Move your critical business data out of the server room and into the secure cloud. We handle complex migrations with zero data loss, ensuring your files and emails are accessible 24/7.
                                 </p>
 
-                                <Accordion type="single" collapsible className="w-full">
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger>Microsoft 365 Migration</AccordionTrigger>
+                                <Accordion type="single" collapsible className="w-full space-y-4">
+                                    <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-purple-600 hover:no-underline font-semibold text-left">Microsoft 365 Migration</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Expert migration of email, files, and apps to the Microsoft 365 ecosystem using AvePoint.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-2">
-                                        <AccordionTrigger>Zoho Workplace Setup</AccordionTrigger>
+                                    <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-purple-600 hover:no-underline font-semibold text-left">Zoho Workplace Setup</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Implementation of Zoho’s suite for mail, CRM, and projects.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-3">
-                                        <AccordionTrigger>M365 Governance</AccordionTrigger>
+                                    <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-purple-600 hover:no-underline font-semibold text-left">M365 Governance</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Advanced management with CoreView to manage licenses and secure your tenant.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-4">
-                                        <AccordionTrigger>Cloud Backup</AccordionTrigger>
+                                    <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-purple-600 hover:no-underline font-semibold text-left">Cloud Backup</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Ensuring data is backed up independently using Dropsuite or Acronis.
                                         </AccordionContent>

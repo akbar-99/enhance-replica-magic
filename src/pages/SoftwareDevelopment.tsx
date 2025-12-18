@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2, Code2, Smartphone, Database, Layout, Layers, Terminal, Rocket, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { motion } from 'framer-motion';
 
 // Reusing assets
 import webDevImg from '@/assets/features/web-development.png';
@@ -115,27 +116,27 @@ export default function SoftwareDevelopment() {
                                     Your website is your 24/7 digital storefront. We build high-performance websites that look great on every device and convert visitors into customers.
                                 </p>
 
-                                <Accordion type="single" collapsible className="w-full">
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger>Corporate Websites</AccordionTrigger>
+                                <Accordion type="single" collapsible className="w-full space-y-4">
+                                    <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-indigo-600 hover:no-underline font-semibold text-left">Corporate Websites</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Professional, brand-aligned websites that establish authority and trust.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-2">
-                                        <AccordionTrigger>Web Portals</AccordionTrigger>
+                                    <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-indigo-600 hover:no-underline font-semibold text-left">Web Portals</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Secure customer log-in areas, intranets, and employee dashboards.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-3">
-                                        <AccordionTrigger>E-Commerce Solutions</AccordionTrigger>
+                                    <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-indigo-600 hover:no-underline font-semibold text-left">E-Commerce Solutions</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Robust online stores with secure payment gateway integration.
                                         </AccordionContent>
                                     </AccordionItem>
-                                    <AccordionItem value="item-4">
-                                        <AccordionTrigger>Content Management Systems</AccordionTrigger>
+                                    <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                                        <AccordionTrigger className="text-slate-900 hover:text-indigo-600 hover:no-underline font-semibold text-left">Content Management Systems</AccordionTrigger>
                                         <AccordionContent className="text-slate-600">
                                             Easy-to-use platforms (like WordPress) for non-technical updates.
                                         </AccordionContent>
@@ -264,7 +265,14 @@ export default function SoftwareDevelopment() {
                     </div>
 
                     <div className="flex flex-col md:flex-row justify-between items-center relative gap-8">
-                        <div className="hidden md:block absolute top-[2.5rem] left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-pink-500 to-indigo-500 opacity-30 transform -translate-y-1/2" />
+                        {/* Animated Line */}
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "100%" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            className="hidden md:block absolute top-[2.5rem] left-0 h-1 bg-gradient-to-r from-indigo-500 via-pink-500 to-indigo-500 opacity-50 transform -translate-y-1/2"
+                        />
 
                         {[
                             { icon: Layout, title: "Discovery", step: "01" },
@@ -273,13 +281,20 @@ export default function SoftwareDevelopment() {
                             { icon: CheckCircle2, title: "QA", step: "04" },
                             { icon: Rocket, title: "Launch", step: "05" }
                         ].map((item, idx) => (
-                            <div key={idx} className="relative z-10 text-center group w-full md:w-auto">
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: idx * 0.3 }}
+                                className="relative z-10 text-center group w-full md:w-auto"
+                            >
                                 <div className="w-20 h-20 mx-auto bg-slate-800 rounded-2xl border-2 border-slate-700 flex items-center justify-center mb-4 group-hover:border-indigo-500 group-hover:bg-indigo-500/10 transition-all duration-300 shadow-xl">
                                     <item.icon className="w-8 h-8 text-slate-400 group-hover:text-indigo-400 transition-colors" />
                                 </div>
                                 <div className="text-xs font-bold text-indigo-500 mb-1 tracking-widest uppercase">Step {item.step}</div>
                                 <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
 

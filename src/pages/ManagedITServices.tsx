@@ -27,14 +27,14 @@ export default function ManagedITServices() {
         keywords="Managed IT Services Dubai, IT Support UAE, Cybersecurity Services, IT Consultancy, Enhance Tech"
         canonicalUrl="https://itenhance.tech/managed-it-services"
       />
-      
+
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue">
         <div className="absolute inset-0 bg-hero-gradient opacity-90" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
-        
+
         {/* Animated Background Blobs */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[100px] animate-pulse delay-1000" />
@@ -65,9 +65,9 @@ export default function ManagedITServices() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-2xl blur-xl" />
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
-                alt="IT Team Collaboration" 
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
+                alt="IT Team Collaboration"
                 className="relative rounded-2xl shadow-2xl border border-slate-100"
               />
             </div>
@@ -114,7 +114,7 @@ export default function ManagedITServices() {
             </Card>
 
             <Card className="border-primary/20 bg-primary/5 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full -mr-12 -mt-12 blur-xl" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full -mr-12 -mt-12 blur-xl" />
               <CardContent className="p-8 relative z-10">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-6 h-6 text-primary" />
@@ -142,9 +142,9 @@ export default function ManagedITServices() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
-                <img 
-                  src={managedItImg} 
-                  alt="Managed IT Services 3D Illustration" 
+                <img
+                  src={managedItImg}
+                  alt="Managed IT Services 3D Illustration"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
                 />
               </div>
@@ -157,36 +157,36 @@ export default function ManagedITServices() {
                 <p className="text-slate-600 mb-8">
                   We act as an extension of your team, providing enterprise-level IT management. By combining advanced monitoring tools with a 24/7 helpdesk, we ensure your infrastructure runs smoothly.
                 </p>
-                
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>24/7 Helpdesk & Remote Support</AccordionTrigger>
+
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                  <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">24/7 Helpdesk & Remote Support</AccordionTrigger>
                     <AccordionContent className="text-slate-600">
                       Instant access to expert engineers for remote resolution of day-to-day IT issues (desktops, laptops, mobile devices).
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Proactive System Monitoring</AccordionTrigger>
+                  <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Proactive System Monitoring</AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                       We use advanced RMM tools to detect server health, disk space, and performance issues before they cause outages.
+                      We use advanced RMM tools to detect server health, disk space, and performance issues before they cause outages.
                     </AccordionContent>
                   </AccordionItem>
-                   <AccordionItem value="item-3">
-                    <AccordionTrigger>Ticket Management</AccordionTrigger>
+                  <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Ticket Management</AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                       Streamlined issue tracking and resolution using industry-leading platforms like Freshdesk and Halo ITSM.
+                      Streamlined issue tracking and resolution using industry-leading platforms like Freshdesk and Halo ITSM.
                     </AccordionContent>
                   </AccordionItem>
-                   <AccordionItem value="item-4">
-                    <AccordionTrigger>Patch & Update Management</AccordionTrigger>
+                  <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Patch & Update Management</AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                       Automated deployment of critical security updates for Windows, macOS, and third-party applications.
+                      Automated deployment of critical security updates for Windows, macOS, and third-party applications.
                     </AccordionContent>
                   </AccordionItem>
-                   <AccordionItem value="item-5">
-                    <AccordionTrigger>User Management</AccordionTrigger>
+                  <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">User Management</AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                       We handle all new employee on-boarding and off-boarding across Microsoft 365 and Zoho.
+                      We handle all new employee on-boarding and off-boarding across Microsoft 365 and Zoho.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -197,9 +197,9 @@ export default function ManagedITServices() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-purple-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
-                 <img 
-                  src={managedSecurityImg} 
-                  alt="Managed Cyber Security 3D Illustration" 
+                <img
+                  src={managedSecurityImg}
+                  alt="Managed Cyber Security 3D Illustration"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
                 />
               </div>
@@ -234,9 +234,9 @@ export default function ManagedITServices() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-amber-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
-                 <img 
-                  src={consultancyImg} 
-                  alt="IT Consultancy 3D Illustration" 
+                <img
+                  src={consultancyImg}
+                  alt="IT Consultancy 3D Illustration"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
                 />
               </div>
@@ -313,7 +313,7 @@ export default function ManagedITServices() {
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900">Why Choose Enhance Tech?</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -336,7 +336,7 @@ export default function ManagedITServices() {
       <section className="py-24 bg-gradient-to-r from-primary to-blue-600 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-32 -mb-32" />
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Optimize Your IT Operations?</h2>
           <p className="text-lg text-blue-100 mb-10">
