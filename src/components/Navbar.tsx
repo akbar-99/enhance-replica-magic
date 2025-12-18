@@ -116,7 +116,7 @@ const navItems: NavItem[] = [
     label: "Solutions",
     dropdown: [
       {
-        label: "Streamline IT Support",
+        label: "Optimize Cloud Operations",
         href: "/solutions/enterprise",
         description: "For large organizations",
       },
@@ -131,12 +131,12 @@ const navItems: NavItem[] = [
         description: "Meet regulatory requirements",
       },
       {
-        label: "Optimize Cloud Operations",
+        label: "Streamline IT Support",
         href: "/solutions/zero-trust",
         description: "Modern security framework",
       },
       {
-        label: "Manage Microsoft 365",
+        label: "Microsoft 365 Management",
         href: "/solutions/enterprise",
         description: "For large organizations",
       },
