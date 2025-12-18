@@ -3,23 +3,23 @@ import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucid
 const footerLinks = {
   Products: [
     {
-      label: "Cloud Services",
+      label: "Compute and Storage",
       href: "/products/data-security",
     },
     {
-      label: "Compute and Storage",
+      label: "Network Security",
       href: "/products/cloud-security",
     },
     {
-      label: "Firewall & Network Security",
+      label: "Networking & Infrastructure",
       href: "/products/network-security",
     },
     {
-      label: "Cybersecurity Solutions",
+      label: "Physical Security & Surveillance",
       href: "/products/endpoint-security",
     },
     {
-      label: "Backup & Disaster Recovery",
+      label: "Meeting Room ",
       href: "/products/endpoint-security",
     },
     {
@@ -29,7 +29,7 @@ const footerLinks = {
   ],
   Solutions: [
     {
-      label: "Streamline IT Support",
+      label: "Optimize Cloud Operations",
       href: "/solutions/enterprise",
     },
     {
@@ -41,11 +41,11 @@ const footerLinks = {
       href: "/solutions/compliance",
     },
     {
-      label: "Optimize Cloud Operations",
+      label: "Streamline IT Support",
       href: "/solutions/zero-trust",
     },
     {
-      label: "Manage Microsoft 365",
+      label: "Microsoft 365 Management",
       href: "/solutions/zero-trust",
     },
 
@@ -201,7 +201,9 @@ export default function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="flex flex-col">
-              <h4 className={`font-semibold mb-4 text-sm ${category === "Quick Link" ? "text-primary" : "text-foreground"}`}>
+              <h4
+                className={`font-semibold mb-4 text-sm ${category === "Quick Link" ? "text-primary" : "text-foreground"}`}
+              >
                 {category === "Quick Link" ? (
                   <span className="underline decoration-primary underline-offset-4 text-foreground">
                     {category.toUpperCase()}
