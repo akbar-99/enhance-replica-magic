@@ -138,7 +138,7 @@ export default function TrustedBy() {
       }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]">
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer">
-              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-contain" />
+              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-scale-down border-double border border-glow-cyan" />
             </div>)}
         </div>
       </div>
