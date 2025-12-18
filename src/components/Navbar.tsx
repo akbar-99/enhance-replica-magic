@@ -459,7 +459,7 @@ export default function Navbar() {
             ))}
             {/* Mobile Language Selector */}
             <div className="border-t border-border pt-4 mt-2">
-              <p className="text-sm text-muted-foreground mb-2">{t('nav.search')}</p>
+              <p className="text-sm text-muted-foreground mb-2">{t('nav.language')}</p>
               <div className="flex flex-wrap gap-2">
                 {languages.map((lang) => (
                   <button
