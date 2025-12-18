@@ -164,7 +164,7 @@ export default function TrustedBy() {
           style={{
             scrollBehavior: "auto",
           }}
-          className="flex items-center gap-9 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]"
+          className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]"
         >
           {/* Duplicate partners for seamless infinite scroll */}
           {[...partners, ...partners].map((partner, index) => (
