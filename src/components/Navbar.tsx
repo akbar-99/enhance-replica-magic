@@ -228,11 +228,11 @@ export default function Navbar() {
   const searchItems = getAllSearchItems();
   const filteredResults = searchQuery.trim()
     ? searchItems.filter(
-        (item) =>
-          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.category.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
+      (item) =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase()),
+    )
     : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
@@ -281,24 +281,50 @@ export default function Navbar() {
                   {/* Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`absolute top-full ${item.label === "Products" ? "left-1/2 -translate-x-1/2 w-[700px]" : "left-0 min-w-[240px]"} mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
+                      className={`absolute top-full ${item.label === "Products"
+                        ? "left-1/2 -translate-x-1/2 w-[700px]"
+                        : item.label === "Solutions"
+                          ? "left-1/2 -translate-x-1/2 w-[800px]"
+                          : "left-0 min-w-[240px]"
+                        } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
-                      <div className={`p-4 ${item.label === "Products" ? "grid grid-cols-2 gap-2" : ""}`}>
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            to={subItem.href}
-                            className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
-                          >
-                            <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                              {subItem.label}
-                            </span>
-                            {subItem.description && (
-                              <span className="text-xs text-muted-foreground mt-0.5">{subItem.description}</span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
+                      {item.label === "Solutions" ? (
+                        <div className="p-6">
+                          <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.label}
+                                to={subItem.href}
+                                className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
+                              >
+                                <span className="font-medium text-primary group-hover:text-primary/80 transition-colors text-base">
+                                  {subItem.label}
+                                </span>
+                                {subItem.description && (
+                                  <span className="text-xs text-muted-foreground mt-1">{subItem.description}</span>
+                                )}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className={`p-4 ${item.label === "Products" ? "grid grid-cols-2 gap-2" : ""}`}>
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.label}
+                              to={subItem.href}
+                              className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
+                            >
+                              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                                {subItem.label}
+                              </span>
+                              {subItem.description && (
+                                <span className="text-xs text-muted-foreground mt-0.5">{subItem.description}</span>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -387,7 +413,7 @@ export default function Navbar() {
             </Dialog>
 
             <Link to="/demo" className="btn-primary text-sm px-[13px]">
-              ​Talk to an Expert
+              Talk to an Expert
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
