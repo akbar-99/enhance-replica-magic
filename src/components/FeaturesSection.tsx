@@ -68,7 +68,7 @@ export default function FeaturesSection() {
             <span className="text-slate-900">Scalable Solutions for the</span>{" "}
             <span className="text-primary">Modern Enterprise</span>
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-500 max-w-1xl mx-auto leading-relaxed">
             Protect your organization with our comprehensive suite of security solutions designed for the modern
             enterprise.
           </p>
