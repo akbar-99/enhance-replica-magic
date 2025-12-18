@@ -15,6 +15,10 @@ import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import ITAMCQuote from '@/pages/ITAMCQuote';
 import ServiceLocation from '@/pages/ServiceLocation';
+import ManagedITServices from '@/pages/ManagedITServices';
+import InfrastructureDeployment from '@/pages/InfrastructureDeployment';
+import WorkplaceModernization from '@/pages/WorkplaceModernization';
+import SoftwareDevelopment from '@/pages/SoftwareDevelopment';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -41,6 +45,10 @@ const AnimatedRoutes = () => {
         <Route path="/use-cases" element={<PageTransition><Solutions /></PageTransition>} />
         <Route path="/learn-more" element={<PageTransition><Products /></PageTransition>} />
         <Route path="/it-amc-quote" element={<PageTransition><ITAMCQuote /></PageTransition>} />
+        <Route path="/managed-it-services" element={<PageTransition><ManagedITServices /></PageTransition>} />
+        <Route path="/services/infrastructure-deployment" element={<PageTransition><InfrastructureDeployment /></PageTransition>} />
+        <Route path="/services/workplace-modernization" element={<PageTransition><WorkplaceModernization /></PageTransition>} />
+        <Route path="/services/software-web-development" element={<PageTransition><SoftwareDevelopment /></PageTransition>} />
         <Route path="/services/:slug" element={<PageTransition><ServiceLocation /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>

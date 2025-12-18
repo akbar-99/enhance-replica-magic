@@ -10,28 +10,28 @@ const features = [
     title: "Managed Services",
     description:
       "Ensure business continuity with proactive IT support, 24/7 system and threat monitoring, and rapid maintenance for your entire network.",
-    link: "/products/managed-it",
+    link: "/managed-it-services",
   },
   {
     image: infrastructureHardwareImg,
     title: "Infrastructure Deployment",
     description:
       "Design, install, or upgrade your complete physical IT foundation—from robust cabling and networking to enterprise-grade data centers.",
-    link: "/products/security",
+    link: "/services/infrastructure-deployment",
   },
   {
     image: modernWorkplaceImg,
     title: "Workplace Modernization",
     description:
       "Transform your daily operations with secure cloud migration, Microsoft 365 integration, and seamless remote collaboration tools.",
-    link: "/products/server-storage",
+    link: "/services/workplace-modernization",
   },
   {
     image: webDevelopmentImg,
     title: "Software & Web Development",
     description:
       "Build custom websites and high-performance web and mobile applications tailored specifically to your business goals and branding.",
-    link: "/products/network",
+    link: "/services/software-web-development",
   },
 ];
 const cardColors = [
@@ -65,7 +65,7 @@ export default function FeaturesSection() {
             <span className="text-slate-900">​What </span> <span className="text-primary"> We Do </span>
           </h2>
           <p className="text-lg text-slate-500 max-w-1xl mx-auto leading-relaxed">
-            ​Enhance your organization with our comprehensive suite of technology services tailored for both SMEs and
+            Enhance your organization with our comprehensive suite of technology services tailored for both SMEs and
             large enterprises.
           </p>
         </div>
