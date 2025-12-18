@@ -66,6 +66,10 @@ const languages = [
     label: "Deutsch",
   },
   {
+    code: "IT",
+    label: "Italiano",
+  },
+  {
     code: "AR",
     label: "العربية",
   },
