@@ -1,21 +1,21 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import SEO from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle2, Monitor, Shield, Phone, RefreshCcw, Users, BarChart } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2, Monitor, Shield, Phone, RefreshCcw, Users, BarChart } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Images
-import managedItImg from '@/assets/managed-it.png';
-import managedSecurityImg from '@/assets/managed-security.png';
-import consultancyImg from '@/assets/consultancy.png';
+import managedItImg from "@/assets/managed-it.png";
+import managedSecurityImg from "@/assets/managed-security.png";
+import consultancyImg from "@/assets/consultancy.png";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.6 },
 };
 
 export default function ManagedITServices() {
@@ -72,19 +72,26 @@ export default function ManagedITServices() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">About Managed Services</span>
+              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
+                About Managed Services
+              </span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-2 mb-6 text-slate-900">
                 Stop Waiting for Things to Break
               </h2>
               <div className="space-y-6 text-slate-600 leading-relaxed">
                 <p>
-                  In today’s fast-paced digital landscape, relying on a "break-fix" model—where you only call IT when something breaks—is no longer sustainable. Downtime costs money, security breaches ruin reputations, and outdated technology slows down your team.
+                  In today’s fast-paced digital landscape, relying on a "break-fix" model—where you only call IT when
+                  something breaks—is no longer sustainable. Downtime costs money, security breaches ruin reputations,
+                  and outdated technology slows down your team.
                 </p>
                 <p>
-                  Managed Services is a proactive approach where Enhance Tech takes full responsibility for your IT infrastructure, security, and strategy for a predictable monthly fee. Instead of waiting for problems to occur, we prevent them.
+                  Managed Services is a proactive approach where Enhance Tech takes full responsibility for your IT
+                  infrastructure, security, and strategy for a predictable monthly fee. Instead of waiting for problems
+                  to occur, we prevent them.
                 </p>
                 <p>
-                  We act as your fully integrated IT department, monitoring your systems 24/7 to ensure your business runs efficiently, securely, and without interruption.
+                  We act as your fully integrated IT department, monitoring your systems 24/7 to ensure your business
+                  runs efficiently, securely, and without interruption.
                 </p>
               </div>
             </div>
@@ -108,7 +115,8 @@ export default function ManagedITServices() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">The Old Way (Break-Fix)</h3>
                 <p className="text-slate-600">
-                  You wait for a failure, suffer downtime while waiting for repairs, and pay unpredictable emergency rates.
+                  You wait for a failure, suffer downtime while waiting for repairs, and pay unpredictable emergency
+                  rates.
                 </p>
               </CardContent>
             </Card>
@@ -121,7 +129,8 @@ export default function ManagedITServices() {
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-4">The Enhance Tech Way</h3>
                 <p className="text-slate-700 font-medium">
-                  We detect and fix issues in the background before they impact you, all for a fixed, budget-friendly monthly subscription.
+                  We detect and fix issues in the background before they impact you, all for a fixed, budget-friendly
+                  monthly subscription.
                 </p>
               </CardContent>
             </Card>
@@ -152,39 +161,69 @@ export default function ManagedITServices() {
                 <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 rotate-3 hover:rotate-6 transition-transform">
                   <Monitor className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">1. Managed IT Services</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2"> Managed IT Services</h3>
                 <p className="text-lg font-medium text-blue-600 mb-6">"Your 24/7 Remote IT Department"</p>
                 <p className="text-slate-600 mb-8">
-                  We act as an extension of your team, providing enterprise-level IT management. By combining advanced monitoring tools with a 24/7 helpdesk, we ensure your infrastructure runs smoothly.
+                  We act as an extension of your team, providing enterprise-level IT management. By combining advanced
+                  monitoring tools with a 24/7 helpdesk, we ensure your infrastructure runs smoothly.
                 </p>
 
                 <Accordion type="single" collapsible className="w-full space-y-4">
-                  <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
-                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">24/7 Helpdesk & Remote Support</AccordionTrigger>
+                  <AccordionItem
+                    value="item-1"
+                    className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors"
+                  >
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">
+                      24/7 Helpdesk & Remote Support
+                    </AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                      Instant access to expert engineers for remote resolution of day-to-day IT issues (desktops, laptops, mobile devices).
+                      Instant access to expert engineers for remote resolution of day-to-day IT issues (desktops,
+                      laptops, mobile devices).
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
-                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Proactive System Monitoring</AccordionTrigger>
+                  <AccordionItem
+                    value="item-2"
+                    className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors"
+                  >
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">
+                      Proactive System Monitoring
+                    </AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                      We use advanced RMM tools to detect server health, disk space, and performance issues before they cause outages.
+                      We use advanced RMM tools to detect server health, disk space, and performance issues before they
+                      cause outages.
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
-                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Ticket Management</AccordionTrigger>
+                  <AccordionItem
+                    value="item-3"
+                    className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors"
+                  >
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">
+                      Ticket Management
+                    </AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                      Streamlined issue tracking and resolution using industry-leading platforms like Freshdesk and Halo ITSM.
+                      Streamlined issue tracking and resolution using industry-leading platforms like Freshdesk and Halo
+                      ITSM.
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
-                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">Patch & Update Management</AccordionTrigger>
+                  <AccordionItem
+                    value="item-4"
+                    className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors"
+                  >
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">
+                      Patch & Update Management
+                    </AccordionTrigger>
                     <AccordionContent className="text-slate-600">
-                      Automated deployment of critical security updates for Windows, macOS, and third-party applications.
+                      Automated deployment of critical security updates for Windows, macOS, and third-party
+                      applications.
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors">
-                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">User Management</AccordionTrigger>
+                  <AccordionItem
+                    value="item-5"
+                    className="border border-slate-200 rounded-lg px-4 bg-slate-50 hover:bg-white transition-colors"
+                  >
+                    <AccordionTrigger className="text-slate-900 hover:text-primary hover:no-underline font-semibold text-left">
+                      User Management
+                    </AccordionTrigger>
                     <AccordionContent className="text-slate-600">
                       We handle all new employee on-boarding and off-boarding across Microsoft 365 and Zoho.
                     </AccordionContent>
@@ -207,10 +246,11 @@ export default function ManagedITServices() {
                 <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 -rotate-3 hover:-rotate-6 transition-transform">
                   <Shield className="w-8 h-8 text-purple-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">2. Managed Cyber Security</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2"> Managed Cyber Security</h3>
                 <p className="text-lg font-medium text-purple-600 mb-6">"Continuous Protection Backed by a 24/7 SOC"</p>
                 <p className="text-slate-600 mb-8">
-                  Modern threats require more than just an antivirus. Our Managed Security service deploys a multi-layered defense strategy designed to predict, prevent, and respond to cyber attacks.
+                  Modern threats require more than just an antivirus. Our Managed Security service deploys a
+                  multi-layered defense strategy designed to predict, prevent, and respond to cyber attacks.
                 </p>
 
                 <ul className="space-y-4">
@@ -219,7 +259,7 @@ export default function ManagedITServices() {
                     "Next-Gen Endpoint Protection",
                     "Email Security",
                     "Vulnerability Assessments",
-                    "Compliance Readiness"
+                    "Compliance Readiness",
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-purple-600 mt-1 shrink-0" />
@@ -244,10 +284,11 @@ export default function ManagedITServices() {
                 <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 rotate-3 hover:rotate-6 transition-transform">
                   <BarChart className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">3. IT Consultancy & Audit</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2"> IT Consultancy & Audit</h3>
                 <p className="text-lg font-medium text-amber-600 mb-6">"Strategic Vision for Digital Growth"</p>
                 <p className="text-slate-600 mb-8">
-                  Technology should be an investment, not just a cost. Our consultants bridge the gap between technical jargon and business goals.
+                  Technology should be an investment, not just a cost. Our consultants bridge the gap between technical
+                  jargon and business goals.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -255,7 +296,7 @@ export default function ManagedITServices() {
                     "IT Infrastructure Audits",
                     "Digital Transformation Strategy",
                     "Budget Planning (CapEx vs. OpEx)",
-                    "Disaster Recovery Planning"
+                    "Disaster Recovery Planning",
                   ].map((item, idx) => (
                     <div key={idx} className="bg-amber-50 p-4 rounded-xl border border-amber-100">
                       <h4 className="font-semibold text-slate-900 text-sm mb-1">{item}</h4>
@@ -282,26 +323,28 @@ export default function ManagedITServices() {
               {
                 step: "01",
                 title: "Discovery & Audit",
-                desc: "Full, non-intrusive scan of your network to understand assets and security posture."
+                desc: "Full, non-intrusive scan of your network to understand assets and security posture.",
               },
               {
                 step: "02",
                 title: "Strategic Roadmap",
-                desc: "Report highlighting risks and a plan to fix them, with a roadmap for improvements."
+                desc: "Report highlighting risks and a plan to fix them, with a roadmap for improvements.",
               },
               {
                 step: "03",
                 title: "Deployment",
-                desc: "Installation of management agents and security tools with zero disruption."
+                desc: "Installation of management agents and security tools with zero disruption.",
               },
               {
                 step: "04",
                 title: "Go Live & Support",
-                desc: "Immediate access to our 24/7 helpdesk and proactive system management."
-              }
+                desc: "Immediate access to our 24/7 helpdesk and proactive system management.",
+              },
             ].map((item, idx) => (
               <div key={idx} className="relative group">
-                <div className="text-6xl font-bold text-slate-800 absolute -top-10 left-0 -z-10 group-hover:text-primary/20 transition-colors duration-300">{item.step}</div>
+                <div className="text-6xl font-bold text-slate-800 absolute -top-10 left-0 -z-10 group-hover:text-primary/20 transition-colors duration-300">
+                  {item.step}
+                </div>
                 <h3 className="text-xl font-bold mb-3 text-primary">{item.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -318,12 +361,24 @@ export default function ManagedITServices() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Vendor Agnostic", desc: "We work with the best in the industry—Microsoft, Dell, Fortinet, and more." },
-              { title: "Local Expertise", desc: "Global standards delivered by a local team that understands your business." },
+              {
+                title: "Vendor Agnostic",
+                desc: "We work with the best in the industry—Microsoft, Dell, Fortinet, and more.",
+              },
+              {
+                title: "Local Expertise",
+                desc: "Global standards delivered by a local team that understands your business.",
+              },
               { title: "Transparent Pricing", desc: "No hidden fees. Just predictable, scalable IT costs." },
-              { title: "Results Driven", desc: "Focus on boosting efficiency and enabling scalability for your business." }
+              {
+                title: "Results Driven",
+                desc: "Focus on boosting efficiency and enabling scalability for your business.",
+              },
             ].map((item, idx) => (
-              <div key={idx} className="p-6 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-slate-100 text-center">
+              <div
+                key={idx}
+                className="p-6 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-slate-100 text-center"
+              >
                 <h3 className="font-bold text-slate-900 mb-3">{item.title}</h3>
                 <p className="text-sm text-slate-600">{item.desc}</p>
               </div>
