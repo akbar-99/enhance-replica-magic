@@ -1,5 +1,4 @@
 import statsBackground from '@/assets/stats-background.jpg';
-
 const stats = [{
   value: '99.9%',
   label: 'Uptime SLA'
@@ -14,10 +13,9 @@ const stats = [{
   label: 'Global Support'
 }];
 export default function StatsSection() {
-  return <section 
-    className="py-[25px] my-[2px] bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: `url(${statsBackground})` }}
-  >
+  return <section style={{
+    backgroundImage: `url(${statsBackground})`
+  }} className="my-[2px] bg-cover bg-center bg-no-repeat py-[72px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => <div key={stat.label} className="text-center" style={{
