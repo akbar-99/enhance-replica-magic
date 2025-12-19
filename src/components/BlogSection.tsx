@@ -120,14 +120,14 @@ const BlogSection = () => {
   return <section className="py-20 lg:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
             <span className="text-slate-900">Latest news, updates</span>{" "}
             <span className="text-primary">&</span>
             <br />
             <span className="text-primary">strategies for your business.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-2xl">
             Technology moves fast—we help you keep up. Explore our latest articles to find simple explanations for complex tech and smart strategies to make your business run smoother every day.
           </p>
         </div>
