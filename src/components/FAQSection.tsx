@@ -54,27 +54,53 @@ const FAQSection = () => {
             </p>
           </div>
 
-          {/* Right Side - Accordion */}
-          <div className="space-y-4">
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 shadow-[0_0_1px_1px_rgba(255,255,255,0.8),0_4px_24px_-4px_rgba(0,0,0,0.05)] overflow-hidden group transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)] data-[state=open]:border-primary/30 data-[state=open]:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)]"
-                >
-                  <AccordionTrigger className="px-6 py-5 text-slate-800 text-left font-medium text-base hover:no-underline hover:text-primary [&[data-state=open]]:text-primary [&[data-state=open]>svg]:rotate-180 [&>svg]:text-primary/60 [&>svg]:transition-transform [&>svg]:duration-300">
-                    <div className="flex flex-col items-start gap-1">
-                      <span className="font-bold text-lg">{faq.question}</span>
-                      <span className="text-sm text-slate-500 font-normal">{faq.tagline}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          {/* Right Side - Two Column Accordion */}
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Left Column - First 3 items */}
+            <div className="space-y-4">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.slice(0, 3).map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 shadow-[0_0_1px_1px_rgba(255,255,255,0.8),0_4px_24px_-4px_rgba(0,0,0,0.05)] overflow-hidden group transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)] data-[state=open]:border-primary/30 data-[state=open]:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)]"
+                  >
+                    <AccordionTrigger className="px-6 py-5 text-slate-800 text-left font-medium text-base hover:no-underline hover:text-primary [&[data-state=open]]:text-primary [&[data-state=open]>svg]:rotate-180 [&>svg]:text-primary/60 [&>svg]:transition-transform [&>svg]:duration-300">
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="font-bold text-lg">{faq.question}</span>
+                        <span className="text-sm text-slate-500 font-normal">{faq.tagline}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            {/* Right Column - Last 3 items */}
+            <div className="space-y-4">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.slice(3, 6).map((faq, index) => (
+                  <AccordionItem
+                    key={index + 3}
+                    value={`item-${index + 3}`}
+                    className="bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 shadow-[0_0_1px_1px_rgba(255,255,255,0.8),0_4px_24px_-4px_rgba(0,0,0,0.05)] overflow-hidden group transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)] data-[state=open]:border-primary/30 data-[state=open]:shadow-[0_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_-4px_rgba(59,130,246,0.15)]"
+                  >
+                    <AccordionTrigger className="px-6 py-5 text-slate-800 text-left font-medium text-base hover:no-underline hover:text-primary [&[data-state=open]]:text-primary [&[data-state=open]>svg]:rotate-180 [&>svg]:text-primary/60 [&>svg]:transition-transform [&>svg]:duration-300">
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="font-bold text-lg">{faq.question}</span>
+                        <span className="text-sm text-slate-500 font-normal">{faq.tagline}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
       </div>
