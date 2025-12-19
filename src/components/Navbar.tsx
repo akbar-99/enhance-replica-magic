@@ -118,27 +118,27 @@ const navItems: NavItem[] = [
       {
         label: "Optimize Cloud Operations",
         href: "/solutions/enterprise",
-        description: "For large organizations",
+        description: "Cloud Cost and Performance Management",
       },
       {
         label: "Stop Cyber Threats",
         href: "/solutions/ai-security",
-        description: "Protect AI workflows",
+        description: "Endpoint Detection and Response",
       },
       {
         label: "Prevent Data Loss",
         href: "/solutions/compliance",
-        description: "Meet regulatory requirements",
+        description: "Backup and Disaster Recovery",
       },
       {
         label: "Streamline IT Support",
         href: "/solutions/zero-trust",
-        description: "Modern security framework",
+        description: "24/7 Helpdesk & SOC",
       },
       {
         label: "Microsoft 365 Management",
         href: "/solutions/enterprise",
-        description: "For large organizations",
+        description: "Tenant Administration and Governance",
       },
     ],
   },
