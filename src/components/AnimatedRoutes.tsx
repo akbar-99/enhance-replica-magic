@@ -5,6 +5,7 @@ import PageTransition from './PageTransition';
 // Direct imports for instant page loads - better for SEO
 import Index from '@/pages/Index';
 import Products from '@/pages/Products';
+import ProductDetail from '@/pages/ProductDetail';
 import Solutions from '@/pages/Solutions';
 import SolutionDetail from '@/pages/SolutionDetail';
 import Resources from '@/pages/Resources';
@@ -28,7 +29,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Index /></PageTransition>} />
         <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
-        <Route path="/products/:slug" element={<PageTransition><Products /></PageTransition>} />
+        <Route path="/products/:slug" element={<PageTransition><ProductDetail /></PageTransition>} />
         <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
