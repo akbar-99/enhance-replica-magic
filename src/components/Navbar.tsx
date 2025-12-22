@@ -107,7 +107,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Meeting Room ",
-        href: "/products/endpoint-security",
+        href: "/solutions/meeting-spaces",
         description: "Audio-Visual Conferencing Systems	",
       },
     ],
@@ -171,7 +171,7 @@ const navItems: NavItem[] = [
     label: "Resources",
     dropdown: [
       {
-        label: "Blogs",
+        label: "Blog",
         href: "/resources/blog",
         description: "Latest insights",
       },
