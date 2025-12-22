@@ -102,12 +102,12 @@ const navItems: NavItem[] = [
       },
       {
         label: "Physical Security & Surveillance",
-        href: "/products/endpoint-security",
+        href: "/solutions/physical-security",
         description: "CCTV and Access Control",
       },
       {
         label: "Meeting Room ",
-        href: "/solutions/meeting-spaces",
+        href: "/products/endpoint-security",
         description: "Audio-Visual Conferencing Systems	",
       },
     ],
