@@ -31,7 +31,27 @@ const contactOptions = [
   },
 ];
 
-const offices = [{ city: "Dubai", address: "AlDiyar Building, Sheikh Zayed Road", region: "Dubai", country: "UAE" }];
+const offices = [
+  { city: "Dubai", address: "AlDiyar Building, Sheikh Zayed Road", region: "Dubai", country: "UAE" },
+  {
+    city: "Doha",
+    country: "Qatar",
+    type: "EMEA HQ",
+    timezone: "GMT",
+  },
+  {
+    city: "Riyadh",
+    country: "KSA",
+    type: "APAC HQ",
+    timezone: "SGT",
+  },
+  {
+    city: "Kochi",
+    country: "India",
+    type: "Office",
+    timezone: "AEST",
+  },
+];
 
 const companyContact = {
   phone: "+971 4 329 6840",
