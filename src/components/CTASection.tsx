@@ -16,7 +16,7 @@ const FloatingParticle = ({
   size: number;
   left: string;
   top: string;
-}) => <motion.div className="absolute rounded-full bg-primary/20" style={{
+}) => <motion.div className="absolute rounded-full bg-glow-cyan/20" style={{
   width: size,
   height: size,
   left,
@@ -144,7 +144,7 @@ export default function CTASection() {
           repeat: Infinity,
           ease: "easeInOut"
         }} />
-          <motion.div className="absolute top-1/2 -right-4 w-24 h-48 bg-primary/30 rounded-full blur-3xl -translate-y-1/2" animate={{
+          <motion.div className="absolute top-1/2 -right-4 w-24 h-48 bg-glow-cyan/30 rounded-full blur-3xl -translate-y-1/2" animate={{
           opacity: [0.2, 0.5, 0.2],
           x: [10, -10, 10]
         }} transition={{
@@ -165,7 +165,7 @@ export default function CTASection() {
             repeat: Infinity,
             ease: "linear"
           }} />
-            <motion.div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent" animate={{
+            <motion.div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-glow-cyan/20 to-transparent" animate={{
             opacity: [0, 0.5, 0],
             y: [100, -100, 100]
           }} transition={{
@@ -200,7 +200,7 @@ export default function CTASection() {
             ease: "easeInOut",
             delay: 0.5
           }} />
-            <motion.div className="absolute w-2 h-2 bg-primary/40 rounded-full blur-sm" style={{
+            <motion.div className="absolute w-2 h-2 bg-glow-cyan/40 rounded-full blur-sm" style={{
             right: "25%",
             bottom: "25%"
           }} animate={{
@@ -268,7 +268,7 @@ export default function CTASection() {
           }}>
               <Link to="/contact" className="relative inline-flex items-center gap-3 px-10 py-4 rounded-full font-semibold text-white overflow-hidden group/btn transition-all duration-300 hover:scale-105">
                 {/* Glass gradient background */}
-                <span className="absolute inset-0 bg-gradient-to-r from-primary via-glow-cyan to-glow-cyan rounded-full" />
+                <span className="absolute inset-0 bg-gradient-to-r from-glow-cyan via-glow-cyan to-glow-cyan rounded-full" />
 
                 {/* Animated shine effect */}
                 <motion.span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full" animate={{
@@ -287,7 +287,7 @@ export default function CTASection() {
                 <span className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 shadow-[0_0_40px_hsl(var(--glow-cyan)/0.6),inset_0_0_20px_hsl(var(--glow-cyan)/0.3)]" />
 
                 {/* Border */}
-                <span className="absolute inset-0 rounded-full border border-white/30 group-hover/btn:border-white/50 transition-colors duration-300 bg-primary" />
+                <span className="absolute inset-0 rounded-full border border-white/30 group-hover/btn:border-white/50 transition-colors duration-300 bg-glow-cyan" />
 
                 <span className="relative z-10 font-semibold">{t('cta.getStarted')}</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
