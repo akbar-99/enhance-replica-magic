@@ -149,7 +149,7 @@ export default function ManagedITServices() {
           <div className="space-y-32">
             {/* Service 1 */}
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="order-2 lg:order-1 relative group">
+              <div className="order-2 lg:order-1 relative group h-fit lg:sticky lg:top-32">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
                   src={managedItImg}
@@ -234,7 +234,7 @@ export default function ManagedITServices() {
 
             {/* Service 2 */}
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="order-1 lg:order-2 relative group">
+              <div className="order-1 lg:order-2 relative group h-fit lg:sticky lg:top-32">
                 <div className="absolute inset-0 bg-purple-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
                   src={managedSecurityImg}
@@ -272,7 +272,7 @@ export default function ManagedITServices() {
 
             {/* Service 3 */}
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="order-2 lg:order-1 relative group">
+              <div className="order-2 lg:order-1 relative group h-fit lg:sticky lg:top-32">
                 <div className="absolute inset-0 bg-amber-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
                   src={consultancyImg}
