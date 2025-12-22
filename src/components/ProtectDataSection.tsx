@@ -54,9 +54,12 @@ const ProtectDataSection = () => {
 
         {/* Right Panel - Solutions List */}
         <div className="bg-slate-50 p-6 lg:p-10 py-[102px]">
-          <p className="font-medium mb-6 foreground tracking-wider text-2xl text-primary-foreground">
-            Explore Our Solutions To:
-          </p>
+          <Link to="/solutions" className="group block mb-6">
+            <p className="font-medium tracking-wider text-2xl text-primary-foreground group-hover:text-primary transition-colors duration-200 flex items-center gap-2">
+              Explore Our Solutions To:
+              <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-200 -translate-x-2 group-hover:translate-x-0" />
+            </p>
+          </Link>
 
           <div className="grid md:grid-cols-2 gap-x-6">
             {/* Left Column */}
