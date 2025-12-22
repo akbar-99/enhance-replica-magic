@@ -202,7 +202,7 @@ export default function Footer() {
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="flex flex-col">
               <h4 className="font-semibold mb-4 text-sm text-foreground">
-                {category === "Quick Link" ? "QUICK LINK" : category}
+                {category}
               </h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
