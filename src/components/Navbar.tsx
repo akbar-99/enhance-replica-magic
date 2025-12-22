@@ -113,6 +113,31 @@ const navItems: NavItem[] = [
     ],
   },
   {
+    label: "Services",
+    dropdown: [
+      {
+        label: "Managed Services",
+        href: "/services/managed-it",
+        description: "Proactive IT management & support",
+      },
+      {
+        label: "Infrastructure Deployment",
+        href: "/services/infrastructure-deployment",
+        description: "Network & system implementation",
+      },
+      {
+        label: "Workplace Modernization",
+        href: "/services/workplace-modernization",
+        description: "Modern digital workplace solutions",
+      },
+      {
+        label: "Software & Web Development",
+        href: "/services/software-development",
+        description: "Custom software & web applications",
+      },
+    ],
+  },
+  {
     label: "Solutions",
     dropdown: [
       {
@@ -284,12 +309,12 @@ export default function Navbar() {
                       className={`absolute top-full ${
                         item.label === "Products"
                           ? "left-1/2 -translate-x-1/2 w-[700px]"
-                          : item.label === "Solutions"
+                          : item.label === "Solutions" || item.label === "Services"
                             ? "left-1/2 -translate-x-1/2 w-[800px]"
                             : "left-0 min-w-[240px]"
                       } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
-                      {item.label === "Solutions" ? (
+                      {item.label === "Solutions" || item.label === "Services" ? (
                         <div className="p-6">
                           <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                             {item.dropdown.map((subItem) => (
