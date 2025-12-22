@@ -268,7 +268,7 @@ export default function CTASection() {
           }}>
             <Link to="/contact" className="relative inline-flex items-center gap-3 px-10 py-4 rounded-full font-semibold text-white overflow-hidden group/btn transition-all duration-300 hover:scale-105">
               {/* Glass gradient background */}
-              <span className="absolute inset-0 bg-gradient-to-r from-glow-cyan via-glow-cyan to-glow-cyan rounded-full" />
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" />
 
               {/* Animated shine effect */}
               <motion.span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full" animate={{
