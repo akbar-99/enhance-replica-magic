@@ -92,7 +92,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Network Security",
-        href: "/solutions/secure-network",
+        href: "/products/network-security",
         description: "Next-Gen Firewalls and Defense",
       },
       {
@@ -102,7 +102,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Physical Security & Surveillance",
-        href: "/products/endpoint-security",
+        href: "/solutions/physical-security",
         description: "CCTV and Access Control",
       },
       {
