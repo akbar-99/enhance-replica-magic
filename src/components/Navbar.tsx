@@ -87,7 +87,7 @@ const navItems: NavItem[] = [
     dropdown: [
       {
         label: "Compute and Storage",
-        href: "/products/cloud-security",
+        href: "/solutions/enterprise-hardware",
         description: "Secure cloud environments",
       },
       {
