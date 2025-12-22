@@ -171,7 +171,7 @@ const navItems: NavItem[] = [
     label: "Resources",
     dropdown: [
       {
-        label: "Blog",
+        label: "Blogs",
         href: "/resources/blog",
         description: "Latest insights",
       },
