@@ -157,7 +157,7 @@ export default function CTASection() {
         }} />
 
           {/* Card content */}
-          <div className="relative bg-[#141f38]/95 backdrop-blur-xl rounded-3xl border border-white/10 px-8 text-center overflow-hidden md:px-16 py-12 group-hover:border-white/20 transition-colors duration-500 opacity-80 shadow-none">
+          <div className=""py-24 bg-gradient-to-r from-cyan-500 to-blue-600 relative overflow-hidden">
             {/* Inner animated light streaks */}
             <motion.div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-glow-cyan/20 to-transparent" animate={{
             opacity: [0, 0.5, 0],
