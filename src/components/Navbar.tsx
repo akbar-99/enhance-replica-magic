@@ -281,7 +281,7 @@ export default function Navbar() {
         <div className="flex items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-glow-cyan rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">E</span>
             </div>
             <span className="text-xl font-bold text-foreground tracking-tight">
