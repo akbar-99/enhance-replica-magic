@@ -337,7 +337,7 @@ export default function ManagedITServices() {
               },
             ].map((item, idx) => (
               <div key={idx} className="relative group">
-                <div className="text-6xl font-bold text-slate-800 absolute -top-10 left-0 -z-10 group-hover:text-primary/20 transition-colors duration-300">
+                <div className="text-6xl font-bold text-white/5 absolute -top-10 left-0 -z-10 group-hover:text-primary/20 transition-colors duration-300">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-primary">{item.title}</h3>
