@@ -166,107 +166,136 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Contact Form & Map Section */}
       <section className="py-20 page-section-blue">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-slate-200/80 rounded-3xl p-10 shadow-xl shadow-primary/5">
-            {submitted ? (
-              <div className="text-center py-10">
-                <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-10 h-10 text-emerald-500" />
-                </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Message Sent!</h2>
-                <p className="text-slate-600 mb-8">
-                  Thank you for reaching out. We'll get back to you within 24 hours.
-                </p>
-                <button onClick={() => setSubmitted(false)} className="btn-primary">
-                  Send Another Message
-                </button>
-              </div>
-            ) : (
-              <>
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
-                  <p className="text-slate-600">Fill out the form below and we'll respond promptly.</p>
-                </div>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-3">
-                        Your Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-3">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Contact Form */}
+            <div className="bg-white border border-slate-200/80 rounded-3xl p-10 shadow-xl shadow-primary/5 h-full">
+              {submitted ? (
+                <div className="text-center py-10">
+                  <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-emerald-500" />
                   </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold text-slate-900 mb-3">
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    >
-                      <option value="">Select a subject...</option>
-                      <option value="sales">Sales Inquiry</option>
-                      <option value="support">Technical Support</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="press">Press & Media</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-3">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                      placeholder="How can we help you?"
-                    />
-                  </div>
-
-                  <button type="submit" className="btn-primary w-full justify-center text-lg py-4">
-                    <Send className="w-5 h-5" />
-                    Send Message
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Message Sent!</h2>
+                  <p className="text-slate-600 mb-8">
+                    Thank you for reaching out. We'll get back to you within 24 hours.
+                  </p>
+                  <button onClick={() => setSubmitted(false)} className="btn-primary">
+                    Send Another Message
                   </button>
-                </form>
-              </>
-            )}
+                </div>
+              ) : (
+                <>
+                  <div className="text-center mb-8">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
+                    <p className="text-slate-600">Fill out the form below and we'll respond promptly.</p>
+                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-3">
+                          Your Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-3">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                          placeholder="john@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-semibold text-slate-900 mb-3">
+                        Subject *
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      >
+                        <option value="">Select a subject...</option>
+                        <option value="sales">Sales Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="press">Press & Media</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-3">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={6}
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                        placeholder="How can we help you?"
+                      />
+                    </div>
+
+                    <button type="submit" className="btn-primary w-full justify-center text-lg py-4">
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </button>
+                  </form>
+                </>
+              )}
+            </div>
+
+            {/* Map Section */}
+            <div className="bg-white border border-slate-200/80 rounded-3xl p-4 shadow-xl shadow-primary/5 h-full min-h-[500px] flex flex-col">
+              <div className="p-4 mb-2">
+                <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                  <MapPin className="w-6 h-6 text-primary" />
+                  Find Us
+                </h2>
+                <p className="text-slate-600 mt-2">
+                  AlDiyar Building, Sheikh Zayed Road, Dubai, UAE
+                </p>
+              </div>
+              <div className="flex-grow w-full rounded-2xl overflow-hidden border border-slate-100 relative bg-slate-100">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178510024345!2d55.2721877!3d25.1972018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682829c85c07%3A0xa4ec9701a0808600!2sAl%20Diyar%20General%20Trading%20Co.%20LLC!5e0!3m2!1sen!2sae!4v1710000000000!5m2!1sen!2sae"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "400px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Enhance Tech Location"
+                  className="absolute inset-0"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
