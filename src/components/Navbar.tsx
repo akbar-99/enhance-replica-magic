@@ -92,12 +92,12 @@ const navItems: NavItem[] = [
       },
       {
         label: "Network Security",
-        href: "/products/network-security",
+        href: "/solutions/secure-network",
         description: "Next-Gen Firewalls and Defense",
       },
       {
         label: "Networking & Infrastructure",
-        href: "/solutions/infrastructure",
+        href: "/products/endpoint-security",
         description: "Core Switching and Cabling",
       },
       {
