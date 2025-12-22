@@ -63,30 +63,31 @@ export default function OptimizeCloudOperations() {
                             <motion.h1
                                 {...fadeIn}
                                 transition={{ delay: 0.1, duration: 0.8 }}
-                                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight"
+                                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight"
                             >
-                                Optimize Cloud Operations: <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-400">Control & Efficiency</span>
+                                Optimize Cloud Operations: <br className="hidden xl:block" />
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">Control & Efficiency</span>
                             </motion.h1>
                             <motion.p
                                 {...fadeIn}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl"
+                                className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0"
                             >
                                 Enhance Your Cloud Strategy. Simplify Management and Maximize ROI. Transform your infrastructure from a complex burden into a scalable asset.
                             </motion.p>
                             <motion.div
                                 {...fadeIn}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="flex flex-wrap justify-center lg:justify-start gap-4"
+                                className="flex flex-wrap justify-center lg:justify-start gap-5"
                             >
                                 <Link to="/demo">
-                                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/25 rounded-full px-8 h-14 text-lg">
+                                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-2xl shadow-primary/40 rounded-full px-10 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95">
                                         Get a Cloud Health Check
-                                        <ArrowRight className="ml-2 h-5 w-5" />
+                                        <ArrowRight className="ml-2 h-6 w-6" />
                                     </Button>
                                 </Link>
                                 <Link to="/contact">
-                                    <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-8 h-14 text-lg">
+                                    <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-10 h-16 text-lg font-medium transition-all">
                                         Contact Our Cloud Team
                                     </Button>
                                 </Link>
@@ -94,25 +95,29 @@ export default function OptimizeCloudOperations() {
                         </div>
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                             className="flex-1 relative hidden lg:block"
                         >
-                            <div className="relative z-10 bg-gradient-to-br from-slate-900/50 to-slate-950/50 backdrop-blur-2xl p-8 rounded-[40px] border border-white/10 shadow-3xl">
-                                <div className="grid grid-cols-2 gap-4">
-                                    {[
-                                        { icon: Cloud, label: "Azure Infrastructure", value: "99.9% Uptime" },
-                                        { icon: BarChart3, label: "Cost Savings", value: "Avg. 35% reduction" },
-                                        { icon: Shield, label: "Security Compliance", value: "Automated" },
-                                        { icon: Zap, label: "Automation", value: "Zero-Touch" },
-                                    ].map((stat, i) => (
-                                        <div key={i} className="bg-white/5 p-6 rounded-3xl border border-white/5 hover:bg-white/10 transition-colors">
-                                            <stat.icon className="w-8 h-8 text-cyan-400 mb-3" />
-                                            <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">{stat.label}</p>
-                                            <p className="text-white font-bold text-lg">{stat.value}</p>
-                                        </div>
-                                    ))}
+                            <div className="relative z-10 bg-slate-900/40 backdrop-blur-3xl p-1 rounded-[40px] border border-white/10 shadow-[0_0_50px_-12px_rgba(34,211,238,0.2)]">
+                                <div className="bg-slate-950/60 p-8 rounded-[38px] border border-white/5">
+                                    <div className="grid grid-cols-2 gap-6">
+                                        {[
+                                            { icon: Cloud, label: "Azure Infrastructure", value: "99.9% Uptime" },
+                                            { icon: BarChart3, label: "Cost Savings", value: "Avg. 35% Redux" },
+                                            { icon: Shield, label: "Security Compliance", value: "Fully Automated" },
+                                            { icon: Zap, label: "Automation", value: "Zero-Touch" },
+                                        ].map((stat, i) => (
+                                            <div key={i} className="bg-white/5 p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group text-center">
+                                                <div className="w-12 h-12 bg-cyan-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                                    <stat.icon className="w-6 h-6 text-cyan-400" />
+                                                </div>
+                                                <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{stat.label}</p>
+                                                <p className="text-white font-bold text-base xl:text-lg">{stat.value}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                             {/* Floating icon */}
@@ -133,13 +138,13 @@ export default function OptimizeCloudOperations() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <motion.div {...fadeIn}>
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
                                 Beyond Migration: <br />
-                                <span className="text-primary">Taming the Complexity of the Cloud</span>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">Taming Cloud Complexity</span>
                             </h2>
                             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
                                 <p>
-                                    Moving to the cloud is only the first step. The real challenge is managing it effectively. Without proper optimization, businesses face <span className="text-slate-900 font-bold">"cloud sprawl"</span>—uncontrolled costs, security gaps, and administrative complexity.
+                                    Moving to the cloud is only the first step. The real challenge is managing it effectively. Without proper optimization, businesses face <span className="text-slate-900 font-semibold underline decoration-primary/30 decoration-2 underline-offset-4">"cloud sprawl"</span>—uncontrolled costs, security gaps, and administrative complexity.
                                 </p>
                                 <p>
                                     At Enhance Tech, we help you tame the complexity. We provide the expertise to streamline your Microsoft environment, automate tedious tasks, and ensure you are only paying for the resources you actually use.
@@ -150,14 +155,17 @@ export default function OptimizeCloudOperations() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="relative rounded-3xl overflow-hidden shadow-2xl"
+                            className="relative group"
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
-                                alt="Cloud Computing Visualization"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-cyan-500/20 rounded-[40px] blur-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-700" />
+                            <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-slate-100">
+                                <img
+                                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                                    alt="Cloud Computing Visualization"
+                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -167,12 +175,12 @@ export default function OptimizeCloudOperations() {
             <section className="py-24 bg-slate-50 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full mb-4">
+                        <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full mb-4 border border-primary/20">
                             <Zap className="w-4 h-4 text-primary" />
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider">Business Impact</span>
+                            <span className="text-xs font-extrabold text-primary uppercase tracking-[0.2em]">Business Impact</span>
                         </motion.div>
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Key Benefits</motion.h2>
-                        <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg">
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Key Benefits</motion.h2>
+                        <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             Discover how optimized cloud operations transform your IT efficiency and bottom line.
                         </motion.p>
                     </div>
@@ -195,13 +203,13 @@ export default function OptimizeCloudOperations() {
                             <motion.div
                                 key={i}
                                 variants={fadeIn}
-                                className="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                                className="bg-white p-8 rounded-[32px] border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-2 group"
                             >
-                                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                                    <benefit.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+                                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 border border-slate-100 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 shadow-sm">
+                                    <benefit.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">{benefit.title}</h3>
-                                <p className="text-slate-600 leading-relaxed text-sm">{benefit.desc}</p>
+                                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors tracking-tight">{benefit.title}</h3>
+                                <p className="text-slate-500 leading-relaxed text-sm group-hover:text-slate-600 transition-colors">{benefit.desc}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -212,50 +220,44 @@ export default function OptimizeCloudOperations() {
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-20">
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Technology Ecosystem</motion.h2>
-                        <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg">
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Our Tech Ecosystem</motion.h2>
+                        <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             We enhance your cloud efficiency by leveraging the full power of the Microsoft Cloud stack.
                         </motion.p>
                     </div>
 
-                    <div className="space-y-20">
+                    <div className="space-y-32">
                         {/* Azure */}
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 className="relative"
                             >
-                                <div className="absolute -inset-4 bg-blue-500/10 rounded-[40px] blur-2xl" />
-                                <div className="relative bg-slate-900 p-10 rounded-[40px] border border-white/5 overflow-hidden group">
-                                    <Cloud className="absolute top-0 right-0 w-64 h-64 text-blue-500/5 -mr-20 -mt-20 transform group-hover:scale-110 transition-transform duration-700" />
+                                <div className="absolute -inset-6 bg-blue-500/10 rounded-[50px] blur-3xl" />
+                                <div className="relative bg-slate-900 p-12 rounded-[48px] border border-white/5 overflow-hidden group shadow-2xl">
+                                    <Cloud className="absolute top-0 right-0 w-80 h-80 text-blue-500/5 -mr-24 -mt-24 transform group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000" />
                                     <div className="relative z-10 text-white">
-                                        <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4 block">Section 01</span>
-                                        <h3 className="text-3xl font-bold mb-4">Cloud Infrastructure: Microsoft Azure</h3>
-                                        <p className="text-slate-400 text-lg mb-8 italic">"Scalable, Secure Computing"</p>
-                                        <div className="space-y-6">
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-cyan-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Azure Virtual Desktop (AVD)</h4>
-                                                    <p className="text-slate-400 text-sm italic">Deliver a secure Windows experience to any device, anywhere.</p>
+                                        <div className="px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full inline-block mb-6">
+                                            <span className="text-cyan-400 font-bold tracking-[0.3em] uppercase text-[10px]">Cloud Core</span>
+                                        </div>
+                                        <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft Azure</h3>
+                                        <p className="text-cyan-400/80 text-lg mb-10 font-medium italic">"Scalable, Secure Computing"</p>
+                                        <div className="space-y-8">
+                                            {[
+                                                { title: "Azure Virtual Desktop", desc: "Deliver a secure Windows experience to any device, anywhere." },
+                                                { title: "Server Migration", desc: "Retire aging hardware. We migrate SQL and DCs with zero data loss." },
+                                                { title: "Cost Optimization", desc: "Active monitoring ensures you never overpay for idle resources." }
+                                            ].map((item, idx) => (
+                                                <div key={idx} className="flex gap-5 group/item">
+                                                    <div className="w-1.5 h-auto bg-gradient-to-b from-cyan-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
+                                                    <div>
+                                                        <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-cyan-300 transition-colors">{item.title}</h4>
+                                                        <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-cyan-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Server Migration</h4>
-                                                    <p className="text-slate-400 text-sm italic">Retire aging hardware. We migrate SQL, File Servers, and DCs with zero data loss.</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-cyan-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Cost Optimization</h4>
-                                                    <p className="text-slate-400 text-sm italic">Active "Right-Sizing" monitoring ensures you never overpay for idle resources.</p>
-                                                </div>
-                                            </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -264,55 +266,52 @@ export default function OptimizeCloudOperations() {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="text-slate-600 leading-relaxed space-y-4"
+                                className="text-slate-600 space-y-8"
                             >
-                                <p className="text-lg">
-                                    We help you move your heavy on-premise servers into the agile world of Azure. Whether you are lifting and shifting legacy applications or building modern cloud-native apps, we ensure your infrastructure is optimized for performance and cost.
-                                </p>
-                                <div className="pt-4 grid grid-cols-2 gap-4">
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">FinOps Ready</div>
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">Cloud-Native Focus</div>
+                                <div className="space-y-4">
+                                    <h4 className="text-2xl font-bold text-slate-900">Infrastructure Reimagined</h4>
+                                    <p className="text-lg leading-relaxed">
+                                        We help you move your heavy on-premise servers into the agile world of Azure. Whether you are lifting and shifting legacy applications or building modern cloud-native apps, we ensure your infrastructure is optimized for performance and cost.
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">FinOps Ready</div>
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">Cloud-Native</div>
                                 </div>
                             </motion.div>
                         </div>
 
                         {/* Microsoft 365 */}
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <motion.div
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 className="lg:order-2 relative"
                             >
-                                <div className="absolute -inset-4 bg-sky-500/10 rounded-[40px] blur-2xl" />
-                                <div className="relative bg-slate-900 p-10 rounded-[40px] border border-white/5 overflow-hidden group">
-                                    <Layout className="absolute top-0 right-0 w-64 h-64 text-sky-500/5 -mr-20 -mt-20 transform group-hover:scale-110 transition-transform duration-700" />
+                                <div className="absolute -inset-6 bg-sky-500/10 rounded-[50px] blur-3xl" />
+                                <div className="relative bg-slate-900 p-12 rounded-[48px] border border-white/5 overflow-hidden group shadow-2xl">
+                                    <Layout className="absolute top-0 right-0 w-80 h-80 text-sky-500/5 -mr-24 -mt-24 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000" />
                                     <div className="relative z-10 text-white">
-                                        <span className="text-sky-400 font-bold tracking-widest uppercase text-xs mb-4 block">Section 02</span>
-                                        <h3 className="text-3xl font-bold mb-4">Modern Workplace: Microsoft 365</h3>
-                                        <p className="text-slate-400 text-lg mb-8 italic">"Productivity & Collaboration"</p>
-                                        <div className="space-y-6">
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-sky-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Teams & SharePoint Structure</h4>
-                                                    <p className="text-slate-400 text-sm italic">Architected for discoverability, security, and automated backups.</p>
+                                        <div className="px-4 py-1.5 bg-sky-500/10 border border-sky-500/20 rounded-full inline-block mb-6">
+                                            <span className="text-sky-400 font-bold tracking-[0.3em] uppercase text-[10px]">Productivity</span>
+                                        </div>
+                                        <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft 365</h3>
+                                        <p className="text-sky-400/80 text-lg mb-10 font-medium italic">"Productivity & Collaboration"</p>
+                                        <div className="space-y-8">
+                                            {[
+                                                { title: "Teams & SharePoint", desc: "Architected for discoverability, security, and automated backups." },
+                                                { title: "License Management", desc: "Active analysis ensures you aren't paying for features you don't use." },
+                                                { title: "Identity Security", desc: "SSO and MFA configuration to secure user identities flawlessly." }
+                                            ].map((item, idx) => (
+                                                <div key={idx} className="flex gap-5 group/item">
+                                                    <div className="w-1.5 h-auto bg-gradient-to-b from-sky-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
+                                                    <div>
+                                                        <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-sky-300 transition-colors">{item.title}</h4>
+                                                        <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-sky-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">License Management</h4>
-                                                    <p className="text-slate-400 text-sm italic">Active analysis ensures you aren't paying for features you don't use.</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-sky-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Identity Security (Entra ID)</h4>
-                                                    <p className="text-slate-400 text-sm italic">Single Sign-On (SSO) and MFA configuration to secure user identities.</p>
-                                                </div>
-                                            </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -321,55 +320,52 @@ export default function OptimizeCloudOperations() {
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="lg:order-1 text-slate-600 leading-relaxed space-y-4"
+                                className="lg:order-1 text-slate-600 space-y-8"
                             >
-                                <p className="text-lg">
-                                    Most businesses use less than 20% of the Microsoft 365 features they pay for. We help you unlock the full value of your subscription, turning it from just "Email" into a complete operating system for your business.
-                                </p>
-                                <div className="pt-4 grid grid-cols-2 gap-4">
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">Secure-by-Design</div>
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">Full Feature Unlock</div>
+                                <div className="space-y-4">
+                                    <h4 className="text-2xl font-bold text-slate-900">Unlock Full Value</h4>
+                                    <p className="text-lg leading-relaxed">
+                                        Most businesses use less than 20% of the Microsoft 365 features they pay for. We help you unlock the full value of your subscription, turning it from just "Email" into a complete operating system for your business.
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">Secure-by-Design</div>
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">Global Reach</div>
                                 </div>
                             </motion.div>
                         </div>
 
                         {/* Intune */}
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 className="relative"
                             >
-                                <div className="absolute -inset-4 bg-indigo-500/10 rounded-[40px] blur-2xl" />
-                                <div className="relative bg-slate-900 p-10 rounded-[40px] border border-white/5 overflow-hidden group">
-                                    <Laptop className="absolute top-0 right-0 w-64 h-64 text-indigo-500/5 -mr-20 -mt-20 transform group-hover:scale-110 transition-transform duration-700" />
+                                <div className="absolute -inset-6 bg-indigo-500/10 rounded-[50px] blur-3xl" />
+                                <div className="relative bg-slate-900 p-12 rounded-[48px] border border-white/5 overflow-hidden group shadow-2xl">
+                                    <Laptop className="absolute top-0 right-0 w-80 h-80 text-indigo-500/5 -mr-24 -mt-24 transform group-hover:scale-110 transition-all duration-1000" />
                                     <div className="relative z-10 text-white">
-                                        <span className="text-indigo-400 font-bold tracking-widest uppercase text-xs mb-4 block">Section 03</span>
-                                        <h3 className="text-3xl font-bold mb-4">Device Management: Microsoft Intune</h3>
-                                        <p className="text-slate-400 text-lg mb-8 italic">"Control Your Fleet"</p>
-                                        <div className="space-y-6">
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-indigo-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Windows Autopilot</h4>
-                                                    <p className="text-slate-400 text-sm italic">New laptops install company settings automatically upon first boot.</p>
+                                        <div className="px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full inline-block mb-6">
+                                            <span className="text-indigo-400 font-bold tracking-[0.3em] uppercase text-[10px]">Fleet Management</span>
+                                        </div>
+                                        <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft Intune</h3>
+                                        <p className="text-indigo-400/80 text-lg mb-10 font-medium italic">"Control Your Device Fleet"</p>
+                                        <div className="space-y-8">
+                                            {[
+                                                { title: "Windows Autopilot", desc: "New laptops install company settings automatically upon first boot." },
+                                                { title: "Mobile Management", desc: "Secure company data on employee phones with selective wiping." },
+                                                { title: "Patch Compliance", desc: "Automatic fleet-wide updates close security loops without friction." }
+                                            ].map((item, idx) => (
+                                                <div key={idx} className="flex gap-5 group/item">
+                                                    <div className="w-1.5 h-auto bg-gradient-to-b from-indigo-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
+                                                    <div>
+                                                        <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-indigo-300 transition-colors">{item.title}</h4>
+                                                        <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-indigo-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Mobile Device Management (MDM)</h4>
-                                                    <p className="text-slate-400 text-sm italic">Secure company data on employee phones with selective data wiping.</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <div className="w-1 h-auto bg-indigo-400 rounded-full" />
-                                                <div>
-                                                    <h4 className="font-bold text-white mb-1">Patch Compliance</h4>
-                                                    <p className="text-slate-400 text-sm italic">Automatic fleet-wide updates close security loopholes without friction.</p>
-                                                </div>
-                                            </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -378,14 +374,17 @@ export default function OptimizeCloudOperations() {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="text-slate-600 leading-relaxed space-y-4"
+                                className="text-slate-600 space-y-8"
                             >
-                                <p className="text-lg">
-                                    The days of manually installing software on every computer are over. We use Microsoft Intune to manage your devices purely from the cloud, ensuring consistency, security, and ease of deployment.
-                                </p>
-                                <div className="pt-4 grid grid-cols-2 gap-4">
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">Remote-First Support</div>
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm">Global Fleet Control</div>
+                                <div className="space-y-4">
+                                    <h4 className="text-2xl font-bold text-slate-900">Modern Device Control</h4>
+                                    <p className="text-lg leading-relaxed">
+                                        The days of manually installing software on every computer are over. We use Microsoft Intune to manage your devices purely from the cloud, ensuring consistency, security, and ease of deployment.
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">Remote-First</div>
+                                    <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 font-bold text-sm text-center text-primary shadow-sm hover:bg-white hover:border-primary/20 transition-all uppercase tracking-widest">Auto-Scale</div>
                                 </div>
                             </motion.div>
                         </div>
@@ -395,17 +394,17 @@ export default function OptimizeCloudOperations() {
 
             {/* The Enhance Advantage */}
             <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-hero-gradient opacity-40" />
+                <div className="absolute inset-0 bg-hero-gradient opacity-30" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
+                    <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <div className="lg:w-1/3">
-                            <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/20 rounded-full mb-4 border border-cyan-500/20">
+                            <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/10 rounded-full mb-6 border border-cyan-500/20">
                                 <Shield className="w-4 h-4 text-cyan-400" />
-                                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider italic">The Enhance Advantage</span>
+                                <span className="text-[10px] font-extrabold text-cyan-400 uppercase tracking-[0.3em]">The Enhance Advantage</span>
                             </motion.div>
-                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-6 italic">We Don't Just Setup. <br /> <span className="text-cyan-400">We Tune.</span></motion.h2>
-                            <motion.p {...fadeIn} className="text-slate-400 text-lg leading-relaxed italic">
-                                A cloud environment is a living thing—it grows and changes every day. Enhance Tech provides ongoing optimization to ensure it stays efficient.
+                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">We Don't Just Setup. <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">We Fine-Tune.</span></motion.h2>
+                            <motion.p {...fadeIn} className="text-slate-400 text-lg leading-relaxed">
+                                A cloud environment is a living thing—it grows and changes every day. Enhance Tech provides ongoing optimization to ensure it stays efficient, secure and scalable.
                             </motion.p>
                         </div>
 
@@ -422,19 +421,20 @@ export default function OptimizeCloudOperations() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="p-8 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group"
+                                    className="p-10 bg-white/5 backdrop-blur-sm rounded-[32px] border border-white/10 hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-500 group shadow-lg"
                                 >
-                                    <div className="w-10 h-10 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6 border border-cyan-500/20">
-                                        <CheckCircle2 className="w-5 h-5 text-cyan-400" />
+                                    <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:scale-110 transition-all duration-300">
+                                        <CheckCircle2 className="w-6 h-6 text-cyan-400 group-hover:text-white transition-colors" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-3 italic group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{item.title}</h3>
-                                    <p className="text-slate-400 text-sm italic">{item.desc}</p>
+                                    <h3 className="text-xl font-bold mb-4 group-hover:text-cyan-300 transition-colors uppercase tracking-tight">{item.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
+
 
             {/* CTA Section */}
             <section className="py-24 bg-white relative">
