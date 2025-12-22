@@ -201,16 +201,8 @@ export default function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="flex flex-col">
-              <h4
-                className={`font-semibold mb-4 text-sm ${category === "Quick Link" ? "text-primary" : "text-foreground"}`}
-              >
-                {category === "Quick Link" ? (
-                  <span className="underline decoration-primary underline-offset-4 text-foreground">
-                    {category.toUpperCase()}
-                  </span>
-                ) : (
-                  category
-                )}
+              <h4 className="font-semibold mb-4 text-sm text-foreground">
+                {category === "Quick Link" ? "QUICK LINK" : category}
               </h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
