@@ -51,8 +51,8 @@ const slides: Slide[] = [
   {
     id: "2",
     type: "light-tablet",
-    titleStart: "Enhance Tech named as a Representative Vendor in the first",
-    titleHighlight: "Gartner® Market Guide for Data Security Posture Management",
+    titleStart: "Enhance Tech delivers a comprehensive, multi-layered security architecture",
+    titleHighlight: "powered by industry leaders including Fortinet, Bitdefender, Acronis, and SonicWall.",
     cta: "Read the Report",
     ctaLink: "/resources",
   },
