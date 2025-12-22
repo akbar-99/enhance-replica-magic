@@ -253,11 +253,11 @@ export default function Navbar() {
   const searchItems = getAllSearchItems();
   const filteredResults = searchQuery.trim()
     ? searchItems.filter(
-        (item) =>
-          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.category.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
+      (item) =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase()),
+    )
     : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
@@ -285,7 +285,7 @@ export default function Navbar() {
               <span className="text-primary-foreground font-bold text-sm">E</span>
             </div>
             <span className="text-xl font-bold text-foreground tracking-tight">
-              Enhance<span className="text-primary">Tech</span>
+              Enhance<span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
             </span>
           </Link>
 
@@ -306,13 +306,12 @@ export default function Navbar() {
                   {/* Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`absolute top-full ${
-                        item.label === "Products"
+                      className={`absolute top-full ${item.label === "Products"
                           ? "left-1/2 -translate-x-1/2 w-[700px]"
                           : item.label === "Solutions" || item.label === "Services"
                             ? "left-1/2 -translate-x-1/2 w-[800px]"
                             : "left-0 min-w-[240px]"
-                      } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
+                        } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
                       {item.label === "Solutions" || item.label === "Services" ? (
                         <div className="p-6">
