@@ -59,8 +59,8 @@ const slides: Slide[] = [
   {
     id: "3",
     type: "analytics",
-    title: "Uncover hidden data threats in minutes with a",
-    highlight: "free data risk assessment.",
+    title: "Identify your biggest security risks before hackers do. ",
+    highlight: "Schedule your Zero-Cost Threat Review.",
     cta: "Start Your Free Assessment",
     ctaLink: "/demo",
     percentage: 62.5,
