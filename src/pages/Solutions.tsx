@@ -35,10 +35,10 @@ const detailedSolutions = [
     color: 'bg-amber-500',
   },
   {
-    id: 'cloud-operations',
+    id: 'optimize-cloud-operations',
     icon: Cloud,
     title: 'Optimize Cloud Operations',
-    description: 'Maximize your AWS and cloud investments with expert management, cost optimization, and cloud-native solutions.',
+    description: 'Maximize your Microsoft Cloud ROI with expert Azure infrastructure management, M365 optimization, and FinOps cost control.',
     color: 'bg-cyan-500',
   },
   {
@@ -125,13 +125,13 @@ export default function Solutions() {
         structuredData={solutionsSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-10 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <Sparkles className="w-4 h-4 text-primary" />
@@ -164,7 +164,7 @@ export default function Solutions() {
               >
                 {/* Hover gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-[hsl(var(--glow-cyan))]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className={`w-14 h-14 rounded-2xl ${solution.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <solution.icon className="w-7 h-7 text-white" />

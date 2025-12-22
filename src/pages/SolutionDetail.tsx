@@ -137,8 +137,8 @@ const solutionsData: SolutionData[] = [
     id: 'cloud-operations',
     icon: Cloud,
     title: 'Optimize Cloud Operations',
-    headline: 'AWS Cloud Management & Optimization',
-    description: 'Maximize your cloud investment with expert AWS management and optimization services. We help you reduce costs, improve performance, and leverage cloud-native technologies to drive business innovation and scalability.',
+    headline: 'Optimize Cloud Operations: Azure & Microsoft 365',
+    description: 'Maximize your Microsoft Cloud ROI with Enhance Tech. Optimize Azure infrastructure, streamline Microsoft 365 management, and control cloud costs.',
     color: 'bg-cyan-500',
     benefits: [
       'Reduced cloud infrastructure costs',
@@ -311,9 +311,9 @@ const solutionsData: SolutionData[] = [
 
 export default function SolutionDetail() {
   const { slug } = useParams<{ slug: string }>();
-  
+
   const solution = solutionsData.find((s) => s.id === slug);
-  
+
   if (!solution) {
     return <Navigate to="/solutions" replace />;
   }
@@ -337,13 +337,13 @@ export default function SolutionDetail() {
         structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-10 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
@@ -444,7 +444,7 @@ export default function SolutionDetail() {
               const relatedSolution = solutionsData.find((s) => s.id === service.link.split('/').pop());
               const RelatedIcon = relatedSolution?.icon || Shield;
               const relatedColor = relatedSolution?.color || 'bg-primary';
-              
+
               return (
                 <Link
                   key={index}
