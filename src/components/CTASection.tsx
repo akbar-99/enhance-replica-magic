@@ -33,7 +33,9 @@ const FloatingParticle = ({
   ease: "easeInOut"
 }} />;
 export default function CTASection() {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const particles = [{
     delay: 0,
     duration: 4,
@@ -95,9 +97,9 @@ export default function CTASection() {
     left: "5%",
     top: "55%"
   }];
-  return <section className="relative overflow-hidden py-16" style={{
+  return <section style={{
     backgroundColor: '#141f38'
-  }}>
+  }} className="relative overflow-hidden py-16 bg-[#109eda]">
       {/* Floating particles background */}
       <div className="absolute inset-0 pointer-events-none">
         {particles.map((particle, index) => <FloatingParticle key={index} {...particle} />)}
