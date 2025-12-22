@@ -159,7 +159,7 @@ export default function Footer() {
                 <span className="text-primary-foreground font-bold text-sm">E</span>
               </div>
               <span className="text-xl font-bold text-foreground tracking-tight">
-                Enhance<span className="text-primary">Tech</span>
+                Enhance<span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">

@@ -136,7 +136,7 @@ const BlogSection = () => {
           <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
             <span className="text-slate-900">Latest news, updates</span> <span className="text-primary">&</span>
             <br />
-            <span className="text-primary">strategies for your business.</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">strategies for your business.</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-1xl mx-auto">
             Technology moves fast—we help you keep up. Explore our latest articles to find simple explanations for

@@ -123,24 +123,24 @@ export default function TrustedBy() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
   return <section className="bg-white py-[3px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold py-[16px] lg:text-4xl my-0">
-          <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
-          <span className="text-primary text-5xl">{t("trusted.titleHighlight")}</span>
-        </h2>
-        <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-[2px]">
-          ​We maintain strategic alliances and hold certifications from premier industry organizations.
-        </p>
-      </div>
-      <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
-        <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+      <h2 className="text-2xl md:text-3xl font-bold py-[16px] lg:text-4xl my-0">
+        <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 text-5xl">{t("trusted.titleHighlight")}</span>
+      </h2>
+      <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-[2px]">
+        We maintain strategic alliances and hold certifications from premier industry organizations.
+      </p>
+    </div>
+    <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
+      <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
         scrollBehavior: "auto"
       }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]">
-          {/* Duplicate partners for seamless infinite scroll */}
-          {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer">
-              <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-scale-down border-double border border-glow-cyan" />
-            </div>)}
-        </div>
+        {/* Duplicate partners for seamless infinite scroll */}
+        {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer">
+          <img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-scale-down border-double border border-glow-cyan" />
+        </div>)}
       </div>
-    </section>;
+    </div>
+  </section>;
 }
