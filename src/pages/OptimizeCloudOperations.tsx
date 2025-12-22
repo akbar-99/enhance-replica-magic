@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2, Cloud, Shield, Zap, Layout, Eye, Laptop, Server, Database, Users, Lock, BarChart3, Settings2, Globe, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -24,9 +24,42 @@ const staggerContainer = {
     viewport: { once: true }
 };
 
+const listItemVariants = {
+    initial: { opacity: 0, x: -10 },
+    whileInView: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5 }
+    },
+    viewport: { once: true }
+};
+
 export default function OptimizeCloudOperations() {
+    // Mouse parallax effect for hero background
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const { clientX, clientY } = e;
+        const moveX = clientX - window.innerWidth / 2;
+        const moveY = clientY - window.innerHeight / 2;
+        mouseX.set(moveX);
+        mouseY.set(moveY);
+    };
+
+    const blobTranslateX1 = useTransform(mouseX, [-500, 500], [-30, 30]);
+    const blobTranslateY1 = useTransform(mouseY, [-500, 500], [-30, 30]);
+    const blobTranslateX2 = useTransform(mouseX, [-500, 500], [40, -40]);
+    const blobTranslateY2 = useTransform(mouseY, [-500, 500], [40, -40]);
+
+    const titleRotateX = useTransform(mouseY, [-500, 500], [5, -5]);
+    const titleRotateY = useTransform(mouseX, [-500, 500], [-5, 5]);
+
     return (
-        <main className="min-h-screen page-bg-light overflow-x-hidden">
+        <main
+            className="min-h-screen page-bg-light overflow-x-hidden"
+            onMouseMove={handleMouseMove}
+        >
             <SEO
                 title="Optimize Cloud Operations: Azure & Microsoft 365 | Enhance Tech"
                 description="Maximize your Microsoft Cloud ROI with Enhance Tech. Optimize Azure infrastructure, streamline Microsoft 365 management, and control cloud costs."
@@ -41,13 +74,15 @@ export default function OptimizeCloudOperations() {
                 <div className="absolute inset-0 bg-hero-gradient opacity-95" />
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
-                {/* Animated Background Elements */}
+                {/* Animated Background Elements with Mouse Parallax */}
                 <motion.div
+                    style={{ x: blobTranslateX1, y: blobTranslateY1 }}
                     animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute top-20 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]"
                 />
                 <motion.div
+                    style={{ x: blobTranslateX2, y: blobTranslateY2 }}
                     animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[100px]"
@@ -203,13 +238,17 @@ export default function OptimizeCloudOperations() {
                             <motion.div
                                 key={i}
                                 variants={fadeIn}
-                                className="bg-white p-8 rounded-[32px] border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-2 group"
+                                whileHover={{ scale: 1.05, y: -10 }}
+                                className="bg-white p-8 rounded-[32px] border border-slate-200/60 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 group relative overflow-hidden"
                             >
-                                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 border border-slate-100 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 shadow-sm">
-                                    <benefit.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="relative z-10">
+                                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 border border-slate-100 group-hover:bg-primary transition-all duration-500 group-hover:rotate-6 shadow-sm">
+                                        <benefit.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors tracking-tight">{benefit.title}</h3>
+                                    <p className="text-slate-500 leading-relaxed text-sm group-hover:text-slate-600 transition-colors">{benefit.desc}</p>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors tracking-tight">{benefit.title}</h3>
-                                <p className="text-slate-500 leading-relaxed text-sm group-hover:text-slate-600 transition-colors">{benefit.desc}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -244,21 +283,31 @@ export default function OptimizeCloudOperations() {
                                         </div>
                                         <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft Azure</h3>
                                         <p className="text-cyan-400/80 text-lg mb-10 font-medium italic">"Scalable, Secure Computing"</p>
-                                        <div className="space-y-8">
+                                        <motion.div
+                                            variants={staggerContainer}
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            viewport={{ once: true }}
+                                            className="space-y-8"
+                                        >
                                             {[
                                                 { title: "Azure Virtual Desktop", desc: "Deliver a secure Windows experience to any device, anywhere." },
                                                 { title: "Server Migration", desc: "Retire aging hardware. We migrate SQL and DCs with zero data loss." },
                                                 { title: "Cost Optimization", desc: "Active monitoring ensures you never overpay for idle resources." }
                                             ].map((item, idx) => (
-                                                <div key={idx} className="flex gap-5 group/item">
+                                                <motion.div
+                                                    key={idx}
+                                                    variants={listItemVariants}
+                                                    className="flex gap-5 group/item p-4 -m-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default"
+                                                >
                                                     <div className="w-1.5 h-auto bg-gradient-to-b from-cyan-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
                                                     <div>
                                                         <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-cyan-300 transition-colors">{item.title}</h4>
                                                         <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                                                     </div>
-                                                </div>
+                                                </motion.div>
                                             ))}
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -298,21 +347,31 @@ export default function OptimizeCloudOperations() {
                                         </div>
                                         <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft 365</h3>
                                         <p className="text-sky-400/80 text-lg mb-10 font-medium italic">"Productivity & Collaboration"</p>
-                                        <div className="space-y-8">
+                                        <motion.div
+                                            variants={staggerContainer}
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            viewport={{ once: true }}
+                                            className="space-y-8"
+                                        >
                                             {[
                                                 { title: "Teams & SharePoint", desc: "Architected for discoverability, security, and automated backups." },
                                                 { title: "License Management", desc: "Active analysis ensures you aren't paying for features you don't use." },
                                                 { title: "Identity Security", desc: "SSO and MFA configuration to secure user identities flawlessly." }
                                             ].map((item, idx) => (
-                                                <div key={idx} className="flex gap-5 group/item">
+                                                <motion.div
+                                                    key={idx}
+                                                    variants={listItemVariants}
+                                                    className="flex gap-5 group/item p-4 -m-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default"
+                                                >
                                                     <div className="w-1.5 h-auto bg-gradient-to-b from-sky-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
                                                     <div>
                                                         <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-sky-300 transition-colors">{item.title}</h4>
                                                         <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                                                     </div>
-                                                </div>
+                                                </motion.div>
                                             ))}
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -352,21 +411,31 @@ export default function OptimizeCloudOperations() {
                                         </div>
                                         <h3 className="text-3xl font-extrabold mb-4 tracking-tight">Microsoft Intune</h3>
                                         <p className="text-indigo-400/80 text-lg mb-10 font-medium italic">"Control Your Device Fleet"</p>
-                                        <div className="space-y-8">
+                                        <motion.div
+                                            variants={staggerContainer}
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            viewport={{ once: true }}
+                                            className="space-y-8"
+                                        >
                                             {[
                                                 { title: "Windows Autopilot", desc: "New laptops install company settings automatically upon first boot." },
                                                 { title: "Mobile Management", desc: "Secure company data on employee phones with selective wiping." },
                                                 { title: "Patch Compliance", desc: "Automatic fleet-wide updates close security loops without friction." }
                                             ].map((item, idx) => (
-                                                <div key={idx} className="flex gap-5 group/item">
+                                                <motion.div
+                                                    key={idx}
+                                                    variants={listItemVariants}
+                                                    className="flex gap-5 group/item p-4 -m-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default"
+                                                >
                                                     <div className="w-1.5 h-auto bg-gradient-to-b from-indigo-400 to-transparent rounded-full group-hover/item:from-white transition-colors" />
                                                     <div>
                                                         <h4 className="font-bold text-white mb-1.5 text-lg group-hover/item:text-indigo-300 transition-colors">{item.title}</h4>
                                                         <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                                                     </div>
-                                                </div>
+                                                </motion.div>
                                             ))}
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div>
                             </motion.div>
