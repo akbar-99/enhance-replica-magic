@@ -307,10 +307,10 @@ export default function Navbar() {
                   {item.dropdown && (
                     <div
                       className={`absolute top-full ${item.label === "Products"
-                          ? "left-1/2 -translate-x-1/2 w-[700px]"
-                          : item.label === "Solutions" || item.label === "Services"
-                            ? "left-1/2 -translate-x-1/2 w-[800px]"
-                            : "left-0 min-w-[240px]"
+                        ? "left-1/2 -translate-x-1/2 w-[700px]"
+                        : item.label === "Solutions" || item.label === "Services"
+                          ? "left-1/2 -translate-x-1/2 w-[800px]"
+                          : "left-0 min-w-[240px]"
                         } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
                       {item.label === "Solutions" || item.label === "Services" ? (
@@ -322,7 +322,7 @@ export default function Navbar() {
                                 to={subItem.href}
                                 className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
                               >
-                                <span className="font-medium text-primary group-hover:text-primary/80 transition-colors text-base">
+                                <span className="font-medium text-primary group-hover:text-glow-cyan group-hover:drop-shadow-[0_0_8px_hsl(var(--glow-cyan)/0.5)] transition-all duration-300 text-base">
                                   {subItem.label}
                                 </span>
                                 {subItem.description && (
@@ -340,7 +340,7 @@ export default function Navbar() {
                               to={subItem.href}
                               className="flex flex-col px-4 py-3 rounded-md hover:bg-secondary/50 transition-colors group"
                             >
-                              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                              <span className="font-medium text-foreground group-hover:text-glow-cyan group-hover:drop-shadow-[0_0_8px_hsl(var(--glow-cyan)/0.5)] transition-all duration-300">
                                 {subItem.label}
                               </span>
                               {subItem.description && (
