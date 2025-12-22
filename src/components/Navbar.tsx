@@ -97,12 +97,12 @@ const navItems: NavItem[] = [
       },
       {
         label: "Networking & Infrastructure",
-        href: "/products/endpoint-security",
+        href: "/solutions/infrastructure",
         description: "Core Switching and Cabling",
       },
       {
         label: "Physical Security & Surveillance",
-        href: "/solutions/physical-security",
+        href: "/products/endpoint-security",
         description: "CCTV and Access Control",
       },
       {
