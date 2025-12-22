@@ -336,7 +336,11 @@ export default function ManagedITServices() {
                 desc: "Immediate access to our 24/7 helpdesk and proactive system management.",
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative group text-center">
+              <div
+                key={idx}
+                className="relative group text-center animate-fade-up"
+                style={{ animationDelay: `${idx * 200}ms` }}
+              >
                 <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-cyan-600 transition-colors duration-300 ring-1 ring-slate-700">
                   <item.icon className="w-8 h-8 text-cyan-400 group-hover:text-white transition-colors" />
                 </div>
