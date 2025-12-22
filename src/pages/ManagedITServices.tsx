@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Monitor, Shield, Phone, RefreshCcw, Users, BarChart } from "lucide-react";
+import { ArrowRight, CheckCircle2, Monitor, Shield, Phone, RefreshCcw, Users, BarChart, Search, Map, Rocket, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -316,32 +316,35 @@ export default function ManagedITServices() {
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                step: "01",
+                icon: Search,
                 title: "Discovery & Audit",
                 desc: "Full, non-intrusive scan of your network to understand assets and security posture.",
               },
               {
-                step: "02",
+                icon: Map,
                 title: "Strategic Roadmap",
                 desc: "Report highlighting risks and a plan to fix them, with a roadmap for improvements.",
               },
               {
-                step: "03",
+                icon: Rocket,
                 title: "Deployment",
                 desc: "Installation of management agents and security tools with zero disruption.",
               },
               {
-                step: "04",
+                icon: Headphones,
                 title: "Go Live & Support",
                 desc: "Immediate access to our 24/7 helpdesk and proactive system management.",
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative group">
-                <div className="text-6xl font-bold text-white/5 absolute -top-10 left-0 -z-10 group-hover:text-primary/20 transition-colors duration-300">
-                  {item.step}
+              <div key={idx} className="relative group text-center">
+                <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-cyan-600 transition-colors duration-300 ring-1 ring-slate-700">
+                  <item.icon className="w-8 h-8 text-cyan-400 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-primary">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">{item.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-slate-800 -z-10" />
+                )}
               </div>
             ))}
           </div>
