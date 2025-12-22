@@ -158,9 +158,7 @@ export default function ManagedITServices() {
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 rotate-3 hover:rotate-6 transition-transform">
-                  <Monitor className="w-8 h-8 text-blue-600" />
-                </div>
+
                 <h3 className="text-2xl font-bold text-slate-900 mb-2"> Managed IT Services</h3>
                 <p className="text-lg font-medium text-blue-600 mb-6">"Your 24/7 Remote IT Department"</p>
                 <p className="text-slate-600 mb-8">
@@ -243,9 +241,7 @@ export default function ManagedITServices() {
                 />
               </div>
               <div className="order-2 lg:order-1">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 -rotate-3 hover:-rotate-6 transition-transform">
-                  <Shield className="w-8 h-8 text-purple-600" />
-                </div>
+
                 <h3 className="text-2xl font-bold text-slate-900 mb-2"> Managed Cyber Security</h3>
                 <p className="text-lg font-medium text-purple-600 mb-6">"Continuous Protection Backed by a 24/7 SOC"</p>
                 <p className="text-slate-600 mb-8">
@@ -281,9 +277,7 @@ export default function ManagedITServices() {
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 rotate-3 hover:rotate-6 transition-transform">
-                  <BarChart className="w-8 h-8 text-amber-600" />
-                </div>
+
                 <h3 className="text-2xl font-bold text-slate-900 mb-2"> IT Consultancy & Audit</h3>
                 <p className="text-lg font-medium text-amber-600 mb-6">"Strategic Vision for Digital Growth"</p>
                 <p className="text-slate-600 mb-8">
