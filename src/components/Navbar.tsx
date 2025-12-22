@@ -92,12 +92,12 @@ const navItems: NavItem[] = [
       },
       {
         label: "Network Security",
-        href: "/products/network-security",
+        href: "/solutions/secure-network",
         description: "Next-Gen Firewalls and Defense",
       },
       {
         label: "Networking & Infrastructure",
-        href: "/products/endpoint-security",
+        href: "/solutions/infrastructure",
         description: "Core Switching and Cabling",
       },
       {
@@ -107,7 +107,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Meeting Room ",
-        href: "/products/endpoint-security",
+        href: "/solutions/meeting-spaces",
         description: "Audio-Visual Conferencing Systems	",
       },
     ],
