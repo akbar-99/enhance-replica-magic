@@ -1,60 +1,40 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-  Shield,
-  Zap,
-  Lock,
-  Eye,
-  Laptop,
-  Server,
-  Mail,
-  Search,
-  Activity,
-  Globe,
-  Cpu,
-  Terminal,
-  Layers,
-  ShieldAlert,
-  Monitor,
-  Users,
-  Bell,
-  FileText,
-  CheckCircle,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Laptop, Server, Mail, Search, Activity, Globe, Cpu, Terminal, Layers, ShieldAlert, Monitor, Users, Bell, FileText, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
 const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0
+  },
+  viewport: {
+    once: true
+  },
+  transition: {
+    duration: 0.6
+  }
 };
-
 const staggerContainer = {
   initial: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.1,
-    },
+      staggerChildren: 0.1
+    }
   },
-  viewport: { once: true },
+  viewport: {
+    once: true
+  }
 };
-
 export default function StopCyberThreats() {
-  return (
-    <main className="min-h-screen page-bg-light overflow-x-hidden relative">
-      <SEO
-        title="Stop Cyber Threats: Comprehensive Security Ecosystem | Enhance Secure"
-        description="Protect your business with the Enhance Secure ecosystem. Integrated defense featuring Bitdefender, Sorb, Vircom, and Veriato—monitored 24/7 by our dedicated SOC."
-        keywords="Cybersecurity, Bitdefender, Sorb Security, Vircom, Veriato, SOC, Endpoint Security, Email Security, Insider Risk"
-        canonicalUrl="https://itenhance.tech/solutions/stop-cyber-threats"
-      />
+  return <main className="min-h-screen page-bg-light overflow-x-hidden relative">
+      <SEO title="Stop Cyber Threats: Comprehensive Security Ecosystem | Enhance Secure" description="Protect your business with the Enhance Secure ecosystem. Integrated defense featuring Bitdefender, Sorb, Vircom, and Veriato—monitored 24/7 by our dedicated SOC." keywords="Cybersecurity, Bitdefender, Sorb Security, Vircom, Veriato, SOC, Endpoint Security, Email Security, Insider Risk" canonicalUrl="https://itenhance.tech/solutions/stop-cyber-threats" />
 
       <Navbar />
 
@@ -64,93 +44,99 @@ export default function StopCyberThreats() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
         {/* Animated Background Elements */}
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 right-0 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px]"
-        />
+        <motion.div animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.3, 0.5, 0.3]
+      }} transition={{
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }} className="absolute top-20 right-0 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]" />
+        <motion.div animate={{
+        scale: [1.2, 1, 1.2],
+        opacity: [0.2, 0.4, 0.2]
+      }} transition={{
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }} className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="flex-1 text-center lg:text-left">
-              <motion.div
-                {...fadeIn}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20"
-              >
+              <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20">
                 <ShieldAlert className="w-4 h-4 text-blue-400" />
                 <span className="text-sm font-semibold text-blue-100 uppercase tracking-wider">
                   360° Business Protection
                 </span>
               </motion.div>
-              <motion.h1
-                {...fadeIn}
-                transition={{ delay: 0.1, duration: 0.8 }}
-                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter"
-              >
+              <motion.h1 transition={{
+              delay: 0.1,
+              duration: 0.8
+            }} className="text-5xl md:text-6xl xl:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter lg:text-5xl">
                 Stop Cyber Threats <br className="hidden xl:block" />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-300 animate-pulse-slow">
                   Comprehensive Ecosystem
                 </span>
               </motion.h1>
-              <motion.p
-                {...fadeIn}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium"
-              >
+              <motion.p {...fadeIn} transition={{
+              delay: 0.2,
+              duration: 0.8
+            }} className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                 Secure Your Endpoints, Email, and Workforce with{" "}
                 <span className="text-white font-bold">Enhance Secure</span>. A multi-layered strategy for today's
                 digital landscape.
               </motion.p>
-              <motion.div
-                {...fadeIn}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-6"
-              >
+              <motion.div {...fadeIn} transition={{
+              delay: 0.3,
+              duration: 0.8
+            }} className="flex flex-wrap justify-center lg:justify-start gap-6">
                 <Link to="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] rounded-full px-12 h-20 text-xl font-black transition-all hover:scale-105 active:scale-95 group"
-                  >
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] rounded-full px-12 h-20 text-xl font-black transition-all hover:scale-105 active:scale-95 group">
                     Free Security Consultation
                     <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform" />
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-12 h-20 text-xl font-bold transition-all border-2"
-                  >
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-12 h-20 text-xl font-bold transition-all border-2">
                     Contact Our Team
                   </Button>
                 </Link>
               </motion.div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="flex-1 relative hidden lg:block"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.9,
+            y: 30
+          }} animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0
+          }} transition={{
+            duration: 1,
+            ease: "easeOut"
+          }} className="flex-1 relative hidden lg:block">
               <div className="relative z-10 bg-slate-900/40 backdrop-blur-3xl p-1 rounded-[40px] border border-white/10 shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)]">
                 <div className="bg-slate-950/60 p-8 rounded-[38px] border border-white/5">
                   <div className="grid grid-cols-2 gap-6">
-                    {[
-                      { icon: Laptop, label: "Endpoints", value: "Bitdefender" },
-                      { icon: Mail, label: "Email Protection", value: "Sorb & Vircom" },
-                      { icon: Users, label: "Insider Risk", value: "Veriato" },
-                      { icon: Activity, label: "24/7 SOC", value: "Expert Monitoring" },
-                    ].map((stat, i) => (
-                      <div
-                        key={i}
-                        className="bg-white/5 p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group text-center"
-                      >
+                    {[{
+                    icon: Laptop,
+                    label: "Endpoints",
+                    value: "Bitdefender"
+                  }, {
+                    icon: Mail,
+                    label: "Email Protection",
+                    value: "Sorb & Vircom"
+                  }, {
+                    icon: Users,
+                    label: "Insider Risk",
+                    value: "Veriato"
+                  }, {
+                    icon: Activity,
+                    label: "24/7 SOC",
+                    value: "Expert Monitoring"
+                  }].map((stat, i) => <div key={i} className="bg-white/5 p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group text-center">
                         <div className="w-12 h-12 bg-blue-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                           <stat.icon className="w-6 h-6 text-blue-400" />
                         </div>
@@ -158,8 +144,7 @@ export default function StopCyberThreats() {
                           {stat.label}
                         </p>
                         <p className="text-white font-bold text-base xl:text-lg">{stat.value}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -193,20 +178,18 @@ export default function StopCyberThreats() {
                 </p>
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: 20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-[40px] blur-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-700" />
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-slate-100">
-                <img
-                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=60&w=1200&auto=format&fit=crop"
-                  alt="Security Operations Center"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                  loading="lazy"
-                />
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=60&w=1200&auto=format&fit=crop" alt="Security Operations Center" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
               </div>
             </motion.div>
@@ -218,17 +201,19 @@ export default function StopCyberThreats() {
       <section className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative order-2 lg:order-1"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: -20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} className="relative order-2 lg:order-1">
               <div className="absolute -inset-6 bg-red-600/10 rounded-[50px] blur-3xl opacity-50 transition-opacity group-hover:opacity-100" />
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="relative bg-white p-10 rounded-[48px] border border-slate-200 overflow-hidden group shadow-2xl"
-              >
+              <motion.div whileHover={{
+              scale: 1.02
+            }} className="relative bg-white p-10 rounded-[48px] border border-slate-200 overflow-hidden group shadow-2xl">
                 <div className="px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full inline-block mb-6">
                   <span className="text-red-600 font-bold tracking-[0.2em] uppercase text-[10px]">
                     Endpoint Security
@@ -241,16 +226,19 @@ export default function StopCyberThreats() {
                   Bitdefender GravityZone, a global leader in security tests, to provide your first line of defense.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Ransomware Mitigation",
-                      desc: "Automatic detection and instant file rollback from secure cache.",
-                    },
-                    { title: "Network Attack Defense", desc: "Blocks brute force attacks and server exploits." },
-                    { title: "HyperDetect™", desc: "Machine learning that spots 'fileless' attacks in memory." },
-                    { title: "Lightweight Performance", desc: "Security that won't slow down your team." },
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex gap-4">
+                  {[{
+                  title: "Ransomware Mitigation",
+                  desc: "Automatic detection and instant file rollback from secure cache."
+                }, {
+                  title: "Network Attack Defense",
+                  desc: "Blocks brute force attacks and server exploits."
+                }, {
+                  title: "HyperDetect™",
+                  desc: "Machine learning that spots 'fileless' attacks in memory."
+                }, {
+                  title: "Lightweight Performance",
+                  desc: "Security that won't slow down your team."
+                }].map((item, idx) => <div key={idx} className="flex gap-4">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-1">
                         <CheckCircle className="w-5 h-5 text-red-600" />
                       </div>
@@ -258,8 +246,7 @@ export default function StopCyberThreats() {
                         <h4 className="font-bold text-slate-900 text-sm mb-1">{item.title}</h4>
                         <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </motion.div>
             </motion.div>
@@ -298,27 +285,23 @@ export default function StopCyberThreats() {
                 phishing attacks that human eyes often miss.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {[
-                  "Dynamic Sandboxing",
-                  "Credential Shield",
-                  "Impersonation Protection",
-                  "Regional Threat Intelligence",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
+                {["Dynamic Sandboxing", "Credential Shield", "Impersonation Protection", "Regional Threat Intelligence"].map((item, idx) => <div key={idx} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
                       <CheckCircle2 className="w-4 h-4 text-blue-600" />
                     </div>
                     <span className="text-slate-700 font-semibold text-sm">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.9
+          }} whileInView={{
+            opacity: 1,
+            scale: 1
+          }} viewport={{
+            once: true
+          }} className="relative">
               <div className="absolute -inset-10 bg-blue-500/5 rounded-full blur-3xl" />
               <Card className="relative bg-slate-900 border-none rounded-[40px] overflow-hidden shadow-2xl">
                 <CardContent className="p-12">
@@ -357,10 +340,7 @@ export default function StopCyberThreats() {
       <section className="py-24 bg-slate-950 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.div
-              {...fadeIn}
-              className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/10 rounded-full mb-4 border border-cyan-500/20"
-            >
+            <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/10 rounded-full mb-4 border border-cyan-500/20">
               <Layers className="w-4 h-4 text-cyan-400" />
               <span className="text-[10px] font-extrabold text-cyan-400 uppercase tracking-[0.2em]">
                 Hygiene & Compliance
@@ -373,39 +353,39 @@ export default function StopCyberThreats() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Bell,
-                title: "99.9% Spam Capture",
-                desc: "Keeps junk mail and bulk marketing out of your inbox.",
-              },
-              {
-                icon: Activity,
-                title: "Email Continuity",
-                desc: "Secure emergency portal during Microsoft 365 outages.",
-              },
-              { icon: Globe, title: "DMARC/DKIM", desc: "Brand protection against domain spoofing and fake emails." },
-              {
-                icon: Lock,
-                title: "DLP & Encryption",
-                desc: "Automated encryption for sensitive financial or personal data.",
-              },
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-colors group"
-              >
+            {[{
+            icon: Bell,
+            title: "99.9% Spam Capture",
+            desc: "Keeps junk mail and bulk marketing out of your inbox."
+          }, {
+            icon: Activity,
+            title: "Email Continuity",
+            desc: "Secure emergency portal during Microsoft 365 outages."
+          }, {
+            icon: Globe,
+            title: "DMARC/DKIM",
+            desc: "Brand protection against domain spoofing and fake emails."
+          }, {
+            icon: Lock,
+            title: "DLP & Encryption",
+            desc: "Automated encryption for sensitive financial or personal data."
+          }].map((feature, i) => <motion.div key={i} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: i * 0.1
+          }} className="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-colors group">
                 <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-6 h-6 text-cyan-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -414,12 +394,15 @@ export default function StopCyberThreats() {
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-indigo-900 rounded-[48px] p-12 text-white relative overflow-hidden group shadow-2xl"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.9
+          }} whileInView={{
+            opacity: 1,
+            scale: 1
+          }} viewport={{
+            once: true
+          }} className="bg-indigo-900 rounded-[48px] p-12 text-white relative overflow-hidden group shadow-2xl">
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
               <div className="relative z-10">
                 <Users className="w-16 h-16 text-indigo-400 mb-8 group-hover:scale-110 transition-transform duration-500" />
@@ -430,28 +413,22 @@ export default function StopCyberThreats() {
                   glass" visibility.
                 </p>
                 <div className="space-y-6">
-                  {[
-                    {
-                      title: "Psycholinguistic AI",
-                      desc: "Analyze sentiment to detect disgruntled behavior before leaks.",
-                    },
-                    {
-                      title: "User Behavior Analytics",
-                      desc: "Alerts for anomalies like client list downloads at 2 AM.",
-                    },
-                    {
-                      title: "Forensic Screen Recording",
-                      desc: "Irrefutable evidence for security incidents or HR disputes.",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex gap-4">
+                  {[{
+                  title: "Psycholinguistic AI",
+                  desc: "Analyze sentiment to detect disgruntled behavior before leaks."
+                }, {
+                  title: "User Behavior Analytics",
+                  desc: "Alerts for anomalies like client list downloads at 2 AM."
+                }, {
+                  title: "Forensic Screen Recording",
+                  desc: "Irrefutable evidence for security incidents or HR disputes."
+                }].map((item, idx) => <div key={idx} className="flex gap-4">
                       <div className="w-2 h-auto bg-indigo-400/30 rounded-full" />
                       <div>
                         <h4 className="font-bold text-white text-base">{item.title}</h4>
                         <p className="text-indigo-200 text-sm">{item.desc}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </motion.div>
@@ -482,10 +459,7 @@ export default function StopCyberThreats() {
       <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.div
-              {...fadeIn}
-              className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-600/10 rounded-full mb-4 border border-blue-600/20"
-            >
+            <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-600/10 rounded-full mb-4 border border-blue-600/20">
               <Activity className="w-4 h-4 text-blue-600" />
               <span className="text-[10px] font-extrabold text-blue-600 uppercase tracking-[0.2em]">
                 The Human Element
@@ -500,10 +474,9 @@ export default function StopCyberThreats() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-10 bg-white rounded-[40px] border border-slate-200 shadow-lg group transition-all"
-            >
+            <motion.div whileHover={{
+            y: -10
+          }} className="p-10 bg-white rounded-[40px] border border-slate-200 shadow-lg group transition-all">
               <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
                 <Search className="w-8 h-8 text-white" />
               </div>
@@ -513,10 +486,9 @@ export default function StopCyberThreats() {
               </p>
             </motion.div>
 
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-10 bg-blue-600 rounded-[40px] text-white shadow-xl shadow-blue-600/20 group transition-all"
-            >
+            <motion.div whileHover={{
+            y: -10
+          }} className="p-10 bg-blue-600 rounded-[40px] text-white shadow-xl shadow-blue-600/20 group transition-all">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform">
                 <Zap className="w-8 h-8 text-blue-600" />
               </div>
@@ -527,10 +499,9 @@ export default function StopCyberThreats() {
               </p>
             </motion.div>
 
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-10 bg-white rounded-[40px] border border-slate-200 shadow-lg group transition-all"
-            >
+            <motion.div whileHover={{
+            y: -10
+          }} className="p-10 bg-white rounded-[40px] border border-slate-200 shadow-lg group transition-all">
               <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                 <FileText className="w-8 h-8 text-white" />
               </div>
@@ -561,11 +532,7 @@ export default function StopCyberThreats() {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-slate-700 text-white rounded-full px-12 h-16 text-xl hover:bg-slate-800"
-              >
+              <Button size="lg" variant="outline" className="border-slate-700 text-white rounded-full px-12 h-16 text-xl hover:bg-slate-800">
                 Contact Sales
               </Button>
             </Link>
@@ -574,6 +541,5 @@ export default function StopCyberThreats() {
       </section>
 
 
-    </main>
-  );
+    </main>;
 }
