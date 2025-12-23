@@ -16,7 +16,7 @@ const contactOptions = [
     icon: Mail,
     title: "Email Us",
     description: "Send us an email and we'll respond within 24 hours.",
-    contact: "Info@itenhance.tech",
+    contact: "connect@itenhance.tech",
     type: "email",
     color: "bg-emerald-500",
   },
@@ -57,7 +57,7 @@ const offices = [
 ];
 const companyContact = {
   phone: "+971 4 329 6840",
-  email: "Info@itenhance.tech",
+  email: "connect@itenhance.tech",
   address: "Al Diyar Building, Sheikh Zayed Road, Dubai, UAE",
 };
 export default function Contact() {
