@@ -209,7 +209,7 @@ const navItems: NavItem[] = [
       {
         label: "Our Goals",
         href: "/resources/webinars",
-        description: "Expert sessions",
+        description: "",
       },
     ],
   },
