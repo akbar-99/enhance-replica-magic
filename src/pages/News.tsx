@@ -11,19 +11,20 @@ import Navbar from '../components/Navbar';
 import FloatingNavBar from '../components/FloatingNavBar';
 
 const News = () => {
-    const { articles, loading, refresh } = useNewsAggregator();
+    const { articles, loading, refresh, lastUpdated } = useNewsAggregator();
     const [selectedSource, setSelectedSource] = useState<string>('All');
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
     const [isRefreshing, setIsRefreshing] = useState(false);
 
-    const sources = ['All', 'TechCrunch', 'Hacker News', 'The Verge', 'ZDNet'];
+    const sources = ['All', 'TechCrunch', 'Hacker News', 'The Verge', 'ZDNet', 'InfoWorld'];
 
     const sourceColors = {
         'TechCrunch': 'bg-green-500',
         'Hacker News': 'bg-orange-500',
         'The Verge': 'bg-pink-500',
         'ZDNet': 'bg-blue-500',
+        'InfoWorld': 'bg-purple-500',
     };
 
     const filteredAndSortedArticles = useMemo(() => {
@@ -103,9 +104,15 @@ const News = () => {
                         <p className="text-xl md:text-2xl mb-3 text-white/90">
                             Stay ahead with the latest technology news
                         </p>
-                        <div className="flex items-center justify-center space-x-2 text-white/70">
+                        <div className="flex items-center justify-center space-x-3 text-white/70">
+                            <span className="flex h-2 w-2 relative">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span className="text-sm font-medium tracking-wider text-green-400 uppercase">Live</span>
+                            <span className="text-white/40">|</span>
                             <TrendingUp className="h-5 w-5 animate-pulse" />
-                            <span>Live updates from 4 top tech sources</span>
+                            <span>Real-time updates from 5 sources</span>
                         </div>
                     </motion.div>
                 </div>
@@ -229,9 +236,17 @@ const News = () => {
                         </div>
                     </div>
 
-                    {/* Results Count */}
-                    <div className="mt-4 text-sm text-muted-foreground text-center lg:text-left">
-                        Showing {filteredAndSortedArticles.length} article{filteredAndSortedArticles.length !== 1 ? 's' : ''}
+                    {/* Results Count & Last Updated */}
+                    <div className="mt-4 flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-muted-foreground">
+                        <div>
+                            Showing {filteredAndSortedArticles.length} article{filteredAndSortedArticles.length !== 1 ? 's' : ''}
+                        </div>
+                        {lastUpdated && (
+                            <div className="flex items-center gap-2">
+                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                Last updated: {format(lastUpdated, 'hh:mm:ss a')}
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
