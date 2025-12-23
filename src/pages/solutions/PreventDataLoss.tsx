@@ -39,7 +39,7 @@ export default function PreventDataLoss() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue py-[72px]">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue py-[44px]">
         <div className="absolute inset-0 bg-hero-gradient opacity-95" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
