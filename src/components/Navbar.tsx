@@ -207,6 +207,11 @@ const navItems: NavItem[] = [
         description: "Join Our Team",
       },
       {
+        label: " Internship",
+        href: "/company/careers",
+        description: "Join Our Team",
+      },
+      {
         label: "Contact",
         href: "/company/contact",
         description: "Get in Touch",
