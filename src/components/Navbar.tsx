@@ -175,11 +175,7 @@ const navItems: NavItem[] = [
         href: "/resources/blog",
         description: "Latest Insights",
       },
-      {
-        label: "Case Studies",
-        href: "/resources/case-studies",
-        description: "Success Stories",
-      },
+
       {
         label: "News",
         href: "/news",
