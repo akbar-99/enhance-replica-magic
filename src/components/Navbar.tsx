@@ -185,11 +185,6 @@ const navItems: NavItem[] = [
         href: "/company/news",
         description: "Latest Announcements",
       },
-      {
-        label: "Webinars",
-        href: "/resources/webinars",
-        description: "Expert sessions",
-      },
     ],
   },
 
@@ -210,6 +205,11 @@ const navItems: NavItem[] = [
         label: "Contact",
         href: "/company/contact",
         description: "Get in Touch",
+      },
+      {
+        label: "Our Goals",
+        href: "/resources/webinars",
+        description: "Expert sessions",
       },
     ],
   },
