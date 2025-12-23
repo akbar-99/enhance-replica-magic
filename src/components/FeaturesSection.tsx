@@ -61,8 +61,8 @@ export default function FeaturesSection() {
     <section className="bg-white py-[35px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-slate-900">​What </span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500"> We Do </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+            What We Do
           </h2>
           <p className="text-lg text-slate-500 max-w-1xl mx-auto leading-relaxed">
             Enhance your organization with our comprehensive suite of technology services tailored for both SMEs and

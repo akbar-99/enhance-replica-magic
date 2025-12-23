@@ -44,7 +44,7 @@ const FAQSection = () => {
         {/* Top - Title Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            <span className="text-slate-900">The Enhance</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech Difference</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">The Enhance Tech Difference</span>
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto">
             We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational

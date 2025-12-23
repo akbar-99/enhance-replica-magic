@@ -133,10 +133,9 @@ const BlogSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
-            <span className="text-slate-900">Latest news, updates</span> <span className="text-primary">&</span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">strategies for your business.</span>
+          <h2 className="text-3xl lg:text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 pb-2">
+            Latest news, updates & <br />
+            strategies for your business.
           </h2>
           <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-1xl mx-auto">
             Technology moves fast—we help you keep up. Explore our latest articles to find simple explanations for

@@ -102,12 +102,12 @@ export default function ITAMCQuote() {
         structuredData={amcSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <FileText className="w-4 h-4 text-primary" />
@@ -125,10 +125,12 @@ export default function ITAMCQuote() {
       {/* Features */}
       <section className="py-16 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-10">What's Included in Our AMC</h2>
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 text-center mb-10">
+            What's Included in Our AMC
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {amcFeatures.map((feature, index) => (
-              <div 
+              <div
                 key={feature.title}
                 className="group bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
               >
@@ -149,13 +151,12 @@ export default function ITAMCQuote() {
           <h2 className="text-2xl font-bold text-slate-900 text-center mb-10">AMC Plans</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {amcPlans.map((plan) => (
-              <div 
+              <div
                 key={plan.name}
-                className={`relative bg-white border rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 ${
-                  plan.popular 
-                    ? 'border-primary shadow-xl shadow-primary/10' 
-                    : 'border-slate-200/80 hover:shadow-xl hover:shadow-primary/10'
-                }`}
+                className={`relative bg-white border rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 ${plan.popular
+                  ? 'border-primary shadow-xl shadow-primary/10'
+                  : 'border-slate-200/80 hover:shadow-xl hover:shadow-primary/10'
+                  }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-semibold rounded-full">

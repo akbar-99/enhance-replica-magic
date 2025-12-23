@@ -108,8 +108,8 @@ export default function Contact() {
             <Mail className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Get in Touch</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Contact <span className="glow-text">Us</span>
+          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Contact Us
           </h1>
           <p
             className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up"
@@ -188,7 +188,7 @@ export default function Contact() {
               ) : (
                 <>
                   <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
+                    <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-2">Send us a Message</h2>
                     <p className="text-slate-600">Fill out the form below and we'll respond promptly.</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -274,7 +274,7 @@ export default function Contact() {
             {/* Map Section */}
             <div className="bg-white border border-slate-200/80 rounded-3xl p-4 shadow-xl shadow-primary/5 h-full min-h-[500px] flex flex-col">
               <div className="p-4 mb-2">
-                <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 flex items-center gap-3">
                   <MapPin className="w-6 h-6 text-primary" />
                   Find Us
                 </h2>
@@ -304,7 +304,7 @@ export default function Contact() {
       <section className="py-20 page-section-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Offices</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Our Offices</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">Visit us at one of our global locations.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

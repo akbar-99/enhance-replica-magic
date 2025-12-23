@@ -123,20 +123,20 @@ export default function Resources() {
         structuredData={resourcesSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <BookOpen className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Knowledge Center</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Security <span className="glow-text">Resources</span>
+          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Security Resources
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Explore our library of resources to help you stay ahead of threats and maximize your security investment.
@@ -148,7 +148,7 @@ export default function Resources() {
       <section className="py-20 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold text-slate-900">Featured Resources</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Featured Resources</h2>
             <Link to="/resources/all" className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
               View All <ChevronRight className="w-4 h-4" />
             </Link>
@@ -196,7 +196,7 @@ export default function Resources() {
       <section className="py-20 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Browse by Category</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Browse by Category</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Find the resources that matter most to your security journey.
             </p>
@@ -230,15 +230,15 @@ export default function Resources() {
       {/* Newsletter CTA */}
       <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">
             Stay Updated
           </h2>
           <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest security insights and updates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input 
-              type="email" 
+            <input
+              type="email"
               placeholder="Enter your email"
               className="flex-1 px-6 py-4 bg-slate-800/50 border border-slate-700 rounded-full text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
             />

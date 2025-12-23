@@ -137,8 +137,8 @@ export default function Solutions() {
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Industry Solutions</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Security <span className="glow-text">Solutions</span>
+          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Security Solutions
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Industry-specific solutions and use cases designed to address your unique security challenges.
@@ -150,7 +150,7 @@ export default function Solutions() {
       <section className="py-20 page-section-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Explore Our Solutions</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Explore Our Solutions</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Comprehensive security solutions to protect your data and business from every angle.
             </p>
@@ -189,7 +189,7 @@ export default function Solutions() {
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Trusted by Industry Leaders</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Trusted by Industry Leaders</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
               Our solutions protect organizations across all major industries worldwide.
             </p>
@@ -215,7 +215,7 @@ export default function Solutions() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/10 via-white to-[hsl(var(--glow-cyan))]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">
             Find Your Solution
           </h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">

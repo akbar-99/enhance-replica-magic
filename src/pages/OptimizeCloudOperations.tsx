@@ -173,9 +173,9 @@ export default function OptimizeCloudOperations() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <motion.div {...fadeIn}>
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
                                 Beyond Migration: <br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">Taming Cloud Complexity</span>
+                                Taming Cloud Complexity
                             </h2>
                             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
                                 <p>
@@ -214,7 +214,7 @@ export default function OptimizeCloudOperations() {
                             <Zap className="w-4 h-4 text-primary" />
                             <span className="text-xs font-extrabold text-primary uppercase tracking-[0.2em]">Business Impact</span>
                         </motion.div>
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Key Benefits</motion.h2>
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Key Benefits</motion.h2>
                         <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             Discover how optimized cloud operations transform your IT efficiency and bottom line.
                         </motion.p>
@@ -259,7 +259,7 @@ export default function OptimizeCloudOperations() {
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-20">
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Our Tech Ecosystem</motion.h2>
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Our Tech Ecosystem</motion.h2>
                         <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             We enhance your cloud efficiency by leveraging the full power of the Microsoft Cloud stack.
                         </motion.p>
@@ -469,9 +469,9 @@ export default function OptimizeCloudOperations() {
                         <div className="lg:w-1/3">
                             <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/10 rounded-full mb-6 border border-cyan-500/20">
                                 <Shield className="w-4 h-4 text-cyan-400" />
-                                <span className="text-[10px] font-extrabold text-cyan-400 uppercase tracking-[0.3em]">The Enhance Advantage</span>
+                                <span className="text-[10px] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 uppercase tracking-[0.3em]">The Enhance Advantage</span>
                             </motion.div>
-                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">We Don't Just Setup. <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">We Fine-Tune.</span></motion.h2>
+                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">We Don't Just Setup. <br /> We Fine-Tune.</motion.h2>
                             <motion.p {...fadeIn} className="text-slate-400 text-lg leading-relaxed">
                                 A cloud environment is a living thing—it grows and changes every day. Enhance Tech provides ongoing optimization to ensure it stays efficient, secure and scalable.
                             </motion.p>
@@ -508,7 +508,7 @@ export default function OptimizeCloudOperations() {
             {/* CTA Section */}
             <section className="py-24 bg-white relative">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Optimize Your Cloud Today</motion.h2>
+                    <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Optimize Your Cloud Today</motion.h2>
                     <motion.p {...fadeIn} className="text-xl text-slate-600 mb-10">
                         Stop paying for resources you don't use. Enhance your efficiency now with a professional health check.
                     </motion.p>

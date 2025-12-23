@@ -124,9 +124,8 @@ export default function TrustedBy() {
   }, [isPaused]);
   return <section className="bg-white py-[3px]">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-      <h2 className="text-2xl md:text-3xl font-bold py-[16px] lg:text-4xl my-0">
-        <span className="text-slate-900 text-5xl">{t("trusted.title")} </span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 text-5xl">{t("trusted.titleHighlight")}</span>
+      <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold py-6 my-0 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+        Partnered with the best to deliver the best.
       </h2>
       <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-[2px]">
         We maintain strategic alliances and hold certifications from premier industry organizations.

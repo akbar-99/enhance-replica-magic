@@ -225,18 +225,8 @@ export default function CTASection() {
           }} transition={{
             duration: 0.5,
             delay: 0.2
-          }} className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 relative">
-            <span className="text-white">{t('cta.title')} </span>
-            <motion.span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 relative inline-block" whileHover={{
-              scale: 1.05
-            }} transition={{
-              type: "spring",
-              stiffness: 300
-            }}>
-              {t('cta.titleHighlight')}
-              {/* Glow effect under text */}
-              <span className="absolute inset-0 blur-lg bg-glow-cyan/30 -z-10" />
-            </motion.span>
+          }} className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 relative bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+            {t('cta.title')} {t('cta.titleHighlight')}
           </motion.h2>
 
           <motion.p initial={{

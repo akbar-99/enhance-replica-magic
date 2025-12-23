@@ -89,7 +89,7 @@ const locationData: Record<string, {
 export default function ServiceLocation() {
   const { slug } = useParams<{ slug: string }>();
   const location = locationData[slug || ''] || locationData['it-support-dubai'];
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -117,23 +117,19 @@ export default function ServiceLocation() {
         canonicalUrl={`https://itenhance.tech/services/${slug}`}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <MapPin className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">{location.name}</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            {location.fullName.split(' ').map((word, i) => 
-              i === location.fullName.split(' ').length - 1 
-                ? <span key={i} className="glow-text">{word}</span> 
-                : word + ' '
-            )}
+          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            {location.fullName}
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
             {location.description}
@@ -144,10 +140,10 @@ export default function ServiceLocation() {
       {/* Services */}
       <section className="py-16 page-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-10">Our Services</h2>
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 text-center mb-10">Our Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {location.services.map((service, index) => (
-              <div 
+              <div
                 key={service.title}
                 className="group bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
               >
@@ -167,7 +163,7 @@ export default function ServiceLocation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Why Choose Us in {location.name}</h2>
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6">Why Choose Us in {location.name}</h2>
               <ul className="space-y-4">
                 {location.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">

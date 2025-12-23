@@ -156,9 +156,9 @@ export default function NetworkSecurity() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <motion.div {...fadeIn}>
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
                                 Network Security: <br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">The First Line of Defense</span>
+                                The First Line of Defense
                             </h2>
                             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
                                 <p className="font-semibold text-slate-900">
@@ -201,7 +201,7 @@ export default function NetworkSecurity() {
                             <Zap className="w-4 h-4 text-blue-600" />
                             <span className="text-xs font-extrabold text-blue-600 uppercase tracking-[0.2em]">Strategic Security</span>
                         </motion.div>
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Key Benefits</motion.h2>
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Key Benefits</motion.h2>
                         <motion.p {...fadeIn} className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             Discover how upgrading your network security transforms your defense.
                         </motion.p>
@@ -255,7 +255,9 @@ export default function NetworkSecurity() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">What's Included</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+                                What's Included
+                            </h2>
                             <p className="text-slate-600 text-lg mb-10 leading-relaxed">
                                 Comprehensive capabilities designed to harden your network infrastructure.
                             </p>
@@ -306,7 +308,7 @@ export default function NetworkSecurity() {
             <section className="py-24 bg-slate-950 text-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-20">
-                        <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Our Technology Ecosystem</motion.h2>
+                        <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-4 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Our Technology Ecosystem</motion.h2>
                         <motion.p {...fadeIn} className="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
                             We enhance your network with the world’s top firewall vendors, validated by industry analysts like Gartner® and Forrester®.
                         </motion.p>
@@ -497,10 +499,10 @@ export default function NetworkSecurity() {
                         <div className="lg:w-1/3">
                             <motion.div {...fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 rounded-full mb-6 border border-blue-200">
                                 <Shield className="w-4 h-4 text-blue-600" />
-                                <span className="text-[10px] font-extrabold text-blue-600 uppercase tracking-[0.3em]">The Enhance Advantage</span>
+                                <span className="text-[10px] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 uppercase tracking-[0.3em]">The Enhance Advantage</span>
                             </motion.div>
-                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-slate-900">
-                                We Don't Just Plug It In. <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">We Tune It.</span>
+                            <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+                                We Don't Just Plug It In. <br /> We Tune It.
                             </motion.h2>
                             <motion.p {...fadeIn} className="text-slate-600 text-lg leading-relaxed">
                                 A firewall with "default settings" provides almost no protection. To work effectively, it must be tuned to your specific traffic and risks.
@@ -538,7 +540,7 @@ export default function NetworkSecurity() {
             <section className="py-24 bg-slate-900 relative overflow-hidden">
                 <div className="absolute inset-0 bg-hero-gradient opacity-20" />
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold text-white mb-6">Secure Your Network Today</motion.h2>
+                    <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Secure Your Network Today</motion.h2>
                     <motion.p {...fadeIn} className="text-xl text-slate-300 mb-10">
                         Don't leave your digital front door open. Enhance your perimeter defense now.
                     </motion.p>

@@ -84,7 +84,7 @@ export default function WorkplaceModernization() {
               <span className="text-purple-600 font-semibold tracking-wider uppercase text-sm">
                 About Workplace Modernization
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold mt-2 mb-6 text-slate-900">Work From Anywhere, Securely</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold mt-2 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Work From Anywhere, Securely</h2>
               <div className="space-y-6 text-slate-600 leading-relaxed">
                 <p>
                   The way we work has changed forever. Rigid, on-premise servers and isolated workstations are slowing
@@ -109,7 +109,7 @@ export default function WorkplaceModernization() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Our Modernization Solutions</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Our Modernization Solutions</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">Comprehensive tools for the hybrid workforce.</p>
           </div>
 
@@ -339,7 +339,7 @@ export default function WorkplaceModernization() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">Why Modernize with Enhance Tech?</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Why Modernize with Enhance Tech?</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[

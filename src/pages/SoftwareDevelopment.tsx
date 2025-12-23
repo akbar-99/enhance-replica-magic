@@ -84,7 +84,7 @@ export default function SoftwareDevelopment() {
               <span className="text-indigo-600 font-semibold tracking-wider uppercase text-sm">
                 About Software & Web Development
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold mt-2 mb-6 text-slate-900">
+              <h2 className="text-3xl lg:text-4xl font-bold mt-2 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
                 Turning Ideas into Digital Reality
               </h2>
               <div className="space-y-6 text-slate-600 leading-relaxed">
@@ -111,7 +111,7 @@ export default function SoftwareDevelopment() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Our Development Solutions</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Our Development Solutions</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">Scalable, secure, and user-centric digital products.</p>
           </div>
 
@@ -369,7 +369,7 @@ export default function SoftwareDevelopment() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">Why Choose Enhance Tech?</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Why Choose Enhance Tech?</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[

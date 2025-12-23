@@ -84,20 +84,20 @@ export default function Partners() {
         structuredData={partnersSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-10 right-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-10 left-1/4 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <Handshake className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Partner Network</span>
           </div>
-          <h1 className="section-title text-slate-900 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Partner <span className="glow-text">Ecosystem</span>
+          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Partner Ecosystem
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Join our global network of partners and help organizations protect their most valuable assets.
@@ -130,7 +130,7 @@ export default function Partners() {
       <section className="py-20 page-section-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Partnership Opportunities</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Partnership Opportunities</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Explore the different ways you can partner with Enhance Tech.
             </p>
@@ -173,15 +173,15 @@ export default function Partners() {
       <section className="py-20 page-section-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Technology Alliances</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Technology Alliances</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               We integrate with leading technology platforms to deliver comprehensive security solutions.
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {partnerLogos.map((logo, index) => (
-              <div 
-                key={logo} 
+              <div
+                key={logo}
                 className="group px-8 py-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-all duration-300 hover:scale-105"
               >
                 <span className="text-xl font-bold text-slate-400 group-hover:text-primary transition-colors duration-300">
@@ -200,7 +200,7 @@ export default function Partners() {
             <Star className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Become a Partner</span>
           </div>
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">
             Ready to Partner with Us?
           </h2>
           <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
