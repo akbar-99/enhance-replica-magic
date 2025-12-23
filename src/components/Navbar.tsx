@@ -197,6 +197,11 @@ const navItems: NavItem[] = [
         description: "Our Mission & Values",
       },
       {
+        label: "Our Goals",
+        href: "/resources/webinars",
+        description: "",
+      },
+      {
         label: "Careers",
         href: "/company/careers",
         description: "Join Our Team",
@@ -205,11 +210,6 @@ const navItems: NavItem[] = [
         label: "Contact",
         href: "/company/contact",
         description: "Get in Touch",
-      },
-      {
-        label: "Our Goals",
-        href: "/resources/webinars",
-        description: "",
       },
     ],
   },
