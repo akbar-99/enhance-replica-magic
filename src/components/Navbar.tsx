@@ -88,7 +88,7 @@ const navItems: NavItem[] = [
       {
         label: "Compute and Storage",
         href: "/solutions/enterprise-hardware",
-        description: "Secure cloud environments",
+        description: "Secure Cloud Environments",
       },
       {
         label: "Network Security",
@@ -118,22 +118,22 @@ const navItems: NavItem[] = [
       {
         label: "Managed Services",
         href: "/services/managed-it",
-        description: "Proactive IT management & support",
+        description: "Proactive IT management & Support",
       },
       {
         label: "Infrastructure Deployment",
         href: "/services/infrastructure-deployment",
-        description: "Network & system implementation",
+        description: "Network & System Implementation",
       },
       {
         label: "Workplace Modernization",
         href: "/services/workplace-modernization",
-        description: "Modern digital workplace solutions",
+        description: "Modern Digital Workplace Solutions",
       },
       {
         label: "Software & Web Development",
         href: "/services/software-development",
-        description: "Custom software & web applications",
+        description: "Custom Software & Web Applications",
       },
     ],
   },
@@ -173,12 +173,12 @@ const navItems: NavItem[] = [
       {
         label: "Blogs",
         href: "/resources/blog",
-        description: "Latest insights",
+        description: "Latest Insights",
       },
       {
         label: "Case Studies",
         href: "/resources/case-studies",
-        description: "Success stories",
+        description: "Success Stories",
       },
       {
         label: "Whitepapers",
@@ -218,22 +218,22 @@ const navItems: NavItem[] = [
       {
         label: "About Us",
         href: "/company/about",
-        description: "Our mission & values",
+        description: "Our Mission & Values",
       },
       {
         label: "Careers",
         href: "/company/careers",
-        description: "Join our team",
+        description: "Join Our Team",
       },
       {
         label: "Contact",
         href: "/company/contact",
-        description: "Get in touch",
+        description: "Get in Touch",
       },
       {
         label: "News",
         href: "/company/news",
-        description: "Latest announcements",
+        description: "Latest Announcements",
       },
     ],
   },
