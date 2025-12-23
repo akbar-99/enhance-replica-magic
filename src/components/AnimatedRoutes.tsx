@@ -25,7 +25,9 @@ import NetworkSecurity from '@/pages/NetworkSecurity';
 import StopCyberThreats from '@/pages/solutions/StopCyberThreats';
 import PreventDataLoss from '@/pages/solutions/PreventDataLoss';
 import StreamlineITOperations from '@/pages/solutions/StreamlineITOperations';
+import PhysicalSecurity from '@/pages/solutions/PhysicalSecurity';
 import SmartMeetingRooms from '@/pages/solutions/SmartMeetingRooms';
+import News from '@/pages/News';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -48,6 +50,7 @@ const AnimatedRoutes = () => {
         <Route path="/solutions/it-support" element={<PageTransition><StreamlineITOperations /></PageTransition>} />
         <Route path="/solutions/meeting-room-av" element={<PageTransition><SmartMeetingRooms /></PageTransition>} />
         <Route path="/solutions/meeting-spaces" element={<PageTransition><SmartMeetingRooms /></PageTransition>} />
+        <Route path="/solutions/physical-security" element={<PageTransition><PhysicalSecurity /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
         <Route path="/resources/:slug" element={<PageTransition><Resources /></PageTransition>} />
@@ -58,6 +61,7 @@ const AnimatedRoutes = () => {
         <Route path="/company/careers" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/company/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/company/news" element={<PageTransition><Company /></PageTransition>} />
+        <Route path="/news" element={<PageTransition><News /></PageTransition>} />
         <Route path="/demo" element={<PageTransition><Demo /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/use-cases" element={<PageTransition><Solutions /></PageTransition>} />

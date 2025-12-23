@@ -142,27 +142,27 @@ const navItems: NavItem[] = [
     dropdown: [
       {
         label: "Optimize Cloud Operations",
-        href: "/solutions/enterprise",
+        href: "/solutions/optimize-cloud-operations",
         description: "Cloud Cost and Performance Management",
       },
       {
         label: "Stop Cyber Threats",
-        href: "/solutions/ai-security",
+        href: "/solutions/stop-cyber-threats",
         description: "Endpoint Detection and Response",
       },
       {
         label: "Prevent Data Loss",
-        href: "/solutions/compliance",
+        href: "/solutions/prevent-data-loss",
         description: "Backup and Disaster Recovery",
       },
       {
         label: "Streamline IT Support",
-        href: "/solutions/zero-trust",
+        href: "/solutions/streamline-it-operations",
         description: "24/7 Helpdesk & SOC",
       },
       {
         label: "Manage Microsoft 365",
-        href: "/solutions/enterprise",
+        href: "/solutions/microsoft-365",
         description: "Tenant Administration and Governance",
       },
     ],
@@ -182,8 +182,8 @@ const navItems: NavItem[] = [
       },
       {
         label: "News",
-        href: "/company/news",
-        description: "Latest Announcements",
+        href: "/news",
+        description: "Latest Tech News",
       },
     ],
   },
@@ -234,11 +234,11 @@ export default function Navbar() {
   const searchItems = getAllSearchItems();
   const filteredResults = searchQuery.trim()
     ? searchItems.filter(
-        (item) =>
-          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.category.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
+      (item) =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase()),
+    )
     : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
@@ -288,13 +288,12 @@ export default function Navbar() {
                   {/* Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`absolute top-full ${
-                        item.label === "Products"
-                          ? "left-1/2 -translate-x-1/2 w-[700px]"
-                          : item.label === "Solutions" || item.label === "Services"
-                            ? "left-1/2 -translate-x-1/2 w-[800px]"
-                            : "left-0 min-w-[240px]"
-                      } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
+                      className={`absolute top-full ${item.label === "Products"
+                        ? "left-1/2 -translate-x-1/2 w-[700px]"
+                        : item.label === "Solutions" || item.label === "Services"
+                          ? "left-1/2 -translate-x-1/2 w-[800px]"
+                          : "left-0 min-w-[240px]"
+                        } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
                       {item.label === "Solutions" || item.label === "Services" ? (
                         <div className="p-6">
