@@ -41,28 +41,28 @@ interface HeroTab {
 const heroTabs: HeroTab[] = [
   {
     id: "ai-security",
-    label: "Lack of In-House IT Expertise",
-    title: "Expert Skills at a Lower Cost",
+    label: "Expert Skills at a Lower Cost",
+    title: "Lack of In-House IT Expertise",
     description: "Access a full team of certified specialists for a fraction of the cost of hiring internally.",
   },
   {
     id: "discovery",
-    label: "Inefficient IT Projects and Rollouts",
-    title: "Strategic Project Management",
+    label: "Strategic Project Management",
+    title: "Inefficient IT Projects and Rollouts",
     description:
       "Streamline your execution with precision planning that keeps every rollout on track and cost-effective.",
   },
   {
     id: "enhance",
-    label: "Frequent Downtime",
-    title: "Ensure Business Continuity",
+    label: "Ensure Business Continuity",
+    title: "Frequent Downtime",
     description:
       "Proactive maintenance and 24 X 7 monitoring to identify and resolve potential issues before they disrupt your operations.",
   },
   {
     id: "Enhance 3",
-    label: "Security & Compliance Gaps",
-    title: "Fortify Your Infrastructure",
+    label: "Fortify Your Infrastructure",
+    title: "Security & Compliance Gaps",
     description:
       "Implement robust defense strategies that safeguard your sensitive data and ensure adherence to industry standards.",
   },
