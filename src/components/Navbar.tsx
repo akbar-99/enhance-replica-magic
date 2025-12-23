@@ -17,7 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-
+import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
 // Flatten all nav items for search
 const getAllSearchItems = () => {
   const items: {
@@ -261,14 +261,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-glow-cyan rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">E</span>
-            </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">
-              Enhance
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={enhanceTechLogo} 
+              alt="Enhance Tech" 
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

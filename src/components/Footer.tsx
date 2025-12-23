@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucide-react";
+import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
 const footerLinks = {
   Products: [
     {
@@ -154,14 +155,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-glow-cyan rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">E</span>
-              </div>
-              <span className="text-xl font-bold text-foreground tracking-tight">
-                Enhance
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
-              </span>
+            <Link to="/" className="flex items-center mb-4">
+              <img 
+                src={enhanceTechLogo} 
+                alt="Enhance Tech" 
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Protecting enterprise data with AI-native security solutions.
