@@ -9,7 +9,7 @@ const PhysicalSecurity = () => {
                 title="Physical Security & Surveillance | Enhance Tech"
                 description="Protect your premises with Enhance Tech. Advanced CCTV, Access Control, and Gate Barriers. Integrated physical security solutions for UAE offices and warehouses."
                 keywords="physical security, CCTV Dubai, access control, biometric systems, gate barriers, SIRA compliance, surveillance UAE"
-                canonical="https://enhancetech.ae/solutions/physical-security"
+                canonicalUrl="https://enhancetech.ae/solutions/physical-security"
             />
 
             {/* Placeholder - Content to be added */}
