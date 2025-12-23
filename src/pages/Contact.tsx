@@ -32,7 +32,7 @@ const contactOptions = [
 ];
 
 const offices = [
-  { city: "Dubai", address: "AlDiyar Building, Sheikh Zayed Road", region: "Dubai", country: "UAE" },
+  { city: "Dubai", address: "Al Diyar Building, Sheikh Zayed Road", region: "Dubai", country: "UAE" },
   {
     city: "Doha",
     country: "Qatar",
@@ -56,7 +56,7 @@ const offices = [
 const companyContact = {
   phone: "+971 4 329 6840",
   email: "Info@itenhance.tech",
-  address: "AlDiyar Building, Sheikh Zayed Road, Dubai, UAE",
+  address: "Al Diyar Building, Sheikh Zayed Road, Dubai, UAE",
 };
 
 export default function Contact() {
@@ -108,7 +108,10 @@ export default function Contact() {
             <Mail className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Get in Touch</span>
           </div>
-          <h1 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1
+            className="section-title bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             Contact Us
           </h1>
           <p
@@ -188,7 +191,9 @@ export default function Contact() {
               ) : (
                 <>
                   <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-2">Send us a Message</h2>
+                    <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-2">
+                      Send us a Message
+                    </h2>
                     <p className="text-slate-600">Fill out the form below and we'll respond promptly.</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -278,9 +283,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-primary" />
                   Find Us
                 </h2>
-                <p className="text-slate-600 mt-2">
-                  AlDiyar Building, Sheikh Zayed Road, Dubai, UAE
-                </p>
+                <p className="text-slate-600 mt-2">AlDiyar Building, Sheikh Zayed Road, Dubai, UAE</p>
               </div>
               <div className="flex-grow w-full rounded-2xl overflow-hidden border border-slate-100 relative bg-slate-100">
                 <iframe
@@ -304,7 +307,9 @@ export default function Contact() {
       <section className="py-20 page-section-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">Our Offices</h2>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-4">
+              Our Offices
+            </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">Visit us at one of our global locations.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
