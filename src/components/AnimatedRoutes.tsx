@@ -23,6 +23,7 @@ import SoftwareDevelopment from '@/pages/SoftwareDevelopment';
 import OptimizeCloudOperations from '@/pages/OptimizeCloudOperations';
 import NetworkSecurity from '@/pages/NetworkSecurity';
 import StopCyberThreats from '@/pages/solutions/StopCyberThreats';
+import PreventDataLoss from '@/pages/solutions/PreventDataLoss';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
         <Route path="/solutions/secure-network" element={<PageTransition><NetworkSecurity /></PageTransition>} />
         <Route path="/solutions/stop-cyber-threats" element={<PageTransition><StopCyberThreats /></PageTransition>} />
         <Route path="/solutions/cyber-threats" element={<PageTransition><StopCyberThreats /></PageTransition>} />
+        <Route path="/solutions/prevent-data-loss" element={<PageTransition><PreventDataLoss /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
         <Route path="/resources/:slug" element={<PageTransition><Resources /></PageTransition>} />
