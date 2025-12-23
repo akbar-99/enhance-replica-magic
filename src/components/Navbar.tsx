@@ -181,9 +181,9 @@ const navItems: NavItem[] = [
         description: "Success Stories",
       },
       {
-        label: "Whitepapers",
-        href: "/resources/whitepapers",
-        description: "In-depth research",
+        label: "News",
+        href: "/company/news",
+        description: "Latest Announcements",
       },
       {
         label: "Webinars",
@@ -192,26 +192,7 @@ const navItems: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Partners",
-    dropdown: [
-      {
-        label: "Partner Program",
-        href: "/partners/program",
-        description: "Join our ecosystem",
-      },
-      {
-        label: "Find a Partner",
-        href: "/partners/find",
-        description: "Local expertise",
-      },
-      {
-        label: "Technology Partners",
-        href: "/partners/technology",
-        description: "Integration partners",
-      },
-    ],
-  },
+
   {
     label: "Company",
     dropdown: [
@@ -229,11 +210,6 @@ const navItems: NavItem[] = [
         label: "Contact",
         href: "/company/contact",
         description: "Get in Touch",
-      },
-      {
-        label: "News",
-        href: "/company/news",
-        description: "Latest Announcements",
       },
     ],
   },
