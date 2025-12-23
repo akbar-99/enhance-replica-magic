@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import PromoBanner from "./components/PromoBanner";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import FloatingNavBar from "./components/FloatingNavBar";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -18,7 +20,9 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <PromoBanner />
+        <Navbar />
         <AnimatedRoutes />
+        <Footer />
         <FloatingNavBar />
       </BrowserRouter>
     </TooltipProvider>

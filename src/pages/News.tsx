@@ -75,12 +75,12 @@ const News = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-darker">
+            <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-darker">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-6 relative z-10 pt-12">
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -92,15 +92,15 @@ const News = () => {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm mb-8 border border-white/20"
+                            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm mb-6 border border-white/20"
                         >
                             <Newspaper className="h-10 w-10" />
                         </motion.div>
 
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                        <h1 className="text-5xl md:text-6xl font-bold mb-4">
                             Tech News Hub
                         </h1>
-                        <p className="text-xl md:text-2xl mb-4 text-white/90">
+                        <p className="text-xl md:text-2xl mb-3 text-white/90">
                             Stay ahead with the latest technology news
                         </p>
                         <div className="flex items-center justify-center space-x-2 text-white/70">
@@ -108,6 +108,68 @@ const News = () => {
                             <span>Live updates from 4 top tech sources</span>
                         </div>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* Breaking News Ticker */}
+            <section className="bg-red-600 border-y border-red-700 overflow-hidden">
+                <div className="container mx-auto px-6 py-3">
+                    <div className="flex items-center gap-4">
+                        <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="flex items-center gap-2 bg-red-700 px-4 py-1.5 rounded-full flex-shrink-0"
+                        >
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                            </span>
+                            <span className="text-white font-bold text-sm uppercase tracking-wider">Breaking News</span>
+                        </motion.div>
+
+                        <div className="flex-1 overflow-hidden">
+                            <motion.div
+                                animate={{
+                                    x: [0, -2000],
+                                }}
+                                transition={{
+                                    x: {
+                                        repeat: Infinity,
+                                        repeatType: "loop",
+                                        duration: 30,
+                                        ease: "linear",
+                                    },
+                                }}
+                                className="flex gap-8 whitespace-nowrap"
+                            >
+                                {articles.slice(0, 10).map((article, index) => (
+                                    <a
+                                        key={index}
+                                        href={article.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+                                    >
+                                        <span className="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+                                        <span className="font-medium">{article.title}</span>
+                                    </a>
+                                ))}
+                                {/* Duplicate for seamless loop */}
+                                {articles.slice(0, 10).map((article, index) => (
+                                    <a
+                                        key={`dup-${index}`}
+                                        href={article.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+                                    >
+                                        <span className="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+                                        <span className="font-medium">{article.title}</span>
+                                    </a>
+                                ))}
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
