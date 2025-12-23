@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, Handshake, Search, Cpu, Award, Users, Globe, ChevronRight, CheckCircle, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -219,7 +219,7 @@ export default function Partners() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

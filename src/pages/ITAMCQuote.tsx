@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText } from 'lucide-react';
 
@@ -274,7 +274,7 @@ export default function ITAMCQuote() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

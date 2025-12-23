@@ -410,7 +410,7 @@ export default function ManagedITServices() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

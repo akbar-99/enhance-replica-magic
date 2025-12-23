@@ -244,7 +244,7 @@ export default function Company() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

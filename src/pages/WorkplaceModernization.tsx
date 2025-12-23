@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
@@ -385,7 +385,7 @@ export default function WorkplaceModernization() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

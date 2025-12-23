@@ -381,7 +381,7 @@ export default function InfrastructureDeployment() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

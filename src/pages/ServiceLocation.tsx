@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO from '@/components/SEO';
 import { ArrowRight, CheckCircle, MapPin, Phone, Mail, Send, Shield, Server, Clock, Headphones, Building, Network, Cloud, Settings } from 'lucide-react';
 
@@ -231,7 +231,7 @@ export default function ServiceLocation() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

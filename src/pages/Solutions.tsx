@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, ChevronRight, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -234,7 +234,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

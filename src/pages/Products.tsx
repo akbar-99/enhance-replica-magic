@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye, Server, Globe, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -110,13 +110,13 @@ export default function Products() {
         structuredData={productsSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-up">
             <Shield className="w-4 h-4 text-primary" />
@@ -197,7 +197,7 @@ export default function Products() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

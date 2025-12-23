@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Cloud, Shield, Zap, Layout, Eye, Laptop, Serv
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -531,7 +531,7 @@ export default function OptimizeCloudOperations() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

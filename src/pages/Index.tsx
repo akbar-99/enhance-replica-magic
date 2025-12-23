@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import NewsCarousel from '@/components/NewsCarousel';
-import Footer from '@/components/Footer';
+
 import NewsAndTrustedSection from '@/components/NewsAndTrustedSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import TrustedBy from '@/components/TrustedBy';
@@ -84,7 +84,7 @@ const Index = () => {
       <StatsSection />
       <BlogSection />
       <CTASection />
-      <Footer />
+
       <FloatingNavBar />
     </main>
   );

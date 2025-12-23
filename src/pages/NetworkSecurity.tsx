@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Laptop, Server, Datab
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -563,7 +563,7 @@ export default function NetworkSecurity() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

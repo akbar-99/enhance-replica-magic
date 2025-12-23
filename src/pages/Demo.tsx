@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote } from 'lucide-react';
 
@@ -89,7 +89,7 @@ export default function Demo() {
             </a>
           </div>
         </section>
-        <Footer />
+
       </main>
     );
   }
@@ -104,12 +104,12 @@ export default function Demo() {
         structuredData={demoSchema}
       />
       <Navbar />
-      
+
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-1/3 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
@@ -124,11 +124,11 @@ export default function Demo() {
               <p className="text-lg text-slate-600 mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
                 See how Enhance Tech can help protect your organization's most sensitive data with a personalized demo from one of our security experts.
               </p>
-              
+
               <div className="space-y-6 mb-10">
                 {benefits.map((benefit, index) => (
-                  <div 
-                    key={benefit.text} 
+                  <div
+                    key={benefit.text}
                     className="flex items-start gap-4 group animate-fade-up"
                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   >
@@ -329,7 +329,7 @@ export default function Demo() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
 import FloatingNavBar from '../components/FloatingNavBar';
 
 const News = () => {
@@ -339,7 +339,7 @@ const News = () => {
                     )}
                 </div>
             </section>
-            <Footer />
+
             <FloatingNavBar />
         </main>
     );

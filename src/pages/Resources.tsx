@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, BookOpen, FileText, Video, Download, Calendar, Newspaper, ChevronRight, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -250,7 +250,7 @@ export default function Resources() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

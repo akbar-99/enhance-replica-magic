@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye, Server, Globe, Check, ChevronRight } from 'lucide-react';
 
@@ -159,7 +159,7 @@ export default function ProductDetail() {
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <Footer />
+
       </main>
     );
   }
@@ -196,18 +196,18 @@ export default function ProductDetail() {
         structuredData={productSchema}
       />
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />
         <div className="absolute top-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-64 h-64 bg-[hsl(var(--glow-cyan))]/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-12">
             <div className="flex-1">
-              <Link 
-                to="/products" 
+              <Link
+                to="/products"
                 className="inline-flex items-center gap-2 text-primary text-sm font-medium mb-6 hover:gap-3 transition-all duration-300"
               >
                 <ChevronRight className="w-4 h-4 rotate-180" />
@@ -265,7 +265,7 @@ export default function ProductDetail() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.benefits.map((benefit, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
               >
@@ -334,7 +334,7 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }
