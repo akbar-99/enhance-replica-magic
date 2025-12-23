@@ -88,7 +88,7 @@ const navItems: NavItem[] = [
       {
         label: "Compute and Storage",
         href: "/solutions/enterprise-hardware",
-        description: "Secure Cloud Environments",
+        description: " Enterprise Servers and Storage",
       },
       {
         label: "Network Security",
