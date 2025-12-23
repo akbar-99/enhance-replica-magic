@@ -196,21 +196,13 @@ const navItems: NavItem[] = [
         href: "/company/about",
         description: "Our Mission & Values",
       },
-      {
-        label: "Our Goals",
-        href: "/resources/webinars",
-        description: "",
-      },
+
       {
         label: "Careers",
         href: "/company/careers",
         description: "Join Our Team",
       },
-      {
-        label: " Internship",
-        href: "/company/careers",
-        description: "Join Our Team",
-      },
+
       {
         label: "Contact",
         href: "/company/contact",
@@ -234,11 +226,11 @@ export default function Navbar() {
   const searchItems = getAllSearchItems();
   const filteredResults = searchQuery.trim()
     ? searchItems.filter(
-      (item) =>
-        item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toLowerCase().includes(searchQuery.toLowerCase()),
-    )
+        (item) =>
+          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.category.toLowerCase().includes(searchQuery.toLowerCase()),
+      )
     : [];
   useEffect(() => {
     if (searchOpen && searchInputRef.current) {
@@ -262,9 +254,9 @@ export default function Navbar() {
         <div className="flex items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img 
-              src={enhanceTechLogo} 
-              alt="Enhance Tech" 
+            <img
+              src={enhanceTechLogo}
+              alt="Enhance Tech"
               className="h-10 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
             />
           </Link>
@@ -286,12 +278,13 @@ export default function Navbar() {
                   {/* Dropdown */}
                   {item.dropdown && (
                     <div
-                      className={`absolute top-full ${item.label === "Products"
-                        ? "left-1/2 -translate-x-1/2 w-[700px]"
-                        : item.label === "Solutions" || item.label === "Services"
-                          ? "left-1/2 -translate-x-1/2 w-[800px]"
-                          : "left-0 min-w-[240px]"
-                        } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
+                      className={`absolute top-full ${
+                        item.label === "Products"
+                          ? "left-1/2 -translate-x-1/2 w-[700px]"
+                          : item.label === "Solutions" || item.label === "Services"
+                            ? "left-1/2 -translate-x-1/2 w-[800px]"
+                            : "left-0 min-w-[240px]"
+                      } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
                       {item.label === "Solutions" || item.label === "Services" ? (
                         <div className="p-6">
