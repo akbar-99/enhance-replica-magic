@@ -21,6 +21,7 @@ import InfrastructureDeployment from '@/pages/InfrastructureDeployment';
 import WorkplaceModernization from '@/pages/WorkplaceModernization';
 import SoftwareDevelopment from '@/pages/SoftwareDevelopment';
 import OptimizeCloudOperations from '@/pages/OptimizeCloudOperations';
+import NetworkSecurity from '@/pages/NetworkSecurity';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -34,6 +35,8 @@ const AnimatedRoutes = () => {
         <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
         <Route path="/solutions/optimize-cloud-operations" element={<PageTransition><OptimizeCloudOperations /></PageTransition>} />
         <Route path="/solutions/cloud-operations" element={<PageTransition><OptimizeCloudOperations /></PageTransition>} />
+        <Route path="/solutions/network-security" element={<PageTransition><NetworkSecurity /></PageTransition>} />
+        <Route path="/solutions/secure-network" element={<PageTransition><NetworkSecurity /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
         <Route path="/resources/:slug" element={<PageTransition><Resources /></PageTransition>} />
