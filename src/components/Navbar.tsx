@@ -261,11 +261,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center group">
             <img 
               src={enhanceTechLogo} 
               alt="Enhance Tech" 
-              className="h-9 w-auto"
+              className="h-12 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
+              style={{
+                filter: "brightness(0) saturate(100%) invert(68%) sepia(52%) saturate(456%) hue-rotate(152deg) brightness(96%) contrast(91%)",
+              }}
             />
           </Link>
 
