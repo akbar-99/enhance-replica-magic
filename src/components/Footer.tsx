@@ -159,7 +159,8 @@ export default function Footer() {
                 <span className="text-primary-foreground font-bold text-sm">E</span>
               </div>
               <span className="text-xl font-bold text-foreground tracking-tight">
-                Enhance<span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
+                Enhance
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">Tech</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
@@ -179,7 +180,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>AlDiyar Building, Sheikh Zayed Road, Dubai, UAE</span>
+                <span>Al Diyar Building, Sheikh Zayed Road, Dubai, UAE</span>
               </div>
             </div>
             <div className="flex gap-3">
@@ -201,9 +202,7 @@ export default function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="flex flex-col">
-              <h4 className="font-semibold mb-4 text-sm text-foreground">
-                {category}
-              </h4>
+              <h4 className="font-semibold mb-4 text-sm text-foreground">{category}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
