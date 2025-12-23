@@ -6,6 +6,9 @@ import { format, formatDistanceToNow } from 'date-fns';
 import SEO from '../components/SEO';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import FloatingNavBar from '../components/FloatingNavBar';
 
 const News = () => {
     const { articles, loading, refresh } = useNewsAggregator();
@@ -62,13 +65,14 @@ const News = () => {
     };
 
     return (
-        <>
+        <main className="min-h-screen bg-background">
             <SEO
                 title="Tech News Hub | Enhance Tech"
                 description="Stay updated with the latest technology news from TechCrunch, The Hacker News, The Verge, and ZDNet. Real-time news aggregation."
                 keywords="tech news, technology news, cybersecurity news, latest tech updates, TechCrunch, The Verge, Hacker News, ZDNet"
                 canonicalUrl="https://enhancetech.ae/news"
             />
+            <Navbar />
 
             {/* Hero Section */}
             <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-darker">
@@ -273,7 +277,9 @@ const News = () => {
                     )}
                 </div>
             </section>
-        </>
+            <Footer />
+            <FloatingNavBar />
+        </main>
     );
 };
 
