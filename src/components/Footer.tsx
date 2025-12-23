@@ -159,10 +159,7 @@ export default function Footer() {
               <img 
                 src={enhanceTechLogo} 
                 alt="Enhance Tech" 
-                className="h-12 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
-                style={{
-                  filter: "brightness(0) saturate(100%) invert(68%) sepia(52%) saturate(456%) hue-rotate(152deg) brightness(96%) contrast(91%)",
-                }}
+                className="h-10 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
               />
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
