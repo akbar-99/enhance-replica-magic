@@ -168,7 +168,7 @@ export default function NetworkSecurity() {
                                     Your network firewall is the front door to your digital organization. In an era of encrypted attacks and high-speed fiber connections, a traditional firewall is no longer enough. You need intelligence, speed, and deep inspection capabilities.
                                 </p>
                                 <p>
-                                    At Enhance Tech, we deploy Next-Generation Firewalls (NGFW) that do more than just open and close ports. They inspect every packet of data, decrypt hidden threats, and use Artificial Intelligence to block attacks in real-time.
+                                    At Enhance Tech, we deploy Next-Generation Firewalls (NGFW) that do more than just manage ports. They inspect every packet of data, decrypt hidden threats, and use Artificial Intelligence to block attacks in real-time.
                                 </p>
                             </div>
                         </motion.div>
@@ -364,12 +364,18 @@ export default function NetworkSecurity() {
                                 viewport={{ once: true }}
                                 className="lg:order-2"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=60&w=1200&auto=format&fit=crop"
-                                    alt="Fortinet Hardware"
-                                    className="rounded-[32px] shadow-2xl border border-white/5"
-                                    loading="lazy"
-                                />
+                                <div className="relative w-full aspect-video rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/Zai7blMzp7o?start=11&autoplay=1&mute=1&loop=1&playlist=Zai7blMzp7o"
+                                        title="Fortinet Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    ></iframe>
+                                </div>
                             </motion.div>
                         </div>
 
@@ -422,12 +428,18 @@ export default function NetworkSecurity() {
                                 viewport={{ once: true }}
                                 className="lg:order-1"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=60&w=1200&auto=format&fit=crop"
-                                    alt="SonicWall Security"
-                                    className="rounded-[32px] shadow-2xl border border-white/5"
-                                    loading="lazy"
-                                />
+                                <div className="relative w-full aspect-video rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/YNACb3X7gYE?si=kNY4LxKzTTXIw8kL&autoplay=1&mute=1&loop=1&playlist=YNACb3X7gYE"
+                                        title="SonicWall Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    ></iframe>
+                                </div>
                             </motion.div>
                         </div>
 
@@ -480,12 +492,18 @@ export default function NetworkSecurity() {
                                 viewport={{ once: true }}
                                 className="lg:order-2"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=60&w=1200&auto=format&fit=crop"
-                                    alt="Sangfor AI Technology"
-                                    className="rounded-[32px] shadow-2xl border border-white/5"
-                                    loading="lazy"
-                                />
+                                <div className="relative w-full aspect-video rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/mo37LCY_--I?si=x0RW73eRrTz-LrjM&autoplay=1&mute=1&loop=1&playlist=mo37LCY_--I"
+                                        title="Sangfor Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    ></iframe>
+                                </div>
                             </motion.div>
                         </div>
                     </div>
