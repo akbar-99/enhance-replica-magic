@@ -295,7 +295,7 @@ const ComputeStorage = () => {
                                     headline: "High Performance & Massive Connectivity",
                                     desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals.",
                                     color: "blue",
-                                    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop"
+                                    img: "/lovable-uploads/qnap-nas-actual.jpg"
                                 }
                             ].map((item, i) => (
                                 <motion.div
