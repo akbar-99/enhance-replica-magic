@@ -119,9 +119,9 @@ export default function WorkplaceModernization() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-purple-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={cloudImg}
-                  alt="Cloud Migration 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/cloud-migration.jpg"
+                  alt="Cloud Migration Digital Art"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -189,9 +189,9 @@ export default function WorkplaceModernization() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-emerald-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={meetingImg}
-                  alt="Smart Meeting Rooms 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/meeting-room.jpg"
+                  alt="Modern Conference Room"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-2 lg:order-1">
@@ -225,9 +225,9 @@ export default function WorkplaceModernization() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={commsImg}
-                  alt="Unified Communications 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/unified-comms.jpg"
+                  alt="Unified Communications Video Call"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -261,9 +261,9 @@ export default function WorkplaceModernization() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={securityImg}
-                  alt="Remote Access 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/remote-work.jpg"
+                  alt="Secure Remote Work"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-2 lg:order-1">

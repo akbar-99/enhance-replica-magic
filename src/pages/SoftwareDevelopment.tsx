@@ -121,9 +121,9 @@ export default function SoftwareDevelopment() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={webDevImg}
-                  alt="Web Development 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/web-development.jpg"
+                  alt="Custom Web Development Code"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -191,9 +191,9 @@ export default function SoftwareDevelopment() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-pink-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={mobileImg}
-                  alt="Mobile App Development 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/mobile-app.jpg"
+                  alt="Mobile App User Experience"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-2 lg:order-1">
@@ -227,9 +227,9 @@ export default function SoftwareDevelopment() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={softwareImg}
-                  alt="Custom Software 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/custom-software.jpg"
+                  alt="Custom Software Code Screens"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -264,9 +264,9 @@ export default function SoftwareDevelopment() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-teal-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={designImg}
-                  alt="UI/UX Design 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/ui-ux-design.jpg"
+                  alt="UI/UX Design Mockup"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-2 lg:order-1">

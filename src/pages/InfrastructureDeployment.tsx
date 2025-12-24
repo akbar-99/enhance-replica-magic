@@ -60,9 +60,9 @@ export default function InfrastructureDeployment() {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl" />
               <img
-                src={serverImg}
+                src="/lovable-uploads/infrastructure-expert.jpg"
                 alt="Server Room Infrastructure"
-                className="relative rounded-2xl shadow-2xl border border-slate-100"
+                className="relative rounded-2xl shadow-2xl border border-slate-100 w-full h-full object-cover aspect-[4/3]"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -250,9 +250,9 @@ export default function InfrastructureDeployment() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-red-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src={securityImg}
-                  alt="Physical Security 3D Illustration"
-                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500"
+                  src="/lovable-uploads/security-center.jpg"
+                  alt="Physical Security Operations Center"
+                  className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
               <div className="order-2 lg:order-1">
