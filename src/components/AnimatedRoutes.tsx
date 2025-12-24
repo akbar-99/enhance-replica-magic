@@ -27,6 +27,7 @@ import PreventDataLoss from '@/pages/solutions/PreventDataLoss';
 import StreamlineITOperations from '@/pages/solutions/StreamlineITOperations';
 import PhysicalSecurity from '@/pages/solutions/PhysicalSecurity';
 import SmartMeetingRooms from '@/pages/solutions/SmartMeetingRooms';
+import ManageMicrosoft365 from '@/pages/solutions/ManageMicrosoft365';
 import News from '@/pages/News';
 
 const AnimatedRoutes = () => {
@@ -50,6 +51,8 @@ const AnimatedRoutes = () => {
         <Route path="/solutions/it-support" element={<PageTransition><StreamlineITOperations /></PageTransition>} />
         <Route path="/solutions/meeting-room-av" element={<PageTransition><SmartMeetingRooms /></PageTransition>} />
         <Route path="/solutions/meeting-spaces" element={<PageTransition><SmartMeetingRooms /></PageTransition>} />
+        <Route path="/solutions/manage-microsoft-365" element={<PageTransition><ManageMicrosoft365 /></PageTransition>} />
+        <Route path="/solutions/microsoft-365" element={<PageTransition><ManageMicrosoft365 /></PageTransition>} />
         <Route path="/solutions/physical-security" element={<PageTransition><PhysicalSecurity /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
