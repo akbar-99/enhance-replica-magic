@@ -236,7 +236,7 @@ export default function Company() {
               Contact Us
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/careers" className="btn-secondary border-slate-600 text-white hover:bg-slate-700">
+            <Link to="/company/careers" className="btn-secondary border-slate-600 text-white hover:bg-slate-700">
               View Careers
               <ArrowRight className="w-4 h-4" />
             </Link>
