@@ -229,17 +229,20 @@ const ComputeStorage = () => {
                                 {
                                     brand: "Dell Technologies",
                                     model: "Dell PowerEdge",
-                                    desc: "Renowned for scalability and the industry-leading iDRAC management controller, making remote server management effortless."
+                                    desc: "Renowned for scalability and the industry-leading iDRAC management controller, making remote server management effortless.",
+                                    img: "/lovable-uploads/enterprise-server.png"
                                 },
                                 {
                                     brand: "HPE",
                                     model: "HPE ProLiant",
-                                    desc: "The world's most secure industry-standard servers. Famous for their 'Silicon Root of Trust' which prevents compromised firmware code."
+                                    desc: "The world's most secure industry-standard servers. Famous for their 'Silicon Root of Trust' which prevents compromised firmware code.",
+                                    img: "/lovable-uploads/hpe-proliant.png"
                                 },
                                 {
                                     brand: "Lenovo",
                                     model: "Lenovo ThinkSystem",
-                                    desc: "Consistently ranked #1 in server reliability. Lenovo servers offer incredible uptime and value for performance-critical applications."
+                                    desc: "Consistently ranked #1 in server reliability. Lenovo servers offer incredible uptime and value for performance-critical applications.",
+                                    img: "/lovable-uploads/lenovo-thinksystem.png"
                                 }
                             ].map((item, i) => (
                                 <motion.div
@@ -249,7 +252,7 @@ const ComputeStorage = () => {
                                     className="bg-slate-900/40 backdrop-blur-sm rounded-[32px] border border-white/5 overflow-hidden group hover:border-indigo-500/20 transition-all"
                                 >
                                     <div className="h-48 relative">
-                                        <img src="/lovable-uploads/enterprise-server.png" alt={item.brand} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                        <img src={item.img} alt={item.brand} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
                                         <div className="absolute bottom-4 left-6">
                                             <span className="text-indigo-400 font-bold text-sm uppercase tracking-widest">{item.brand}</span>
