@@ -85,20 +85,40 @@ export default function Contact() {
         to_name: 'Enhance Tech Team',
       };
 
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim();
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim();
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim();
+
+      console.log('Sending email with config:', {
+        serviceId: serviceId ? `${serviceId.substring(0, 8)}...` : 'MISSING',
+        templateId: templateId ? `${templateId.substring(0, 8)}...` : 'MISSING',
+        hasPublicKey: !!publicKey,
+        envKeys: Object.keys(import.meta.env).filter(k => k.startsWith('VITE_EMAILJS'))
+      });
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration is incomplete. If you are on the preview site, make sure you've added the VITE_EMAILJS variables to your project settings.");
+      }
+
       const result = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        serviceId,
+        templateId,
         templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+        publicKey
       );
 
       if (result.status === 200) {
         setSubmitted(true);
         toast.success("Message sent successfully!");
       }
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast.error("Failed to send message. Please try again later.");
+    } catch (error: any) {
+      console.error('EmailJS Error Detail:', {
+        message: error?.text || error?.message || error,
+        status: error?.status,
+        fullError: error
+      });
+      const errorMsg = error?.text || "Failed to send message. Please check your credentials or try again later.";
+      toast.error(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
