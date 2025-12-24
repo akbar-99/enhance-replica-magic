@@ -532,8 +532,16 @@ export default function ManageMicrosoft365() {
                             x: 0
                         }} viewport={{
                             once: true
-                        }} className="lg:order-2 bg-gradient-to-br from-emerald-900/20 to-slate-900/20 p-6 rounded-[32px]">
-                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop" alt="AvePoint 3D Data Governance" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
+                        }} className="lg:order-2 bg-gradient-to-br from-emerald-900/10 to-transparent p-1 rounded-[32px] border border-white/5 shadow-2xl overflow-hidden group">
+                            <div className="relative aspect-video rounded-[24px] overflow-hidden">
+                                <iframe
+                                    src="https://player.vimeo.com/video/970670509?h=2c25a5abca&badge=0&autopause=0&player_id=0&app_id=58479"
+                                    className="absolute inset-0 w-full h-full"
+                                    frameBorder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                                    title="AvePoint Data Management Solution"
+                                />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
