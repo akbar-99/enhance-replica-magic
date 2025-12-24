@@ -288,14 +288,14 @@ const ComputeStorage = () => {
                                     headline: "The Gold Standard for User-Friendly Storage",
                                     desc: "Their DSM operating system is as easy to use as a smartphone, with built-in apps for backing up Office 365 and syncing files.",
                                     color: "emerald",
-                                    img: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop"
+                                    img: "https://images.unsplash.com/photo-1577538926988-7926820ed209?q=80&w=2000&auto=format&fit=crop"
                                 },
                                 {
                                     name: "QNAP",
                                     headline: "High Performance & Massive Connectivity",
                                     desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals.",
                                     color: "blue",
-                                    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop"
+                                    img: "https://images.unsplash.com/photo-1620361421000-64328420819f?q=80&w=2000&auto=format&fit=crop"
                                 }
                             ].map((item, i) => (
                                 <motion.div
