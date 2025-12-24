@@ -127,7 +127,7 @@ const ComputeStorage = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-transparent z-10" />
                             <img
-                                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1200&auto=format&fit=crop"
+                                src="/lovable-uploads/modern-datacenter.png"
                                 alt="Modern Data Center Infrastructure"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
@@ -229,20 +229,17 @@ const ComputeStorage = () => {
                                 {
                                     brand: "Dell Technologies",
                                     model: "Dell PowerEdge",
-                                    desc: "Renowned for scalability and the industry-leading iDRAC management controller, making remote server management effortless.",
-                                    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=600&auto=format&fit=crop"
+                                    desc: "Renowned for scalability and the industry-leading iDRAC management controller, making remote server management effortless."
                                 },
                                 {
                                     brand: "HPE",
                                     model: "HPE ProLiant",
-                                    desc: "The world's most secure industry-standard servers. Famous for their 'Silicon Root of Trust' which prevents compromised firmware code from executing.",
-                                    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop"
+                                    desc: "The world's most secure industry-standard servers. Famous for their 'Silicon Root of Trust' which prevents compromised firmware code."
                                 },
                                 {
                                     brand: "Lenovo",
                                     model: "Lenovo ThinkSystem",
-                                    desc: "Consistently ranked #1 in server reliability and customer satisfaction. Lenovo servers offer incredible uptime and value for performance-critical applications.",
-                                    img: "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?q=80&w=600&auto=format&fit=crop"
+                                    desc: "Consistently ranked #1 in server reliability. Lenovo servers offer incredible uptime and value for performance-critical applications."
                                 }
                             ].map((item, i) => (
                                 <motion.div
@@ -252,7 +249,7 @@ const ComputeStorage = () => {
                                     className="bg-slate-900/40 backdrop-blur-sm rounded-[32px] border border-white/5 overflow-hidden group hover:border-indigo-500/20 transition-all"
                                 >
                                     <div className="h-48 relative">
-                                        <img src={item.img} alt={item.brand} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                        <img src="/lovable-uploads/enterprise-server.png" alt={item.brand} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
                                         <div className="absolute bottom-4 left-6">
                                             <span className="text-indigo-400 font-bold text-sm uppercase tracking-widest">{item.brand}</span>
@@ -286,15 +283,13 @@ const ComputeStorage = () => {
                                 {
                                     name: "Synology",
                                     headline: "The Gold Standard for User-Friendly Storage",
-                                    desc: "Their DiskStation Manager (DSM) operating system is as easy to use as a smartphone, with built-in apps for backing up Office 365, syncing files, and surveillance.",
-                                    img: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop",
+                                    desc: "Their DSM operating system is as easy to use as a smartphone, with built-in apps for backing up Office 365 and syncing files.",
                                     color: "emerald"
                                 },
                                 {
                                     name: "QNAP",
                                     headline: "High Performance & Massive Connectivity",
-                                    desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals and virtualization targets.",
-                                    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop",
+                                    desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals.",
                                     color: "blue"
                                 }
                             ].map((item, i) => (
@@ -320,7 +315,7 @@ const ComputeStorage = () => {
                                             </ul>
                                         </div>
                                         <div className="lg:w-1/2 relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                                            <img src={item.img} alt={item.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                            <img src="/lovable-uploads/modern-nas.png" alt={item.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                         </div>
                                     </div>
                                 </motion.div>
@@ -330,7 +325,7 @@ const ComputeStorage = () => {
                 </div>
             </section>
 
-            {/* What's Included Section - Modern Dark Card */}
+            {/* What's Included Section */}
             <section className="py-24 bg-[#050b1d]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -402,7 +397,7 @@ const ComputeStorage = () => {
                                     <span className="text-indigo-400 text-3xl">We Engineer.</span>
                                 </motion.h2>
                                 <motion.p {...fadeIn} className="text-slate-400 text-lg mb-8">
-                                    Buying the wrong server is a costly mistake. At Enhance Tech, our solution architects ensure the perfect fit for your workload.
+                                    At Enhance Tech, our solution architects ensure the perfect fit.
                                 </motion.p>
 
                                 <div className="space-y-8">
@@ -434,12 +429,8 @@ const ComputeStorage = () => {
                             </div>
 
                             <div className="relative">
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-3xl aspect-square"
-                                >
-                                    <img src="https://images.unsplash.com/photo-1596272875729-ed2ff7d6d9c5?q=80&w=800&auto=format&fit=crop" alt="Precision IT Engineering" className="absolute inset-0 w-full h-full object-cover" />
+                                <div className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-3xl aspect-square">
+                                    <img src="/lovable-uploads/precision-engineering.png" alt="Precision IT Engineering" className="absolute inset-0 w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
                                     <div className="absolute bottom-10 left-10 right-10">
                                         <div className="flex items-center gap-4 p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
@@ -452,7 +443,7 @@ const ComputeStorage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             </div>
                         </div>
                     </div>
