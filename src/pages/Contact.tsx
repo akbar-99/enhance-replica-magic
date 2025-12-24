@@ -2,8 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO, { organizationSchema } from "@/components/SEO";
-import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle, Loader2 } from "lucide-react";
-import emailjs from '@emailjs/browser';
+import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle, Loader2, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 const contactOptions = [
   {
@@ -77,28 +76,20 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        reply_to: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Enhance Tech Team',
-      };
+      // Direct email construction
+      const mailtoUrl = `mailto:social@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
 
-      const result = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
-      );
-
-      if (result.status === 200) {
+      // Simulate success and provide direct link
+      setTimeout(() => {
         setSubmitted(true);
-        toast.success("Message sent successfully!");
-      }
+        toast.success("Message ready to send!");
+        // We open the mailto after a short delay for better UX
+        window.location.href = mailtoUrl;
+      }, 800);
+
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast.error("Failed to send message. Please try again later.");
+      console.error('Submission Error:', error);
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -212,13 +203,15 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-emerald-500" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Message Sent!</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Opening Mail Client...</h2>
                   <p className="text-slate-600 mb-8">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
+                    Your message has been prepared. Please click 'Send' in your email application to finish.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="btn-primary">
-                    Send Another Message
-                  </button>
+                  <div className="flex flex-col gap-3">
+                    <button onClick={() => setSubmitted(false)} className="btn-secondary">
+                      Go Back
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <>
