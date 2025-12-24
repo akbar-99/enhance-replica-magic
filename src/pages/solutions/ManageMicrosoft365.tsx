@@ -180,9 +180,8 @@ export default function ManageMicrosoft365() {
                         once: true
                     }} className="relative group">
                         <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/20 to-blue-500/20 rounded-[40px] blur-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-700" />
-                        <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-slate-100">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=60&w=1200&auto=format&fit=crop" alt="Microsoft 365 Management Dashboard" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                        <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-blue-50 p-8">
+                            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop" alt="Microsoft 365 3D Cloud Management" className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                         </div>
                     </motion.div>
                 </div>
@@ -304,9 +303,9 @@ export default function ManageMicrosoft365() {
                         scale: 1
                     }} viewport={{
                         once: true
-                    }} className="bg-slate-900 p-1 rounded-[40px] shadow-2xl relative overflow-hidden group">
+                    }} className="bg-gradient-to-br from-blue-900/20 to-slate-900/20 p-8 rounded-[40px] shadow-2xl relative overflow-hidden group">
                         <div className="absolute inset-0 bg-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=60&w=1200&auto=format&fit=crop" alt="Microsoft 365 Management Tools" className="rounded-[38px] opacity-80 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop" alt="Microsoft 365 3D Management Dashboard" className="rounded-[38px] w-full object-contain group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                     </motion.div>
                 </div>
             </div>
@@ -391,8 +390,8 @@ export default function ManageMicrosoft365() {
                             x: 0
                         }} viewport={{
                             once: true
-                        }} className="lg:order-2">
-                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=60&w=1200&auto=format&fit=crop" alt="Microsoft 365 Platform" className="rounded-[32px] shadow-2xl border border-white/5" loading="lazy" />
+                        }} className="lg:order-2 bg-gradient-to-br from-blue-900/20 to-slate-900/20 p-6 rounded-[32px]">
+                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1200&auto=format&fit=crop" alt="Microsoft 365 3D Platform" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
                         </motion.div>
                     </div>
 
@@ -462,8 +461,8 @@ export default function ManageMicrosoft365() {
                             x: 0
                         }} viewport={{
                             once: true
-                        }} className="lg:order-1">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=60&w=1200&auto=format&fit=crop" alt="CoreView Management Platform" className="rounded-[32px] shadow-2xl border border-white/5" loading="lazy" />
+                        }} className="lg:order-1 bg-gradient-to-br from-cyan-900/20 to-slate-900/20 p-6 rounded-[32px]">
+                            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop" alt="CoreView 3D Management Analytics" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
                         </motion.div>
                     </div>
 
@@ -533,8 +532,8 @@ export default function ManageMicrosoft365() {
                             x: 0
                         }} viewport={{
                             once: true
-                        }} className="lg:order-2">
-                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=60&w=1200&auto=format&fit=crop" alt="AvePoint Governance Solutions" className="rounded-[32px] shadow-2xl border border-white/5" loading="lazy" />
+                        }} className="lg:order-2 bg-gradient-to-br from-emerald-900/20 to-slate-900/20 p-6 rounded-[32px]">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop" alt="AvePoint 3D Data Governance" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
                         </motion.div>
                     </div>
                 </div>
