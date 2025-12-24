@@ -94,7 +94,7 @@ export default function OptimizeCloudOperations() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue py-[44px]">
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
         <div className="absolute inset-0 bg-hero-gradient opacity-95" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
@@ -147,7 +147,7 @@ export default function OptimizeCloudOperations() {
                   delay: 0.1,
                   duration: 0.8,
                 }}
-                className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight lg:text-5xl"
+                className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight"
               >
                 Optimize Cloud Operations: <br className="hidden xl:block" />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">

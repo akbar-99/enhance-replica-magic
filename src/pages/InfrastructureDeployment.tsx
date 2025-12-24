@@ -25,7 +25,7 @@ export default function InfrastructureDeployment() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue">
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
         <div className="absolute inset-0 bg-hero-gradient opacity-90" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
@@ -35,7 +35,7 @@ export default function InfrastructureDeployment() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up">
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 mb-6 animate-fade-up">
               Building the Backbone of Your Digital Business
             </h1>
             <p className="text-xl text-slate-300 mb-8 animate-fade-up animation-delay-200">

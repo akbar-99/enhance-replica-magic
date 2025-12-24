@@ -63,7 +63,7 @@ export default function StreamlineITOperations() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden page-section-blue">
+            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
                 <div className="absolute inset-0 bg-hero-gradient opacity-95" />
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 
@@ -94,7 +94,7 @@ export default function StreamlineITOperations() {
                             <motion.h1
                                 {...fadeIn}
                                 transition={{ delay: 0.1, duration: 0.8 }}
-                                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter"
+                                className="text-4xl md:text-5xl font-black text-white mb-8 leading-[1.1] tracking-tighter"
                             >
                                 Streamline <br className="hidden xl:block" />
                                 IT Operations:

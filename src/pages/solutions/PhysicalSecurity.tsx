@@ -41,7 +41,7 @@ export default function PhysicalSecurity() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950 py-[44px]">
+        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-950">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-900/20 via-slate-950 to-slate-950" />
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
 
@@ -73,7 +73,7 @@ export default function PhysicalSecurity() {
                         <motion.h1 {...fadeIn} transition={{
                             delay: 0.1,
                             duration: 0.8
-                        }} className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-white mb-8 leading-[1] tracking-tighter">
+                        }} className="text-4xl md:text-5xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
                             Physical Security <br className="hidden xl:block" />
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 via-amber-400 to-orange-300 animate-pulse-slow">
                                 Protect Your People & Assets

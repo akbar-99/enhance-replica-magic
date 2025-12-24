@@ -50,7 +50,7 @@ const Infrastructure = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
+            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-3xl pointer-events-none" />
 
@@ -68,7 +68,7 @@ const Infrastructure = () => {
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white leading-tight"
+                            className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white leading-tight"
                         >
                             Networking & Infrastructure: <br />
                             <span className="text-blue-400">The Foundation of IT</span>
