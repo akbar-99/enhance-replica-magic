@@ -287,13 +287,15 @@ const ComputeStorage = () => {
                                     name: "Synology",
                                     headline: "The Gold Standard for User-Friendly Storage",
                                     desc: "Their DSM operating system is as easy to use as a smartphone, with built-in apps for backing up Office 365 and syncing files.",
-                                    color: "emerald"
+                                    color: "emerald",
+                                    img: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop"
                                 },
                                 {
                                     name: "QNAP",
                                     headline: "High Performance & Massive Connectivity",
                                     desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals.",
-                                    color: "blue"
+                                    color: "blue",
+                                    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop"
                                 }
                             ].map((item, i) => (
                                 <motion.div
@@ -318,7 +320,7 @@ const ComputeStorage = () => {
                                             </ul>
                                         </div>
                                         <div className="lg:w-1/2 relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                                            <img src="/lovable-uploads/modern-nas.png" alt={item.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                            <img src={item.img} alt={item.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                         </div>
                                     </div>
                                 </motion.div>
