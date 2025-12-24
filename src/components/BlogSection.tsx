@@ -2,11 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-react";
 
 // Import 3D character images
-import blogChar1 from "@/assets/blog/blog-character-1.jpg";
-import blogChar2 from "@/assets/blog/blog-character-2.png";
-import blogChar3 from "@/assets/blog/blog-character-3.png";
-import blogChar4 from "@/assets/blog/blog-character-4.png";
-import blogChar5 from "@/assets/blog/blog-character-5.png";
+// Image paths for the new character images
+const blogChar1 = "/lovable-uploads/blog-character-1.jpg";
+const blogChar2 = "/lovable-uploads/blog-character-2.jpg";
+const blogChar3 = "/lovable-uploads/blog-character-3.jpg";
+const blogChar4 = "/lovable-uploads/blog-character-4.jpg";
+const blogChar5 = "/lovable-uploads/blog-character-1.jpg"; // Reusing first one for consistency
 const blogPosts = [
   {
     id: 1,
@@ -196,7 +197,7 @@ const BlogSection = () => {
                         alt={post.title}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-contain bg-[#112d71] transition-transform duration-700 group-hover:scale-105"
                       />
                       {/* Hover overlay effect */}
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
