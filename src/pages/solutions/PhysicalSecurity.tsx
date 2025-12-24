@@ -391,7 +391,7 @@ export default function PhysicalSecurity() {
                         }} viewport={{
                             once: true
                         }} className="lg:order-2 bg-gradient-to-br from-orange-900/20 to-slate-900/20 p-6 rounded-[32px]">
-                            <img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?q=80&w=1200&auto=format&fit=crop" alt="CCTV Surveillance 3D" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
+                            <img src="/lovable-uploads/cctv-surveillance.png" alt="Intelligent Video Surveillance CCTV" className="rounded-[24px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
                         </motion.div>
                     </div>
 
