@@ -62,7 +62,7 @@ const footerLinks = {
     },
     {
       label: "News",
-      href: "/company/news",
+      href: ""/news",
     },
   ],
   Company: [
