@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Database, Server, Clo
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import SEO from "@/components/SEO";
+import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 const fadeIn = {
@@ -33,8 +33,49 @@ const staggerContainer = {
   }
 };
 export default function PreventDataLoss() {
+  // Structured data for data loss prevention services
+  const serviceSchema = createServiceSchema(
+    "Data Loss Prevention Solutions",
+    "Comprehensive data protection ecosystem featuring backup and disaster recovery with Acronis, cloud backup with Dropsuite, and data governance with Microsoft Purview. Protect your business-critical data across all platforms in Dubai, UAE."
+  );
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://itenhance.tech" },
+    { name: "Solutions", url: "https://itenhance.tech/solutions" },
+    { name: "Prevent Data Loss", url: "https://itenhance.tech/solutions/prevent-data-loss" }
+  ]);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      serviceSchema,
+      breadcrumbSchema,
+      {
+        "@type": "Product",
+        "name": "Data Backup & Recovery Solutions",
+        "description": "Enterprise data protection with Acronis, Dropsuite, and Microsoft Purview for comprehensive backup and compliance",
+        "brand": organizationSchema,
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "AED",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          }
+        }
+      }
+    ]
+  };
+
   return <main className="min-h-screen page-bg-light overflow-x-hidden relative">
-    <SEO title="Prevent Data Loss: Resilience & Governance | Enhance Tech" description="Protect, backup, and control your data with Enhance Tech. Comprehensive DLP strategy featuring Acronis, Dropsuite, and Microsoft Purview for business continuity and compliance." keywords="Data Loss Prevention, DLP, Acronis, Dropsuite, Microsoft Purview, Backup, Data Governance, Business Continuity, Disaster Recovery" canonicalUrl="https://itenhance.tech/solutions/prevent-data-loss" />
+    <SEO
+      title="Prevent Data Loss: Backup & Disaster Recovery | Enhance Tech"
+      description="Protect your business-critical data with Acronis, Dropsuite, and Microsoft Purview. Comprehensive backup, disaster recovery, and data governance solutions in Dubai, UAE."
+      keywords="Data Loss Prevention, Backup Solutions, Disaster Recovery, Acronis, Dropsuite, Microsoft Purview, Data Protection Dubai"
+      canonicalUrl="https://itenhance.tech/solutions/prevent-data-loss"
+      structuredData={structuredData}
+    />
 
     <Navbar />
 
@@ -87,15 +128,15 @@ export default function PreventDataLoss() {
             <motion.div {...fadeIn} transition={{
               delay: 0.3,
               duration: 0.8
-            }} className="flex flex-wrap justify-center lg:justify-start gap-6">
+            }} className="flex flex-wrap justify-center lg:justify-start gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-500 text-white shadow-[0_0_30px_-5px_rgba(147,51,234,0.4)] rounded-full px-12 h-20 text-xl font-black transition-all hover:scale-105 active:scale-95 group">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-500/30 rounded-full px-8 h-14 text-base font-semibold transition-all hover:scale-105 active:scale-95 group">
                   Get Data Risk Assessment
-                  <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-12 h-20 text-xl font-bold transition-all border-2">
+                <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 backdrop-blur-md rounded-full px-8 h-14 text-base font-semibold transition-all border-2 hover:border-white/60">
                   Contact Our Team
                 </Button>
               </Link>
@@ -633,13 +674,13 @@ export default function PreventDataLoss() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/contact">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-12 h-16 text-xl">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-full px-8 h-14 text-base font-semibold shadow-lg shadow-purple-500/30 transition-all hover:scale-105">
               Get a Data Risk Assessment
-              <ArrowRight className="ml-2 h-6 w-6" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
           <Link to="/contact">
-            <Button size="lg" variant="outline" className="border-slate-700 text-white rounded-full px-12 h-16 text-xl hover:bg-slate-800">
+            <Button size="lg" variant="outline" className="border-slate-600 text-white rounded-full px-8 h-14 text-base font-semibold hover:bg-gradient-to-r hover:from-slate-800 hover:to-slate-700 transition-all hover:border-slate-500">
               Contact Our Team
             </Button>
           </Link>

@@ -2,7 +2,7 @@ import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Database, Server, Clo
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import SEO from "@/components/SEO";
+import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
 const fadeIn = {
@@ -35,8 +35,51 @@ const staggerContainer = {
 };
 
 export default function ManageMicrosoft365() {
+    // Structured data for Microsoft 365 management
+    const serviceSchema = createServiceSchema(
+        "Microsoft 365 Management Solutions",
+        "Advanced Microsoft 365 management, governance, and migration solutions with CoreView and AvePoint. Virtual tenant segmentation, automated governance, and seamless cloud migration for enterprises in Dubai, UAE."
+    );
+
+    const breadcrumbSchema = createBreadcrumbSchema([
+        { name: "Home", url: "https://itenhance.tech" },
+        { name: "Solutions", url: "https://itenhance.tech/solutions" },
+        { name: "Manage Microsoft 365", url: "https://itenhance.tech/solutions/manage-microsoft-365" }
+    ]);
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@graph": [
+            serviceSchema,
+            breadcrumbSchema,
+            {
+                "@type": "SoftwareApplication",
+                "name": "Microsoft 365 Management Platform",
+                "applicationCategory": "BusinessApplication",
+                "description": "Enterprise Microsoft 365 management with CoreView and AvePoint for governance, migration, and optimization",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "AED",
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "United Arab Emirates"
+                    }
+                },
+                "provider": organizationSchema,
+                "featureList": ["Virtual Tenant Segmentation", "Automated Governance", "License Optimization", "Cloud Migration"]
+            }
+        ]
+    };
+
     return <main className="min-h-screen page-bg-light overflow-x-hidden relative">
-        <SEO title="Manage Microsoft 365: Advanced Operations | Enhance Tech" description="Maximize your Microsoft 365 investment. Advanced management, migration, and governance with Microsoft, CoreView, and AvePoint." keywords="Microsoft 365 Management, CoreView, AvePoint, Cloud Governance, M365 Administration, Tenant Management, License Optimization" canonicalUrl="https://itenhance.tech/solutions/manage-microsoft-365" />
+        <SEO
+            title="Manage Microsoft 365: Advanced Operations | Enhance Tech"
+            description="Maximize your Microsoft 365 investment. Advanced management, migration, and governance with Microsoft, CoreView, and AvePoint."
+            keywords="Microsoft 365 Management, CoreView, AvePoint, Cloud Governance, M365 Administration, Tenant Management, License Optimization"
+            canonicalUrl="https://itenhance.tech/solutions/manage-microsoft-365"
+            structuredData={structuredData}
+        />
 
         <Navbar />
 
@@ -88,15 +131,15 @@ export default function ManageMicrosoft365() {
                         <motion.div {...fadeIn} transition={{
                             delay: 0.3,
                             duration: 0.8
-                        }} className="flex flex-wrap justify-center lg:justify-start gap-6">
+                        }} className="flex flex-wrap justify-center lg:justify-start gap-4">
                             <Link to="/contact">
-                                <Button size="lg" className="bg-sky-600 hover:bg-sky-500 text-white shadow-[0_0_30px_-5px_rgba(14,165,233,0.4)] rounded-full px-12 h-20 text-xl font-black transition-all hover:scale-105 active:scale-95 group">
+                                <Button size="lg" className="bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white shadow-lg shadow-sky-500/30 rounded-full px-8 h-14 text-base font-semibold transition-all hover:scale-105 active:scale-95 group">
                                     Get Governance Assessment
-                                    <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </Link>
                             <Link to="/contact">
-                                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-12 h-20 text-xl font-bold transition-all border-2">
+                                <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 backdrop-blur-md rounded-full px-8 h-14 text-base font-semibold transition-all border-2 hover:border-white/60">
                                     Contact Cloud Team
                                 </Button>
                             </Link>
@@ -622,13 +665,13 @@ export default function ManageMicrosoft365() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link to="/contact">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-12 h-16 text-xl">
+                        <Button size="lg" className="bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white rounded-full px-8 h-14 text-base font-semibold shadow-lg shadow-sky-500/30 transition-all hover:scale-105">
                             Get a Governance Assessment
-                            <ArrowRight className="ml-2 h-6 w-6" />
+                            <ArrowRight className="ml-2 h-5 w-5" />
                         </Button>
                     </Link>
                     <Link to="/contact">
-                        <Button size="lg" variant="outline" className="border-slate-700 text-white rounded-full px-12 h-16 text-xl hover:bg-slate-800">
+                        <Button size="lg" variant="outline" className="border-slate-600 text-white rounded-full px-8 h-14 text-base font-semibold hover:bg-gradient-to-r hover:from-slate-800 hover:to-slate-700 transition-all hover:border-slate-500">
                             Contact Our Cloud Team
                         </Button>
                     </Link>
