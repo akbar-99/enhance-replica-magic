@@ -86,11 +86,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold rounded-2xl hover:translate-y-[-2px] hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 active:scale-95 border-none;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[hsl(var(--glow-cyan))] to-primary text-primary-foreground font-semibold rounded-full hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 border-2 border-primary/20 bg-background/50 backdrop-blur-sm text-foreground font-semibold rounded-2xl hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 active:scale-95;
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 text-foreground font-semibold rounded-full hover:border-foreground/40 hover:bg-foreground/5 transition-all duration-300;
   }
 
   .hero-tab {

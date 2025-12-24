@@ -1,40 +1,52 @@
 import { motion } from 'framer-motion';
-import { Network, Wifi, Zap, ShieldCheck, Scale, Activity, ArrowRight, CheckCircle2, ChevronRight, Cable, Server, Battery, ThermometerSun, Settings, Map, CheckCircle } from 'lucide-react';
+import {
+    Network,
+    Wifi,
+    Zap,
+    ShieldCheck,
+    Scale,
+    Activity,
+    ArrowRight,
+    CheckCircle2,
+    ChevronRight,
+    Cable,
+    Server,
+    Battery,
+    ThermometerSun,
+    Settings,
+    Map,
+    CheckCircle
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
+
 const fadeIn = {
-  initial: {
-    opacity: 0,
-    y: 20
-  },
-  whileInView: {
-    opacity: 1,
-    y: 0
-  },
-  viewport: {
-    once: true
-  },
-  transition: {
-    duration: 0.6
-  }
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
 };
+
 const Infrastructure = () => {
-  const serviceSchema = createServiceSchema('Networking & Infrastructure Solutions', 'Build the digital backbone of your organization with high-speed connectivity, critical power, and structured cabling.');
-  const breadcrumbSchema = createBreadcrumbSchema([{
-    name: 'Home',
-    url: 'https://itenhance.tech'
-  }, {
-    name: 'Solutions',
-    url: 'https://itenhance.tech/solutions'
-  }, {
-    name: 'Networking & Infrastructure',
-    url: 'https://itenhance.tech/solutions/infrastructure'
-  }]);
-  return <div className="min-h-screen bg-[#020617] text-white selection:bg-indigo-500/30">
-            <SEO title="Networking & Infrastructure: The Foundation of IT | Enhance Tech" description="Design and deploy a resilient IT backbone. Enterprise Wi-Fi 6, switching, structured cabling from Legrand, Vertiv UPS, and Aruba connectivity." structuredData={{
-      "@graph": [serviceSchema, breadcrumbSchema]
-    }} />
+    const serviceSchema = createServiceSchema(
+        'Networking & Infrastructure Solutions',
+        'Build the digital backbone of your organization with high-speed connectivity, critical power, and structured cabling.'
+    );
+
+    const breadcrumbSchema = createBreadcrumbSchema([
+        { name: 'Home', url: 'https://itenhance.tech' },
+        { name: 'Solutions', url: 'https://itenhance.tech/solutions' },
+        { name: 'Networking & Infrastructure', url: 'https://itenhance.tech/solutions/infrastructure' },
+    ]);
+
+    return (
+        <div className="min-h-screen bg-[#020617] text-white selection:bg-indigo-500/30">
+            <SEO
+                title="Networking & Infrastructure: The Foundation of IT | Enhance Tech"
+                description="Design and deploy a resilient IT backbone. Enterprise Wi-Fi 6, switching, structured cabling from Legrand, Vertiv UPS, and Aruba connectivity."
+                structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
+            />
             <Navbar />
 
             {/* Hero Section */}
@@ -44,50 +56,40 @@ const Infrastructure = () => {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center max-w-4xl mx-auto">
-                        <motion.div initial={{
-            opacity: 0,
-            scale: 0.9
-          }} animate={{
-            opacity: 1,
-            scale: 1
-          }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+                        >
                             <Network className="w-4 h-4 text-blue-400" />
                             <span className="text-xs font-bold tracking-widest uppercase text-blue-400">Layer 1 & 2 Infrastructure</span>
                         </motion.div>
 
-                        <motion.h1 initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} className="text-4xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white leading-tight md:text-6xl">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white leading-tight"
+                        >
                             Networking & Infrastructure: <br />
                             <span className="text-blue-400">The Foundation of IT</span>
                         </motion.h1>
 
-                        <motion.p initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            delay: 0.1
-          }} className="text-xl text-slate-400 leading-relaxed mb-10">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-xl text-slate-400 leading-relaxed mb-10"
+                        >
                             Connect Faster. Power Reliably. Scale Effortlessly. <br />
                             We design and deploy the high-speed backbone that drives your organization.
                         </motion.p>
 
-                        <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            delay: 0.2
-          }} className="flex flex-wrap justify-center gap-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="flex flex-wrap justify-center gap-4"
+                        >
                             <Link to="/contact" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-500/25 flex items-center gap-2 group">
                                 Get a Site Survey
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -118,17 +120,18 @@ const Infrastructure = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div initial={{
-            opacity: 0,
-            scale: 0.9
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.8
-          }} className="relative aspect-square lg:aspect-video rounded-[40px] overflow-hidden group">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8 }}
+                            className="relative aspect-square lg:aspect-video rounded-[40px] overflow-hidden group"
+                        >
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent z-10" />
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80" alt="Modern Infrastructure Backbone" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img
+                                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+                                alt="Modern Infrastructure Backbone"
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
                         </motion.div>
                     </div>
                 </div>
@@ -147,52 +150,59 @@ const Infrastructure = () => {
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[{
-            title: "High-Speed Connectivity",
-            desc: "Eliminate 'dead zones' and buffering with enterprise-grade Wi-Fi 6 and 10GbE switching.",
-            icon: Wifi,
-            color: "from-blue-400 to-indigo-500"
-          }, {
-            title: "Business Continuity",
-            desc: "Prevent downtime during power outages with critical backup power (UPS) solutions.",
-            icon: Zap,
-            color: "from-amber-400 to-orange-500"
-          }, {
-            title: "Organized Cabling",
-            desc: "Replace messy 'spaghetti cables' with organized, labeled, and certified structured cabling systems.",
-            icon: Cable,
-            color: "from-emerald-400 to-teal-500"
-          }, {
-            title: "Scalable Architecture",
-            desc: "Networks designed to grow with you—add new users or devices without replacing core hardware.",
-            icon: Scale,
-            color: "from-purple-400 to-pink-500"
-          }, {
-            title: "Intelligent Power Management",
-            desc: "Monitor energy usage and remotely reboot hung devices from anywhere.",
-            icon: Activity,
-            color: "from-cyan-400 to-blue-500"
-          }, {
-            title: "Maximum Uptime",
-            desc: "Redundant pathways and monitored links ensure your network never takes a day off.",
-            icon: ShieldCheck,
-            color: "from-red-400 to-rose-500"
-          }].map((benefit, i) => <motion.div key={i} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            delay: i * 0.1
-          }} className="group p-8 rounded-[32px] bg-slate-900 border border-white/5 hover:border-blue-500/30 transition-all relative overflow-hidden">
+                        {[
+                            {
+                                title: "High-Speed Connectivity",
+                                desc: "Eliminate 'dead zones' and buffering with enterprise-grade Wi-Fi 6 and 10GbE switching.",
+                                icon: Wifi,
+                                color: "from-blue-400 to-indigo-500"
+                            },
+                            {
+                                title: "Business Continuity",
+                                desc: "Prevent downtime during power outages with critical backup power (UPS) solutions.",
+                                icon: Zap,
+                                color: "from-amber-400 to-orange-500"
+                            },
+                            {
+                                title: "Organized Cabling",
+                                desc: "Replace messy 'spaghetti cables' with organized, labeled, and certified structured cabling systems.",
+                                icon: Cable,
+                                color: "from-emerald-400 to-teal-500"
+                            },
+                            {
+                                title: "Scalable Architecture",
+                                desc: "Networks designed to grow with you—add new users or devices without replacing core hardware.",
+                                icon: Scale,
+                                color: "from-purple-400 to-pink-500"
+                            },
+                            {
+                                title: "Intelligent Power Management",
+                                desc: "Monitor energy usage and remotely reboot hung devices from anywhere.",
+                                icon: Activity,
+                                color: "from-cyan-400 to-blue-500"
+                            },
+                            {
+                                title: "Maximum Uptime",
+                                desc: "Redundant pathways and monitored links ensure your network never takes a day off.",
+                                icon: ShieldCheck,
+                                color: "from-red-400 to-rose-500"
+                            }
+                        ].map((benefit, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group p-8 rounded-[32px] bg-slate-900 border border-white/5 hover:border-blue-500/30 transition-all relative overflow-hidden"
+                            >
                                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${benefit.color} opacity-5 blur-3xl group-hover:opacity-15 transition-opacity`} />
                                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-6`}>
                                     <benefit.icon className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold mb-4 group-hover:text-blue-300 transition-colors">{benefit.title}</h3>
                                 <p className="text-slate-400 leading-relaxed">{benefit.desc}</p>
-                            </motion.div>)}
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -217,16 +227,12 @@ const Infrastructure = () => {
                                     Aruba, a Hewlett Packard Enterprise company, is the gold standard for campus and branch networking. They are famous for their "Mobile First" approach, ensuring your team stays connected securely, whether they are at their desk or walking the floor.
                                 </p>
                                 <ul className="space-y-4">
-                                    {[{
-                  title: "Analyst Recognition",
-                  desc: "A long-standing Leader in the Gartner® Magic Quadrant™."
-                }, {
-                  title: "AI-Powered Wi-Fi",
-                  desc: "APs automatically optimize radio frequencies for the best signal."
-                }, {
-                  title: "Centralized Management",
-                  desc: "Manage all switches and APs from the Aruba Central cloud dashboard."
-                }].map((feature, i) => <li key={i} className="flex gap-4">
+                                    {[
+                                        { title: "Analyst Recognition", desc: "A long-standing Leader in the Gartner® Magic Quadrant™." },
+                                        { title: "AI-Powered Wi-Fi", desc: "APs automatically optimize radio frequencies for the best signal." },
+                                        { title: "Centralized Management", desc: "Manage all switches and APs from the Aruba Central cloud dashboard." }
+                                    ].map((feature, i) => (
+                                        <li key={i} className="flex gap-4">
                                             <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 mt-1">
                                                 <CheckCircle2 className="w-4 h-4 text-blue-400" />
                                             </div>
@@ -234,11 +240,16 @@ const Infrastructure = () => {
                                                 <span className="font-bold text-white block">{feature.title}</span>
                                                 <span className="text-sm text-slate-400">{feature.desc}</span>
                                             </div>
-                                        </li>)}
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-video lg:aspect-square group">
-                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80" alt="Aruba Enterprise Networking" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img
+                                    src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80"
+                                    alt="Aruba Enterprise Networking"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                             </div>
                         </motion.div>
@@ -254,16 +265,12 @@ const Infrastructure = () => {
                                     Legrand provides the physical pathways that connect your world. Their structured cabling solutions (LCS³) are designed for performance and ease of maintenance, ensuring your "Layer 1" is flawless.
                                 </p>
                                 <ul className="space-y-4">
-                                    {[{
-                  title: "High-Performance Fiber",
-                  desc: "Certified Cat6A and Fiber Optic solutions that guarantee bandwidth."
-                }, {
-                  title: "Smart Racks",
-                  desc: "Server cabinets designed for optimal airflow and cable management."
-                }, {
-                  title: "Future-Proof Design",
-                  desc: "Modular systems that allow you to swap cassettes easily as tech evolves."
-                }].map((feature, i) => <li key={i} className="flex gap-4">
+                                    {[
+                                        { title: "High-Performance Fiber", desc: "Certified Cat6A and Fiber Optic solutions that guarantee bandwidth." },
+                                        { title: "Smart Racks", desc: "Server cabinets designed for optimal airflow and cable management." },
+                                        { title: "Future-Proof Design", desc: "Modular systems that allow you to swap cassettes easily as tech evolves." }
+                                    ].map((feature, i) => (
+                                        <li key={i} className="flex gap-4">
                                             <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-1">
                                                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                                             </div>
@@ -271,11 +278,16 @@ const Infrastructure = () => {
                                                 <span className="font-bold text-white block">{feature.title}</span>
                                                 <span className="text-sm text-slate-400">{feature.desc}</span>
                                             </div>
-                                        </li>)}
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="lg:order-1 relative rounded-[40px] overflow-hidden shadow-2xl aspect-video lg:aspect-square group">
-                                <img src="https://images.unsplash.com/photo-1551808195-2321035038c7?auto=format&fit=crop&q=80" alt="Legrand Structured Cabling" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img
+                                    src="https://images.unsplash.com/photo-1551808195-2321035038c7?auto=format&fit=crop&q=80"
+                                    alt="Legrand Structured Cabling"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                             </div>
                         </motion.div>
@@ -291,16 +303,12 @@ const Infrastructure = () => {
                                     Data needs power. Vertiv (formerly Emerson Network Power) ensures that your critical equipment never goes dark. They are the preferred choice for protecting data centers and server rooms.
                                 </p>
                                 <ul className="space-y-4">
-                                    {[{
-                  title: "Liebert® UPS",
-                  desc: "Industry-leading supplies that protect servers during blackouts."
-                }, {
-                  title: "Thermal Management",
-                  desc: "Precision cooling solutions that extend server lifespan."
-                }, {
-                  title: "Smart PDUs",
-                  desc: "Intelligent units that let you monitor power draw and switch outlets."
-                }].map((feature, i) => <li key={i} className="flex gap-4">
+                                    {[
+                                        { title: "Liebert® UPS", desc: "Industry-leading supplies that protect servers during blackouts." },
+                                        { title: "Thermal Management", desc: "Precision cooling solutions that extend server lifespan." },
+                                        { title: "Smart PDUs", desc: "Intelligent units that let you monitor power draw and switch outlets." }
+                                    ].map((feature, i) => (
+                                        <li key={i} className="flex gap-4">
                                             <div className="w-6 h-6 rounded-full bg-amber-500/10 flex items-center justify-center flex-shrink-0 mt-1">
                                                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
                                             </div>
@@ -308,11 +316,16 @@ const Infrastructure = () => {
                                                 <span className="font-bold text-white block">{feature.title}</span>
                                                 <span className="text-sm text-slate-400">{feature.desc}</span>
                                             </div>
-                                        </li>)}
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-video lg:aspect-square group">
-                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80" alt="Vertiv Power Management" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img
+                                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80"
+                                    alt="Vertiv Power Management"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                             </div>
                         </motion.div>
@@ -328,16 +341,12 @@ const Infrastructure = () => {
                                     For growing businesses or rugged industrial environments, D-Link offers robust, cost-effective networking solutions designed for fast deployment and resilience.
                                 </p>
                                 <ul className="space-y-4">
-                                    {[{
-                  title: "Industrial Switches",
-                  desc: "Ruggedized hardware designed to withstand heat, dust, and vibration."
-                }, {
-                  title: "Cost-Effective Switching",
-                  desc: "Smart Managed Switches that provide VLANs, QoS, and security."
-                }, {
-                  title: "Nucleus Cloud",
-                  desc: "Simple, cloud-based management for fast network deployment."
-                }].map((feature, i) => <li key={i} className="flex gap-4">
+                                    {[
+                                        { title: "Industrial Switches", desc: "Ruggedized hardware designed to withstand heat, dust, and vibration." },
+                                        { title: "Cost-Effective Switching", desc: "Smart Managed Switches that provide VLANs, QoS, and security." },
+                                        { title: "Nucleus Cloud", desc: "Simple, cloud-based management for fast network deployment." }
+                                    ].map((feature, i) => (
+                                        <li key={i} className="flex gap-4">
                                             <div className="w-6 h-6 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0 mt-1">
                                                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                                             </div>
@@ -345,11 +354,16 @@ const Infrastructure = () => {
                                                 <span className="font-bold text-white block">{feature.title}</span>
                                                 <span className="text-sm text-slate-400">{feature.desc}</span>
                                             </div>
-                                        </li>)}
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="lg:order-1 relative rounded-[40px] overflow-hidden shadow-2xl aspect-video lg:aspect-square group">
-                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" alt="D-Link Industrial Networking" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img
+                                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
+                                    alt="D-Link Industrial Networking"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                             </div>
                         </motion.div>
@@ -367,34 +381,28 @@ const Infrastructure = () => {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        {[{
-            icon: Network,
-            title: "Switching & Routing"
-          }, {
-            icon: Wifi,
-            title: "Wi-Fi 6/6E Access Points"
-          }, {
-            icon: Cable,
-            title: "Structured Cabling"
-          }, {
-            icon: Server,
-            title: "Racks & Cabinets"
-          }, {
-            icon: Battery,
-            title: "UPS Systems"
-          }, {
-            icon: ThermometerSun,
-            title: "Cooling & PDU"
-          }].map((item, i) => <motion.div key={i} {...fadeIn} transition={{
-            delay: i * 0.1
-          }} className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-blue-500/30 flex flex-col items-center gap-4 group transition-all">
+                        {[
+                            { icon: Network, title: "Switching & Routing" },
+                            { icon: Wifi, title: "Wi-Fi 6/6E Access Points" },
+                            { icon: Cable, title: "Structured Cabling" },
+                            { icon: Server, title: "Racks & Cabinets" },
+                            { icon: Battery, title: "UPS Systems" },
+                            { icon: ThermometerSun, title: "Cooling & PDU" }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                {...fadeIn}
+                                transition={{ delay: i * 0.1 }}
+                                className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-blue-500/30 flex flex-col items-center gap-4 group transition-all"
+                            >
                                 <div className="w-16 h-16 rounded-2xl bg-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <item.icon className="w-8 h-8 text-blue-400" />
                                 </div>
                                 <span className="text-center font-bold text-slate-200 group-hover:text-blue-300 transition-colors uppercase tracking-widest text-xs">
                                     {item.title}
                                 </span>
-                            </motion.div>)}
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -420,21 +428,24 @@ const Infrastructure = () => {
                                 </p>
 
                                 <div className="space-y-8">
-                                    {[{
-                  title: "Heat Maps & Site Surveys",
-                  desc: "We simulate your office floor plan to place Wi-Fi APs exactly where they are needed for 100% coverage.",
-                  icon: Map
-                }, {
-                  title: "Certified Cabling",
-                  desc: "We certify cables with Fluke testers to prove they meet global ISO/TIA standards.",
-                  icon: CheckCircle
-                }, {
-                  title: "Power Load Balancing",
-                  desc: "We calculate total power draw to ensure your UPS can handle the load during an outage.",
-                  icon: Activity
-                }].map((item, i) => <motion.div key={i} {...fadeIn} transition={{
-                  delay: i * 0.1
-                }} className="flex gap-4">
+                                    {[
+                                        {
+                                            title: "Heat Maps & Site Surveys",
+                                            desc: "We simulate your office floor plan to place Wi-Fi APs exactly where they are needed for 100% coverage.",
+                                            icon: Map
+                                        },
+                                        {
+                                            title: "Certified Cabling",
+                                            desc: "We certify cables with Fluke testers to prove they meet global ISO/TIA standards.",
+                                            icon: CheckCircle
+                                        },
+                                        {
+                                            title: "Power Load Balancing",
+                                            desc: "We calculate total power draw to ensure your UPS can handle the load during an outage.",
+                                            icon: Activity
+                                        }
+                                    ].map((item, i) => (
+                                        <motion.div key={i} {...fadeIn} transition={{ delay: i * 0.1 }} className="flex gap-4">
                                             <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center">
                                                 <item.icon className="w-6 h-6 text-blue-400" />
                                             </div>
@@ -442,7 +453,8 @@ const Infrastructure = () => {
                                                 <h4 className="font-bold text-white mb-2 text-lg">{item.title}</h4>
                                                 <p className="text-slate-400 text-sm">{item.desc}</p>
                                             </div>
-                                        </motion.div>)}
+                                        </motion.div>
+                                    ))}
                                 </div>
                             </div>
 
@@ -491,6 +503,8 @@ const Infrastructure = () => {
                     </motion.div>
                 </div>
             </section>
-        </div>;
+        </div>
+    );
 };
+
 export default Infrastructure;
