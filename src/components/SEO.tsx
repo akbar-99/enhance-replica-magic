@@ -110,7 +110,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+97143296840",
     "contactType": "customer service",
-    "email": "connect@itenhance.tech"
+    "email": "social@itenhance.tech"
   },
   "sameAs": [
     "https://www.linkedin.com/company/enhance-tech",

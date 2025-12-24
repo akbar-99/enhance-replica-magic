@@ -224,8 +224,8 @@ export default function ServiceLocation() {
             <a href="tel:+97143296840" className="btn-primary">
               <Phone className="w-4 h-4" /> +97143296840
             </a>
-            <a href="mailto:connect@itenhance.tech" className="btn-secondary">
-              <Mail className="w-4 h-4" /> connect@itenhance.tech
+            <a href="mailto:social@itenhance.tech" className="btn-secondary">
+              <Mail className="w-4 h-4" /> social@itenhance.tech
             </a>
           </div>
         </div>
