@@ -30,7 +30,6 @@ import SmartMeetingRooms from '@/pages/solutions/SmartMeetingRooms';
 import ManageMicrosoft365 from '@/pages/solutions/ManageMicrosoft365';
 import ComputeStorage from '@/pages/solutions/ComputeStorage';
 import Infrastructure from '@/pages/solutions/Infrastructure';
-import Careers from '@/pages/Careers';
 import News from '@/pages/News';
 
 const AnimatedRoutes = () => {
@@ -67,8 +66,7 @@ const AnimatedRoutes = () => {
         <Route path="/partners/:slug" element={<PageTransition><Partners /></PageTransition>} />
         <Route path="/company" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/company/about" element={<PageTransition><Company /></PageTransition>} />
-        <Route path="/company/careers" element={<PageTransition><Careers /></PageTransition>} />
-        <Route path="/company/jobs" element={<PageTransition><Careers /></PageTransition>} />
+        <Route path="/company/careers" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/company/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/company/news" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/news" element={<PageTransition><News /></PageTransition>} />
