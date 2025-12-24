@@ -61,20 +61,8 @@ const footerLinks = {
       href: "/resources/blog",
     },
     {
-      label: "Case Studies",
-      href: "/resources/case-studies",
-    },
-    {
-      label: "Whitepapers",
-      href: "/resources/whitepapers",
-    },
-    {
-      label: "Webinars",
-      href: "/resources/webinars",
-    },
-    {
-      label: "Documentation",
-      href: "/resources/docs",
+      label: "News",
+      href: "/company/news",
     },
   ],
   Company: [
@@ -89,14 +77,6 @@ const footerLinks = {
     {
       label: "Contact",
       href: "/company/contact",
-    },
-    {
-      label: "News",
-      href: "/company/news",
-    },
-    {
-      label: "Partners",
-      href: "/partners",
     },
   ],
   "Quick Link": [
