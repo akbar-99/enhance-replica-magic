@@ -17,7 +17,7 @@ const contactOptions = [
     icon: Mail,
     title: "Email Us",
     description: "Send us an email and we'll respond within 24 hours.",
-    contact: "social@itenhance.tech",
+    contact: "connect@itenhance.tech",
     type: "email",
     color: "bg-emerald-500",
   },
@@ -58,7 +58,7 @@ const offices = [
 ];
 const companyContact = {
   phone: "+971 4 329 6840",
-  email: "social@itenhance.tech",
+  email: "connect@itenhance.tech",
   address: "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE",
 };
 export default function Contact() {
@@ -77,7 +77,7 @@ export default function Contact() {
 
     try {
       // Direct email construction
-      const mailtoUrl = `mailto:social@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
+      const mailtoUrl = `mailto:connect@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
 
       // Simulate success and provide direct link
       setTimeout(() => {

@@ -161,11 +161,11 @@ export default function Footer() {
                 <span>+971 4 329 6840</span>
               </a>
               <a
-                href="mailto:social@itenhance.tech"
+                href="mailto:connect@itenhance.tech"
                 className="flex items-center gap-2 hover:text-foreground transition-colors"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>social@itenhance.tech</span>
+                <span>connect@itenhance.tech</span>
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
