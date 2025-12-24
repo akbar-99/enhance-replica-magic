@@ -275,11 +275,14 @@ export default function Contact() {
                         className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       >
                         <option value="">Select a subject...</option>
-                        <option value="sales">Sales Inquiry</option>
-                        <option value="support">Technical Support</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="press">Press & Media</option>
-                        <option value="other">Other</option>
+                        <option value="Sales Inquiry">Sales Inquiry</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="IT AMC Services">IT AMC Services</option>
+                        <option value="Managed IT Services">Managed IT Services</option>
+                        <option value="Cybersecurity Solutions">Cybersecurity Solutions</option>
+                        <option value="Cloud Services">Cloud Services</option>
+                        <option value="Partnership">Partnership Opportunity</option>
+                        <option value="General Inquiry">General Inquiry</option>
                       </select>
                     </div>
 
