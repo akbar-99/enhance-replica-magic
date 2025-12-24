@@ -368,7 +368,7 @@ export default function NetworkSecurity() {
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src="https://www.youtube.com/embed/Zai7blMzp7o?start=11&autoplay=1&mute=1&loop=1&playlist=Zai7blMzp7o"
+                                        src="https://www.youtube.com/embed/Zai7blMzp7o?start=11&autoplay=1&mute=1&loop=1&playlist=Zai7blMzp7o&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
                                         title="Fortinet Video"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -432,7 +432,7 @@ export default function NetworkSecurity() {
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src="https://www.youtube.com/embed/YNACb3X7gYE?si=kNY4LxKzTTXIw8kL&autoplay=1&mute=1&loop=1&playlist=YNACb3X7gYE"
+                                        src="https://www.youtube.com/embed/YNACb3X7gYE?autoplay=1&mute=1&loop=1&playlist=YNACb3X7gYE&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
                                         title="SonicWall Video"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -496,7 +496,7 @@ export default function NetworkSecurity() {
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src="https://www.youtube.com/embed/mo37LCY_--I?si=x0RW73eRrTz-LrjM&autoplay=1&mute=1&loop=1&playlist=mo37LCY_--I"
+                                        src="https://www.youtube.com/embed/mo37LCY_--I?autoplay=1&mute=1&loop=1&playlist=mo37LCY_--I&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
                                         title="Sangfor Video"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
