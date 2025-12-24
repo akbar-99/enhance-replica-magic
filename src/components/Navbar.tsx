@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDown, Search, Globe, Menu, X, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
@@ -208,6 +208,7 @@ const navItems: NavItem[] = [
   },
 ];
 export default function Navbar() {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -242,14 +243,21 @@ export default function Navbar() {
   const handleSearchItemClick = (href: string) => {
     setSearchOpen(false);
     setSearchQuery("");
-    window.location.href = href;
+    navigate(href);
+  };
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
   };
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group" onClick={handleLogoClick}>
             <img
               src={enhanceTechLogo}
               alt="Enhance Tech"
@@ -275,10 +283,10 @@ export default function Navbar() {
                   {item.dropdown && (
                     <div
                       className={`absolute top-full ${item.label === "Products"
-                          ? "left-1/2 -translate-x-1/2 w-[700px]"
-                          : item.label === "Solutions" || item.label === "Services"
-                            ? "left-1/2 -translate-x-1/2 w-[800px]"
-                            : "left-0 min-w-[240px]"
+                        ? "left-1/2 -translate-x-1/2 w-[700px]"
+                        : item.label === "Solutions" || item.label === "Services"
+                          ? "left-1/2 -translate-x-1/2 w-[800px]"
+                          : "left-0 min-w-[240px]"
                         } mt-2 bg-popover border border-border rounded-lg shadow-xl transition-all duration-200 ${activeDropdown === item.label ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}
                     >
                       {item.label === "Solutions" || item.label === "Services" ? (

@@ -5,7 +5,12 @@ export default function ScrollToTop() {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // Use requestAnimationFrame to ensure scroll happens after the route transition starts
+        const timeoutId = setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 0);
+
+        return () => clearTimeout(timeoutId);
     }, [pathname]);
 
     return null;
