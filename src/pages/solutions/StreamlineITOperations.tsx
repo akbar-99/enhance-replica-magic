@@ -688,6 +688,7 @@ export default function StreamlineITOperations() {
         </section>
 
 
-    </main>
-    );
+
+
+    </main>;
 }
