@@ -373,7 +373,7 @@ export default function NetworkSecurity() {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        className="absolute inset-0 w-[101%] h-[101%] -left-[0.5%] -top-[0.5%] object-cover pointer-events-none"
                                     ></iframe>
                                 </div>
                             </motion.div>
@@ -437,7 +437,7 @@ export default function NetworkSecurity() {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        className="absolute inset-0 w-[101%] h-[101%] -left-[0.5%] -top-[0.5%] object-cover pointer-events-none"
                                     ></iframe>
                                 </div>
                             </motion.div>
@@ -501,7 +501,7 @@ export default function NetworkSecurity() {
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        className="absolute inset-0 w-[101%] h-[101%] -left-[0.5%] -top-[0.5%] object-cover pointer-events-none"
                                     ></iframe>
                                 </div>
                             </motion.div>

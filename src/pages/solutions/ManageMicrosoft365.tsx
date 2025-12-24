@@ -536,9 +536,9 @@ export default function ManageMicrosoft365() {
                             <div className="relative aspect-video rounded-[24px] overflow-hidden">
                                 <iframe
                                     src="https://player.vimeo.com/video/970670509?h=2c25a5abca&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-                                    className="absolute inset-0 w-full h-full"
+                                    className="absolute inset-0 w-[101%] h-[101%] -left-[0.5%] -top-[0.5%] pointer-events-none"
                                     frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                                    allow="autoplay; fullscreen; picture-in-picture"
                                     title="AvePoint Data Management Solution"
                                 />
                             </div>
