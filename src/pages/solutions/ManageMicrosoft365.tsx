@@ -88,15 +88,15 @@ export default function ManageMicrosoft365() {
                         <motion.div {...fadeIn} transition={{
                             delay: 0.3,
                             duration: 0.8
-                        }} className="flex flex-wrap justify-center lg:justify-start gap-6">
+                        }} className="flex flex-wrap justify-center lg:justify-start gap-4">
                             <Link to="/contact">
-                                <Button size="lg" className="bg-sky-600 hover:bg-sky-500 text-white shadow-[0_0_30px_-5px_rgba(14,165,233,0.4)] rounded-full px-12 h-20 text-xl font-black transition-all hover:scale-105 active:scale-95 group">
+                                <Button size="lg" className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white shadow-xl shadow-sky-500/25 rounded-2xl px-10 h-14 text-base font-bold transition-all hover:scale-105 active:scale-95 border-none">
                                     Get Governance Assessment
-                                    <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight className="ml-2 h-5 w-5" />
                                 </Button>
                             </Link>
                             <Link to="/contact">
-                                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-12 h-20 text-xl font-bold transition-all border-2">
+                                <Button size="lg" className="border-2 border-white/20 text-white hover:border-white/40 hover:bg-white/10 backdrop-blur-md rounded-2xl px-10 h-14 text-base font-medium transition-all hover:scale-105 active:scale-95 bg-transparent">
                                     Contact Cloud Team
                                 </Button>
                             </Link>

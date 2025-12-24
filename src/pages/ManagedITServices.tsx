@@ -49,7 +49,7 @@ export default function ManagedITServices() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 animate-fade-up animation-delay-400">
               <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25">
+                <Button size="lg" className="btn-primary shadow-xl shadow-blue-500/20">
                   Book Your Free Initial Audit Today
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

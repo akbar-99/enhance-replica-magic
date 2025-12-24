@@ -176,17 +176,16 @@ export default function OptimizeCloudOperations() {
                 <Link to="/demo">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-white shadow-2xl shadow-primary/40 rounded-full px-10 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95"
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-xl shadow-blue-500/25 rounded-2xl px-10 h-14 text-base font-bold transition-all hover:scale-105 active:scale-95 border-none"
                   >
                     Get a Cloud Health Check
-                    <ArrowRight className="ml-2 h-6 w-6" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/contact">
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-10 h-16 text-lg font-medium transition-all"
+                    className="border-2 border-white/20 text-white hover:border-white/40 hover:bg-white/10 backdrop-blur-md rounded-2xl px-10 h-14 text-base font-medium transition-all hover:scale-105 active:scale-95 bg-transparent"
                   >
                     Contact Our Cloud Team
                   </Button>
@@ -827,7 +826,7 @@ export default function OptimizeCloudOperations() {
           </motion.p>
           <motion.div {...fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 h-14 text-lg">
+              <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-xl shadow-blue-500/20 rounded-2xl px-10 h-14 text-base font-bold transition-all hover:scale-105 active:scale-95 border-none">
                 Get a Cloud Health Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -835,8 +834,7 @@ export default function OptimizeCloudOperations() {
             <Link to="/contact">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-slate-300 rounded-full px-10 h-14 text-lg hover:bg-slate-50"
+                className="border-2 border-slate-200 text-slate-900 hover:bg-slate-50 rounded-2xl px-10 h-14 text-base font-medium transition-all hover:scale-105 active:scale-95 bg-transparent"
               >
                 Contact Our Cloud Team
               </Button>
