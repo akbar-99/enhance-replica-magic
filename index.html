@@ -15,8 +15,12 @@
     <link rel="dns-prefetch" href="https://my.spline.design">
     <link rel="preconnect" href="https://my.spline.design" crossorigin>
     
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/src/assets/hero-background.jpg" type="image/jpeg">
+    <link rel="preload" as="image" href="/src/assets/hero-background.jpg" type="image/jpeg" imagesrcset="/src/assets/hero-background.jpg">
     
     <!-- Resource hints for better performance -->
     <link rel="prefetch" href="/src/assets/partners/microsoft-logo.png">

@@ -21,7 +21,7 @@ const SplineEmbed = memo(() => {
         width="150%"
         height="150%"
         className="rounded-2xl"
-        loading="lazy"
+        loading="eager"
         onLoad={() => setIsLoaded(true)}
         style={{ opacity: isLoaded ? 1 : 0 }}
       />
