@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucide-react";
 import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
 const footerLinks = {
@@ -129,13 +129,23 @@ const socialLinks = [
   },
 ];
 export default function Footer() {
+  const location = useLocation();
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  };
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
-            <Link to="/" className="flex items-center mb-4 group">
+            <Link to="/" className="flex items-center mb-4 group" onClick={handleLogoClick}>
               <img
                 src={enhanceTechLogo}
                 alt="Enhance Tech"
