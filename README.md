@@ -62,6 +62,14 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### AWS Amplify (Best for Production)
+1. **Push your code** to GitHub.
+2. Go to the [AWS Amplify Console](https://console.aws.amazon.com/amplify).
+3. Connect your repository and select the branch (e.g., `main`).
+4. Amplify will automatically detect the configuration in `amplify.yml`.
+5. Click **Deliver** and wait for the build to complete.
+
+### Lovable
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
