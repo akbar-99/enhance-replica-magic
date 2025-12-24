@@ -398,7 +398,7 @@ export default function PreventDataLoss() {
             }} viewport={{
               once: true
             }} className="lg:order-2">
-              <img src="/lovable-uploads/acronis-dashboard.png" alt="Acronis Cyber Protect Cloud Dashboard" className="rounded-[32px] shadow-2xl border border-white/5 w-full h-full object-cover aspect-[4/3]" loading="lazy" />
+              <img src="/lovable-uploads/acronis-dashboard.png" alt="Acronis Cyber Protect Cloud Dashboard" className="rounded-[32px] shadow-2xl border border-white/5 w-full object-contain" loading="lazy" />
             </motion.div>
           </div>
 
