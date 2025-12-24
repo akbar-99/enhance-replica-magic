@@ -26,7 +26,7 @@ const contactOptions = [
     icon: MapPin,
     title: "Visit Us",
     description: "Come visit our office in Dubai.",
-    contact: "Al Diyar Building, Sheikh Zayed Road, Dubai, UAE",
+    contact: "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE",
     type: "address",
     color: "bg-purple-500",
   },
@@ -34,7 +34,7 @@ const contactOptions = [
 const offices = [
   {
     city: "Dubai",
-    address: "Al Diyar Building, Sheikh Zayed Road",
+    address: "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl",
     region: "Dubai",
     country: "UAE",
   },
@@ -60,7 +60,7 @@ const offices = [
 const companyContact = {
   phone: "+971 4 329 6840",
   email: "connect@itenhance.tech",
-  address: "Al Diyar Building, Sheikh Zayed Road, Dubai, UAE",
+  address: "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE",
 };
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -328,11 +328,11 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-primary" />
                   Find Us
                 </h2>
-                <p className="text-slate-600 mt-2">Al Diyar Building, Sheikh Zayed Road, Dubai, UAE</p>
+                <p className="text-slate-600 mt-2">Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE</p>
               </div>
               <div className="flex-grow w-full rounded-2xl overflow-hidden border border-slate-100 relative bg-slate-100">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178510024345!2d55.2721877!3d25.1972018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682829c85c07%3A0xa4ec9701a0808600!2sAl%20Diyar%20General%20Trading%20Co.%20LLC!5e0!3m2!1sen!2sae!4v1710000000000!5m2!1sen!2sae"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.6808972267644!2d55.25316527536999!3d25.187687577682887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69a49b927fe3%3A0xa9561028f36e44d8!2sAddiyar%20Building%20-%20Ground%20Floor%20-%20Sheikh%20Zayed%20Rd%20-%20Al%20Wasl%20-%20Dubai!5e0!3m2!1sen!2sae!4v1735034607000!5m2!1sen!2sae"
                   width="100%"
                   height="100%"
                   style={{

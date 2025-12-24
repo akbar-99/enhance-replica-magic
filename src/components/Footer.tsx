@@ -156,9 +156,9 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link to="/" className="flex items-center mb-4 group">
-              <img 
-                src={enhanceTechLogo} 
-                alt="Enhance Tech" 
+              <img
+                src={enhanceTechLogo}
+                alt="Enhance Tech"
                 className="h-10 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
               />
             </Link>
@@ -179,7 +179,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Al Diyar Building, Sheikh Zayed Road, Dubai, UAE</span>
+                <span>Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE</span>
               </div>
             </div>
             <div className="flex gap-3">

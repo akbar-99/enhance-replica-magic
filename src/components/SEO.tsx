@@ -102,7 +102,7 @@ export const organizationSchema = {
   "description": "Leading IT solutions provider in Dubai, UAE offering managed IT services, cybersecurity, cloud solutions, and enterprise technology.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "AlDiyar Building, Sheikh Zayed Road",
+    "streetAddress": "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl",
     "addressLocality": "Dubai",
     "addressCountry": "UAE"
   },
