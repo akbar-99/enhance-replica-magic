@@ -8,9 +8,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Images
-import managedItImg from "@/assets/managed-it.png";
-import managedSecurityImg from "@/assets/managed-security.png";
-import consultancyImg from "@/assets/consultancy.png";
+import managedItImg from "@/assets/managed-it.webp";
+import managedSecurityImg from "@/assets/managed-security.webp";
+import consultancyImg from "@/assets/consultancy.webp";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

@@ -182,7 +182,7 @@ export default function StreamlineITOperations() {
                     >
                         <div className="relative z-10 p-1 rounded-[40px] shadow-[0_0_50px_-12px_rgba(8,145,178,0.3)]">
                             <img
-                                src="/lovable-uploads/it_operations_hero.png"
+                                src="/lovable-uploads/it_operations_hero.webp"
                                 alt="Unified IT Operations"
                                 className="rounded-[38px] border border-white/10 w-full h-auto object-cover"
                             />
@@ -224,7 +224,7 @@ export default function StreamlineITOperations() {
                         <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-[40px] blur-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-700" />
                         <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-slate-100">
                             <img
-                                src="/lovable-uploads/automation_workflow.png"
+                                src="/lovable-uploads/automation_workflow.webp"
                                 alt="IT Automation Workflow"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                                 loading="lazy"
@@ -505,7 +505,7 @@ export default function StreamlineITOperations() {
                             className="lg:order-2"
                         >
                             <img
-                                src="/lovable-uploads/freshworks_concept.png"
+                                src="/lovable-uploads/freshworks_concept.webp"
                                 alt="Freshworks Interface"
                                 className="rounded-[32px] shadow-2xl border border-white/5"
                                 loading="lazy"
@@ -578,7 +578,7 @@ export default function StreamlineITOperations() {
                             className="lg:order-1"
                         >
                             <img
-                                src="/lovable-uploads/halo_itsm_concept.png"
+                                src="/lovable-uploads/halo_itsm_concept.webp"
                                 alt="Halo ITSM Interface"
                                 className="rounded-[32px] shadow-2xl border border-white/5"
                                 loading="lazy"

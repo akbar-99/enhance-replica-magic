@@ -127,7 +127,7 @@ const ComputeStorage = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-transparent z-10" />
                             <img
-                                src="/lovable-uploads/modern-datacenter.png"
+                                src="/lovable-uploads/modern-datacenter.webp"
                                 alt="Modern Data Center Infrastructure"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
@@ -230,19 +230,19 @@ const ComputeStorage = () => {
                                     brand: "Dell Technologies",
                                     model: "Dell PowerEdge",
                                     desc: "Renowned for scalability and the industry-leading iDRAC management controller, making remote server management effortless.",
-                                    img: "/lovable-uploads/enterprise-server.png"
+                                    img: "/lovable-uploads/enterprise-server.webp"
                                 },
                                 {
                                     brand: "HPE",
                                     model: "HPE ProLiant",
                                     desc: "The world's most secure industry-standard servers. Famous for their 'Silicon Root of Trust' which prevents compromised firmware code.",
-                                    img: "/lovable-uploads/hpe-proliant.png"
+                                    img: "/lovable-uploads/hpe-proliant.webp"
                                 },
                                 {
                                     brand: "Lenovo",
                                     model: "Lenovo ThinkSystem",
                                     desc: "Consistently ranked #1 in server reliability. Lenovo servers offer incredible uptime and value for performance-critical applications.",
-                                    img: "/lovable-uploads/lenovo-thinksystem.png"
+                                    img: "/lovable-uploads/lenovo-thinksystem.webp"
                                 }
                             ].map((item, i) => (
                                 <motion.div
@@ -288,14 +288,14 @@ const ComputeStorage = () => {
                                     headline: "The Gold Standard for User-Friendly Storage",
                                     desc: "Their DSM operating system is as easy to use as a smartphone, with built-in apps for backing up Office 365 and syncing files.",
                                     color: "emerald",
-                                    img: "/lovable-uploads/synology-nas-actual.jpg"
+                                    img: "/lovable-uploads/synology-nas-actual.webp"
                                 },
                                 {
                                     name: "QNAP",
                                     headline: "High Performance & Massive Connectivity",
                                     desc: "Known for powerful hardware specs. Featuring fast 10GbE networking and Thunderbolt ports, ideal for creative professionals.",
                                     color: "blue",
-                                    img: "/lovable-uploads/qnap-nas-actual.jpg"
+                                    img: "/lovable-uploads/qnap-nas-actual.webp"
                                 }
                             ].map((item, i) => (
                                 <motion.div
@@ -435,7 +435,7 @@ const ComputeStorage = () => {
 
                             <div className="relative">
                                 <div className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-3xl aspect-square">
-                                    <img src="/lovable-uploads/precision-engineering.png" alt="Precision IT Engineering" className="absolute inset-0 w-full h-full object-cover" />
+                                    <img src="/lovable-uploads/precision-engineering.webp" alt="Precision IT Engineering" className="absolute inset-0 w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
                                     <div className="absolute bottom-10 left-10 right-10">
                                         <div className="flex items-center gap-4 p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">

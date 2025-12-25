@@ -140,7 +140,7 @@ export default function SmartMeetingRooms() {
                         >
                             <div className="relative z-10 p-1 rounded-[40px] shadow-[0_0_50px_-12px_rgba(37,99,235,0.3)]">
                                 <img
-                                    src="/lovable-uploads/meeting_room_hero.png"
+                                    src="/lovable-uploads/meeting_room_hero.webp"
                                     alt="Smart Meeting Room"
                                     className="rounded-[38px] border border-white/10 w-full h-auto object-cover"
                                 />

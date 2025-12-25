@@ -1,9 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import managedServicesImg from "@/assets/features/managed-services.png";
-import infrastructureHardwareImg from "@/assets/features/infrastructure-hardware.png";
-import modernWorkplaceImg from "@/assets/features/modern-workplace.png";
-import webDevelopmentImg from "@/assets/features/web-development.png";
+import managedServicesImg from "@/assets/features/managed-services.webp";
+import infrastructureHardwareImg from "@/assets/features/infrastructure-hardware.webp";
+import modernWorkplaceImg from "@/assets/features/modern-workplace.webp";
+import webDevelopmentImg from "@/assets/features/web-development.webp";
 const features = [
   {
     image: managedServicesImg,

@@ -18,11 +18,11 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Reusing existing assets to maintain visual consistency and overcome generation limits
-import modernWorkplaceImg from "@/assets/features/modern-workplace.png";
-import cloudImg from "@/assets/consultancy.png"; // Abstract flow fits Cloud
-import meetingImg from "@/assets/server-storage.png"; // Tech hardware fits Meeting Rooms
-import commsImg from "@/assets/managed-it.png"; // General IT/People fits Communications
-import securityImg from "@/assets/network-connectivity.png"; // Connectivity fits Remote Access
+import modernWorkplaceImg from "@/assets/features/modern-workplace.webp";
+import cloudImg from "@/assets/consultancy.webp"; // Abstract flow fits Cloud
+import meetingImg from "@/assets/server-storage.webp"; // Tech hardware fits Meeting Rooms
+import commsImg from "@/assets/managed-it.webp"; // General IT/People fits Communications
+import securityImg from "@/assets/network-connectivity.webp"; // Connectivity fits Remote Access
 
 export default function WorkplaceModernization() {
   return (
@@ -119,7 +119,7 @@ export default function WorkplaceModernization() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-purple-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/cloud-migration.jpg"
+                  src="/lovable-uploads/cloud-migration.webp"
                   alt="Cloud Migration Digital Art"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -189,7 +189,7 @@ export default function WorkplaceModernization() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-emerald-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/meeting-room.jpg"
+                  src="/lovable-uploads/meeting-room.webp"
                   alt="Modern Conference Room"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -225,7 +225,7 @@ export default function WorkplaceModernization() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/unified-comms.jpg"
+                  src="/lovable-uploads/unified-comms.webp"
                   alt="Unified Communications Video Call"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -261,7 +261,7 @@ export default function WorkplaceModernization() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/remote-work.jpg"
+                  src="/lovable-uploads/remote-work.webp"
                   alt="Secure Remote Work"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />

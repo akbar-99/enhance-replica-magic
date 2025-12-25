@@ -1,4 +1,4 @@
-import statsBackground from '@/assets/stats-background.jpg';
+import statsBackground from "@/assets/stats-background.webp";
 const stats = [{
   value: '99.9%',
   label: 'Uptime SLA'
@@ -14,21 +14,21 @@ const stats = [{
 }];
 export default function StatsSection() {
   return <section style={{
-    backgroundImage: "url(\"/lovable-uploads/3b8ba20a-8b8c-4a2c-bdad-bc96de88f2f2.jpg\")"
+    backgroundImage: "url(\"/lovable-uploads/3b8ba20a-8b8c-4a2c-bdad-bc96de88f2f2.webp\")"
   }} className="my-[2px] bg-cover bg-center bg-no-repeat py-[72px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => <div key={stat.label} className="text-center" style={{
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat, index) => <div key={stat.label} className="text-center" style={{
           animationDelay: `${index * 150}ms`
         }}>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold glow-text mb-2">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground text-sm md:text-base">
-                {stat.label}
-              </div>
-            </div>)}
-        </div>
+          <div className="text-4xl md:text-5xl lg:text-6xl font-bold glow-text mb-2">
+            {stat.value}
+          </div>
+          <div className="text-muted-foreground text-sm md:text-base">
+            {stat.label}
+          </div>
+        </div>)}
       </div>
-    </section>;
+    </div>
+  </section>;
 }

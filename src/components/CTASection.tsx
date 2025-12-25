@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import ctaBackground from "@/assets/cta-background.jpg";
+import ctaBackground from "@/assets/cta-background.webp";
 // Floating particle component
 const FloatingParticle = ({
   delay,

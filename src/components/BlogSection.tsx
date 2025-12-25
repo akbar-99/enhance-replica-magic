@@ -3,11 +3,11 @@ import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-r
 
 // Import 3D character images
 // Image paths for the new character images
-const blogChar1 = "/lovable-uploads/blog-character-1.jpg";
-const blogChar2 = "/lovable-uploads/blog-character-2.jpg";
-const blogChar3 = "/lovable-uploads/blog-character-3.jpg";
-const blogChar4 = "/lovable-uploads/blog-character-4.jpg";
-const blogChar5 = "/lovable-uploads/blog-character-1.jpg"; // Reusing first one for consistency
+const blogChar1 = "/lovable-uploads/blog-character-1.webp";
+const blogChar2 = "/lovable-uploads/blog-character-2.webp";
+const blogChar3 = "/lovable-uploads/blog-character-3.webp";
+const blogChar4 = "/lovable-uploads/blog-character-4.webp";
+const blogChar5 = "/lovable-uploads/blog-character-1.webp"; // Reusing first one for consistency
 const blogPosts = [
   {
     id: 1,

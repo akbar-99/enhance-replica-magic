@@ -5,31 +5,7 @@ import { useTranslation } from "react-i18next";
 import heroBackground from "@/assets/hero-background.webp";
 
 // Lazy load Spline embed
-const SplineEmbed = memo(() => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    <>
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Loader2 className="w-8 h-8 text-primary animate-spin" />
-        </div>
-      )}
-      <iframe
-        src="https://my.spline.design/cubeandballs-8E1GulS3ZESsoKit9aF93qKF/"
-        frameBorder="0"
-        width="150%"
-        height="150%"
-        className="rounded-2xl"
-        loading="eager"
-        onLoad={() => setIsLoaded(true)}
-        style={{ opacity: isLoaded ? 1 : 0 }}
-      />
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-    </>
-  );
-});
-SplineEmbed.displayName = "SplineEmbed";
+// SplineEmbed removed as per user request to remove the cube
 
 interface HeroTab {
   id: string;
@@ -74,7 +50,6 @@ function HeroSection() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isPaused, setIsPaused] = useState(false);
-  const [showSpline, setShowSpline] = useState(false);
 
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
 
@@ -92,10 +67,7 @@ function HeroSection() {
   }, [goToNextTab, isPaused]);
 
   // Delay Spline loading for faster initial render
-  useEffect(() => {
-    const timer = setTimeout(() => setShowSpline(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+
   return (
     <section className="relative min-h-screen overflow-hidden py-0">
       {/* Preload hero background for LCP */}
@@ -131,7 +103,7 @@ function HeroSection() {
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Left - Tabs (hidden on mobile, shown on desktop) */}
           <div
-            className="hidden lg:block lg:col-span-3 space-y-2"
+            className="block lg:col-span-3 space-y-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -185,14 +157,9 @@ function HeroSection() {
           </div>
 
           {/* Right Side - Spline 3D (below content on mobile) */}
+          {/* Right Side - Spline 3D (Removed) */}
           <div className="order-2 lg:order-none w-full lg:col-span-4 relative h-[250px] sm:h-[350px] lg:h-[600px] flex items-center justify-center lg:-mt-24 overflow-hidden">
-            {showSpline ? (
-              <SplineEmbed />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Loader2 className="w-8 h-8 text-primary animate-spin" />
-              </div>
-            )}
+            {/* Cube removed */}
           </div>
         </div>
       </div>

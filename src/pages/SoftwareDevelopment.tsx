@@ -19,10 +19,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { motion } from "framer-motion";
 
 // Reusing assets
-import webDevImg from "@/assets/features/web-development.png";
-import mobileImg from "@/assets/features/modern-workplace.png"; // Devices/Screens
-import softwareImg from "@/assets/consultancy.png"; // Logic/Structure
-import designImg from "@/assets/managed-it.png"; // Visuals/Screens
+import webDevImg from "@/assets/features/web-development.webp";
+import mobileImg from "@/assets/features/modern-workplace.webp"; // Devices/Screens
+import softwareImg from "@/assets/consultancy.webp"; // Logic/Structure
+import designImg from "@/assets/managed-it.webp"; // Visuals/Screens
 
 export default function SoftwareDevelopment() {
   return (
@@ -121,7 +121,7 @@ export default function SoftwareDevelopment() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-indigo-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/web-development.jpg"
+                  src="/lovable-uploads/web-development.webp"
                   alt="Custom Web Development Code"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -191,7 +191,7 @@ export default function SoftwareDevelopment() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-pink-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/mobile-app.jpg"
+                  src="/lovable-uploads/mobile-app.webp"
                   alt="Mobile App User Experience"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -227,7 +227,7 @@ export default function SoftwareDevelopment() {
               <div className="order-2 lg:order-1 relative group">
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/custom-software.jpg"
+                  src="/lovable-uploads/custom-software.webp"
                   alt="Custom Software Code Screens"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />
@@ -264,7 +264,7 @@ export default function SoftwareDevelopment() {
               <div className="order-1 lg:order-2 relative group">
                 <div className="absolute inset-0 bg-teal-500/10 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-500" />
                 <img
-                  src="/lovable-uploads/ui-ux-design.jpg"
+                  src="/lovable-uploads/ui-ux-design.webp"
                   alt="UI/UX Design Mockup"
                   className="relative w-full drop-shadow-2xl rounded-2xl transform group-hover:-translate-y-4 transition-transform duration-500 w-full h-full object-cover aspect-[4/3]"
                 />

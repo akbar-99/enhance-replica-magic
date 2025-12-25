@@ -14,7 +14,7 @@ const SEO = ({
   description,
   keywords = "IT solutions, cybersecurity, cloud services, managed IT, Dubai, UAE, enterprise security",
   canonicalUrl,
-  ogImage = "/og-image.png",
+  ogImage = "/og-image.webp",
   structuredData
 }: SEOProps) => {
   const siteUrl = 'https://itenhance.tech';
@@ -68,7 +68,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "ENHANCE TECH",
   "url": "https://itenhance.tech",
-  "logo": "https://itenhance.tech/logo.png",
+  "logo": "https://itenhance.tech/logo.webp",
   "description": "Leading IT solutions provider in Dubai, UAE offering managed IT services, cybersecurity, cloud solutions, and enterprise technology.",
   "address": {
     "@type": "PostalAddress",
