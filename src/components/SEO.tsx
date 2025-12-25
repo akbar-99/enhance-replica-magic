@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
@@ -17,79 +17,49 @@ const SEO = ({
   ogImage = "/og-image.png",
   structuredData
 }: SEOProps) => {
-  useEffect(() => {
-    // Update document title
-    document.title = title;
+  const siteUrl = 'https://itenhance.tech';
+  const fullCanonicalUrl = canonicalUrl?.startsWith('http')
+    ? canonicalUrl
+    : canonicalUrl
+      ? `${siteUrl}${canonicalUrl}`
+      : siteUrl;
 
-    // Update or create meta tags
-    const updateMetaTag = (name: string, content: string, isProperty = false) => {
-      const attribute = isProperty ? 'property' : 'name';
-      let meta = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute(attribute, name);
-        document.head.appendChild(meta);
-      }
-      meta.content = content;
-    };
+  const fullOgImage = ogImage.startsWith('http')
+    ? ogImage
+    : `${siteUrl}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
 
-    // Standard meta tags
-    updateMetaTag('description', description);
-    updateMetaTag('keywords', keywords);
-    updateMetaTag('author', 'ENHANCE TECH');
-    updateMetaTag('robots', 'index, follow');
+  return (
+    <Helmet>
+      {/* Basic Metadata */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content="ENHANCE TECH" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={fullCanonicalUrl} />
 
-    // Open Graph tags
-    updateMetaTag('og:title', title, true);
-    updateMetaTag('og:description', description, true);
-    updateMetaTag('og:type', 'website', true);
-    updateMetaTag('og:image', ogImage, true);
-    updateMetaTag('og:site_name', 'ENHANCE TECH', true);
-    if (canonicalUrl) {
-      updateMetaTag('og:url', canonicalUrl, true);
-    }
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={fullOgImage} />
+      <meta property="og:url" content={fullCanonicalUrl} />
+      <meta property="og:site_name" content="ENHANCE TECH" />
 
-    // Twitter Card tags
-    updateMetaTag('twitter:card', 'summary_large_image');
-    updateMetaTag('twitter:title', title);
-    updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', ogImage);
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={fullOgImage} />
 
-    // Canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (canonicalUrl) {
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        document.head.appendChild(canonical);
-      }
-      canonical.href = canonicalUrl;
-    }
-
-    // Structured Data (JSON-LD)
-    const existingScript = document.querySelector('script[data-seo="structured-data"]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    if (structuredData) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-seo', 'structured-data');
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      // Cleanup structured data on unmount
-      const script = document.querySelector('script[data-seo="structured-data"]');
-      if (script) {
-        script.remove();
-      }
-    };
-  }, [title, description, keywords, canonicalUrl, ogImage, structuredData]);
-
-  return null;
+      {/* Structured Data */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
+    </Helmet>
+  );
 };
 
 // Base organization structured data
