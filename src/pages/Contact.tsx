@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO, { organizationSchema } from "@/components/SEO";
@@ -76,51 +77,27 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const webhookUrl = import.meta.env.VITE_POWER_AUTOMATE_URL;
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
 
-      if (!webhookUrl) {
-        // Fallback to mailto if no webhook is configured
-        console.warn('Power Automate URL not configured, falling back to mailto');
-        const mailtoUrl = `mailto:connect@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-        setTimeout(() => {
-          setSubmitted(true);
-          toast.success("Message ready to send via email!");
-          window.location.href = mailtoUrl;
-        }, 800);
-        return;
-      }
-
-      // Send to Power Automate
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          timestamp: new Date().toISOString()
-        }),
-      });
-
-      if (response.ok || response.status === 202) {
+      if (result.status === 200) {
         setSubmitted(true);
         toast.success("Message sent successfully!");
-
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         throw new Error('Submission failed');
       }
-
     } catch (error) {
       console.error('Submission Error:', error);
       toast.error("Something went wrong. Please try again.");

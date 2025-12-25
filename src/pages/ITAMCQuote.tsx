@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
-import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText } from 'lucide-react';
+import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText, Loader2 } from 'lucide-react';
 
 const amcFeatures = [
   {
@@ -79,10 +81,39 @@ export default function ITAMCQuote() {
     requirements: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        employees: formData.employees,
+        devices: formData.devices,
+        message: formData.requirements,
+        form_name: 'IT AMC Quote Request',
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+      toast.success("Quote request sent successfully!");
+    } catch (error) {
+      console.error('AMC Quote Request Error:', error);
+      toast.error("Failed to send quote request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -263,9 +294,22 @@ export default function ITAMCQuote() {
                       className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                       placeholder="Describe your IT infrastructure and specific needs..." />
                   </div>
-                  <button type="submit" className="btn-primary w-full justify-center text-lg py-4">
-                    <Send className="w-5 h-5" />
-                    Get My Quote
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full justify-center text-lg py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        Get My Quote
+                      </>
+                    )}
                   </button>
                 </form>
               </>

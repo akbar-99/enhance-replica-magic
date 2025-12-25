@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
-import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote } from 'lucide-react';
+import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote, Loader2 } from 'lucide-react';
 
 const demoSchema = {
   "@context": "https://schema.org",
@@ -50,10 +52,40 @@ export default function Demo() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const templateParams = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        jobTitle: formData.jobTitle,
+        companySize: formData.employees,
+        message: formData.message,
+        form_name: 'Demo Request',
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+      toast.success("Demo request sent successfully!");
+    } catch (error) {
+      console.error('Demo Request Error:', error);
+      toast.error("Failed to send demo request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -313,9 +345,22 @@ export default function Demo() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full justify-center text-lg py-4">
-                  Request Demo
-                  <ArrowRight className="w-5 h-5" />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full justify-center text-lg py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Request Demo
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
                 </button>
 
                 <p className="text-sm text-slate-500 text-center">

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 
 import SEO from '@/components/SEO';
-import { ArrowRight, CheckCircle, MapPin, Phone, Mail, Send, Shield, Server, Clock, Headphones, Building, Network, Cloud, Settings } from 'lucide-react';
+import { ArrowRight, CheckCircle, MapPin, Phone, Mail, Send, Shield, Server, Clock, Headphones, Building, Network, Cloud, Settings, Loader2 } from 'lucide-react';
 
 const locationData: Record<string, {
   name: string;
@@ -98,10 +100,38 @@ export default function ServiceLocation() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        message: formData.message,
+        location_name: location.name,
+        form_name: 'Consultation Request',
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+      toast.success("Consultation request sent successfully!");
+    } catch (error) {
+      console.error('Consultation Error:', error);
+      toast.error("Failed to send request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -205,8 +235,21 @@ export default function ServiceLocation() {
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                   <textarea name="message" rows={3} value={formData.message} onChange={handleChange} placeholder="How can we help?"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" />
-                  <button type="submit" className="btn-primary w-full justify-center">
-                    <Send className="w-4 h-4" /> Submit Request
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" /> Submit Request
+                      </>
+                    )}
                   </button>
                 </form>
               )}
