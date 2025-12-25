@@ -222,13 +222,17 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-emerald-500" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Opening Mail Client...</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Message Sent!</h2>
                   <p className="text-slate-600 mb-8">
-                    Your message has been prepared. Please click 'Send' in your email application to finish.
+                    Your message has been successfully sent to our team. We'll get back to you as soon as possible.
                   </p>
                   <div className="flex flex-col gap-3">
-                    <button onClick={() => setSubmitted(false)} className="btn-secondary">
-                      Go Back
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="btn-primary w-fit mx-auto"
+                    >
+                      <ArrowRight className="w-4 h-4 rotate-180" />
+                      Send Another Message
                     </button>
                   </div>
                 </div>

@@ -221,7 +221,13 @@ export default function ServiceLocation() {
                     <CheckCircle className="w-8 h-8 text-emerald-500" />
                   </div>
                   <h4 className="text-lg font-bold text-slate-900 mb-2">Thank You!</h4>
-                  <p className="text-slate-600 text-sm">We'll contact you within 24 hours.</p>
+                  <p className="text-slate-600 text-sm mb-6">We'll contact you within 24 hours.</p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="btn-primary py-2 px-4 text-sm mx-auto"
+                  >
+                    Send Another
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
