@@ -76,16 +76,50 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Direct email construction
-      const mailtoUrl = `mailto:connect@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
+      const webhookUrl = import.meta.env.VITE_POWER_AUTOMATE_URL;
 
-      // Simulate success and provide direct link
-      setTimeout(() => {
+      if (!webhookUrl) {
+        // Fallback to mailto if no webhook is configured
+        console.warn('Power Automate URL not configured, falling back to mailto');
+        const mailtoUrl = `mailto:connect@itenhance.tech?subject=${encodeURIComponent(formData.subject + ": " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.email)}`;
+
+        setTimeout(() => {
+          setSubmitted(true);
+          toast.success("Message ready to send via email!");
+          window.location.href = mailtoUrl;
+        }, 800);
+        return;
+      }
+
+      // Send to Power Automate
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok || response.status === 202) {
         setSubmitted(true);
-        toast.success("Message ready to send!");
-        // We open the mailto after a short delay for better UX
-        window.location.href = mailtoUrl;
-      }, 800);
+        toast.success("Message sent successfully!");
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error('Submission failed');
+      }
 
     } catch (error) {
       console.error('Submission Error:', error);
