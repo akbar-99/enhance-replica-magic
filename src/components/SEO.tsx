@@ -14,7 +14,7 @@ const SEO = ({
   description,
   keywords = "IT solutions, cybersecurity, cloud services, managed IT, Dubai, UAE, enterprise security",
   canonicalUrl,
-  ogImage = "/og-image.jpg",
+  ogImage = "/og-image.png",
   structuredData
 }: SEOProps) => {
   useEffect(() => {

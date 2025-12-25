@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucide-react";
-import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
+import enhanceTechLogo from "@/assets/enhance-tech-logo.webp";
 const footerLinks = {
   Products: [
     {

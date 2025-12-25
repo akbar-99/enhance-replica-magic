@@ -17,7 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
+import enhanceTechLogo from "@/assets/enhance-tech-logo.webp";
 // Flatten all nav items for search
 const getAllSearchItems = () => {
   const items: {

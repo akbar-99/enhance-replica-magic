@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, memo } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-background.webp";
 
 // Lazy load Spline embed
 const SplineEmbed = memo(() => {
