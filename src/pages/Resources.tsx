@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, BookOpen, FileText, Video, Download, Calendar, Newspaper, ChevronRight, Play, ExternalLink, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { submitToHubSpot } from "@/lib/hubspot";
 
 const resourceCategories = [
   {
@@ -105,6 +106,20 @@ export default function Resources() {
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      // HubSpot Submission
+      const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+      const newsletterFormId = import.meta.env.VITE_HUBSPOT_NEWSLETTER_FORM_ID;
+
+      if (portalId && newsletterFormId) {
+        try {
+          await submitToHubSpot(portalId, newsletterFormId, {
+            email: email,
+          });
+        } catch (hsError) {
+          console.error("HubSpot Newsletter Submission Failed:", hsError);
+        }
+      }
 
       toast.success("Subscribed successfully!");
       setEmail('');

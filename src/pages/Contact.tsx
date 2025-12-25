@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEO, { organizationSchema } from "@/components/SEO";
 import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle, Loader2, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
+import { submitToHubSpot } from "@/lib/hubspot";
 const contactOptions = [
   {
     icon: Phone,
@@ -92,12 +93,31 @@ export default function Contact() {
         message: formData.message,
       };
 
+      // EmailJS Submission
       const result = await emailjs.send(
         serviceId,
         templateId,
         templateParams,
         publicKey
       );
+
+      // HubSpot Submission
+      const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+      const contactFormId = import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID;
+
+      if (portalId && contactFormId) {
+        try {
+          await submitToHubSpot(portalId, contactFormId, {
+            email: formData.email,
+            firstname: formData.name,
+            subject: formData.subject,
+            message: formData.message,
+          });
+        } catch (hsError) {
+          console.error("HubSpot Submission Failed:", hsError);
+          // We continue because EmailJS might have succeeded
+        }
+      }
 
       if (result.status === 200) {
         setSubmitted(true);

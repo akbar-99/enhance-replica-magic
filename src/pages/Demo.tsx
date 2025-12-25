@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote, Loader2 } from 'lucide-react';
+import { submitToHubSpot } from "@/lib/hubspot";
 
 const demoSchema = {
   "@context": "https://schema.org",
@@ -77,6 +78,26 @@ export default function Demo() {
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      // HubSpot Submission
+      const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+      const demoFormId = import.meta.env.VITE_HUBSPOT_DEMO_FORM_ID;
+
+      if (portalId && demoFormId) {
+        try {
+          await submitToHubSpot(portalId, demoFormId, {
+            email: formData.email,
+            firstname: formData.firstName,
+            lastname: formData.lastName,
+            company: formData.company,
+            phone: formData.phone,
+            jobtitle: formData.jobTitle,
+            message: formData.message,
+          });
+        } catch (hsError) {
+          console.error("HubSpot Demo Submission Failed:", hsError);
+        }
+      }
 
       setSubmitted(true);
       toast.success("Demo request sent successfully!");

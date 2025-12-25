@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 
 import SEO from '@/components/SEO';
 import { ArrowRight, CheckCircle, MapPin, Phone, Mail, Send, Shield, Server, Clock, Headphones, Building, Network, Cloud, Settings, Loader2 } from 'lucide-react';
+import { submitToHubSpot } from "@/lib/hubspot";
 
 const locationData: Record<string, {
   name: string;
@@ -123,6 +124,24 @@ export default function ServiceLocation() {
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      // HubSpot Submission
+      const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+      const consultationFormId = import.meta.env.VITE_HUBSPOT_CONSULTATION_FORM_ID;
+
+      if (portalId && consultationFormId) {
+        try {
+          await submitToHubSpot(portalId, consultationFormId, {
+            email: formData.email,
+            firstname: formData.name,
+            phone: formData.phone,
+            company: formData.company,
+            message: `Location: ${location.name}. ${formData.message}`,
+          });
+        } catch (hsError) {
+          console.error("HubSpot Consultation Submission Failed:", hsError);
+        }
+      }
 
       setSubmitted(true);
       toast.success("Consultation request sent successfully!");

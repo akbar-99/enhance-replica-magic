@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText, Loader2 } from 'lucide-react';
+import { submitToHubSpot } from "@/lib/hubspot";
 
 const amcFeatures = [
   {
@@ -105,6 +106,24 @@ export default function ITAMCQuote() {
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      // HubSpot Submission
+      const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+      const quoteFormId = import.meta.env.VITE_HUBSPOT_QUOTE_FORM_ID;
+
+      if (portalId && quoteFormId) {
+        try {
+          await submitToHubSpot(portalId, quoteFormId, {
+            email: formData.email,
+            firstname: formData.name,
+            phone: formData.phone,
+            company: formData.company,
+            message: `Employees: ${formData.employees}, Devices: ${formData.devices}. Requirements: ${formData.requirements}`,
+          });
+        } catch (hsError) {
+          console.error("HubSpot Quote Submission Failed:", hsError);
+        }
+      }
 
       setSubmitted(true);
       toast.success("Quote request sent successfully!");
