@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 
@@ -93,33 +92,17 @@ export default function Resources() {
 
     setIsSubmitting(true);
     try {
-      const templateParams = {
-        to_email: email,
-        from_email: email,
-        form_name: 'Newsletter Subscription',
-        message: 'Newsletter subscription request',
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
       // HubSpot Submission
       const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
       const newsletterFormId = import.meta.env.VITE_HUBSPOT_NEWSLETTER_FORM_ID;
 
-      if (portalId && newsletterFormId) {
-        try {
-          await submitToHubSpot(portalId, newsletterFormId, {
-            email: email,
-          });
-        } catch (hsError) {
-          console.error("HubSpot Newsletter Submission Failed:", hsError);
-        }
+      if (!portalId || !newsletterFormId) {
+        throw new Error('HubSpot configuration missing. Please check your .env file.');
       }
+
+      await submitToHubSpot(portalId, newsletterFormId, {
+        email: email,
+      });
 
       toast.success("Subscribed successfully!");
       setEmail('');

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 
@@ -89,41 +88,21 @@ export default function ITAMCQuote() {
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        employees: formData.employees,
-        devices: formData.devices,
-        message: formData.requirements,
-        form_name: 'IT AMC Quote Request',
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
       // HubSpot Submission
       const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
       const quoteFormId = import.meta.env.VITE_HUBSPOT_QUOTE_FORM_ID;
 
-      if (portalId && quoteFormId) {
-        try {
-          await submitToHubSpot(portalId, quoteFormId, {
-            email: formData.email,
-            firstname: formData.name,
-            phone: formData.phone,
-            company: formData.company,
-            message: `Employees: ${formData.employees}, Devices: ${formData.devices}. Requirements: ${formData.requirements}`,
-          });
-        } catch (hsError) {
-          console.error("HubSpot Quote Submission Failed:", hsError);
-        }
+      if (!portalId || !quoteFormId) {
+        throw new Error('HubSpot configuration missing. Please check your .env file.');
       }
+
+      await submitToHubSpot(portalId, quoteFormId, {
+        email: formData.email,
+        firstname: formData.name,
+        phone: formData.phone,
+        company: formData.company,
+        message: `Employees: ${formData.employees}, Devices: ${formData.devices}. Requirements: ${formData.requirements}`,
+      });
 
       setSubmitted(true);
       toast.success("Quote request sent successfully!");

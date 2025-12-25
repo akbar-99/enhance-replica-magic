@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO, { organizationSchema } from "@/components/SEO";
@@ -78,54 +77,24 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration missing. Please check your .env file and restart the server.');
-      }
-
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      };
-
-      // EmailJS Submission
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-
       // HubSpot Submission
       const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
       const contactFormId = import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID;
 
-      if (portalId && contactFormId) {
-        try {
-          await submitToHubSpot(portalId, contactFormId, {
-            email: formData.email,
-            firstname: formData.name,
-            subject: formData.subject,
-            message: formData.message,
-          });
-        } catch (hsError) {
-          console.error("HubSpot Submission Failed:", hsError);
-          // We continue because EmailJS might have succeeded
-        }
+      if (!portalId || !contactFormId) {
+        throw new Error('HubSpot configuration missing. Please check your .env file.');
       }
 
-      if (result.status === 200) {
-        setSubmitted(true);
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        throw new Error('Submission failed');
-      }
+      await submitToHubSpot(portalId, contactFormId, {
+        email: formData.email,
+        firstname: formData.name,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
+      setSubmitted(true);
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error: any) {
       console.error('Submission Error:', error);
       toast.error(error.message || "Something went wrong. Please try again.");

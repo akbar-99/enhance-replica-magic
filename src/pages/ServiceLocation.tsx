@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -108,40 +107,21 @@ export default function ServiceLocation() {
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        message: formData.message,
-        location_name: location.name,
-        form_name: 'Consultation Request',
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
       // HubSpot Submission
       const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
       const consultationFormId = import.meta.env.VITE_HUBSPOT_CONSULTATION_FORM_ID;
 
-      if (portalId && consultationFormId) {
-        try {
-          await submitToHubSpot(portalId, consultationFormId, {
-            email: formData.email,
-            firstname: formData.name,
-            phone: formData.phone,
-            company: formData.company,
-            message: `Location: ${location.name}. ${formData.message}`,
-          });
-        } catch (hsError) {
-          console.error("HubSpot Consultation Submission Failed:", hsError);
-        }
+      if (!portalId || !consultationFormId) {
+        throw new Error('HubSpot configuration missing. Please check your .env file.');
       }
+
+      await submitToHubSpot(portalId, consultationFormId, {
+        email: formData.email,
+        firstname: formData.name,
+        phone: formData.phone,
+        company: formData.company,
+        message: `Location: ${location.name}. ${formData.message}`,
+      });
 
       setSubmitted(true);
       toast.success("Consultation request sent successfully!");
@@ -152,6 +132,7 @@ export default function ServiceLocation() {
       setIsSubmitting(false);
     }
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

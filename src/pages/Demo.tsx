@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 
@@ -60,44 +59,23 @@ export default function Demo() {
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        from_email: formData.email,
-        company: formData.company,
-        phone: formData.phone,
-        jobTitle: formData.jobTitle,
-        companySize: formData.employees,
-        message: formData.message,
-        form_name: 'Demo Request',
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
       // HubSpot Submission
       const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
       const demoFormId = import.meta.env.VITE_HUBSPOT_DEMO_FORM_ID;
 
-      if (portalId && demoFormId) {
-        try {
-          await submitToHubSpot(portalId, demoFormId, {
-            email: formData.email,
-            firstname: formData.firstName,
-            lastname: formData.lastName,
-            company: formData.company,
-            phone: formData.phone,
-            jobtitle: formData.jobTitle,
-            message: formData.message,
-          });
-        } catch (hsError) {
-          console.error("HubSpot Demo Submission Failed:", hsError);
-        }
+      if (!portalId || !demoFormId) {
+        throw new Error('HubSpot configuration missing. Please check your .env file.');
       }
+
+      await submitToHubSpot(portalId, demoFormId, {
+        email: formData.email,
+        firstname: formData.firstName,
+        lastname: formData.lastName,
+        company: formData.company,
+        phone: formData.phone,
+        jobtitle: formData.jobTitle,
+        message: formData.message,
+      });
 
       setSubmitted(true);
       toast.success("Demo request sent successfully!");
