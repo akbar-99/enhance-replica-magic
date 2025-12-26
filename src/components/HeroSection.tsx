@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, memo } from "react";
-import { ArrowRight, Loader2, Network, Activity, Users, Globe, Headset, Sparkles } from "lucide-react";
+import { ArrowRight, Loader2, Network, Activity, Users, Globe, Headset, Sparkles, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useMotionValue, useTransform } from "framer-motion";
@@ -159,6 +159,10 @@ function HeroSection() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/80 border border-slate-700 text-sm font-bold uppercase tracking-wider text-foreground mb-4 w-fit ml-4">
+              <Settings className="w-4 h-4 text-blue-400" />
+              PROBLEMS WE SOLVE
+            </div>
             {heroTabs.map((tab, index) => (
               <button
                 key={tab.id}
