@@ -159,9 +159,9 @@ function HeroSection() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/80 border border-slate-700 text-sm font-bold uppercase tracking-wider text-foreground mb-4 w-fit ml-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/80 border border-slate-700 text-sm font-bold  tracking-wider text-foreground mb-4 w-fit ml-4">
               <Settings className="w-4 h-4 text-blue-400" />
-              PROBLEMS WE SOLVE
+              Problems We Solve
             </div>
             {heroTabs.map((tab, index) => (
               <button
