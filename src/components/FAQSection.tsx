@@ -78,20 +78,20 @@ const FAQSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16 sm:mb-24">
+        <div className="text-center mb-16 sm:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.05] text-slate-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-900">
               The{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
                 Enhance Tech Difference
               </span>
             </h2>
-            <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium opacity-80">
+            <p className="text-slate-500 text-base md:text-lg max-w-1xl mx-auto leading-relaxed font-medium opacity-80">
               We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational
               inefficiencies through strategic, scalable, and locally delivered IT solutions.
             </p>
@@ -115,19 +115,19 @@ const FAQSection = () => {
                     value={`item-${index}`}
                     className={`bg-white/60 backdrop-blur-md rounded-3xl border border-white/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 ${faq.glowColor}`}
                   >
-                    <AccordionTrigger className="px-8 py-7 text-slate-900 hover:no-underline [&[data-state=open]>div>div:first-child]:scale-110 [&[data-state=open]>div>div:first-child]:bg-white [&[data-state=open]>svg]:rotate-180">
+                    <AccordionTrigger className="px-8 py-6 text-slate-900 hover:no-underline [&[data-state=open]>div>div:first-child]:scale-110 [&[data-state=open]>div>div:first-child]:bg-white [&[data-state=open]>svg]:rotate-180">
                       <div className="flex items-center gap-5 w-full">
-                        <div className={`w-14 h-14 rounded-2xl ${faq.bgColor} flex items-center justify-center transition-all duration-500 shadow-inner group-hover:scale-110`}>
-                          <faq.icon className={`w-7 h-7 ${faq.color}`} />
+                        <div className={`w-12 h-12 rounded-2xl ${faq.bgColor} flex items-center justify-center transition-all duration-500 shadow-inner group-hover:scale-110`}>
+                          <faq.icon className={`w-6 h-6 ${faq.color}`} />
                         </div>
-                        <div className="flex flex-col items-start gap-0.5">
-                          <span className="font-bold text-xl tracking-tight">{faq.question}</span>
-                          <span className="text-sm text-slate-400 font-semibold uppercase tracking-[0.1em]">{faq.tagline}</span>
+                        <div className="flex flex-col items-start gap-0.5 text-left">
+                          <span className="font-bold text-lg tracking-tight">{faq.question}</span>
+                          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.1em]">{faq.tagline}</span>
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-8 pb-7 pt-2 text-slate-500 text-base leading-relaxed font-medium">
-                      <div className="pl-[76px]">
+                    <AccordionContent className="px-8 pb-6 pt-1 text-slate-500 text-sm leading-relaxed font-medium">
+                      <div className="pl-[68px]">
                         {faq.answer}
                       </div>
                     </AccordionContent>
@@ -152,19 +152,19 @@ const FAQSection = () => {
                     value={`item-${index + 3}`}
                     className={`bg-white/60 backdrop-blur-md rounded-3xl border border-white/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.03)] overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 ${faq.glowColor}`}
                   >
-                    <AccordionTrigger className="px-8 py-7 text-slate-900 hover:no-underline [&[data-state=open]>div>div:first-child]:scale-110 [&[data-state=open]>div>div:first-child]:bg-white [&[data-state=open]>svg]:rotate-180">
+                    <AccordionTrigger className="px-8 py-6 text-slate-900 hover:no-underline [&[data-state=open]>div>div:first-child]:scale-110 [&[data-state=open]>div>div:first-child]:bg-white [&[data-state=open]>svg]:rotate-180">
                       <div className="flex items-center gap-5 w-full">
-                        <div className={`w-14 h-14 rounded-2xl ${faq.bgColor} flex items-center justify-center transition-all duration-500 shadow-inner group-hover:scale-110`}>
-                          <faq.icon className={`w-7 h-7 ${faq.color}`} />
+                        <div className={`w-12 h-12 rounded-2xl ${faq.bgColor} flex items-center justify-center transition-all duration-500 shadow-inner group-hover:scale-110`}>
+                          <faq.icon className={`w-6 h-6 ${faq.color}`} />
                         </div>
-                        <div className="flex flex-col items-start gap-0.5">
-                          <span className="font-bold text-xl tracking-tight">{faq.question}</span>
-                          <span className="text-sm text-slate-400 font-semibold uppercase tracking-[0.1em]">{faq.tagline}</span>
+                        <div className="flex flex-col items-start gap-0.5 text-left">
+                          <span className="font-bold text-lg tracking-tight">{faq.question}</span>
+                          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.1em]">{faq.tagline}</span>
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-8 pb-7 pt-2 text-slate-500 text-base leading-relaxed font-medium">
-                      <div className="pl-[76px]">
+                    <AccordionContent className="px-8 pb-6 pt-1 text-slate-500 text-sm leading-relaxed font-medium">
+                      <div className="pl-[68px]">
                         {faq.answer}
                       </div>
                     </AccordionContent>
