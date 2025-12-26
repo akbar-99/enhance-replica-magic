@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback, memo } from "react";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, Network, Activity, Users, Globe, Headset, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import heroBackground from "@/assets/hero-background.webp";
+import brandIcon from "@/assets/brand-pixel-e.png";
 
 // Lazy load Spline embed
 // SplineEmbed removed as per user request to remove the cube
@@ -51,6 +53,22 @@ function HeroSection() {
   const [activeTab, setActiveTab] = useState("ai-security");
   const [isPaused, setIsPaused] = useState(false);
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    const moveX = clientX - window.innerWidth / 2;
+    const moveY = clientY - window.innerHeight / 2;
+    mouseX.set(moveX);
+    mouseY.set(moveY);
+  };
+
+  const blobTranslateX1 = useTransform(mouseX, [-500, 500], [-30, 30]);
+  const blobTranslateY1 = useTransform(mouseY, [-500, 500], [-30, 30]);
+  const blobTranslateX2 = useTransform(mouseX, [-500, 500], [30, -30]);
+  const blobTranslateY2 = useTransform(mouseY, [-500, 500], [30, -30]);
+
   const currentTab = heroTabs.find((tab) => tab.id === activeTab) || heroTabs[0];
 
   const goToNextTab = useCallback(() => {
@@ -69,7 +87,7 @@ function HeroSection() {
   // Delay Spline loading for faster initial render
 
   return (
-    <section className="relative min-h-screen overflow-hidden py-0">
+    <section onMouseMove={handleMouseMove} className="relative min-h-screen overflow-hidden py-0">
       {/* Preload hero background for LCP */}
       <link rel="preload" as="image" href={heroBackground} />
 
@@ -84,6 +102,40 @@ function HeroSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
       </div>
+
+      {/* Animated Background Elements with Mouse Parallax */}
+      <motion.div
+        style={{
+          x: blobTranslateX1,
+          y: blobTranslateY1,
+        }}
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-20 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]"
+      />
+      <motion.div
+        style={{
+          x: blobTranslateX2,
+          y: blobTranslateY2,
+        }}
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px]"
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide mb-6 sm:mb-8 group cursor-default">
@@ -156,11 +208,52 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Right Side - Spline 3D (below content on mobile) */}
-          {/* Right Side - Spline 3D (Removed) */}
-          <div className="order-2 lg:order-none w-full lg:col-span-4 relative h-[250px] sm:h-[350px] lg:h-[600px] flex items-center justify-center lg:-mt-24 overflow-hidden">
-            {/* Cube removed */}
-          </div>
+          {/* Right Side - Interactive Info Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="order-2 lg:order-none w-full lg:col-span-4 relative flex items-center justify-center lg:-mt-24"
+          >
+            <div className="relative z-10 w-full bg-background/40 backdrop-blur-3xl p-1 rounded-[40px] border border-white/10 shadow-[0_0_50px_-12px_rgba(var(--primary),0.2)]">
+              <div className="bg-slate-950/60 p-6 sm:p-8 rounded-[38px] border border-white/5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                  {[
+                    { icon: Activity, label: "Uptime SLA", value: "99.9% Performance", color: "text-blue-400" },
+                    { icon: Users, label: "Enterprise Customers", value: "14K+ Verified", color: "text-indigo-400" },
+                    { icon: Globe, label: "Countries Protected", value: "150+ Locations", color: "text-cyan-400" },
+                    { icon: Headset, label: "Global Support", value: "24/7 Response", color: "text-primary" },
+                  ].map((stat, i) => (
+                    <div key={i} className="bg-white/5 p-4 sm:p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group flex flex-col items-center justify-center text-center">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                        <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{stat.label}</p>
+                        <p className="text-white font-bold text-sm sm:text-base xl:text-lg leading-[1.2]">{stat.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Floating brand icon */}
+            <motion.div
+              animate={{
+                y: [-8, 8, -8],
+                rotate: [0, 5, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-5 -right-5 p-2.5 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl hidden lg:block z-20"
+            >
+              <img
+                src={brandIcon}
+                alt="Brand Logo"
+                className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
