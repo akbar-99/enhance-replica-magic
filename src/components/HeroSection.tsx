@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback, memo } from "react";
-import { ArrowRight, Loader2, Network, Activity, Users, Globe, Headset, Sparkles, Settings } from "lucide-react";
+import { ArrowRight, Loader2, Network, Activity, Users, Globe, Headset, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion, useMotionValue, useTransform, useSpring, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import heroBackground from "@/assets/hero-background.webp";
 import brandIcon from "@/assets/brand-pixel-e.png";
 
@@ -48,43 +47,6 @@ const heroTabs: HeroTab[] = [
 ];
 
 const AUTO_PLAY_INTERVAL = 3000;
-
-function StatCard({ icon: Icon, label, value, suffix, subtext, decimals = 0, color, delay }: { icon: any, label: string, value: number, suffix: string, subtext: string, decimals?: number, color: string, delay: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { damping: 50, stiffness: 400 });
-
-  useEffect(() => {
-    if (inView) {
-      setTimeout(() => {
-        motionValue.set(value);
-      }, delay);
-    }
-  }, [inView, value, motionValue, delay]);
-
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = latest.toFixed(decimals) + suffix;
-      }
-    });
-  }, [springValue, decimals, suffix]);
-
-  return (
-    <div className="bg-white/5 p-4 sm:p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group flex flex-col items-center justify-center text-center">
-      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${color}`} />
-      </div>
-      <div className="flex flex-col items-center">
-        <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{label}</p>
-        <p className="text-white font-bold text-sm sm:text-base xl:text-lg leading-[1.2]">
-          <span ref={ref}>{0 + suffix}</span> {subtext}
-        </p>
-      </div>
-    </div>
-  );
-}
 
 function HeroSection() {
   const { t } = useTranslation();
@@ -197,10 +159,6 @@ function HeroSection() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20 w-fit">
-              <Settings className="w-4 h-4 text-sky-400" />
-              <span className="text-sm font-semibold text-sky-100 uppercase tracking-wider">We Solve Problems</span>
-            </div>
             {heroTabs.map((tab, index) => (
               <button
                 key={tab.id}
@@ -261,16 +219,20 @@ function HeroSection() {
               <div className="bg-slate-950/60 p-6 sm:p-8 rounded-[38px] border border-white/5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {[
-                    { icon: Activity, label: "Uptime SLA", value: 99.9, suffix: "%", subtext: "Performance", decimals: 1, color: "text-blue-400" },
-                    { icon: Users, label: "Enterprise Customers", value: 14, suffix: "K+", subtext: "Verified", decimals: 0, color: "text-indigo-400" },
-                    { icon: Globe, label: "Countries Protected", value: 150, suffix: "+", subtext: "Locations", decimals: 0, color: "text-cyan-400" },
-                    { icon: Headset, label: "Global Support", value: 24, suffix: "/7", subtext: "Response", decimals: 0, color: "text-primary" },
+                    { icon: Activity, label: "Uptime SLA", value: "99.9% Performance", color: "text-blue-400" },
+                    { icon: Users, label: "Enterprise Customers", value: "14K+ Verified", color: "text-indigo-400" },
+                    { icon: Globe, label: "Countries Protected", value: "150+ Locations", color: "text-cyan-400" },
+                    { icon: Headset, label: "Global Support", value: "24/7 Response", color: "text-primary" },
                   ].map((stat, i) => (
-                    <StatCard
-                      key={i}
-                      {...stat}
-                      delay={i * 100}
-                    />
+                    <div key={i} className="bg-white/5 p-4 sm:p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group flex flex-col items-center justify-center text-center">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                        <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{stat.label}</p>
+                        <p className="text-white font-bold text-sm sm:text-base xl:text-lg leading-[1.2]">{stat.value}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
