@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import {
     Network,
     Wifi,
@@ -15,11 +15,14 @@ import {
     ThermometerSun,
     Settings,
     Map,
-    CheckCircle
+    CheckCircle,
+    Sparkles,
+    BarChart3
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
+import { Button } from '@/components/ui/button';
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -29,6 +32,22 @@ const fadeIn = {
 };
 
 const Infrastructure = () => {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const { clientX, clientY } = e;
+        const moveX = clientX - window.innerWidth / 2;
+        const moveY = clientY - window.innerHeight / 2;
+        mouseX.set(moveX);
+        mouseY.set(moveY);
+    };
+
+    const blobTranslateX1 = useTransform(mouseX, [-500, 500], [-30, 30]);
+    const blobTranslateY1 = useTransform(mouseY, [-500, 500], [-30, 30]);
+    const blobTranslateX2 = useTransform(mouseX, [-500, 500], [30, -30]);
+    const blobTranslateY2 = useTransform(mouseY, [-500, 500], [30, -30]);
+
     const serviceSchema = createServiceSchema(
         'Networking & Infrastructure Solutions',
         'Build the digital backbone of your organization with high-speed connectivity, critical power, and structured cabling.'
@@ -50,60 +69,117 @@ const Infrastructure = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+            <section onMouseMove={handleMouseMove} className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-3xl pointer-events-none" />
+
+                {/* Animated Background Elements with Mouse Parallax */}
+                <motion.div
+                    style={{ x: blobTranslateX1, y: blobTranslateY1 }}
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-[100px]"
+                />
+                <motion.div
+                    style={{ x: blobTranslateX2, y: blobTranslateY2 }}
+                    animate={{ scale: [1.1, 1, 1.1], opacity: [0.2, 0.3, 0.2] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[80px]"
+                />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center max-w-4xl mx-auto">
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                        <div className="flex-1 text-center lg:text-left">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
+                            >
+                                <Network className="w-4 h-4 text-blue-400" />
+                                <span className="text-sm font-semibold tracking-wider uppercase text-blue-100">Layer 1 & 2 Infrastructure</span>
+                            </motion.div>
+
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white"
+                            >
+                                Networking & Infrastructure: <br />
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-400 to-cyan-400">
+                                    The Foundation of IT
+                                </span>
+                            </motion.h1>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
+                            >
+                                Connect Faster. Power Reliably. Scale Effortlessly. <br className="hidden md:block" />
+                                We design and deploy the high-speed backbone that drives your organization.
+                            </motion.p>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="flex flex-wrap justify-center lg:justify-start gap-5"
+                            >
+                                <Link to="/contact">
+                                    <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white shadow-2xl shadow-blue-500/40 rounded-full px-10 h-16 text-lg font-bold transition-all hover:scale-105 active:scale-95">
+                                        Get a Site Survey
+                                        <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                    </Button>
+                                </Link>
+                                <a href="#ecosystem">
+                                    <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 backdrop-blur-md rounded-full px-10 h-16 text-lg font-medium transition-all">
+                                        Explore Ecosystem
+                                    </Button>
+                                </a>
+                            </motion.div>
+                        </div>
+
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="flex-1 relative hidden lg:block"
                         >
-                            <Network className="w-4 h-4 text-blue-400" />
-                            <span className="text-xs font-bold tracking-widest uppercase text-blue-400">Layer 1 & 2 Infrastructure</span>
-                        </motion.div>
-
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white leading-tight"
-                        >
-                            Networking & Infrastructure: <br />
-                            <span className="text-blue-400">The Foundation of IT</span>
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-xl text-slate-400 leading-relaxed mb-10"
-                        >
-                            Connect Faster. Power Reliably. Scale Effortlessly. <br />
-                            We design and deploy the high-speed backbone that drives your organization.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="flex flex-wrap justify-center gap-4"
-                        >
-                            <Link to="/contact" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-500/25 flex items-center gap-2 group">
-                                Get a Site Survey
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                            <a href="#ecosystem" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl transition-all border border-white/10 backdrop-blur-sm">
-                                Explore Ecosystem
-                            </a>
+                            <div className="relative z-10 bg-slate-900/40 backdrop-blur-3xl p-1 rounded-[40px] border border-white/10 shadow-[0_0_50px_-12px_rgba(59,130,246,0.2)]">
+                                <div className="bg-slate-950/60 p-8 rounded-[38px] border border-white/5">
+                                    <div className="grid grid-cols-2 gap-6">
+                                        {[
+                                            { icon: Zap, label: "Speed", value: "Low Latency Backbone", color: "text-blue-400" },
+                                            { icon: Scale, label: "Scalability", value: "Multi-Layer Modular", color: "text-indigo-400" },
+                                            { icon: ShieldCheck, label: "Security", value: "Hardware Edge Defense", color: "text-cyan-400" },
+                                            { icon: Activity, label: "Reliability", value: "Self-Healing Fabric", color: "text-blue-400" },
+                                        ].map((stat, i) => (
+                                            <div key={i} className="bg-white/5 p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group text-center">
+                                                <div className={`w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                                                    <stat.icon className={`w-6 h-6 ${stat.color}`} />
+                                                </div>
+                                                <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{stat.label}</p>
+                                                <p className="text-white font-bold text-base xl:text-lg leading-tight">{stat.value}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Floating icon */}
+                            <motion.div
+                                animate={{ y: [-20, 20, -20] }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute -top-10 -right-10 p-6 bg-blue-500/20 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl"
+                            >
+                                <Network className="w-12 h-12 text-white" />
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="py-24 relative">
+            <section className="py-16 md:py-20 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <motion.div {...fadeIn}>
@@ -138,7 +214,7 @@ const Infrastructure = () => {
             </section>
 
             {/* Key Benefits */}
-            <section className="py-24 bg-slate-900/50 relative border-y border-white/5">
+            <section className="py-16 md:py-20 bg-slate-900/50 relative border-y border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-white">
@@ -208,7 +284,7 @@ const Infrastructure = () => {
             </section>
 
             {/* Technology Ecosystem */}
-            <section id="ecosystem" className="py-24 relative overflow-hidden">
+            <section id="ecosystem" className="py-16 md:py-20 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-20">
                         <motion.h2 {...fadeIn} className="text-3xl md:text-5xl font-bold mb-6">Our Technology Ecosystem</motion.h2>
@@ -372,7 +448,7 @@ const Infrastructure = () => {
             </section>
 
             {/* What's Included */}
-            <section className="py-24 bg-[#050b1d] relative overflow-hidden">
+            <section className="py-16 md:py-20 bg-[#050b1d] relative overflow-hidden">
                 <div className="absolute inset-0 bg-blue-600/5 pointer-events-none" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -408,7 +484,7 @@ const Infrastructure = () => {
             </section>
 
             {/* The Enhance Advantage */}
-            <section className="py-24 relative overflow-hidden">
+            <section className="py-16 md:py-20 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-gradient-to-br from-blue-900/40 to-slate-900 border border-blue-500/20 rounded-[48px] p-8 md:p-16 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
@@ -481,7 +557,7 @@ const Infrastructure = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 relative overflow-hidden">
+            <section className="py-16 md:py-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-blue-600/5 pointer-events-none" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <motion.div {...fadeIn}>
