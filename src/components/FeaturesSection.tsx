@@ -82,15 +82,15 @@ export default function FeaturesSection() {
             >
               {/* Gradient border wrapper */}
               <div
-                className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm`}
+                className={`absolute -inset-[2px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-100 blur-sm`}
               />
               <div
-                className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-30 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`absolute -inset-[1px] bg-gradient-to-br ${cardColors[index].border} rounded-3xl opacity-100`}
               />
 
               {/* Card content */}
               <div
-                className={`relative bg-white rounded-3xl p-6 h-full transition-all duration-300 group-hover:shadow-2xl ${cardColors[index].glow}`}
+                className={`relative bg-white rounded-3xl p-6 h-full shadow-2xl ${cardColors[index].glow}`}
               >
                 {/* 3D Isometric Image container */}
                 <div

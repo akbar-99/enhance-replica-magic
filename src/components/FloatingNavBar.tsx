@@ -37,45 +37,40 @@ const FloatingNavBar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const location = useLocation();
   return <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50">
-      {/* Glass container */}
-      <div className="relative flex items-center gap-3 sm:gap-6 rounded-full backdrop-blur-xl border border-white/10 shadow-2xl py-[5px] px-6 sm:px-[52px] bg-primary-foreground opacity-75">
-        {/* Background glow */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 opacity-50" />
+    {/* Glass container */}
+    <div className="relative flex items-center gap-3 sm:gap-6 py-3 px-6 sm:px-10">
 
-        {/* Inner glass effect */}
-        <div className="absolute inset-[1px] rounded-full bg-gradient-to-b from-white/5 to-transparent" />
-
-        {navItems.map((item, index) => {
+      {navItems.map((item, index) => {
         const Icon = item.icon;
         const isActive = location.pathname === item.path;
         const isHovered = hoveredIndex === index;
         const buttonContent = <div className="relative group" onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
-              {/* Tooltip */}
-              <div className={`absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg bg-background/90 backdrop-blur-sm border border-white/10 text-xs font-medium text-foreground whitespace-nowrap transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}>
-                {item.label}
-                {/* Tooltip arrow */}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-background/90" />
-              </div>
+          {/* Tooltip */}
+          <div className={`absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg bg-background/90 backdrop-blur-sm border border-white/10 text-xs font-medium text-foreground whitespace-nowrap transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}>
+            {item.label}
+            {/* Tooltip arrow */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-background/90" />
+          </div>
 
-              {/* Icon button */}
-              <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all duration-300 cursor-pointer bg-primary/20 ${isHovered ? "bg-primary/30 scale-110" : ""}`}>
-                {/* Glow effect - always visible with pulse */}
-                <div className="absolute inset-0 rounded-full bg-primary/30 blur-lg opacity-100 scale-110 animate-pulse" />
+          {/* Icon button */}
+          <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all duration-300 cursor-pointer bg-slate-800/50 border border-white/5 ${isHovered ? "bg-blue-500/20 border-blue-500/50 scale-110" : "hover:bg-slate-700/50"}`}>
+            {/* Glow effect - only on hover/active */}
+            {isHovered && <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-md transition-all duration-300" />}
 
-                {/* Icon - always glowing */}
-                <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))] ${isHovered ? "scale-110" : ""}`} />
-              </div>
-            </div>;
+            {/* Icon */}
+            <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 ${isHovered ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" : "text-slate-400"}`} />
+          </div>
+        </div>;
         if (item.isExternal) {
           return <a key={index} href={item.path} target={item.path.startsWith("https") ? "_blank" : undefined} rel={item.path.startsWith("https") ? "noopener noreferrer" : undefined}>
-                {buttonContent}
-              </a>;
+            {buttonContent}
+          </a>;
         }
         return <Link key={index} to={item.path}>
-              {buttonContent}
-            </Link>;
+          {buttonContent}
+        </Link>;
       })}
-      </div>
-    </div>;
+    </div>
+  </div>;
 };
 export default FloatingNavBar;

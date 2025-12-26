@@ -4,6 +4,7 @@ import NewsCarousel from '@/components/NewsCarousel';
 
 import NewsAndTrustedSection from '@/components/NewsAndTrustedSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import OnboardingProcess from '@/components/OnboardingProcess';
 import TrustedBy from '@/components/TrustedBy';
 import ProtectDataSection from '@/components/ProtectDataSection';
 import FAQSection from '@/components/FAQSection';
@@ -78,6 +79,7 @@ const Index = () => {
 
       <NewsAndTrustedSection />
       <FeaturesSection />
+      <OnboardingProcess />
       <TrustedBy />
       <ProtectDataSection />
       <FAQSection />
