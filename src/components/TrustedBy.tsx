@@ -1,146 +1,139 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import microsoftLogo from "@/assets/partners/microsoft-logo.webp";
-import dellLogo from "@/assets/partners/dell-logo.webp";
-import fortinetLogo from "@/assets/partners/fortinet-logo.webp";
-import sonicwallLogo from "@/assets/partners/sonicwall-logo.webp";
-import sangforLogo from "@/assets/partners/sangfor-logo.webp";
-import bitdefenderLogo from "@/assets/partners/bitdefender-logo.webp";
-import acronisLogo from "@/assets/partners/acronis-logo.webp";
-import coreviewLogo from "@/assets/partners/coreview-logo.webp";
-import avepointLogo from "@/assets/partners/avepoint-logo.webp";
-import haloitsmLogo from "@/assets/partners/haloitsm-logo.webp";
-import hikvisionLogo from "@/assets/partners/hikvision-logo.webp";
-import dahuaLogo from "@/assets/partners/dahua-logo.webp";
-import zktecoLogo from "@/assets/partners/zkteco-logo.webp";
-import lenovoLogo from "@/assets/partners/lenovo-logo.webp";
-import hpLogo from "@/assets/partners/hp-logo.webp";
-import hpeLogo from "@/assets/partners/hpe-logo.webp";
-import qnapLogo from "@/assets/partners/qnap-logo.webp";
-import vertivLogo from "@/assets/partners/vertiv-logo.webp";
-import logitechLogo from "@/assets/partners/logitech-logo.webp";
-import yealinkLogo from "@/assets/partners/yealink-logo.webp";
-import vircomLogo from "@/assets/partners/vircom-logo.webp";
-import dropsuiteLogo from "@/assets/partners/dropsuite-logo.webp";
-import veriatoLogo from "@/assets/partners/veriato-logo.webp";
-import sorbsecurityLogo from "@/assets/partners/sorbsecurity-logo.webp";
-const partners = [{
-  name: "Microsoft",
-  logo: microsoftLogo
-}, {
-  name: "Dell",
-  logo: dellLogo
-}, {
-  name: "Fortinet",
-  logo: fortinetLogo
-}, {
-  name: "SonicWall",
-  logo: sonicwallLogo
-}, {
-  name: "Sangfor",
-  logo: sangforLogo
-}, {
-  name: "Bitdefender",
-  logo: bitdefenderLogo
-}, {
-  name: "Acronis",
-  logo: acronisLogo
-}, {
-  name: "CoreView",
-  logo: coreviewLogo
-}, {
-  name: "AvePoint",
-  logo: avepointLogo
-}, {
-  name: "HaloITSM",
-  logo: haloitsmLogo
-}, {
-  name: "Hikvision",
-  logo: hikvisionLogo
-}, {
-  name: "Dahua",
-  logo: dahuaLogo
-}, {
-  name: "ZKTeco",
-  logo: zktecoLogo
-}, {
-  name: "Lenovo",
-  logo: lenovoLogo
-}, {
-  name: "HP",
-  logo: hpLogo
-}, {
-  name: "HPE",
-  logo: hpeLogo
-}, {
-  name: "QNAP",
-  logo: qnapLogo
-}, {
-  name: "Vertiv",
-  logo: vertivLogo
-}, {
-  name: "Logitech",
-  logo: logitechLogo
-}, {
-  name: "Yealink",
-  logo: yealinkLogo
-}, {
-  name: "Vircom",
-  logo: vircomLogo
-}, {
-  name: "Dropsuite",
-  logo: dropsuiteLogo
-}, {
-  name: "Veriato",
-  logo: veriatoLogo
-}, {
-  name: "SorbSecurity",
-  logo: sorbsecurityLogo
-}];
+import { motion } from "framer-motion";
+
+// New Logo Assets
+import microsoftLogo from "@/assets/partners/microsoft-logo-new.png";
+import dellLogo from "@/assets/partners/dell-logo-new.png";
+import fortinetLogo from "@/assets/partners/fortinet-logo-new.png";
+import sonicwallLogo from "@/assets/partners/sonicwall-logo-new.png";
+import sangforLogo from "@/assets/partners/sangfor-logo-new.png";
+import bitdefenderLogo from "@/assets/partners/bitdefender-logo-new.png";
+import acronisLogo from "@/assets/partners/acronis-logo-new.png";
+import coreviewLogo from "@/assets/partners/coreview-logo-new.png";
+import avepointLogo from "@/assets/partners/avepoint-logo-new.png";
+import haloitsmLogo from "@/assets/partners/haloitsm-logo-new.png";
+import hikvisionLogo from "@/assets/partners/hikvision-logo-new.png";
+import zktecoLogo from "@/assets/partners/zkteco-logo-new.png";
+import lenovoLogo from "@/assets/partners/lenovo-logo-new.png";
+import qnapLogo from "@/assets/partners/qnap-logo-new.png";
+import vertivLogo from "@/assets/partners/vertiv-logo-new.png";
+import hpHpeLogo from "@/assets/partners/hp-hpe-logo-new.png";
+import logitechLogo from "@/assets/partners/logitech-logo-new.png";
+import yealinkLogo from "@/assets/partners/yealink-logo-new.png";
+import freshworksLogo from "@/assets/partners/freshworks-logo-new.png";
+import dropsuiteLogo from "@/assets/partners/dropsuite-logo-new.png";
+import vircomLogo from "@/assets/partners/vircom-logo-new.png";
+import veriatoLogo from "@/assets/partners/veriato-logo-new.png";
+import sorbsecurityLogo from "@/assets/partners/sorbsecurity-logo.png"; // Kept original as no new one provided for this exact name
+
+const partners = [
+  { name: "Microsoft", logo: microsoftLogo },
+  { name: "Dell", logo: dellLogo },
+  { name: "Fortinet", logo: fortinetLogo },
+  { name: "SonicWall", logo: sonicwallLogo },
+  { name: "Sangfor", logo: sangforLogo },
+  { name: "Bitdefender", logo: bitdefenderLogo },
+  { name: "Acronis", logo: acronisLogo },
+  { name: "CoreView", logo: coreviewLogo },
+  { name: "AvePoint", logo: avepointLogo },
+  { name: "HaloITSM", logo: haloitsmLogo },
+  { name: "Hikvision", logo: hikvisionLogo },
+  { name: "ZKTeco", logo: zktecoLogo },
+  { name: "Lenovo", logo: lenovoLogo },
+  { name: "QNAP", logo: qnapLogo },
+  { name: "Vertiv", logo: vertivLogo },
+  { name: "HP HPE", logo: hpHpeLogo },
+  { name: "Logitech", logo: logitechLogo },
+  { name: "Yealink", logo: yealinkLogo },
+  { name: "Freshworks", logo: freshworksLogo },
+  { name: "Dropsuite", logo: dropsuiteLogo },
+  { name: "Vircom", logo: vircomLogo },
+  { name: "Veriato", logo: veriatoLogo },
+];
+
 export default function TrustedBy() {
-  const {
-    t
-  } = useTranslation();
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    let animationId: number;
-    let scrollPosition = 0;
-    const speed = 0.5;
-    const scroll = () => {
-      if (!isPaused && scrollContainer) {
-        scrollPosition += speed;
-        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-          scrollPosition = 0;
-        }
-        scrollContainer.scrollLeft = scrollPosition;
-      }
-      animationId = requestAnimationFrame(scroll);
-    };
-    animationId = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
-  return <section className="bg-white py-[3px]">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-      <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold py-6 my-0 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
-        Partnered with the best to deliver the best.
-      </h2>
-      <p className="text-muted-foreground text-base md:text-lg max-w-1xl mx-auto my-[2px]">
-        We maintain strategic alliances and hold certifications from premier industry organizations.
-      </p>
-    </div>
-    <div className="max-w-full mx-auto px-0 sm:px-6 lg:px-0 overflow-hidden">
-      <div ref={scrollRef} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
-        scrollBehavior: "auto"
-      }} className="flex items-center gap-12 md:gap-16 overflow-hidden bg-white lg:gap-[26px] py-[31px]">
-        {/* Duplicate partners for seamless infinite scroll */}
-        {[...partners, ...partners].map((partner, index) => <div key={`${partner.name}-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-200 cursor-pointer">
-          <img src={partner.logo} alt={`${partner.name} logo`} loading="eager"
-            decoding="async" className="h-32 md:h-36 lg:h-40 w-auto object-scale-down border-double border border-glow-cyan" />
-        </div>)}
+  const { t } = useTranslation();
+
+  return (
+    <section className="relative bg-white py-24 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-50">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/5 rounded-full blur-[100px]" />
       </div>
-    </div>
-  </section>;
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600">
+            Partnered with the best to deliver the best.
+          </h2>
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            We maintain strategic alliances and hold certifications from premier industry organizations to ensure excellence at every level.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Modern Infinite Marquee */}
+      <div className="relative flex overflow-hidden py-10 select-none">
+        <div className="flex animate-marquee gap-8 sm:gap-12 whitespace-nowrap">
+          {[...partners, ...partners].map((partner, index) => (
+            <motion.div
+              key={`${partner.name}-${index}`}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="flex-shrink-0 group"
+            >
+              <div className="relative h-28 w-56 sm:h-32 sm:w-64 flex items-center justify-center p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Duplicate for seamless infinite loop if CSS marquee is used, 
+            or use framer-motion variants for more control. 
+            I'll stick to a clean CSS marquee with Tailwind for performance. */}
+        <div className="flex animate-marquee gap-8 sm:gap-12 whitespace-nowrap absolute top-10 left-full">
+          {[...partners, ...partners].map((partner, index) => (
+            <motion.div
+              key={`${partner.name}-dup-${index}`}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="flex-shrink-0 group"
+            >
+              <div className="relative h-28 w-56 sm:h-32 sm:w-64 flex items-center justify-center p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Custom styles for the marquee animation */}
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+          animation: marquee 60s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  );
 }
