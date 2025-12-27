@@ -80,8 +80,8 @@ const Index = () => {
       <OnboardingProcess />
       <ProtectDataSection />
       <FAQSection />
-      <TrustedBy />
       <StatsSection />
+      <TrustedBy />
       <BlogSection />
       <CTASection />
 
