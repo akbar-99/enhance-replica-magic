@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ChevronDown, Search, Globe, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Search, Linkedin, Menu, X, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -49,38 +49,6 @@ interface NavItem {
     description?: string;
   }[];
 }
-const languages = [
-  {
-    code: "EN",
-    i18nCode: "en",
-    label: "English",
-  },
-  {
-    code: "ES",
-    i18nCode: "es",
-    label: "Español",
-  },
-  {
-    code: "FR",
-    i18nCode: "fr",
-    label: "Français",
-  },
-  {
-    code: "DE",
-    i18nCode: "de",
-    label: "Deutsch",
-  },
-  {
-    code: "IT",
-    i18nCode: "it",
-    label: "Italiano",
-  },
-  {
-    code: "AR",
-    i18nCode: "ar",
-    label: "العربية",
-  },
-];
 const navItems: NavItem[] = [
   {
     label: "Products",
@@ -212,10 +180,6 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    const currentLang = languages.find((l) => l.i18nCode === i18n.language);
-    return currentLang?.code || "EN";
-  });
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -234,12 +198,6 @@ export default function Navbar() {
       searchInputRef.current.focus();
     }
   }, [searchOpen]);
-  const handleLanguageChange = (lang: (typeof languages)[0]) => {
-    setSelectedLanguage(lang.code);
-    i18n.changeLanguage(lang.i18nCode);
-    // Set document direction for RTL languages
-    document.documentElement.dir = lang.i18nCode === "ar" ? "rtl" : "ltr";
-  };
   const handleSearchItemClick = (href: string) => {
     setSearchOpen(false);
     setSearchQuery("");
@@ -335,26 +293,16 @@ export default function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center gap-4 ml-auto">
-            {/* Language Selector Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors outline-none">
-                <Globe className="w-4 h-4" />
-                <span>{selectedLanguage}</span>
-                <ChevronDown className="w-3 h-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-popover border border-border min-w-[140px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang)}
-                    className={`cursor-pointer ${selectedLanguage === lang.code ? "bg-secondary/50" : ""}`}
-                  >
-                    <span className="font-medium">{lang.code}</span>
-                    <span className="ml-2 text-muted-foreground">{lang.label}</span>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* LinkedIn Link */}
+            <a
+              href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A106953139&keywords=enhance%20tech&origin=RICH_QUERY_SUGGESTION&position=0&sid=nN~"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 p-2 text-muted-foreground hover:text-blue-400 transition-colors outline-none"
+              title="Follow us on LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
 
             {/* Search Dialog */}
             <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
@@ -459,30 +407,12 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            {/* Mobile Language Selector */}
-            <div className="border-t border-border pt-4 mt-2">
-              <p className="text-sm text-muted-foreground mb-2">{t("nav.language")}</p>
-              <div className="flex flex-wrap gap-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      handleLanguageChange(lang);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-1.5 rounded-full text-sm transition-colors ${selectedLanguage === lang.code ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"}`}
-                  >
-                    {lang.code}
-                  </button>
-                ))}
-              </div>
-            </div>
             <Link
               to="/demo"
               className="btn-primary w-full justify-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t("nav.bookMeeting")}
+              Talk to an Expert
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

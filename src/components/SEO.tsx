@@ -83,7 +83,7 @@ export const organizationSchema = {
     "email": "connect@itenhance.tech"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/enhance-tech",
+    "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A106953139&keywords=enhance%20tech&origin=RICH_QUERY_SUGGESTION&position=0&sid=nN~",
     "https://twitter.com/enhancetech"
   ]
 };

@@ -109,7 +109,7 @@ const footerLinks = {
 const socialLinks = [
   {
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A106953139&keywords=enhance%20tech&origin=RICH_QUERY_SUGGESTION&position=0&sid=nN~",
     label: "LinkedIn",
   },
   {

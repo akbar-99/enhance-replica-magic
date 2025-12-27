@@ -79,8 +79,8 @@ const Index = () => {
       <FeaturesSection />
       <OnboardingProcess />
       <ProtectDataSection />
-      <TrustedBy />
       <FAQSection />
+      <TrustedBy />
       <StatsSection />
       <BlogSection />
       <CTASection />
