@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO, { organizationSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { ArrowRight, Target, Users, Award, MapPin, Building2, Lightbulb, Heart, ChevronRight } from "lucide-react";
@@ -104,7 +103,6 @@ export default function Company() {
         canonicalUrl="https://itenhance.tech/company"
         structuredData={{ "@graph": [organizationSchema, breadcrumbSchema] }}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

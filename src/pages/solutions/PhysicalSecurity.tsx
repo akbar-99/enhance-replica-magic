@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Shield, Eye, Camera, Fingerprint, Lock, DoorOpen, Car, UserCheck, Clock, Video, Zap, MapPin, FileCheck, Users, Scan, KeyRound, BadgeCheck, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
@@ -82,10 +81,9 @@ export default function PhysicalSecurity() {
             structuredData={structuredData}
         />
 
-        <Navbar />
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-950">
+        <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-slate-950">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-900/20 via-slate-950 to-slate-950" />
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
 

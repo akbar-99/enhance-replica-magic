@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import NewsCarousel from '@/components/NewsCarousel';
 
@@ -67,7 +66,6 @@ const Index = () => {
         canonicalUrl="https://itenhance.tech"
         structuredData={homeSchema}
       />
-      <Navbar />
 
       {/* Hero + overlapping News Carousel */}
       <div className="relative">

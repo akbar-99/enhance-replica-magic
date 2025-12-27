@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Mic, Video, Monitor, Calendar, Wifi, Users, Layers, ShieldCheck, Zap, Layout } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 
 import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -69,7 +68,6 @@ export default function SmartMeetingRooms() {
                 structuredData={structuredData}
             />
 
-            <Navbar />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">

@@ -6,7 +6,6 @@ import { format, formatDistanceToNow } from 'date-fns';
 import SEO from '../components/SEO';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
-import Navbar from '../components/Navbar';
 
 import FloatingNavBar from '../components/FloatingNavBar';
 
@@ -73,7 +72,6 @@ const News = () => {
                 keywords="tech news, technology news, cybersecurity news, latest tech updates, TechCrunch, The Verge, Hacker News, ZDNet"
                 canonicalUrl="https://enhancetech.ae/news"
             />
-            <Navbar />
 
             {/* Hero Section */}
             <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-darker">

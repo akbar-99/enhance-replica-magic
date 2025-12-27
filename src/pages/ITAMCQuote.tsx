@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
-import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Server, Shield, Clock, Headphones, Send, FileText, Loader2 } from 'lucide-react';
@@ -130,7 +129,6 @@ export default function ITAMCQuote() {
         canonicalUrl="https://itenhance.tech/it-amc-quote"
         structuredData={amcSchema}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

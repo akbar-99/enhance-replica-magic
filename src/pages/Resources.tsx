@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
-import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, BookOpen, FileText, Video, Download, Calendar, Newspaper, ChevronRight, Play, ExternalLink, Loader2 } from 'lucide-react';
@@ -156,7 +155,6 @@ export default function Resources() {
         canonicalUrl="https://itenhance.tech/resources"
         structuredData={resourcesSchema}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

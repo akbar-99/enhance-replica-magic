@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -22,10 +21,8 @@ export default function InfrastructureDeployment() {
         canonicalUrl="https://itenhance.tech/services/infrastructure-deployment"
       />
 
-      <Navbar />
-
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden page-section-blue">
         <div className="absolute inset-0 bg-hero-gradient opacity-90" />
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 

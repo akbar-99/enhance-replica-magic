@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Database, Server, Cloud, HardDrive, Activity, Globe, FileText, Search, Users, AlertTriangle, RefreshCw, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -77,7 +76,6 @@ export default function PreventDataLoss() {
       structuredData={structuredData}
     />
 
-    <Navbar />
 
     {/* Hero Section */}
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">

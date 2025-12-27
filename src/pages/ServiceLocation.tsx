@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
 
 import SEO from '@/components/SEO';
 import { ArrowRight, CheckCircle, MapPin, Phone, Mail, Send, Shield, Server, Clock, Headphones, Building, Network, Cloud, Settings, Loader2 } from 'lucide-react';
@@ -146,7 +145,6 @@ export default function ServiceLocation() {
         keywords={`IT support ${location.name}, managed IT services, technology solutions, IT consulting`}
         canonicalUrl={`https://itenhance.tech/services/${slug}`}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

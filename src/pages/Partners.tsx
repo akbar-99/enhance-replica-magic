@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-
 import SEO, { createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, Handshake, Search, Cpu, Award, Users, Globe, ChevronRight, CheckCircle, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -83,7 +81,6 @@ export default function Partners() {
         canonicalUrl="https://itenhance.tech/partners"
         structuredData={partnersSchema}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

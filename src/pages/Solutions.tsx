@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, createServiceSchema } from '@/components/SEO';
 import { ArrowRight, ChevronRight, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings } from 'lucide-react';
@@ -124,7 +123,6 @@ export default function Solutions() {
         canonicalUrl="https://itenhance.tech/solutions"
         structuredData={solutionsSchema}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

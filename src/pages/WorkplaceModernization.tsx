@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -34,7 +33,6 @@ export default function WorkplaceModernization() {
         canonicalUrl="https://itenhance.tech/services/workplace-modernization"
       />
 
-      <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">

@@ -20,7 +20,6 @@ import {
     BarChart3
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 
@@ -66,7 +65,6 @@ const Infrastructure = () => {
                 description="Design and deploy a resilient IT backbone. Enterprise Wi-Fi 6, switching, structured cabling from Legrand, Vertiv UPS, and Aruba connectivity."
                 structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
             />
-            <Navbar />
 
             {/* Hero Section */}
             <section onMouseMove={handleMouseMove} className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">

@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -90,8 +89,6 @@ export default function OptimizeCloudOperations() {
         keywords="Cloud Operations, Azure Management, Microsoft 365 Optimization, Cloud Cost Control, FinOps, Dubai IT Solutions"
         canonicalUrl="https://itenhance.tech/solutions/optimize-cloud-operations"
       />
-
-      <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">

@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -28,7 +27,6 @@ export default function ManagedITServices() {
         canonicalUrl="https://itenhance.tech/managed-it-services"
       />
 
-      <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
@@ -41,15 +39,15 @@ export default function ManagedITServices() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400 mb-6 animate-fade-up">
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-500 mb-6 animate-fade-up">
               Proactive Support, Strategic Security, and Expert Guidance for Your Business
             </h1>
-            <p className="text-xl text-slate-600 mb-8 animate-fade-up animation-delay-200">
+            <p className="text-xl text-slate-300 mb-8 animate-fade-up animation-delay-200">
               Transforming IT from a Cost Center to a Growth Engine.
             </p>
             <div className="flex flex-wrap justify-center gap-4 animate-fade-up animation-delay-400">
               <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white shadow-lg shadow-purple-500/25">
                   Book Your Free Initial Audit Today
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

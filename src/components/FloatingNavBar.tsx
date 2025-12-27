@@ -39,7 +39,6 @@ const FloatingNavBar = () => {
   return <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50">
     {/* Glass container */}
     <div className="relative flex items-center gap-3 sm:gap-6 py-3 px-6 sm:px-10">
-
       {navItems.map((item, index) => {
         const Icon = item.icon;
         const isActive = location.pathname === item.path;
@@ -53,12 +52,21 @@ const FloatingNavBar = () => {
           </div>
 
           {/* Icon button */}
-          <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all duration-300 cursor-pointer bg-slate-800/50 border border-white/5 ${isHovered ? "bg-blue-500/20 border-blue-500/50 scale-110" : "hover:bg-slate-700/50"}`}>
-            {/* Glow effect - only on hover/active */}
-            {isHovered && <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-md transition-all duration-300" />}
+          <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all duration-300 cursor-pointer bg-slate-800/50 border border-white/10 ${isHovered ? "bg-blue-500/20 border-blue-500/50 scale-110" : "hover:bg-slate-700/50"}`}>
+            {/* Persistent Gradient Glow effect */}
+            <div
+              className={`absolute inset-0 rounded-full blur-md transition-all duration-500 animate-pulse ${isHovered ? "opacity-90 scale-125" : "opacity-50 scale-100"}`}
+              style={{ background: 'linear-gradient(135deg, rgba(34, 211, 238, 0.4) 0%, rgba(59, 130, 246, 0.4) 100%)' }}
+            />
+
+            {/* Inner Glow center point - slightly more concentrated gradient */}
+            <div
+              className={`absolute inset-0 rounded-full blur-sm transition-all duration-500 ${isHovered ? "opacity-100" : "opacity-40"}`}
+              style={{ background: 'linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)' }}
+            />
 
             {/* Icon */}
-            <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 ${isHovered ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" : "text-slate-400"}`} />
+            <Icon className={`relative z-10 w-5 h-5 transition-all duration-300 ${isHovered ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" : "text-slate-300/90 drop-shadow-[0_0_4px_rgba(96,165,250,0.4)]"}`} />
           </div>
         </div>;
         if (item.isExternal) {

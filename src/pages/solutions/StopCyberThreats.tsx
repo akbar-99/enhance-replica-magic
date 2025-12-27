@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Laptop, Server, Mail, Search, Activity, Globe, Cpu, Terminal, Layers, ShieldAlert, Monitor, Users, Bell, FileText, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import SEO, { organizationSchema, createServiceSchema, createBreadcrumbSchema } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -77,10 +76,9 @@ export default function StopCyberThreats() {
       structuredData={structuredData}
     />
 
-    <Navbar />
 
     {/* Hero Section */}
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">
+    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden page-section-blue">
       <div className="absolute inset-0 bg-hero-gradient opacity-95" />
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
 

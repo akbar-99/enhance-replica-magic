@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO, { organizationSchema } from "@/components/SEO";
 import { ArrowRight, Mail, Phone, MapPin, MessageSquare, Headphones, Building, Send, CheckCircle, Loader2, ExternalLink } from "lucide-react";
@@ -122,7 +121,6 @@ export default function Contact() {
         canonicalUrl="https://itenhance.tech/contact"
         structuredData={contactSchema}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

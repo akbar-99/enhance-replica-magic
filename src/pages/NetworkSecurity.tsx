@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Shield, Zap, Lock, Eye, Laptop, Server, Database, Sparkles, Activity, Globe, Cpu, Terminal, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -45,8 +44,6 @@ export default function NetworkSecurity() {
                 keywords="Network Security, NGFW, Firewall, Fortinet, SonicWall, Sangfor, SD-WAN, DPI, Cybersecurity"
                 canonicalUrl="https://itenhance.tech/solutions/network-security"
             />
-
-            <Navbar />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden page-section-blue">

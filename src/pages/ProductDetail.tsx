@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, Shield, Cloud, Lock, Database, Zap, Eye, Server, Globe, Check, ChevronRight } from 'lucide-react';
@@ -150,7 +149,7 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <main className="min-h-screen page-bg-light">
-        <Navbar />
+
         <div className="pt-32 pb-20 text-center">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">Product Not Found</h1>
           <p className="text-slate-600 mb-8">The product you're looking for doesn't exist.</p>
@@ -195,7 +194,7 @@ export default function ProductDetail() {
         canonicalUrl={`https://itenhance.tech/products/${slug}`}
         structuredData={productSchema}
       />
-      <Navbar />
+
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Sparkles, Shield, Server, Monitor, Lock, Cloud, ShieldAlert, HardDrive, Headphones, Network, Settings, LucideIcon } from 'lucide-react';
@@ -336,7 +335,6 @@ export default function SolutionDetail() {
         canonicalUrl={`https://itenhance.tech/solutions/${solution.id}`}
         structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
       />
-      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">

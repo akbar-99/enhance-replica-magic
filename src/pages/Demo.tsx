@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
-import Navbar from '@/components/Navbar';
 
 import SEO, { createBreadcrumbSchema, organizationSchema } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Shield, Clock, Users, Play, Star, Quote, Loader2 } from 'lucide-react';
@@ -104,7 +103,6 @@ export default function Demo() {
           canonicalUrl="https://itenhance.tech/demo"
           structuredData={demoSchema}
         />
-        <Navbar />
         <section className="pt-32 pb-20">
           <div className="max-w-xl mx-auto px-4 text-center">
             <div className="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-8 animate-bounce">
@@ -134,7 +132,6 @@ export default function Demo() {
         canonicalUrl="https://itenhance.tech/demo"
         structuredData={demoSchema}
       />
-      <Navbar />
 
       <section className="pt-32 pb-20 page-section-blue relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[hsl(var(--glow-cyan))]/5" />

@@ -20,7 +20,6 @@ import {
     Shield
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { Button } from "@/components/ui/button";
 
@@ -67,7 +66,6 @@ const ComputeStorage = () => {
                 description="Modernize your data center with Enhance Tech. Enterprise Servers from Dell, HPE, and Lenovo. Smart Storage solutions from Synology and QNAP."
                 structuredData={{ "@graph": [serviceSchema, breadcrumbSchema] }}
             />
-            <Navbar />
 
             {/* Hero Section */}
             <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
