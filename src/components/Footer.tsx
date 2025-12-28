@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucide-react";
-import enhanceTechLogo from "@/assets/enhance-tech-logo.webp";
+import enhanceTechLogo from "@/assets/enhance-logo-new.png";
 const footerLinks = {
   Products: [{
     label: "Compute and Storage",
@@ -106,65 +106,68 @@ export default function Footer() {
     }
   };
   return <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
-          {/* Logo & Description */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-1">
-            <Link to="/" className="flex items-center mb-4 group" onClick={handleLogoClick}>
-              <img src={enhanceTechLogo} alt="Enhance Tech" className="h-10 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]" />
-            </Link>
-            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-              Protecting enterprise data with AI-native security solutions.
-            </p>
-            <div className="space-y-2.5 text-sm text-muted-foreground mb-6">
-              <a className="flex items-center gap-2 hover:text-foreground transition-colors" href="tel:+971 4 329 6840">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+971 4 329 6840</span>
-              </a>
-              <a href="mailto:connect@itenhance.tech" className="flex items-center gap-2 hover:text-foreground transition-colors">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>connect@itenhance.tech</span>
-              </a>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE</span>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              {socialLinks.map(social => {})}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
+        {/* Logo & Description */}
+        <div className="col-span-2 md:col-span-3 lg:col-span-1">
+          <Link to="/" className="flex items-center gap-3 mb-6 group" onClick={handleLogoClick}>
+            <img src={enhanceTechLogo} alt="Enhance Tech" className="h-14 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]" />
+            <span className="font-bold text-3xl tracking-tight text-foreground group-hover:text-glow-cyan transition-colors duration-300">
+              Enhance <span className="text-primary">Tech</span>
+            </span>
+          </Link>
+          <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+            Protecting enterprise data with AI-native security solutions.
+          </p>
+          <div className="space-y-2.5 text-sm text-muted-foreground mb-6">
+            <a className="flex items-center gap-2 hover:text-foreground transition-colors" href="tel:+971 4 329 6840">
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              <span>+971 4 329 6840</span>
+            </a>
+            <a href="mailto:connect@itenhance.tech" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span>connect@itenhance.tech</span>
+            </a>
+            <div className="flex items-start gap-2">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span>Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE</span>
             </div>
           </div>
-
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => <div key={category} className="flex flex-col">
-              <h4 className="font-semibold mb-4 text-sm text-foreground">{category}</h4>
-              <ul className="space-y-2.5">
-                {links.map(link => <li key={link.label}>
-                    <Link to={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors hover:translate-x-1 inline-block">
-                      {link.label}
-                    </Link>
-                  </li>)}
-              </ul>
-            </div>)}
+          <div className="flex gap-3">
+            {socialLinks.map(social => { })}
+          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Enhance Tech. All rights reserved.
-          </p>
-          <div className="flex flex-wrap gap-6">
-            <Link to="/privacy" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/cookies" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-              Cookie Settings
-            </Link>
-          </div>
+        {/* Footer Links */}
+        {Object.entries(footerLinks).map(([category, links]) => <div key={category} className="flex flex-col">
+          <h4 className="font-semibold mb-4 text-sm text-foreground">{category}</h4>
+          <ul className="space-y-2.5">
+            {links.map(link => <li key={link.label}>
+              <Link to={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors hover:translate-x-1 inline-block">
+                {link.label}
+              </Link>
+            </li>)}
+          </ul>
+        </div>)}
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-muted-foreground text-sm">
+          © {new Date().getFullYear()} Enhance Tech. All rights reserved.
+        </p>
+        <div className="flex flex-wrap gap-6">
+          <Link to="/privacy" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            Privacy Policy
+          </Link>
+          <Link to="/terms" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            Terms of Service
+          </Link>
+          <Link to="/cookies" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            Cookie Settings
+          </Link>
         </div>
       </div>
-    </footer>;
+    </div>
+  </footer>;
 }

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDown, Search, Linkedin, Menu, X, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,7 +18,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import enhanceTechLogo from "@/assets/enhance-tech-logo.webp";
+import enhanceTechLogo from "@/assets/enhance-logo-new.png";
 // Flatten all nav items for search
 const getAllSearchItems = () => {
   const items: {
@@ -214,13 +215,55 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-nav/95 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
+
+
+
+
           {/* Logo */}
-          <Link to="/" className="flex items-center group" onClick={handleLogoClick}>
+          <Link to="/" className="flex items-center gap-3 group" onClick={handleLogoClick}>
             <img
               src={enhanceTechLogo}
               alt="Enhance Tech"
-              className="h-10 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]"
+              className="h-12 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)] z-10 relative"
             />
+            <div className="flex overflow-hidden">
+              {/* "Enhance" Animation */}
+              {"Enhance".split("").map((letter, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ x: -20, opacity: 0, width: 0 }}
+                  animate={{ x: 0, opacity: 1, width: "auto" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  className="font-bold text-2xl tracking-tight text-foreground group-hover:text-glow-cyan transition-colors duration-300"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+              {/* Space */}
+              <span className="w-2"></span>
+              {/* "Tech" Animation */}
+              {"Tech".split("").map((letter, index) => (
+                <motion.span
+                  key={`tech-${index}`}
+                  initial={{ x: -20, opacity: 0, width: 0 }}
+                  animate={{ x: 0, opacity: 1, width: "auto" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.8 + (index * 0.1), // Delay starts after "Enhance"
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  className="font-bold text-2xl tracking-tight text-primary group-hover:text-glow-cyan transition-colors duration-300"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

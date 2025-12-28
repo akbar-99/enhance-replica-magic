@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import heroBackground from "@/assets/hero-background.webp";
-import brandIcon from "@/assets/brand-pixel-e.png";
+import enhanceFloatingIcon from "@/assets/enhance-floating-icon.png";
 
 // Lazy load Spline embed
 // SplineEmbed removed as per user request to remove the cube
@@ -252,9 +252,9 @@ function HeroSection() {
               className="absolute -top-5 -right-5 p-2.5 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl hidden lg:block z-20"
             >
               <img
-                src={brandIcon}
+                src={enhanceFloatingIcon}
                 alt="Brand Logo"
-                className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]"
+                className="w-16 h-16 object-contain drop-shadow-[0_0_15px_hsl(var(--glow-cyan)/0.6)]"
               />
             </motion.div>
           </motion.div>
