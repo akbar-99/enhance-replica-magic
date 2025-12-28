@@ -231,13 +231,13 @@ export default function Navbar() {
               {"Enhance".split("").map((letter, index) => (
                 <motion.span
                   key={index}
-                  initial={{ x: -20, opacity: 0, width: 0 }}
-                  animate={{ x: 0, opacity: 1, width: "auto" }}
+                  animate={{ x: [-40, 0, 0, -40], opacity: [0, 1, 1, 0] }}
                   transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 100
+                    duration: 2.5, // Faster cycle time
+                    times: [0, 0.15, 0.85, 1], // Adjusted timing
+                    repeat: Infinity,
+                    delay: index * 0.05, // Stagger
+                    ease: "easeInOut"
                   }}
                   className="font-bold text-2xl tracking-tight text-foreground group-hover:text-glow-cyan transition-colors duration-300"
                 >
@@ -250,13 +250,14 @@ export default function Navbar() {
               {"Tech".split("").map((letter, index) => (
                 <motion.span
                   key={`tech-${index}`}
-                  initial={{ x: -20, opacity: 0, width: 0 }}
-                  animate={{ x: 0, opacity: 1, width: "auto" }}
+                  initial={{ x: -40, opacity: 0 }} // Deeper start position, removed width: 0
+                  animate={{ x: [-40, 0, 0, -40], opacity: [0, 1, 1, 0] }}
                   transition={{
-                    duration: 0.5,
-                    delay: 0.8 + (index * 0.1), // Delay starts after "Enhance"
-                    type: "spring",
-                    stiffness: 100
+                    duration: 2.5, // Faster cycle time
+                    times: [0, 0.15, 0.85, 1], // Adjusted timing
+                    repeat: Infinity,
+                    delay: 0.8 + (index * 0.05), // Shifted stagger for "Tech"
+                    ease: "easeInOut"
                   }}
                   className="font-bold text-2xl tracking-tight text-primary group-hover:text-glow-cyan transition-colors duration-300"
                 >
