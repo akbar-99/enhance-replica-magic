@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Linkedin, Twitter, Youtube, Facebook, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import enhanceTechLogo from "@/assets/enhance-logo-new.png";
 const footerLinks = {
   Products: [{
@@ -77,23 +77,7 @@ const footerLinks = {
     href: "/services/it-consulting-dubai"
   }]
 };
-const socialLinks = [{
-  icon: Linkedin,
-  href: "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A106953139&keywords=enhance%20tech&origin=RICH_QUERY_SUGGESTION&position=0&sid=nN~",
-  label: "LinkedIn"
-}, {
-  icon: Twitter,
-  href: "https://twitter.com",
-  label: "Twitter"
-}, {
-  icon: Youtube,
-  href: "https://youtube.com",
-  label: "YouTube"
-}, {
-  icon: Facebook,
-  href: "https://facebook.com",
-  label: "Facebook"
-}];
+
 export default function Footer() {
   const location = useLocation();
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -112,8 +96,8 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-3 lg:col-span-1">
           <Link to="/" className="flex items-center gap-3 mb-6 group" onClick={handleLogoClick}>
             <img src={enhanceTechLogo} alt="Enhance Tech" className="h-14 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]" />
-            <span className="font-bold text-3xl tracking-tight text-foreground group-hover:text-glow-cyan transition-colors duration-300">
-              Enhance <span className="text-primary">Tech</span>
+            <span className="font-bold text-3xl tracking-tight glow-text group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)] transition-all duration-300">
+              Enhance Tech
             </span>
           </Link>
           <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
@@ -133,9 +117,7 @@ export default function Footer() {
               <span>Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl - Dubai, UAE</span>
             </div>
           </div>
-          <div className="flex gap-3">
-            {socialLinks.map(social => { })}
-          </div>
+
         </div>
 
         {/* Footer Links */}
