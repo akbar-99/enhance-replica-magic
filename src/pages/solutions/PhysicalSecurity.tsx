@@ -396,7 +396,7 @@ export default function PhysicalSecurity() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-orange-400 transition-colors">
-                                        1. Intelligent Video Surveillance (CCTV)
+                                        Intelligent Video Surveillance (CCTV)
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         Gone are the days of grainy, black-and-white footage. We deploy modern IP camera systems that act as intelligent sensors for your business.
@@ -467,7 +467,7 @@ export default function PhysicalSecurity() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-amber-400 transition-colors">
-                                        2. Access Control & Biometrics
+                                        Access Control & Biometrics
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         Stop relying on easily copied physical keys. Our access control solutions ensure that only authorized personnel can enter sensitive areas.
@@ -538,7 +538,7 @@ export default function PhysicalSecurity() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-red-400 transition-colors">
-                                        3. Perimeter Security
+                                        Perimeter Security
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         Control the flow of people and vehicles before they even reach your door.
@@ -621,14 +621,14 @@ export default function PhysicalSecurity() {
                             once: true
                         }} transition={{
                             delay: i * 0.1
-                        }} className="p-10 bg-slate-50 rounded-[32px] border border-slate-100 hover:bg-white hover:border-orange-500/30 hover:shadow-2xl transition-all duration-500 group shadow-sm">
-                            <div className="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 border border-orange-500/20 group-hover:bg-orange-600 group-hover:scale-110 transition-all duration-300">
-                                <item.icon className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors" />
+                        }} className="p-10 bg-white rounded-[32px] border border-orange-200 shadow-xl transition-all duration-500 group">
+                            <div className="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-all duration-300">
+                                <item.icon className="w-6 h-6 text-white transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4 group-hover:text-orange-600 transition-colors uppercase tracking-tight">
+                            <h3 className="text-xl font-bold mb-4 text-orange-600 uppercase tracking-tight">
                                 {item.title}
                             </h3>
-                            <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-600 transition-colors">
+                            <p className="text-slate-700 text-sm leading-relaxed transition-colors">
                                 {item.desc}
                             </p>
                         </motion.div>)}

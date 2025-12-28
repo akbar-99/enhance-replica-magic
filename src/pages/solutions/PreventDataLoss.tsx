@@ -396,7 +396,7 @@ export default function PreventDataLoss() {
                     </span>
                   </div>
                   <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-                    1. Acronis
+                    Acronis
                   </h3>
                   <p className="text-cyan-400/90 text-lg mb-8 font-medium italic">
                     "Best for: Servers, Workstations, and Virtual Machines"
@@ -471,7 +471,7 @@ export default function PreventDataLoss() {
                     </span>
                   </div>
                   <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                    2. Dropsuite
+                    Dropsuite
                   </h3>
                   <p className="text-blue-400/90 text-lg mb-8 font-medium italic">
                     "Best for: Microsoft 365 & Google Workspace"
@@ -546,7 +546,7 @@ export default function PreventDataLoss() {
                     </span>
                   </div>
                   <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-purple-400 transition-colors">
-                    3. Microsoft Purview
+                    Microsoft Purview
                   </h3>
                   <p className="text-purple-400/90 text-lg mb-8 font-medium italic">
                     "Best for: Data Classification, DLP, and Risk Management"

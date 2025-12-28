@@ -394,7 +394,7 @@ export default function ManageMicrosoft365() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                                        1. The Foundation: Microsoft
+                                        The Foundation: Microsoft
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         We start by maximizing the native capabilities of your subscription. We configure Microsoft Intune and Autopilot to secure your devices and deploy applications automatically over the cloud.
@@ -465,7 +465,7 @@ export default function ManageMicrosoft365() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-                                        2. Advanced Administration: CoreView
+                                        Advanced Administration: CoreView
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         For organizations that need more control than the native Admin Center offers, CoreView is the answer. It acts as a wrapper around your tenant to improve security and efficiency.
@@ -536,7 +536,7 @@ export default function ManageMicrosoft365() {
                                         </span>
                                     </div>
                                     <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-                                        3. Data Governance & Migration: AvePoint
+                                        Data Governance & Migration: AvePoint
                                     </h3>
                                     <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                         AvePoint is the industry standard for keeping your collaboration environment clean, compliant, and backed up.

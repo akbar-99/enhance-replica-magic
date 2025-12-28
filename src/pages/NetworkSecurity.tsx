@@ -542,8 +542,8 @@ export default function NetworkSecurity() {
                                     <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
                                         <CheckCircle2 className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4 group-hover:text-blue-600 transition-colors uppercase tracking-tight">{item.title}</h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-600 transition-colors">{item.desc}</p>
+                                    <h3 className="text-2xl font-black mb-4 text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{item.title}</h3>
+                                    <p className="text-slate-600 text-base leading-relaxed group-hover:text-slate-700 transition-colors">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

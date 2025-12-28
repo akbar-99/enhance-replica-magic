@@ -307,7 +307,7 @@ export default function SmartMeetingRooms() {
                                         <div className="px-4 py-1.5 bg-teal-500/20 border border-teal-500/30 rounded-full inline-block mb-6">
                                             <span className="text-teal-400 font-bold tracking-[0.3em] uppercase text-[10px]">The Gold Standard</span>
                                         </div>
-                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-teal-400 transition-colors">1. Logitech</h3>
+                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-teal-400 transition-colors">Logitech</h3>
                                         <p className="text-teal-400/90 text-lg mb-8 font-medium italic">"Rally Bar & Tap Solutions"</p>
                                         <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                             Logitech brings studio-quality video to the meeting room. Famous for reliability and ease of use—perfect for standardized experiences across global offices.
@@ -362,7 +362,7 @@ export default function SmartMeetingRooms() {
                                         <div className="px-4 py-1.5 bg-blue-500/20 border border-blue-500/30 rounded-full inline-block mb-6">
                                             <span className="text-blue-400 font-bold tracking-[0.3em] uppercase text-[10px]">The Versatile Choice</span>
                                         </div>
-                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-blue-400 transition-colors">2. Yealink</h3>
+                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-blue-400 transition-colors">Yealink</h3>
                                         <p className="text-blue-400/90 text-lg mb-8 font-medium italic">"MeetingBoards & Android Bars"</p>
                                         <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                             Yealink offers one of the widest portfolios in the industry, from huddle cameras to fully interactive digital whiteboards. Feature-rich solutions at competitive prices.
@@ -417,7 +417,7 @@ export default function SmartMeetingRooms() {
                                         <div className="px-4 py-1.5 bg-green-500/20 border border-green-500/30 rounded-full inline-block mb-6">
                                             <span className="text-green-400 font-bold tracking-[0.3em] uppercase text-[10px]">Workspace Management</span>
                                         </div>
-                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-green-400 transition-colors">3. GoGet</h3>
+                                        <h3 className="text-4xl font-extrabold mb-4 tracking-tight text-white group-hover:text-green-400 transition-colors">GoGet</h3>
                                         <p className="text-green-400/90 text-lg mb-8 font-medium italic">"Room Booking & Wayfinding"</p>
                                         <p className="text-slate-300 mb-10 leading-relaxed text-sm">
                                             Stop the arguments over who booked the conference room. GoGet provides elegant scheduling displays that sync directly with Outlook or Google Calendar.
@@ -492,8 +492,8 @@ export default function SmartMeetingRooms() {
                                     <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
                                         <item.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4 group-hover:text-blue-600 transition-colors uppercase tracking-tight">{item.title}</h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-600 transition-colors">{item.desc}</p>
+                                    <h3 className="text-2xl font-black mb-4 text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">{item.title}</h3>
+                                    <p className="text-slate-600 text-base leading-relaxed group-hover:text-slate-700 transition-colors">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
