@@ -85,11 +85,8 @@ const FAQSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-900">
-              The{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
-                Enhance Tech Difference
-              </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
+              The Enhance Tech Difference
             </h2>
             <p className="text-slate-500 text-base md:text-lg max-w-1xl mx-auto leading-relaxed font-medium opacity-80">
               We help businesses overcome IT downtime, security risks, lack of in-house expertise, and operational

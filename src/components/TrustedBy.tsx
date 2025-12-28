@@ -9,7 +9,7 @@ import fortinetLogo from "@/assets/partners/fortinet-partner.png";
 import lenovoLogo from "@/assets/partners/lenovo-authorized.jpg";
 import logitechLogo from "@/assets/partners/logitech-partner.png";
 import silverPartnerLogo from "@/assets/partners/silver-partner.png";
-import microsoftLogo from "@/assets/partners/microsoft-logo.png";
+import microsoftLogo from "@/assets/partners/microsoft-partner.png";
 
 const partners = [
   { name: "AvePoint", logo: avepointLogo },
@@ -62,11 +62,8 @@ export default function TrustedBy() {
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             <span className="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em]">Our Global Ecosystem</span>
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tighter text-slate-900 leading-tight">
-            Trusted by global{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 pb-2">
-              industry leaders.
-            </span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 leading-tight">
+            Trusted by global industry leaders.
           </h2>
           <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium opacity-80">
             Strategic alliances with top-tier technology partners to deliver enterprise-grade performance and security.
