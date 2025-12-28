@@ -126,7 +126,7 @@ const BlogSection = () => {
             Latest news & updates for your business.      <br />
              ​  
           </h2>
-          <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-1xl mx-auto">
+          <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-1xl mx-auto py-px my-px">
             Technology moves fast—we help you keep up. Explore our latest articles to find simple explanations for
             complex tech and smart strategies to make your business run smoother every day.
           </p>
