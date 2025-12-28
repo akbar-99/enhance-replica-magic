@@ -14,16 +14,14 @@ import { useToast } from "@/hooks/use-toast";
 import { submitToHubSpot } from "@/lib/hubspot";
 import {
     FileText,
-    Upload,
-    CheckCircle2,
     Loader2,
+    CheckCircle2,
     User,
     Mail,
     Phone,
     MapPin,
     Briefcase,
     GraduationCap,
-    FileCheck,
     Calendar,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -32,8 +30,6 @@ import { useState, useRef } from "react";
 export default function JobApplication() {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const [formData, setFormData] = useState({
         applicationType: "",
@@ -78,48 +74,7 @@ export default function JobApplication() {
         }));
     };
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-            const allowedTypes = [
-                "application/pdf",
-                "application/msword",
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-            ];
-            if (!allowedTypes.includes(file.type)) {
-                toast({
-                    title: "Invalid file type",
-                    description: "Please upload a PDF or DOC/DOCX file",
-                    variant: "destructive",
-                });
-                return;
-            }
-            if (file.size > 5 * 1024 * 1024) {
-                toast({
-                    title: "File too large",
-                    description: "Please upload a file smaller than 5MB",
-                    variant: "destructive",
-                });
-                return;
-            }
-            setUploadedFile(file);
-        }
-    };
 
-    const handleDrop = (e: React.DragEvent) => {
-        e.preventDefault();
-        const file = e.dataTransfer.files?.[0];
-        if (file) {
-            const event = {
-                target: { files: [file] },
-            } as unknown as React.ChangeEvent<HTMLInputElement>;
-            handleFileChange(event);
-        }
-    };
-
-    const handleDragOver = (e: React.DragEvent) => {
-        e.preventDefault();
-    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -131,12 +86,11 @@ export default function JobApplication() {
                 !formData.email ||
                 !formData.phone ||
                 !formData.applicationType ||
-                !formData.position ||
-                !uploadedFile
+                !formData.position
             ) {
                 toast({
                     title: "Required fields missing",
-                    description: "Please fill in all required fields and upload your CV/Resume",
+                    description: "Please fill in all required fields",
                     variant: "destructive",
                 });
                 setIsSubmitting(false);
@@ -168,7 +122,6 @@ export default function JobApplication() {
                 why_join_enhance_tech: formData.whyJoin,
                 how_did_you_hear_about_us: formData.hearAboutUs,
                 cover_letter: formData.coverLetter,
-                cv_filename: uploadedFile.name,
             };
 
             const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
@@ -207,10 +160,6 @@ export default function JobApplication() {
                 hearAboutUs: "",
                 coverLetter: "",
             });
-            setUploadedFile(null);
-            if (fileInputRef.current) {
-                fileInputRef.current.value = "";
-            }
         } catch (error) {
             console.error("Form submission error:", error);
             toast({
@@ -690,74 +639,7 @@ export default function JobApplication() {
                                 </div>
                             </div>
 
-                            {/* Documents */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center">
-                                        <FileCheck className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-slate-900">Documents</h2>
-                                        <p className="text-sm text-slate-600">Upload your CV/Resume</p>
-                                    </div>
-                                </div>
 
-                                <div className="space-y-6">
-                                    <div>
-                                        <Label className="text-slate-700 font-medium">
-                                            CV/Resume <span className="text-red-500">*</span>
-                                        </Label>
-                                        <div
-                                            className="mt-2 border-2 border-dashed border-slate-300 rounded-xl p-8 text-center hover:border-cyan-500 transition-colors cursor-pointer"
-                                            onDrop={handleDrop}
-                                            onDragOver={handleDragOver}
-                                            onClick={() => fileInputRef.current?.click()}
-                                        >
-                                            <input
-                                                ref={fileInputRef}
-                                                type="file"
-                                                accept=".pdf,.doc,.docx"
-                                                onChange={handleFileChange}
-                                                className="hidden"
-                                                required
-                                            />
-                                            {uploadedFile ? (
-                                                <div className="flex items-center justify-center gap-3 text-green-600">
-                                                    <CheckCircle2 className="w-6 h-6" />
-                                                    <div className="text-left">
-                                                        <p className="font-medium">{uploadedFile.name}</p>
-                                                        <p className="text-sm text-slate-600">
-                                                            {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <>
-                                                    <Upload className="w-12 h-12 text-slate-400 mx-auto mb-4" />
-                                                    <p className="text-slate-700 font-medium mb-2">
-                                                        Click to upload or drag and drop
-                                                    </p>
-                                                    <p className="text-sm text-slate-500">PDF, DOC, or DOCX (Max 5MB)</p>
-                                                </>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="coverLetter" className="text-slate-700 font-medium">
-                                            Cover Letter (Optional)
-                                        </Label>
-                                        <Textarea
-                                            id="coverLetter"
-                                            name="coverLetter"
-                                            value={formData.coverLetter}
-                                            onChange={handleInputChange}
-                                            placeholder="Write a brief cover letter..."
-                                            className="mt-2 min-h-[120px]"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
 
                             {/* Additional Information */}
                             <div className="border-t border-slate-200 pt-10">

@@ -107,30 +107,20 @@ export default function TrustedBy() {
 
       {/* Unified Single Scrolling Row */}
       <div className="relative flex overflow-hidden py-10 select-none">
-        <div className="flex animate-marquee-slow gap-8 sm:gap-14 whitespace-nowrap px-4">
+        <div className="flex animate-marquee-slow gap-16 sm:gap-24 whitespace-nowrap px-4">
           {[...partners, ...partners, ...partners].map((partner, index) => (
             <motion.div
               key={`${partner.name}-${index}`}
               initial={{ y: 0 }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 2
-              }}
-              className="flex-shrink-0 group"
+              // Removed the random float to keep it cleaner and aligned like the reference
+              className="flex-shrink-0 group flex items-center justify-center"
             >
-              <div className="relative h-32 w-64 sm:h-40 sm:w-80 flex items-center justify-center p-4 bg-white/80 backdrop-blur-xl border-[0.01px] border-white/50 rounded-[3rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(59,130,246,0.15)] hover:border-blue-400/50 transition-all duration-500 ease-[0.34,1.56,0.64,1] overflow-hidden">
-                <motion.img
-                  whileHover={{ scale: 1.1, x: [-2, 2, -1, 1, 0], y: [-1, 1, -2, 2, 0] }}
+              <div className="relative h-14 w-auto flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <img
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  className="w-[92%] h-[92%] object-contain opacity-90 group-hover:opacity-100 transition-all duration-500"
+                  className="h-full w-auto object-contain"
                 />
-
-                {/* Subtle Inner Glow */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
             </motion.div>
           ))}

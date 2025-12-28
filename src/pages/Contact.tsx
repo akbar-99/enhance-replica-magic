@@ -36,24 +36,28 @@ const offices = [
     address: "Addiyar Building - Ground Floor - Sheikh Zayed Rd - Al Wasl",
     region: "Dubai",
     country: "UAE",
+    flag: "/flags/uae.svg",
   },
   {
     city: "Doha",
     country: "Qatar",
     type: "EMEA HQ",
     timezone: "GMT",
+    flag: "https://hatscripts.github.io/circle-flags/flags/qa.svg",
   },
   {
     city: "Riyadh",
     country: "KSA",
     type: "APAC HQ",
     timezone: "SGT",
+    flag: "/flags/ksa.svg",
   },
   {
     city: "Kochi",
     country: "India",
     type: "Office",
     timezone: "AEST",
+    flag: "https://hatscripts.github.io/circle-flags/flags/in.svg",
   },
 ];
 const companyContact = {
@@ -369,8 +373,13 @@ export default function Contact() {
                 key={office.city}
                 className="group bg-white border border-slate-200/80 rounded-3xl p-8 hover:border-transparent hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <MapPin className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                <div className="w-16 h-16 rounded-full bg-white shadow-lg border-2 border-slate-100 flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute inset-0 rounded-full shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10"></div>
+                  <img
+                    src={office.flag}
+                    alt={`${office.country} flag`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-primary transition-colors duration-300">
                   {office.city}
