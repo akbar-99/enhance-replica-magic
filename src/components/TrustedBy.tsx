@@ -2,54 +2,23 @@ import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-// New Logo Assets
-import microsoftLogo from "@/assets/partners/microsoft-logo-new.png";
-import dellLogo from "@/assets/partners/dell-logo-new.png";
-import fortinetLogo from "@/assets/partners/fortinet-logo-new.png";
-import sonicwallLogo from "@/assets/partners/sonicwall-logo-new.png";
-import sangforLogo from "@/assets/partners/sangfor-logo-new.png";
-import bitdefenderLogo from "@/assets/partners/bitdefender-logo-new.png";
-import acronisLogo from "@/assets/partners/acronis-logo-new.png";
-import coreviewLogo from "@/assets/partners/coreview-logo-new.png";
-import avepointLogo from "@/assets/partners/avepoint-logo-new.png";
-import haloitsmLogo from "@/assets/partners/haloitsm-logo-new.png";
-import hikvisionLogo from "@/assets/partners/hikvision-logo-new.png";
-import zktecoLogo from "@/assets/partners/zkteco-logo-new.png";
-import lenovoLogo from "@/assets/partners/lenovo-logo-new.png";
-import qnapLogo from "@/assets/partners/qnap-logo-new.png";
-import vertivLogo from "@/assets/partners/vertiv-logo-new.png";
-import hpHpeLogo from "@/assets/partners/hp-hpe-logo-new.png";
-import logitechLogo from "@/assets/partners/logitech-logo-new.png";
-import yealinkLogo from "@/assets/partners/yealink-logo-new.png";
-import freshworksLogo from "@/assets/partners/freshworks-logo-new.png";
-import dropsuiteLogo from "@/assets/partners/dropsuite-logo-new.png";
-import vircomLogo from "@/assets/partners/vircom-logo-new.png";
-import veriatoLogo from "@/assets/partners/veriato-logo-new.png";
-import sorbsecurityLogo from "@/assets/partners/sorbsecurity-logo.png"; // Kept original as no new one provided for this exact name
+// Partner certification logos
+import avepointLogo from "@/assets/partners/avepoint-partner.png";
+import bitdefenderLogo from "@/assets/partners/bitdefender-reseller.png";
+import fortinetLogo from "@/assets/partners/fortinet-partner.png";
+import lenovoLogo from "@/assets/partners/lenovo-authorized.jpg";
+import logitechLogo from "@/assets/partners/logitech-partner.png";
+import silverPartnerLogo from "@/assets/partners/silver-partner.png";
+import microsoftLogo from "@/assets/partners/microsoft-logo.png";
 
 const partners = [
-  { name: "Microsoft", logo: microsoftLogo },
-  { name: "Dell", logo: dellLogo },
-  { name: "Fortinet", logo: fortinetLogo },
-  { name: "SonicWall", logo: sonicwallLogo },
-  { name: "Sangfor", logo: sangforLogo },
-  { name: "Bitdefender", logo: bitdefenderLogo },
-  { name: "Acronis", logo: acronisLogo },
-  { name: "CoreView", logo: coreviewLogo },
   { name: "AvePoint", logo: avepointLogo },
-  { name: "HaloITSM", logo: haloitsmLogo },
-  { name: "Hikvision", logo: hikvisionLogo },
-  { name: "ZKTeco", logo: zktecoLogo },
+  { name: "Bitdefender", logo: bitdefenderLogo },
+  { name: "Fortinet", logo: fortinetLogo },
   { name: "Lenovo", logo: lenovoLogo },
-  { name: "QNAP", logo: qnapLogo },
-  { name: "Vertiv", logo: vertivLogo },
-  { name: "HP HPE", logo: hpHpeLogo },
   { name: "Logitech", logo: logitechLogo },
-  { name: "Yealink", logo: yealinkLogo },
-  { name: "Freshworks", logo: freshworksLogo },
-  { name: "Dropsuite", logo: dropsuiteLogo },
-  { name: "Vircom", logo: vircomLogo },
-  { name: "Veriato", logo: veriatoLogo },
+  { name: "Silver Partner", logo: silverPartnerLogo },
+  { name: "Microsoft", logo: microsoftLogo },
 ];
 
 export default function TrustedBy() {
@@ -107,7 +76,7 @@ export default function TrustedBy() {
 
       {/* Unified Single Scrolling Row */}
       <div className="relative flex overflow-hidden py-10 select-none">
-        <div className="flex animate-marquee-slow gap-16 sm:gap-24 whitespace-nowrap px-4">
+        <div className="flex animate-marquee-slow gap-8 sm:gap-12 whitespace-nowrap px-4">
           {[...partners, ...partners, ...partners].map((partner, index) => (
             <motion.div
               key={`${partner.name}-${index}`}
@@ -115,7 +84,7 @@ export default function TrustedBy() {
               // Removed the random float to keep it cleaner and aligned like the reference
               className="flex-shrink-0 group flex items-center justify-center"
             >
-              <div className="relative h-14 w-auto flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+              <div className="relative h-20 w-auto flex items-center justify-center transition-all duration-500">
                 <img
                   src={partner.logo}
                   alt={`${partner.name} logo`}
@@ -134,7 +103,7 @@ export default function TrustedBy() {
           100% { transform: translateX(-33.33%); }
         }
         .animate-marquee-slow {
-          animation: marquee-slow 40s linear infinite;
+          animation: marquee-slow 5s linear infinite;
         }
         .animate-marquee-slow:hover {
           animation-play-state: paused;
