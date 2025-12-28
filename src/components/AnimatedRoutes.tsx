@@ -31,6 +31,9 @@ import ManageMicrosoft365 from '@/pages/solutions/ManageMicrosoft365';
 import ComputeStorage from '@/pages/solutions/ComputeStorage';
 import Infrastructure from '@/pages/solutions/Infrastructure';
 import News from '@/pages/News';
+import Careers from '@/pages/Careers';
+import JobApplication from '@/pages/JobApplication';
+import InternshipApplication from '@/pages/InternshipApplication';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -66,11 +69,15 @@ const AnimatedRoutes = () => {
         <Route path="/partners/:slug" element={<PageTransition><Partners /></PageTransition>} />
         <Route path="/company" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/company/about" element={<PageTransition><Company /></PageTransition>} />
-        <Route path="/company/careers" element={<PageTransition><Company /></PageTransition>} />
-        <Route path="/careers" element={<PageTransition><Company /></PageTransition>} />
+        <Route path="/company/careers" element={<PageTransition><Careers /></PageTransition>} />
+        <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
         <Route path="/company/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/company/news" element={<PageTransition><Company /></PageTransition>} />
         <Route path="/news" element={<PageTransition><News /></PageTransition>} />
+        <Route path="/apply" element={<PageTransition><JobApplication /></PageTransition>} />
+        <Route path="/job-application" element={<PageTransition><JobApplication /></PageTransition>} />
+        <Route path="/apply-internship" element={<PageTransition><InternshipApplication /></PageTransition>} />
+        <Route path="/internship-application" element={<PageTransition><InternshipApplication /></PageTransition>} />
         <Route path="/demo" element={<PageTransition><Demo /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/use-cases" element={<PageTransition><Solutions /></PageTransition>} />
