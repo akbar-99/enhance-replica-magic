@@ -123,8 +123,8 @@ const BlogSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 pb-2">
-            Latest news & updates     <br />
-             for your business.
+            Latest news & updates for your business.      <br />
+             ​  
           </h2>
           <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-1xl mx-auto">
             Technology moves fast—we help you keep up. Explore our latest articles to find simple explanations for
