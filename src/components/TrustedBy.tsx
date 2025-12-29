@@ -10,14 +10,22 @@ import logitechLogo from "@/assets/partners/logitech-partner.png";
 import silverPartnerLogo from "@/assets/partners/silver-partner.png";
 import microsoftLogo from "@/assets/partners/microsoft-partner.png";
 
-const partners = [
+// Row 1
+const partnersRow1 = [
   { name: "Silver Partner", logo: silverPartnerLogo },
   { name: "AvePoint", logo: avepointLogo },
   { name: "Fortinet", logo: fortinetLogo },
   { name: "Logitech", logo: logitechLogo },
   { name: "Microsoft", logo: microsoftLogo },
+];
+
+// Row 2
+const partnersRow2 = [
   { name: "Bitdefender", logo: bitdefenderLogo },
   { name: "Lenovo", logo: lenovoLogo },
+  { name: "Silver Partner 2", logo: silverPartnerLogo },
+  { name: "AvePoint 2", logo: avepointLogo },
+  { name: "Fortinet 2", logo: fortinetLogo },
 ];
 
 export default function TrustedBy() {
@@ -72,10 +80,10 @@ export default function TrustedBy() {
 
       {/* Dark background container for cards */}
       <div className="bg-gradient-to-b from-slate-800 to-slate-900 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Partner Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-            {partners.map((partner, index) => (
+        <div className="max-w-7xl mx-auto space-y-6">
+          {/* Row 1 - 5 cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
+            {partnersRow1.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -85,11 +93,34 @@ export default function TrustedBy() {
                 whileHover={{ y: -4, scale: 1.02 }}
                 className="group"
               >
-                <div className="bg-white rounded-2xl p-6 h-32 md:h-40 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-2xl p-8 h-44 md:h-52 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-h-20 md:max-h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-28 md:max-h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Row 2 - 5 cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
+            {partnersRow2.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="group"
+              >
+                <div className="bg-white rounded-2xl p-8 h-44 md:h-52 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-h-28 md:max-h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </motion.div>
