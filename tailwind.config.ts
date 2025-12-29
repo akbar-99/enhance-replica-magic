@@ -114,6 +114,10 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        "shine": {
+          "0%": { transform: "translateX(-100%) skewX(-12deg)" },
+          "100%": { transform: "translateX(200%) skewX(-12deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
