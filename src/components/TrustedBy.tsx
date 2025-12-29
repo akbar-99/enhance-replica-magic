@@ -104,7 +104,7 @@ export default function TrustedBy() {
             ))}
           </div>
           
-          {/* Row 2 - 5 cards */}
+          {/* Row 2 - 5 cards (half height) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
             {partnersRow2.map((partner, index) => (
               <motion.div
@@ -116,11 +116,11 @@ export default function TrustedBy() {
                 whileHover={{ y: -4, scale: 1.02 }}
                 className="group"
               >
-                <div className="bg-white rounded-2xl p-8 h-44 md:h-52 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-2xl p-4 h-22 md:h-26 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-h-28 md:max-h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-14 md:max-h-18 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </motion.div>
