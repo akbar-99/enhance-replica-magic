@@ -9,7 +9,6 @@ import lenovoLogo from "@/assets/partners/lenovo-authorized.jpg";
 import logitechLogo from "@/assets/partners/logitech-partner.png";
 import silverPartnerLogo from "@/assets/partners/silver-partner.png";
 import microsoftLogo from "@/assets/partners/microsoft-partner.png";
-import dellLogo from "@/assets/partners/dell-authorized-partner.jpg";
 
 // Row 1
 const partnersRow1 = [
@@ -17,14 +16,14 @@ const partnersRow1 = [
   { name: "AvePoint", logo: avepointLogo },
   { name: "Fortinet", logo: fortinetLogo },
   { name: "Logitech", logo: logitechLogo },
-  { name: "Dell", logo: dellLogo },
+  { name: "Microsoft", logo: microsoftLogo },
 ];
 
 // Row 2
 const partnersRow2 = [
   { name: "Bitdefender", logo: bitdefenderLogo },
   { name: "Lenovo", logo: lenovoLogo },
-  { name: "Microsoft", logo: microsoftLogo },
+  { name: "Silver Partner 2", logo: silverPartnerLogo },
   { name: "AvePoint 2", logo: avepointLogo },
   { name: "Fortinet 2", logo: fortinetLogo },
 ];
