@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
@@ -12,13 +11,13 @@ import silverPartnerLogo from "@/assets/partners/silver-partner.png";
 import microsoftLogo from "@/assets/partners/microsoft-partner.png";
 
 const partners = [
-  { name: "AvePoint", logo: avepointLogo },
-  { name: "Bitdefender", logo: bitdefenderLogo },
-  { name: "Fortinet", logo: fortinetLogo },
-  { name: "Lenovo", logo: lenovoLogo },
-  { name: "Logitech", logo: logitechLogo },
   { name: "Silver Partner", logo: silverPartnerLogo },
+  { name: "AvePoint", logo: avepointLogo },
+  { name: "Fortinet", logo: fortinetLogo },
+  { name: "Logitech", logo: logitechLogo },
   { name: "Microsoft", logo: microsoftLogo },
+  { name: "Bitdefender", logo: bitdefenderLogo },
+  { name: "Lenovo", logo: lenovoLogo },
 ];
 
 export default function TrustedBy() {
@@ -51,7 +50,7 @@ export default function TrustedBy() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +61,7 @@ export default function TrustedBy() {
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             <span className="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em]">Our Global Ecosystem</span>
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500 leading-tight">
             Trusted by global industry leaders.
           </h2>
           <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium opacity-80">
@@ -71,41 +70,33 @@ export default function TrustedBy() {
         </motion.div>
       </div>
 
-      {/* Unified Single Scrolling Row */}
-      <div className="relative flex overflow-hidden py-10 select-none">
-        <div className="flex animate-marquee-slow gap-8 sm:gap-12 whitespace-nowrap px-4">
-          {[...partners, ...partners, ...partners].map((partner, index) => (
-            <motion.div
-              key={`${partner.name}-${index}`}
-              initial={{ y: 0 }}
-              // Removed the random float to keep it cleaner and aligned like the reference
-              className="flex-shrink-0 group flex items-center justify-center"
-            >
-              <div className="relative h-20 w-auto flex items-center justify-center transition-all duration-500">
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-            </motion.div>
-          ))}
+      {/* Dark background container for cards */}
+      <div className="bg-gradient-to-b from-slate-800 to-slate-900 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Partner Cards Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="group"
+              >
+                <div className="bg-white rounded-2xl p-6 h-32 md:h-40 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-h-20 md:max-h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
-
-
-      <style>{`
-        @keyframes marquee-slow {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
-        }
-        .animate-marquee-slow {
-          animation: marquee-slow 5s linear infinite;
-        }
-        .animate-marquee-slow:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
