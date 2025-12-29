@@ -34,6 +34,7 @@ import News from '@/pages/News';
 import Careers from '@/pages/Careers';
 import JobApplication from '@/pages/JobApplication';
 import InternshipApplication from '@/pages/InternshipApplication';
+import JobOpeningApplication from '@/pages/JobOpeningApplication';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -76,6 +77,7 @@ const AnimatedRoutes = () => {
         <Route path="/news" element={<PageTransition><News /></PageTransition>} />
         <Route path="/apply" element={<PageTransition><JobApplication /></PageTransition>} />
         <Route path="/job-application" element={<PageTransition><JobApplication /></PageTransition>} />
+        <Route path="/apply-job" element={<PageTransition><JobOpeningApplication /></PageTransition>} />
         <Route path="/apply-internship" element={<PageTransition><InternshipApplication /></PageTransition>} />
         <Route path="/internship-application" element={<PageTransition><InternshipApplication /></PageTransition>} />
         <Route path="/demo" element={<PageTransition><Demo /></PageTransition>} />

@@ -299,7 +299,7 @@ export default function Careers() {
                                             <p className="text-slate-600 leading-relaxed text-lg">{job.summary}</p>
                                         </div>
                                         <div className="flex items-center gap-4 lg:flex-col lg:items-end">
-                                            <Link to="/apply">
+                                            <Link to="/apply-job">
                                                 <Button
                                                     size="lg"
                                                     className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-6 rounded-xl shadow-lg"

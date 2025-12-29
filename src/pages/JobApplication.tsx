@@ -104,7 +104,7 @@ export default function JobApplication() {
                 phone: formData.phone,
                 city: formData.location,
                 linkedin_url: formData.linkedinUrl,
-                application_type: formData.position.toLowerCase().includes("intern") ? "Internship" : "Job",
+                application_type: "Internship",
                 position_applied: formData.position,
                 university: formData.university,
                 degree: formData.degree,
@@ -172,7 +172,7 @@ export default function JobApplication() {
         }
     };
 
-    const isInternship = formData.position.toLowerCase().includes("intern");
+    const isInternship = true;
 
     return (
         <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -207,7 +207,7 @@ export default function JobApplication() {
                             className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 mb-6"
                         >
                             Apply for Your{" "}
-                            {isInternship ? "Internship" : "Dream Role"}
+                            Internship Application
                         </motion.h1>
 
                         <motion.p
@@ -341,7 +341,7 @@ export default function JobApplication() {
                                     </div>
                                     <div>
                                         <h2 className="text-2xl font-bold text-slate-900">
-                                            {isInternship ? "Internship" : "Position"} Details
+                                            Internship Details
                                         </h2>
                                         <p className="text-sm text-slate-600">Which role interests you?</p>
                                     </div>
@@ -349,7 +349,7 @@ export default function JobApplication() {
 
                                 <div>
                                     <Label htmlFor="position" className="text-slate-700 font-medium">
-                                        {isInternship ? "Internship Area" : "Position Applied For"}{" "}
+                                        Internship Area{" "}
                                         <span className="text-red-500">*</span>
                                     </Label>
                                     <Select
@@ -361,10 +361,6 @@ export default function JobApplication() {
                                             <SelectValue placeholder="Select a position" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="Lead Generation Specialist">
-                                                Lead Generation Specialist
-                                            </SelectItem>
-                                            <SelectItem value="Sales Coordinator">Sales Coordinator</SelectItem>
                                             <SelectItem value="IT Infrastructure Intern">
                                                 IT Infrastructure Intern
                                             </SelectItem>
@@ -378,7 +374,6 @@ export default function JobApplication() {
                                                 Sales & Marketing Intern
                                             </SelectItem>
                                             <SelectItem value="General Intern">General Intern</SelectItem>
-                                            <SelectItem value="Other">Other Position</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
