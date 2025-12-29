@@ -239,7 +239,7 @@ export default function Navbar() {
                     delay: index * 0.05, // Stagger
                     ease: "easeInOut"
                   }}
-                  className="font-bold text-2xl tracking-tight glow-text transition-colors duration-300 font-league-spartan"
+                  className="font-bold text-2xl tracking-tight glow-text transition-colors duration-300"
                 >
                   {letter}
                 </motion.span>
@@ -259,7 +259,7 @@ export default function Navbar() {
                     delay: 0.8 + (index * 0.05), // Shifted stagger for "Tech"
                     ease: "easeInOut"
                   }}
-                  className="font-bold text-2xl tracking-tight glow-text transition-colors duration-300 font-league-spartan"
+                  className="font-bold text-2xl tracking-tight glow-text transition-colors duration-300"
                 >
                   {letter}
                 </motion.span>

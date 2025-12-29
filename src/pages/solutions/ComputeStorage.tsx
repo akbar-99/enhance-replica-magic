@@ -461,8 +461,8 @@ const ComputeStorage = () => {
             {/* What's Included Section */}
             <section className="py-16 md:py-20 bg-[#050b1d]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center justify-center min-h-[600px]">
-                        <div className="lg:w-1/3 flex flex-col justify-center">
+                    <div className="flex flex-col lg:flex-row gap-16 items-center">
+                        <div className="lg:w-1/3">
                             <motion.div {...fadeIn}>
                                 <h2 className="text-4xl font-extrabold mb-6 leading-tight">A Complete Solutions Portfolio</h2>
                                 <p className="text-slate-400 mb-8">We provide everything from edge compute nodes to high-density storage arrays.</p>
@@ -487,30 +487,25 @@ const ComputeStorage = () => {
                         </div>
                         <div className="lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-6">
                             {[
-                                { img: "/lovable-uploads/fortinet-partner-v2.png", title: "Fortinet" },
-                                { img: "/lovable-uploads/avepoint-partner-v2.png", title: "AvePoint" },
-                                { img: "/lovable-uploads/logitech-partner-v2.png", title: "Logitech" },
-                                { img: "/lovable-uploads/dell-partner-v2.jpg", title: "Dell Technologies" },
-                                { img: "/lovable-uploads/bitdefender-partner-v2.png", title: "Bitdefender" },
-                                { img: "/lovable-uploads/lenovo-partner-v2.jpg", title: "Lenovo" },
-                                { img: "/lovable-uploads/synology-partner-v2.jpg", title: "Synology" },
-                                { img: "/lovable-uploads/qnap-partner-new.jpg", title: "QNAP" },
-                                { img: "/lovable-uploads/silver-partner.png", title: "Silver Partner" }
+                                { icon: Server, title: "Compute" },
+                                { icon: HardDrive, title: "Storage" },
+                                { icon: Database, title: "Database" },
+                                { icon: Cloud, title: "Virtualize" },
+                                { icon: ShieldCheck, title: "Protect" },
+                                { icon: Activity, title: "Monitor" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
                                     {...fadeIn}
                                     transition={{ delay: i * 0.1 }}
-                                    className={`rounded-2xl bg-white p-4 flex flex-col items-center justify-center gap-4 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all cursor-default group overflow-hidden ${['Dell Technologies', 'Bitdefender', 'Lenovo'].includes(item.title)
-                                        ? 'aspect-[1.8/1]'
-                                        : 'aspect-square'
-                                        }`}
+                                    className="aspect-square rounded-3xl bg-slate-900 border border-white/5 flex flex-col items-center justify-center gap-4 hover:border-indigo-500/30 hover:bg-slate-800/50 transition-all cursor-default group"
                                 >
-                                    <img
-                                        src={item.img}
-                                        alt={item.title}
-                                        className="w-[85%] h-[85%] object-contain group-hover:scale-105 transition-transform duration-500"
-                                    />
+                                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <item.icon className="w-6 h-6 text-indigo-400" />
+                                    </div>
+                                    <span className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
+                                        {item.title}
+                                    </span>
                                 </motion.div>
                             ))}
                         </div>
