@@ -32,7 +32,7 @@ export default function JobApplication() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [formData, setFormData] = useState({
-        applicationType: "",
+
         fullName: "",
         email: "",
         phone: "",
@@ -85,7 +85,7 @@ export default function JobApplication() {
                 !formData.fullName ||
                 !formData.email ||
                 !formData.phone ||
-                !formData.applicationType ||
+
                 !formData.position
             ) {
                 toast({
@@ -104,7 +104,7 @@ export default function JobApplication() {
                 phone: formData.phone,
                 city: formData.location,
                 linkedin_url: formData.linkedinUrl,
-                application_type: formData.applicationType,
+                application_type: formData.position.toLowerCase().includes("intern") ? "Internship" : "Job",
                 position_applied: formData.position,
                 university: formData.university,
                 degree: formData.degree,
@@ -136,7 +136,7 @@ export default function JobApplication() {
 
             // Reset form
             setFormData({
-                applicationType: "",
+
                 fullName: "",
                 email: "",
                 phone: "",
@@ -172,7 +172,7 @@ export default function JobApplication() {
         }
     };
 
-    const isInternship = formData.applicationType === "Internship";
+    const isInternship = formData.position.toLowerCase().includes("intern");
 
     return (
         <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -232,28 +232,7 @@ export default function JobApplication() {
                         className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12"
                     >
                         <form onSubmit={handleSubmit} className="space-y-10">
-                            {/* Application Type */}
-                            <div>
-                                <Label htmlFor="applicationType" className="text-slate-700 font-medium text-lg">
-                                    Application Type <span className="text-red-500">*</span>
-                                </Label>
-                                <p className="text-sm text-slate-500 mt-1 mb-3">
-                                    Are you applying for a job position or an internship?
-                                </p>
-                                <Select
-                                    value={formData.applicationType}
-                                    onValueChange={(value) => handleSelectChange("applicationType", value)}
-                                    required
-                                >
-                                    <SelectTrigger className="mt-2">
-                                        <SelectValue placeholder="Select application type" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="Job">Job Position</SelectItem>
-                                        <SelectItem value="Internship">Internship Program</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
+
 
                             {/* Personal Information */}
                             <div className="border-t border-slate-200 pt-10">
@@ -382,31 +361,24 @@ export default function JobApplication() {
                                             <SelectValue placeholder="Select a position" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            {isInternship ? (
-                                                <>
-                                                    <SelectItem value="IT Infrastructure Intern">
-                                                        IT Infrastructure Intern
-                                                    </SelectItem>
-                                                    <SelectItem value="Cybersecurity Intern">
-                                                        Cybersecurity Intern
-                                                    </SelectItem>
-                                                    <SelectItem value="Cloud Technologies Intern">
-                                                        Cloud Technologies Intern
-                                                    </SelectItem>
-                                                    <SelectItem value="Sales & Marketing Intern">
-                                                        Sales & Marketing Intern
-                                                    </SelectItem>
-                                                    <SelectItem value="General Intern">General Intern</SelectItem>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <SelectItem value="Lead Generation Specialist">
-                                                        Lead Generation Specialist
-                                                    </SelectItem>
-                                                    <SelectItem value="Sales Coordinator">Sales Coordinator</SelectItem>
-                                                    <SelectItem value="Other">Other Position</SelectItem>
-                                                </>
-                                            )}
+                                            <SelectItem value="Lead Generation Specialist">
+                                                Lead Generation Specialist
+                                            </SelectItem>
+                                            <SelectItem value="Sales Coordinator">Sales Coordinator</SelectItem>
+                                            <SelectItem value="IT Infrastructure Intern">
+                                                IT Infrastructure Intern
+                                            </SelectItem>
+                                            <SelectItem value="Cybersecurity Intern">
+                                                Cybersecurity Intern
+                                            </SelectItem>
+                                            <SelectItem value="Cloud Technologies Intern">
+                                                Cloud Technologies Intern
+                                            </SelectItem>
+                                            <SelectItem value="Sales & Marketing Intern">
+                                                Sales & Marketing Intern
+                                            </SelectItem>
+                                            <SelectItem value="General Intern">General Intern</SelectItem>
+                                            <SelectItem value="Other">Other Position</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
