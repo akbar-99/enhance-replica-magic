@@ -393,7 +393,7 @@ export default function Careers() {
                                                         Submit your application and let's start a conversation
                                                     </p>
                                                 </div>
-                                                <Link to="/apply">
+                                                <Link to="/apply-job">
                                                     <Button
                                                         size="lg"
                                                         className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-6 rounded-xl shadow-lg whitespace-nowrap"
