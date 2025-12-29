@@ -227,55 +227,7 @@ export default function Careers() {
                 </div>
             </section>
 
-            {/* Why Join Us */}
-            <section className="py-24 bg-gradient-to-b from-white to-slate-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
-                        >
-                            Why Choose{" "}
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600">
-                                Enhance Tech
-                            </span>
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-                        >
-                            We offer more than just a job – we provide a platform for growth, learning, and meaningful work
-                        </motion.p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {benefits.map((benefit, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group relative"
-                            >
-                                <div className="h-full p-8 bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300">
-                                    <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${benefit.color} rounded-xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                        <benefit.icon className="w-7 h-7 text-white" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                                    <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
 
             {/* Open Positions */}
@@ -592,6 +544,57 @@ export default function Careers() {
                                 </Link>
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Why Join Us */}
+            <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
+                        >
+                            Why Choose{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600">
+                                Enhance Tech
+                            </span>
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+                        >
+                            We offer more than just a job – we provide a platform for growth, learning, and meaningful work
+                        </motion.p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {benefits.map((benefit, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="group relative"
+                            >
+                                <div className="h-full p-8 bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300">
+                                    <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${benefit.color} rounded-xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                        <benefit.icon className="w-7 h-7 text-white" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
+                                    <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
