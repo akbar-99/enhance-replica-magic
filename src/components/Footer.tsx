@@ -96,7 +96,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-3 lg:col-span-1">
           <Link to="/" className="flex items-center gap-3 mb-6 group" onClick={handleLogoClick}>
             <img src={enhanceTechLogo} alt="Enhance Tech" className="h-14 w-auto transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)]" />
-            <span className="font-bold text-3xl tracking-tight glow-text group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)] transition-all duration-300">
+            <span className="font-bold text-3xl tracking-tight glow-text group-hover:drop-shadow-[0_0_12px_hsl(var(--glow-cyan)/0.6)] transition-all duration-300 font-league-spartan">
               Enhance Tech
             </span>
           </Link>

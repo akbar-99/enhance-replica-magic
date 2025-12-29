@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        'league-spartan': ['"League Spartan"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -99,11 +100,11 @@ export default {
           "100%": { backgroundPosition: "200% 0" },
         },
         "glow-pulse": {
-          "0%, 100%": { 
-            textShadow: "0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--accent) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)" 
+          "0%, 100%": {
+            textShadow: "0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--accent) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)"
           },
-          "50%": { 
-            textShadow: "0 0 30px hsl(var(--primary) / 0.9), 0 0 60px hsl(var(--accent) / 0.7), 0 0 90px hsl(var(--primary) / 0.4)" 
+          "50%": {
+            textShadow: "0 0 30px hsl(var(--primary) / 0.9), 0 0 60px hsl(var(--accent) / 0.7), 0 0 90px hsl(var(--primary) / 0.4)"
           },
         },
         "progress": {
