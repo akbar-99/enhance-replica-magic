@@ -20,16 +20,17 @@ import {
     Phone,
     MapPin,
     Briefcase,
-    Calendar,
-    DollarSign,
     Globe,
+    Upload,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function JobOpeningApplication() {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
     const [formData, setFormData] = useState({
         fullName: "",
@@ -38,9 +39,10 @@ export default function JobOpeningApplication() {
         location: "",
         linkedinUrl: "",
         yearsOfExperience: "",
-        expectedJoiningDate: "",
         visaStatus: "",
         expectedSalary: "",
+        referralSource: "",
+        resume: null as File | null,
     });
 
     const handleInputChange = (
@@ -60,6 +62,25 @@ export default function JobOpeningApplication() {
         }));
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            if (file.size > 2 * 1024 * 1024) {
+                toast({
+                    title: "File too large",
+                    description: "Please upload a resume smaller than 2MB",
+                    variant: "destructive",
+                });
+                e.target.value = ""; // Clear the input
+                return;
+            }
+            setFormData((prev) => ({
+                ...prev,
+                resume: file,
+            }));
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -71,11 +92,13 @@ export default function JobOpeningApplication() {
                 !formData.phone ||
                 !formData.location ||
                 !formData.linkedinUrl ||
-                !formData.yearsOfExperience
+                !formData.yearsOfExperience ||
+                !formData.resume ||
+                !turnstileToken
             ) {
                 toast({
                     title: "Required fields missing",
-                    description: "Please fill in all required fields",
+                    description: turnstileToken ? "Please upload your resume and fill in all required fields" : "Please complete the security check",
                     variant: "destructive",
                 });
                 setIsSubmitting(false);
@@ -90,12 +113,14 @@ export default function JobOpeningApplication() {
                 email: formData.email,
                 phone: formData.phone,
                 city: formData.location,
-                linkedin_url: formData.linkedinUrl,
+                state: formData.location,
+                hs_linkedin_url: formData.linkedinUrl,
                 application_type: "Job",
-                years_of_experience: formData.yearsOfExperience, // Ensure this property exists in HubSpot or use a custom one
-                start_date: formData.expectedJoiningDate,
-                visa_status: formData.visaStatus, // Ensure this property exists in HubSpot
-                salary_expectation: formData.expectedSalary, // Ensure this property exists in HubSpot
+                seniority: formData.yearsOfExperience,
+                visa_status: formData.visaStatus,
+                salary_expectation: formData.expectedSalary,
+                referral_source: formData.referralSource,
+                resume_filename: formData.resume?.name || "",
             };
 
             const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
@@ -116,15 +141,16 @@ export default function JobOpeningApplication() {
                 location: "",
                 linkedinUrl: "",
                 yearsOfExperience: "",
-                expectedJoiningDate: "",
                 visaStatus: "",
                 expectedSalary: "",
+                referralSource: "",
+                resume: null,
             });
-        } catch (error) {
+        } catch (error: any) {
             console.error("Form submission error:", error);
             toast({
                 title: "Submission failed",
-                description: "There was an error submitting your application. Please try again.",
+                description: error.message || "There was an error submitting your application. Please try again.",
                 variant: "destructive",
             });
         } finally {
@@ -289,7 +315,7 @@ export default function JobOpeningApplication() {
                                         />
                                     </div>
 
-                                    <div>
+                                    <div className="md:col-span-2">
                                         <Label htmlFor="yearsOfExperience" className="text-slate-700 font-medium">
                                             Years of Experience <span className="text-red-500">*</span>
                                         </Label>
@@ -309,23 +335,6 @@ export default function JobOpeningApplication() {
                                                 <SelectItem value="10+ years">10+ years</SelectItem>
                                             </SelectContent>
                                         </Select>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="expectedJoiningDate" className="text-slate-700 font-medium">
-                                            Expected Date of Joining
-                                        </Label>
-                                        <div className="relative mt-2">
-                                            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="expectedJoiningDate"
-                                                name="expectedJoiningDate"
-                                                type="date"
-                                                value={formData.expectedJoiningDate}
-                                                onChange={handleInputChange}
-                                                className="pl-10"
-                                            />
-                                        </div>
                                     </div>
 
                                     <div>
@@ -350,7 +359,7 @@ export default function JobOpeningApplication() {
                                             Expected Salary (in AED)
                                         </Label>
                                         <div className="relative mt-2">
-                                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">AED</span>
                                             <Input
                                                 id="expectedSalary"
                                                 name="expectedSalary"
@@ -363,6 +372,75 @@ export default function JobOpeningApplication() {
                                         </div>
                                     </div>
 
+                                    <div className="md:col-span-2">
+                                        <Label htmlFor="referralSource" className="text-slate-700 font-medium">
+                                            How did you hear about us? <span className="text-red-500">*</span>
+                                        </Label>
+                                        <Select
+                                            value={formData.referralSource}
+                                            onValueChange={(value) => handleSelectChange("referralSource", value)}
+                                            required
+                                        >
+                                            <SelectTrigger className="mt-2">
+                                                <SelectValue placeholder="Select an option" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="linkedin">LinkedIn</SelectItem>
+                                                <SelectItem value="indeed">Indeed</SelectItem>
+                                                <SelectItem value="glassdoor">Glassdoor</SelectItem>
+                                                <SelectItem value="website">Company Website</SelectItem>
+                                                <SelectItem value="referral">Friend / Referral</SelectItem>
+                                                <SelectItem value="other">Other</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                    <div className="md:col-span-2">
+                                        <Label htmlFor="resume" className="text-slate-700 font-medium">
+                                            Upload your Resume <span className="text-red-500">*</span>
+                                        </Label>
+                                        <div className="mt-2 flex items-center justify-center w-full">
+                                            <label
+                                                htmlFor="resume"
+                                                className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-300 rounded-xl cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors"
+                                            >
+                                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                                    <Upload className="w-8 h-8 text-slate-400 mb-2" />
+                                                    <p className="text-sm text-slate-600">
+                                                        <span className="font-semibold">Click to upload</span> or drag and drop
+                                                    </p>
+                                                    <p className="text-xs text-slate-500 mt-1">
+                                                        PDF, DOC, DOCX (Max 2MB)
+                                                    </p>
+                                                    {formData.resume && (
+                                                        <p className="text-sm text-blue-600 font-medium mt-2 flex items-center gap-1">
+                                                            <FileText className="w-4 h-4" />
+                                                            {formData.resume.name}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                                <input
+                                                    id="resume"
+                                                    name="resume"
+                                                    type="file"
+                                                    className="hidden"
+                                                    onChange={handleFileChange}
+                                                    accept=".pdf,.doc,.docx"
+                                                    required
+                                                />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="mt-6 flex justify-center">
+                                    <Turnstile
+                                        siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                                        onSuccess={(token) => setTurnstileToken(token)}
+                                        onExpire={() => setTurnstileToken(null)}
+                                        onError={() => setTurnstileToken(null)}
+                                    />
                                 </div>
                             </div>
 
@@ -399,6 +477,6 @@ export default function JobOpeningApplication() {
                     </motion.div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 }

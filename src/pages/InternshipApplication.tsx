@@ -148,12 +148,12 @@ export default function InternshipApplication() {
                 email: formData.email,
                 phone: formData.phone,
                 city: formData.location,
-                linkedin_url: formData.linkedinUrl,
+                hs_linkedin_url: formData.linkedinUrl,
                 application_type: "Internship",
                 internship_area: formData.internshipArea,
                 university: formData.university,
                 degree: formData.degree,
-                field_of_study: formData.fieldOfStudy,
+                major: formData.fieldOfStudy,
                 current_year: formData.currentYear,
                 graduation_year: formData.graduationYear,
                 gpa: formData.gpa,
@@ -166,8 +166,8 @@ export default function InternshipApplication() {
                 availability: formData.availability,
                 why_join_enhance_tech: formData.whyJoin,
                 career_goals: formData.careerGoals,
-                how_did_you_hear_about_us: formData.hearAboutUs,
-                cv_filename: uploadedFile.name,
+                referral_source: formData.hearAboutUs,
+                resume_filename: uploadedFile.name,
             };
 
             const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
