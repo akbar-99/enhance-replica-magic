@@ -2,7 +2,6 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
     Select,
     SelectContent,
@@ -12,53 +11,31 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { submitToHubSpot } from "@/lib/hubspot";
-import {
-    FileText,
-    Loader2,
-    CheckCircle2,
-    User,
-    Mail,
-    Phone,
-    MapPin,
-    Briefcase,
-    GraduationCap,
-    Calendar,
-} from "lucide-react";
+import { Loader2, Upload } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 
 export default function JobApplication() {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const [formData, setFormData] = useState({
-
         fullName: "",
         email: "",
         phone: "",
+        countryCode: "+971",
         location: "",
         linkedinUrl: "",
-        position: "",
-        university: "",
-        degree: "",
-        fieldOfStudy: "",
-        graduationYear: "",
-        currentYear: "",
-        gpa: "",
-        relevantCourses: "",
-        technicalSkills: "",
-        softSkills: "",
-        projects: "",
-        internshipExperience: "",
-        extracurricular: "",
-        availability: "",
-        whyJoin: "",
+        yearsOfExperience: "",
+        visaStatus: "",
+        expectedSalary: "",
         hearAboutUs: "",
-        coverLetter: "",
+        resume: null as File | null,
     });
 
     const handleInputChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement>
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -74,7 +51,14 @@ export default function JobApplication() {
         }));
     };
 
-
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setFormData((prev) => ({
+                ...prev,
+                resume: e.target.files![0],
+            }));
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -85,8 +69,9 @@ export default function JobApplication() {
                 !formData.fullName ||
                 !formData.email ||
                 !formData.phone ||
-
-                !formData.position
+                !formData.location ||
+                !formData.linkedinUrl ||
+                !formData.yearsOfExperience
             ) {
                 toast({
                     title: "Required fields missing",
@@ -101,27 +86,14 @@ export default function JobApplication() {
                 firstname: formData.fullName.split(" ")[0],
                 lastname: formData.fullName.split(" ").slice(1).join(" ") || formData.fullName.split(" ")[0],
                 email: formData.email,
-                phone: formData.phone,
+                phone: `${formData.countryCode}${formData.phone}`,
                 city: formData.location,
                 linkedin_url: formData.linkedinUrl,
-                application_type: "Internship",
-                position_applied: formData.position,
-                university: formData.university,
-                degree: formData.degree,
-                field_of_study: formData.fieldOfStudy,
-                graduation_year: formData.graduationYear,
-                current_year: formData.currentYear,
-                gpa: formData.gpa,
-                relevant_courses: formData.relevantCourses,
-                technical_skills: formData.technicalSkills,
-                soft_skills: formData.softSkills,
-                projects: formData.projects,
-                internship_experience: formData.internshipExperience,
-                extracurricular: formData.extracurricular,
-                availability: formData.availability,
-                why_join_enhance_tech: formData.whyJoin,
+                years_of_experience: formData.yearsOfExperience,
+                visa_status: formData.visaStatus,
+                expected_salary: formData.expectedSalary,
                 how_did_you_hear_about_us: formData.hearAboutUs,
-                cover_letter: formData.coverLetter,
+                application_type: "Job",
             };
 
             const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
@@ -136,30 +108,21 @@ export default function JobApplication() {
 
             // Reset form
             setFormData({
-
                 fullName: "",
                 email: "",
                 phone: "",
+                countryCode: "+971",
                 location: "",
                 linkedinUrl: "",
-                position: "",
-                university: "",
-                degree: "",
-                fieldOfStudy: "",
-                graduationYear: "",
-                currentYear: "",
-                gpa: "",
-                relevantCourses: "",
-                technicalSkills: "",
-                softSkills: "",
-                projects: "",
-                internshipExperience: "",
-                extracurricular: "",
-                availability: "",
-                whyJoin: "",
+                yearsOfExperience: "",
+                visaStatus: "",
+                expectedSalary: "",
                 hearAboutUs: "",
-                coverLetter: "",
+                resume: null,
             });
+            if (fileInputRef.current) {
+                fileInputRef.current.value = "";
+            }
         } catch (error) {
             console.error("Form submission error:", error);
             toast({
@@ -172,514 +135,250 @@ export default function JobApplication() {
         }
     };
 
-    const isInternship = true;
-
     return (
-        <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <main className="min-h-screen bg-white">
             <SEO
-                title="Job & Internship Application | Apply Now - Enhance Tech"
-                description="Apply for job openings and internship positions at Enhance Tech. Submit your application with CV and let's start your career journey with us."
-                keywords="Job Application, Internship Application, Apply Now, Career, Enhance Tech, Submit CV, Resume"
-                canonicalUrl="https://itenhance.tech/apply"
+                title="Job Application | Apply Now - Enhance Tech"
+                description="Apply for job openings at Enhance Tech. Submit your application with CV and let's start your career journey with us."
+                keywords="Job Application, Apply Now, Career, Enhance Tech, Submit CV, Resume"
+                canonicalUrl="https://itenhance.tech/apply-job"
             />
 
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50" />
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-100 to-blue-100 border border-cyan-300/50 rounded-full text-cyan-700 text-sm font-medium mb-6"
-                        >
-                            <FileText className="w-4 h-4" />
-                            Application Form
-                        </motion.div>
-
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 mb-6"
-                        >
-                            Apply for Your{" "}
-                            Internship Application
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="text-lg text-slate-600 max-w-2xl mx-auto"
-                        >
-                            Complete the form below to submit your application. We're excited to learn more about you!
-                        </motion.p>
-                    </div>
-                </div>
-            </section>
-
             {/* Application Form */}
-            <section className="pb-24">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-16">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                        className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12"
+                        transition={{ duration: 0.6 }}
+                        className="bg-white"
                     >
-                        <form onSubmit={handleSubmit} className="space-y-10">
+                        <div className="mb-8">
+                            <h1 className="text-4xl font-bold text-slate-800 mb-4">Careers: Job Position</h1>
+                            <p className="text-slate-600">
+                                Complete the form below to submit your application. We're excited to learn more about you!
+                            </p>
+                        </div>
 
-
-                            {/* Personal Information */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                                        <User className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-slate-900">Personal Information</h2>
-                                        <p className="text-sm text-slate-600">Tell us about yourself</p>
-                                    </div>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Full Name and Email */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <Label htmlFor="fullName" className="text-slate-700 font-normal text-base">
+                                        Full Name<span className="text-red-500">*</span>
+                                    </Label>
+                                    <Input
+                                        id="fullName"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleInputChange}
+                                        className="mt-1 bg-gray-50 border-gray-300"
+                                        required
+                                    />
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <Label htmlFor="fullName" className="text-slate-700 font-medium">
-                                            Full Name <span className="text-red-500">*</span>
-                                        </Label>
-                                        <Input
-                                            id="fullName"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleInputChange}
-                                            placeholder="John Doe"
-                                            className="mt-2"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="email" className="text-slate-700 font-medium">
-                                            Email Address <span className="text-red-500">*</span>
-                                        </Label>
-                                        <div className="relative mt-2">
-                                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="email"
-                                                name="email"
-                                                type="email"
-                                                value={formData.email}
-                                                onChange={handleInputChange}
-                                                placeholder="john@example.com"
-                                                className="pl-10"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="phone" className="text-slate-700 font-medium">
-                                            Phone Number <span className="text-red-500">*</span>
-                                        </Label>
-                                        <div className="relative mt-2">
-                                            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="phone"
-                                                name="phone"
-                                                type="tel"
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                placeholder="+971 XX XXX XXXX"
-                                                className="pl-10"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="location" className="text-slate-700 font-medium">
-                                            Current Location/City
-                                        </Label>
-                                        <div className="relative mt-2">
-                                            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="location"
-                                                name="location"
-                                                value={formData.location}
-                                                onChange={handleInputChange}
-                                                placeholder="Dubai, UAE"
-                                                className="pl-10"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="md:col-span-2">
-                                        <Label htmlFor="linkedinUrl" className="text-slate-700 font-medium">
-                                            LinkedIn Profile URL
-                                        </Label>
-                                        <Input
-                                            id="linkedinUrl"
-                                            name="linkedinUrl"
-                                            value={formData.linkedinUrl}
-                                            onChange={handleInputChange}
-                                            placeholder="https://linkedin.com/in/yourprofile"
-                                            className="mt-2"
-                                        />
-                                    </div>
+                                <div>
+                                    <Label htmlFor="email" className="text-slate-700 font-normal text-base">
+                                        Email<span className="text-red-500">*</span>
+                                    </Label>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        className="mt-1 bg-gray-50 border-gray-300"
+                                        required
+                                    />
                                 </div>
                             </div>
 
-                            {/* Position */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                                        <Briefcase className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-slate-900">
-                                            Internship Details
-                                        </h2>
-                                        <p className="text-sm text-slate-600">Which role interests you?</p>
+                            {/* Phone Number and Location */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <Label htmlFor="phone" className="text-slate-700 font-normal text-base">
+                                        Phone Number<span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="flex gap-2 mt-1">
+                                        <Select
+                                            value={formData.countryCode}
+                                            onValueChange={(value) => handleSelectChange("countryCode", value)}
+                                        >
+                                            <SelectTrigger className="w-24 bg-gray-50 border-gray-300">
+                                                <SelectValue />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="+971">🇦🇪 +971</SelectItem>
+                                                <SelectItem value="+1">🇺🇸 +1</SelectItem>
+                                                <SelectItem value="+44">🇬🇧 +44</SelectItem>
+                                                <SelectItem value="+91">🇮🇳 +91</SelectItem>
+                                                <SelectItem value="+92">🇵🇰 +92</SelectItem>
+                                                <SelectItem value="+20">🇪🇬 +20</SelectItem>
+                                                <SelectItem value="+966">🇸🇦 +966</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <Input
+                                            id="phone"
+                                            name="phone"
+                                            type="tel"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            className="flex-1 bg-gray-50 border-gray-300"
+                                            required
+                                        />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <Label htmlFor="position" className="text-slate-700 font-medium">
-                                        Internship Area{" "}
-                                        <span className="text-red-500">*</span>
+                                    <Label htmlFor="location" className="text-slate-700 font-normal text-base">
+                                        Current Location/City<span className="text-red-500">*</span>
+                                    </Label>
+                                    <Input
+                                        id="location"
+                                        name="location"
+                                        value={formData.location}
+                                        onChange={handleInputChange}
+                                        className="mt-1 bg-gray-50 border-gray-300"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            {/* LinkedIn Profile URL */}
+                            <div>
+                                <Label htmlFor="linkedinUrl" className="text-slate-700 font-normal text-base">
+                                    LinkedIn Profile URL<span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="linkedinUrl"
+                                    name="linkedinUrl"
+                                    value={formData.linkedinUrl}
+                                    onChange={handleInputChange}
+                                    className="mt-1 bg-gray-50 border-gray-300"
+                                    required
+                                />
+                            </div>
+
+                            {/* Years of Experience */}
+                            <div>
+                                <Label htmlFor="yearsOfExperience" className="text-slate-700 font-normal text-base">
+                                    Years of Experience<span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="yearsOfExperience"
+                                    name="yearsOfExperience"
+                                    value={formData.yearsOfExperience}
+                                    onChange={handleInputChange}
+                                    className="mt-1 bg-gray-50 border-gray-300"
+                                    required
+                                />
+                            </div>
+
+                            {/* Visa Status and Expected Salary */}
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <Label htmlFor="visaStatus" className="text-slate-700 font-normal text-base">
+                                        Visa Status
                                     </Label>
                                     <Select
-                                        value={formData.position}
-                                        onValueChange={(value) => handleSelectChange("position", value)}
-                                        required
+                                        value={formData.visaStatus}
+                                        onValueChange={(value) => handleSelectChange("visaStatus", value)}
                                     >
-                                        <SelectTrigger className="mt-2">
-                                            <SelectValue placeholder="Select a position" />
+                                        <SelectTrigger className="mt-1 bg-gray-50 border-gray-300">
+                                            <SelectValue />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="IT Infrastructure Intern">
-                                                IT Infrastructure Intern
-                                            </SelectItem>
-                                            <SelectItem value="Cybersecurity Intern">
-                                                Cybersecurity Intern
-                                            </SelectItem>
-                                            <SelectItem value="Cloud Technologies Intern">
-                                                Cloud Technologies Intern
-                                            </SelectItem>
-                                            <SelectItem value="Sales & Marketing Intern">
-                                                Sales & Marketing Intern
-                                            </SelectItem>
-                                            <SelectItem value="General Intern">General Intern</SelectItem>
+                                            <SelectItem value="Resident Visa">Resident Visa</SelectItem>
+                                            <SelectItem value="Work Visa">Work Visa</SelectItem>
+                                            <SelectItem value="Visit Visa">Visit Visa</SelectItem>
+                                            <SelectItem value="Citizen">Citizen</SelectItem>
+                                            <SelectItem value="Other">Other</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
-                            </div>
 
-                            {/* Education */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-                                        <GraduationCap className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-slate-900">Education</h2>
-                                        <p className="text-sm text-slate-600">Your academic background</p>
-                                    </div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="md:col-span-2">
-                                        <Label htmlFor="university" className="text-slate-700 font-medium">
-                                            University/College Name
-                                        </Label>
-                                        <Input
-                                            id="university"
-                                            name="university"
-                                            value={formData.university}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., Dubai University"
-                                            className="mt-2"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="degree" className="text-slate-700 font-medium">
-                                            Degree
-                                        </Label>
-                                        <Input
-                                            id="degree"
-                                            name="degree"
-                                            value={formData.degree}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., Bachelor's, Master's"
-                                            className="mt-2"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="fieldOfStudy" className="text-slate-700 font-medium">
-                                            Field of Study/Major
-                                        </Label>
-                                        <Input
-                                            id="fieldOfStudy"
-                                            name="fieldOfStudy"
-                                            value={formData.fieldOfStudy}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., Computer Science, IT"
-                                            className="mt-2"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="currentYear" className="text-slate-700 font-medium">
-                                            Current Year/Level
-                                        </Label>
-                                        <Select
-                                            value={formData.currentYear}
-                                            onValueChange={(value) => handleSelectChange("currentYear", value)}
-                                        >
-                                            <SelectTrigger className="mt-2">
-                                                <SelectValue placeholder="Select year" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="1st Year">1st Year</SelectItem>
-                                                <SelectItem value="2nd Year">2nd Year</SelectItem>
-                                                <SelectItem value="3rd Year">3rd Year</SelectItem>
-                                                <SelectItem value="4th Year">4th Year</SelectItem>
-                                                <SelectItem value="Graduate">Graduate</SelectItem>
-                                                <SelectItem value="Postgraduate">Postgraduate</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="graduationYear" className="text-slate-700 font-medium">
-                                            Expected Graduation Year
-                                        </Label>
-                                        <div className="relative mt-2">
-                                            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="graduationYear"
-                                                name="graduationYear"
-                                                value={formData.graduationYear}
-                                                onChange={handleInputChange}
-                                                placeholder="2025"
-                                                className="pl-10"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="gpa" className="text-slate-700 font-medium">
-                                            GPA/Grade (Optional)
-                                        </Label>
-                                        <Input
-                                            id="gpa"
-                                            name="gpa"
-                                            value={formData.gpa}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., 3.5/4.0 or 85%"
-                                            className="mt-2"
-                                        />
-                                    </div>
-
-                                    <div className="md:col-span-2">
-                                        <Label htmlFor="relevantCourses" className="text-slate-700 font-medium">
-                                            Relevant Courses (Optional)
-                                        </Label>
-                                        <Textarea
-                                            id="relevantCourses"
-                                            name="relevantCourses"
-                                            value={formData.relevantCourses}
-                                            onChange={handleInputChange}
-                                            placeholder="List relevant courses you've completed..."
-                                            className="mt-2"
-                                            rows={3}
-                                        />
-                                    </div>
+                                <div>
+                                    <Label htmlFor="expectedSalary" className="text-slate-700 font-normal text-base">
+                                        Expected Salary (in AED)
+                                    </Label>
+                                    <Input
+                                        id="expectedSalary"
+                                        name="expectedSalary"
+                                        value={formData.expectedSalary}
+                                        onChange={handleInputChange}
+                                        className="mt-1 bg-gray-50 border-gray-300"
+                                    />
                                 </div>
                             </div>
 
-                            {/* Skills & Experience */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Skills & Experience</h2>
+                            {/* How did you hear about us */}
+                            <div>
+                                <Label htmlFor="hearAboutUs" className="text-slate-700 font-normal text-base">
+                                    How did you hear about us?
+                                </Label>
+                                <Select
+                                    value={formData.hearAboutUs}
+                                    onValueChange={(value) => handleSelectChange("hearAboutUs", value)}
+                                >
+                                    <SelectTrigger className="mt-1 bg-gray-50 border-gray-300">
+                                        <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="LinkedIn">LinkedIn</SelectItem>
+                                        <SelectItem value="Job Board">Job Board</SelectItem>
+                                        <SelectItem value="Company Website">Company Website</SelectItem>
+                                        <SelectItem value="Referral">Referral</SelectItem>
+                                        <SelectItem value="Social Media">Social Media</SelectItem>
+                                        <SelectItem value="Other">Other</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
 
-                                <div className="space-y-6">
-                                    <div>
-                                        <Label htmlFor="technicalSkills" className="text-slate-700 font-medium">
-                                            Technical Skills
-                                        </Label>
-                                        <Textarea
-                                            id="technicalSkills"
-                                            name="technicalSkills"
-                                            value={formData.technicalSkills}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., Programming languages, tools, software..."
-                                            className="mt-2 min-h-[100px]"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="softSkills" className="text-slate-700 font-medium">
-                                            Soft Skills & Languages
-                                        </Label>
-                                        <Textarea
-                                            id="softSkills"
-                                            name="softSkills"
-                                            value={formData.softSkills}
-                                            onChange={handleInputChange}
-                                            placeholder="e.g., Communication, teamwork, languages spoken..."
-                                            className="mt-2"
-                                            rows={3}
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="projects" className="text-slate-700 font-medium">
-                                            Academic/Personal Projects (Optional)
-                                        </Label>
-                                        <Textarea
-                                            id="projects"
-                                            name="projects"
-                                            value={formData.projects}
-                                            onChange={handleInputChange}
-                                            placeholder="Describe any relevant projects you've worked on..."
-                                            className="mt-2 min-h-[100px]"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="internshipExperience" className="text-slate-700 font-medium">
-                                            Previous Internship/Work Experience (Optional)
-                                        </Label>
-                                        <Textarea
-                                            id="internshipExperience"
-                                            name="internshipExperience"
-                                            value={formData.internshipExperience}
-                                            onChange={handleInputChange}
-                                            placeholder="Describe any previous internships or work experience..."
-                                            className="mt-2 min-h-[100px]"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="extracurricular" className="text-slate-700 font-medium">
-                                            Extracurricular Activities (Optional)
-                                        </Label>
-                                        <Textarea
-                                            id="extracurricular"
-                                            name="extracurricular"
-                                            value={formData.extracurricular}
-                                            onChange={handleInputChange}
-                                            placeholder="Clubs, volunteer work, leadership roles..."
-                                            className="mt-2"
-                                            rows={3}
-                                        />
-                                    </div>
-
-                                    {isInternship && (
-                                        <div>
-                                            <Label htmlFor="availability" className="text-slate-700 font-medium">
-                                                Availability
-                                            </Label>
-                                            <Select
-                                                value={formData.availability}
-                                                onValueChange={(value) => handleSelectChange("availability", value)}
-                                            >
-                                                <SelectTrigger className="mt-2">
-                                                    <SelectValue placeholder="When can you start?" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="Immediately">Immediately</SelectItem>
-                                                    <SelectItem value="Within 2 weeks">Within 2 weeks</SelectItem>
-                                                    <SelectItem value="Within 1 month">Within 1 month</SelectItem>
-                                                    <SelectItem value="After semester ends">After semester ends</SelectItem>
-                                                    <SelectItem value="Summer break">Summer break only</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-                                    )}
+                            {/* Upload Resume */}
+                            <div>
+                                <Label htmlFor="resume" className="text-slate-700 font-normal text-base">
+                                    Upload your Resume
+                                </Label>
+                                <div className="mt-1">
+                                    <input
+                                        ref={fileInputRef}
+                                        id="resume"
+                                        name="resume"
+                                        type="file"
+                                        accept=".pdf,.doc,.docx"
+                                        onChange={handleFileChange}
+                                        className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                                    />
                                 </div>
                             </div>
 
-
-
-                            {/* Additional Information */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Additional Information</h2>
-
-                                <div className="space-y-6">
-                                    <div>
-                                        <Label htmlFor="whyJoin" className="text-slate-700 font-medium">
-                                            Why do you want to join Enhance Tech?
-                                        </Label>
-                                        <Textarea
-                                            id="whyJoin"
-                                            name="whyJoin"
-                                            value={formData.whyJoin}
-                                            onChange={handleInputChange}
-                                            placeholder="Tell us what attracts you to this opportunity..."
-                                            className="mt-2 min-h-[120px]"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <Label htmlFor="hearAboutUs" className="text-slate-700 font-medium">
-                                            How did you hear about us?
-                                        </Label>
-                                        <Select
-                                            value={formData.hearAboutUs}
-                                            onValueChange={(value) => handleSelectChange("hearAboutUs", value)}
-                                        >
-                                            <SelectTrigger className="mt-2">
-                                                <SelectValue placeholder="Select an option" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="LinkedIn">LinkedIn</SelectItem>
-                                                <SelectItem value="Job Board">Job Board</SelectItem>
-                                                <SelectItem value="Company Website">Company Website</SelectItem>
-                                                <SelectItem value="University/College">University/College</SelectItem>
-                                                <SelectItem value="Referral">Referral</SelectItem>
-                                                <SelectItem value="Social Media">Social Media</SelectItem>
-                                                <SelectItem value="Other">Other</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
+                            {/* reCAPTCHA Placeholder */}
+                            <div className="flex items-center gap-2 p-4 bg-gray-100 border border-gray-300 rounded w-fit">
+                                <input type="checkbox" className="w-6 h-6" />
+                                <div>
+                                    <p className="text-sm font-medium text-slate-700">protected by reCAPTCHA</p>
+                                    <p className="text-xs text-slate-500">Privacy - Terms</p>
                                 </div>
                             </div>
 
                             {/* Submit Button */}
-                            <div className="border-t border-slate-200 pt-10">
-                                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl">
-                                    <div>
-                                        <p className="font-semibold text-slate-900 mb-1">Ready to submit?</p>
-                                        <p className="text-sm text-slate-600">
-                                            Make sure all required fields are filled before submitting
-                                        </p>
-                                    </div>
-                                    <Button
-                                        type="submit"
-                                        size="lg"
-                                        disabled={isSubmitting}
-                                        className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white shadow-lg whitespace-nowrap min-w-[180px]"
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                                                Submitting...
-                                            </>
-                                        ) : (
-                                            <>
-                                                <CheckCircle2 className="mr-2 h-5 w-5" />
-                                                Submit Application
-                                            </>
-                                        )}
-                                    </Button>
-                                </div>
+                            <div className="flex justify-end pt-4">
+                                <Button
+                                    type="submit"
+                                    size="lg"
+                                    disabled={isSubmitting}
+                                    className="bg-coral-500 hover:bg-coral-600 text-white px-12 py-6 text-base rounded shadow-lg"
+                                    style={{ backgroundColor: "#FF6B56" }}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                            Submitting...
+                                        </>
+                                    ) : (
+                                        "Submit"
+                                    )}
+                                </Button>
                             </div>
                         </form>
                     </motion.div>
