@@ -22,7 +22,6 @@ import {
 import { Link } from 'react-router-dom';
 import SEO, { createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
-import structuredCablingImg from '@/assets/structured-backbone-cabling.jpg';
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -359,7 +358,7 @@ const Infrastructure = () => {
                             </div>
                             <div className="lg:order-1 relative rounded-[40px] overflow-hidden shadow-2xl aspect-video lg:aspect-square group">
                                 <img
-                                    src={structuredCablingImg}
+                                    src="https://images.unsplash.com/photo-1551808195-2321035038c7?auto=format&fit=crop&q=80"
                                     alt="Legrand Structured Cabling"
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
