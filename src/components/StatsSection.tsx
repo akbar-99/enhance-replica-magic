@@ -15,7 +15,7 @@ const stats = [{
 export default function StatsSection() {
   return <section style={{
     backgroundImage: "url(\"/lovable-uploads/3b8ba20a-8b8c-4a2c-bdad-bc96de88f2f2.webp\")"
-  }} className="my-[2px] bg-cover bg-center bg-no-repeat py-[72px]">
+  }} className="my-[2px] bg-cover bg-center bg-no-repeat py-[69px]">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((stat, index) => <div key={stat.label} className="text-center" style={{
