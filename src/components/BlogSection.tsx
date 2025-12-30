@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-r
 import blogChar1 from "@/assets/blog/blog-character-1-new.png";
 import blogChar2 from "@/assets/blog/blog-character-2-new.jpg";
 import blogChar3 from "@/assets/blog/blog-character-3-new.jpg";
-import blogChar4 from "@/assets/blog/blog-character-4-new.jpg";
+import blogChar4 from "@/assets/blog/blog-character-cybersecurity.jpg";
 import blogChar5 from "@/assets/blog/blog-character-5-new.jpg";
 const blogPosts = [{
   id: 1,
