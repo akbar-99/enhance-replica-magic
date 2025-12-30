@@ -142,19 +142,19 @@ export default function TrustedBy() {
                 style={{ transformStyle: "preserve-3d" }}
                 className="group cursor-pointer"
               >
-                <div className="relative bg-white rounded-2xl p-8 h-44 md:h-52 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4),0_0_30px_rgba(59,130,246,0.3)] overflow-hidden">
-                  {/* Animated gradient border */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px]">
+                <div className="relative bg-white rounded-2xl p-8 h-44 md:h-52 flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1),0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 overflow-hidden hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4),0_0_30px_rgba(59,130,246,0.6)]">
+                  {/* Persistent gradient border */}
+                  <div className="absolute inset-0 rounded-2xl opacity-100 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px]">
                     <div className="w-full h-full bg-white rounded-2xl" />
                   </div>
 
-                  {/* Shine effect */}
+                  {/* Shine effect - kept on hover for interactivity */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden rounded-2xl">
                     <div className="absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shine_1.5s_ease-in-out]" />
                   </div>
 
-                  {/* Glow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+                  {/* Persistent Glow effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-xl opacity-20" />
 
                   <img
                     src={partner.logo}
@@ -197,19 +197,19 @@ export default function TrustedBy() {
                 style={{ transformStyle: "preserve-3d" }}
                 className="group cursor-pointer"
               >
-                <div className="relative bg-white rounded-2xl p-4 h-22 md:h-26 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.4),0_0_25px_rgba(59,130,246,0.25)] overflow-hidden">
-                  {/* Animated gradient border */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-500 p-[2px]">
+                <div className="relative bg-white rounded-2xl p-4 h-22 md:h-26 flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1),0_0_15px_rgba(168,85,247,0.4)] transition-all duration-500 overflow-hidden hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.4),0_0_25px_rgba(168,85,247,0.5)]">
+                  {/* Persistent gradient border */}
+                  <div className="absolute inset-0 rounded-2xl opacity-100 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-500 p-[2px]">
                     <div className="w-full h-full bg-white rounded-2xl" />
                   </div>
 
-                  {/* Shine effect */}
+                  {/* Shine effect - kept on hover for interactivity */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden rounded-2xl">
                     <div className="absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shine_1.5s_ease-in-out]" />
                   </div>
 
-                  {/* Glow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-15 transition-opacity duration-500" />
+                  {/* Persistent Glow effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl blur-xl opacity-20" />
 
                   <img
                     src={partner.logo}
