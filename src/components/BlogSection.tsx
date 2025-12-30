@@ -150,9 +150,9 @@ const BlogSection = () => {
             {blogPosts.map(post => <div key={post.id} className="flex-shrink-0" style={{
               width: visibleCards === 1 ? "100%" : `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 24 / visibleCards}px)`
             }}>
-              <div className="group cursor-pointer p-4 rounded-3xl border-2 bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border-slate-100">
+              <div className="group cursor-pointer p-4 rounded-3xl border-2 bg-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-500 border-primary/30 hover:border-primary/50">
                 {/* Card Image Container */}
-                <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] border border-slate-200 group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-lg">
+                <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-xl">
                   <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="w-full h-full object-contain bg-black transition-transform duration-700 group-hover:scale-105" />
                   {/* Hover overlay effect */}
 
