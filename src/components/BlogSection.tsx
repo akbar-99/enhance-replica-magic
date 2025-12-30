@@ -2,12 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-react";
 
 // Import 3D character images
-// Image paths for the new character images
-const blogChar1 = "/lovable-uploads/blog-character-1.webp";
-const blogChar2 = "/lovable-uploads/blog-character-2.webp";
-const blogChar3 = "/lovable-uploads/blog-character-3.webp";
-const blogChar4 = "/lovable-uploads/blog-character-4.webp";
-const blogChar5 = "/lovable-uploads/blog-character-1.webp"; // Reusing first one for consistency
+import blogChar1 from "@/assets/blog/blog-character-1-new.png";
+import blogChar2 from "@/assets/blog/blog-character-2-new.jpg";
+import blogChar3 from "@/assets/blog/blog-character-3-new.jpg";
+import blogChar4 from "@/assets/blog/blog-character-4-new.jpg";
+import blogChar5 from "@/assets/blog/blog-character-5-new.jpg";
 const blogPosts = [{
   id: 1,
   title: "Key Benefits Of Using Microsofts Hand Off Feature In Windows 11",
