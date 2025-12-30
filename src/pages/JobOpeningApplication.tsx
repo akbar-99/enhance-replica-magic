@@ -14,12 +14,17 @@ export default function JobOpeningApplication() {
         // Initialize the form once script is loaded
         script.onload = () => {
             if (window.hbspt) {
-                window.hbspt.forms.create({
-                    region: "eu1",
-                    portalId: "147485336",
-                    formId: "e1c5ee7b-5864-4ca6-9cde-c84ece76d863",
-                    target: "#hubspot-form-container"
-                });
+                const portalId = import.meta.env.VITE_HUBSPOT_PORTAL_ID;
+                const formId = import.meta.env.VITE_HUBSPOT_JOB_FORM_ID;
+
+                if (portalId && formId) {
+                    window.hbspt.forms.create({
+                        region: "eu1",
+                        portalId: portalId,
+                        formId: formId,
+                        target: "#hubspot-form-container"
+                    });
+                }
             }
         };
 
