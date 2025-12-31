@@ -10,7 +10,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { submitToHubSpot } from "@/lib/hubspot";
+import { submitToHubSpot, submitToPowerAutomate } from "@/lib/hubspot";
 import {
     FileText,
     Loader2,
@@ -127,6 +127,12 @@ export default function JobOpeningApplication() {
             const HUBSPOT_FORM_ID = import.meta.env.VITE_HUBSPOT_JOB_APPLICATION_FORM_ID || import.meta.env.VITE_HUBSPOT_FORM_ID;
 
             await submitToHubSpot(HUBSPOT_PORTAL_ID, HUBSPOT_FORM_ID, hubspotData);
+
+            // Optional: Send to Power Automate if configured (for file handling)
+            const POWER_AUTOMATE_URL = import.meta.env.VITE_POWER_AUTOMATE_URL;
+            if (POWER_AUTOMATE_URL && POWER_AUTOMATE_URL !== "your_power_automate_webhook_url_here") {
+                await submitToPowerAutomate(POWER_AUTOMATE_URL, hubspotData, formData.resume);
+            }
 
             toast({
                 title: "Application submitted successfully!",
@@ -342,15 +348,21 @@ export default function JobOpeningApplication() {
                                             Visa Status
                                         </Label>
                                         <div className="relative mt-2">
-                                            <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                            <Input
-                                                id="visaStatus"
-                                                name="visaStatus"
+                                            <Select
                                                 value={formData.visaStatus}
-                                                onChange={handleInputChange}
-                                                placeholder="e.g., Residence Visa, Visit Visa"
-                                                className="pl-10"
-                                            />
+                                                onValueChange={(value) => handleSelectChange("visaStatus", value)}
+                                            >
+                                                <SelectTrigger className="w-full bg-white pl-10">
+                                                    <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 z-10" />
+                                                    <SelectValue placeholder="Select Visa Status" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="Golden Visa">Golden Visa</SelectItem>
+                                                    <SelectItem value="Employment Visa">Employment Visa</SelectItem>
+                                                    <SelectItem value="Dependent Visa">Dependent Visa</SelectItem>
+                                                    <SelectItem value="Visit Visa">Visit Visa</SelectItem>
+                                                </SelectContent>
+                                            </Select>
                                         </div>
                                     </div>
 
@@ -385,12 +397,12 @@ export default function JobOpeningApplication() {
                                                 <SelectValue placeholder="Select an option" />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                <SelectItem value="linkedin">LinkedIn</SelectItem>
-                                                <SelectItem value="indeed">Indeed</SelectItem>
-                                                <SelectItem value="glassdoor">Glassdoor</SelectItem>
-                                                <SelectItem value="website">Company Website</SelectItem>
-                                                <SelectItem value="referral">Friend / Referral</SelectItem>
-                                                <SelectItem value="other">Other</SelectItem>
+                                                <SelectItem value="LinkedIn">LinkedIn</SelectItem>
+                                                <SelectItem value="Indeed">Indeed</SelectItem>
+                                                <SelectItem value="SEO">SEO</SelectItem>
+                                                <SelectItem value="Glassdoor">Glassdoor</SelectItem>
+                                                <SelectItem value="Friend/Referral">Friend/Referral</SelectItem>
+                                                <SelectItem value="Other">Other</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </div>

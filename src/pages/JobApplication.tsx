@@ -11,7 +11,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { submitToHubSpot } from "@/lib/hubspot";
+import { submitToHubSpot, submitToPowerAutomate } from "@/lib/hubspot";
 import {
     FileText,
     Loader2,
@@ -152,6 +152,12 @@ export default function JobApplication() {
             const HUBSPOT_FORM_ID = import.meta.env.VITE_HUBSPOT_INTERNSHIP_FORM_ID || import.meta.env.VITE_HUBSPOT_JOB_APPLICATION_FORM_ID || import.meta.env.VITE_HUBSPOT_FORM_ID;
 
             await submitToHubSpot(HUBSPOT_PORTAL_ID, HUBSPOT_FORM_ID, hubspotData);
+
+            // Optional: Send to Power Automate if configured (for file handling)
+            const POWER_AUTOMATE_URL = import.meta.env.VITE_POWER_AUTOMATE_URL;
+            if (POWER_AUTOMATE_URL && POWER_AUTOMATE_URL !== "your_power_automate_webhook_url_here") {
+                await submitToPowerAutomate(POWER_AUTOMATE_URL, hubspotData, formData.resume);
+            }
 
             toast({
                 title: "Application submitted successfully!",
@@ -318,12 +324,10 @@ export default function JobApplication() {
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem value="Residence Visa">Residence Visa</SelectItem>
-                                        <SelectItem value="Visit Visa">Visit Visa</SelectItem>
-                                        <SelectItem value="Student Visa">Student Visa</SelectItem>
-                                        <SelectItem value="Employment Visa">Employment Visa</SelectItem>
                                         <SelectItem value="Golden Visa">Golden Visa</SelectItem>
-                                        <SelectItem value="Other">Other</SelectItem>
+                                        <SelectItem value="Employment Visa">Employment Visa</SelectItem>
+                                        <SelectItem value="Dependent Visa">Dependent Visa</SelectItem>
+                                        <SelectItem value="Visit Visa">Visit Visa</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -462,10 +466,10 @@ export default function JobApplication() {
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value="LinkedIn">LinkedIn</SelectItem>
-                                        <SelectItem value="Job Board">Job Board</SelectItem>
-                                        <SelectItem value="Company Website">Company Website</SelectItem>
-                                        <SelectItem value="Referral">Referral</SelectItem>
-                                        <SelectItem value="Social Media">Social Media</SelectItem>
+                                        <SelectItem value="Indeed">Indeed</SelectItem>
+                                        <SelectItem value="SEO">SEO</SelectItem>
+                                        <SelectItem value="Glassdoor">Glassdoor</SelectItem>
+                                        <SelectItem value="Friend/Referral">Friend/Referral</SelectItem>
                                         <SelectItem value="Other">Other</SelectItem>
                                     </SelectContent>
                                 </Select>

@@ -56,3 +56,34 @@ export const submitToHubSpot = async (portalId: string, formId: string, data: Re
             : "Failed to submit to HubSpot. Please check your field mappings and configuration."
     );
 };
+
+export const submitToPowerAutomate = async (url: string, data: Record<string, any>, file: File | null) => {
+    const formData = new FormData();
+
+    // Add all fields to FormData
+    Object.keys(data).forEach(key => {
+        formData.append(key, data[key]);
+    });
+
+    // Add file if it exists
+    if (file) {
+        formData.append("resume", file);
+    }
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: formData,
+        });
+
+        if (!response.ok) {
+            console.error("Power Automate Error:", response.statusText);
+            return false;
+        }
+
+        return true;
+    } catch (error) {
+        console.error("Power Automate Fetch Error:", error);
+        return false;
+    }
+};
