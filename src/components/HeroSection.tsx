@@ -224,8 +224,8 @@ function HeroSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {[
                     { icon: Activity, label: "Uptime SLA", value: "99.9% Performance", color: "text-blue-400" },
-                    { icon: Users, label: "Endpoints", value: "14K+ Managed", color: "text-indigo-400" },
-                    { icon: Globe, label: "Countries Protected", value: "150+ Locations", color: "text-cyan-400" },
+                    { icon: Users, label: "End Points", value: "4K+ Managed", color: "text-indigo-400" },
+                    { icon: Globe, label: "Projects", value: "150+ Delivered", color: "text-cyan-400" },
                     { icon: Headset, label: "Global Support", value: "24/7 Response", color: "text-primary" },
                   ].map((stat, i) => (
                     <div
