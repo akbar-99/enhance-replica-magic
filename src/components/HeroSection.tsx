@@ -224,17 +224,26 @@ function HeroSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {[
                     { icon: Activity, label: "Uptime SLA", value: "99.9% Performance", color: "text-blue-400" },
-                    { icon: Users, label: "Enterprise Customers", value: "14K+ Verified", color: "text-indigo-400" },
+                    { icon: Users, label: "Endpoints", value: "14K+ Managed", color: "text-indigo-400" },
                     { icon: Globe, label: "Countries Protected", value: "150+ Locations", color: "text-cyan-400" },
                     { icon: Headset, label: "Global Support", value: "24/7 Response", color: "text-primary" },
                   ].map((stat, i) => (
-                    <div key={i} className="bg-white/5 p-4 sm:p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group flex flex-col items-center justify-center text-center">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                    <div
+                      key={i}
+                      className="bg-white/5 p-4 sm:p-6 rounded-3xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group flex flex-col items-center justify-center text-center"
+                    >
+                      <div
+                        className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}
+                      >
                         <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.color}`} />
                       </div>
                       <div className="flex flex-col items-center">
-                        <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">{stat.label}</p>
-                        <p className="text-white font-bold text-sm sm:text-base xl:text-lg leading-[1.2]">{stat.value}</p>
+                        <p className="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">
+                          {stat.label}
+                        </p>
+                        <p className="text-white font-bold text-sm sm:text-base xl:text-lg leading-[1.2]">
+                          {stat.value}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -246,7 +255,7 @@ function HeroSection() {
               animate={{
                 y: [-8, 8, -8],
                 rotate: [0, 5, 0],
-                scale: [1, 1.05, 1]
+                scale: [1, 1.05, 1],
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-5 -right-5 p-2.5 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl hidden lg:block z-20"
