@@ -8,7 +8,6 @@ import TrustedBy from '@/components/TrustedBy';
 import ProtectDataSection from '@/components/ProtectDataSection';
 import FAQSection from '@/components/FAQSection';
 import BlogSection from '@/components/BlogSection';
-import StatsSection from '@/components/StatsSection';
 import CTASection from '@/components/CTASection';
 import SEO, { organizationSchema, createFAQSchema } from '@/components/SEO';
 import FloatingNavBar from '@/components/FloatingNavBar';
@@ -80,7 +79,6 @@ const Index = () => {
       <OnboardingProcess />
       <ProtectDataSection />
       <FAQSection />
-      <StatsSection />
       <TrustedBy />
       <BlogSection />
       <CTASection />
