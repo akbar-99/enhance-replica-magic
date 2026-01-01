@@ -237,16 +237,29 @@
   @apply bg-muted-foreground/50;
 }
 
-/* Hide Elfsight Widget Ads and Controls */
-[class*="elfsight-app-control"],
-[class*="elfsight-app"] > a[href*="elfsight.com"],
-div[class*="AppPanel__Container"],
-div[class*="DashboardControl"],
-div[class*="AdminPanel"] {
+/* Hiding all Elfsight-related branding, control panels, and badges */
+[class*="elfsight-app"]>a[href*="elfsight.com"],
+[class*="elfsight-app"]+a[href*="elfsight.com"],
+[class*="elfsight-app"]~a[href*="elfsight.com"],
+[class*="elfsight-app"] [class*="BadgeContainer"],
+[class*="elfsight-app"] [class*="BrandingContainer"],
+[class*="elfsight-app"] [class*="Control"],
+[class*="elfsight-app"] [class*="Panel"],
+a[href*="elfsight.com/linkedin-feed-widget"],
+a[href*="elfsight.com"],
+[class*="AppPanel"],
+[class*="DashboardControl"],
+[class*="AdminPanel"] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
   height: 0 !important;
   width: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
 }
