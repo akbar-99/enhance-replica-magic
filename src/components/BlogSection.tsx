@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Globe, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Import 3D character images
 import blogChar1 from "@/assets/blog/blog-character-handoff.jpg";
@@ -150,42 +151,42 @@ const BlogSection = () => {
             {blogPosts.map(post => <div key={post.id} className="flex-shrink-0" style={{
               width: visibleCards === 1 ? "100%" : `calc(${100 / visibleCards}% - ${(visibleCards - 1) * 24 / visibleCards}px)`
             }}>
-              <div className="group cursor-pointer p-4 rounded-3xl border-2 bg-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-500 border-primary/30 hover:border-primary/50">
-                {/* Card Image Container */}
-                <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-xl">
-                  <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
-                  {/* Hover overlay effect */}
+              <Link to="/resources/blog" className="block h-full transition-transform hover:-translate-y-2 duration-300">
+                <div className="group cursor-pointer p-4 rounded-3xl border-2 bg-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-500 border-primary/30 hover:border-primary/50 h-full">
+                  {/* Card Image Container */}
+                  <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[4/3] border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-xl">
+                    <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+                  </div>
 
-                </div>
-
-                {/* Card Content */}
-                <div className="space-y-4 px-2">
-                  {/* Title with Arrow */}
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-lg lg:text-xl font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
-                      {post.title}
-                    </h3>
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 border-2 border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-white group-hover:bg-primary transition-all duration-300">
-                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  {/* Card Content */}
+                  <div className="space-y-4 px-2">
+                    {/* Title with Arrow */}
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-lg lg:text-xl font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 border-2 border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-primary group-hover:text-white group-hover:bg-primary transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Author & Date */}
-                  <div className="flex items-center gap-4 text-sm">
-                    <span className="flex items-center gap-1.5 text-primary font-medium">
-                      <Globe className="w-4 h-4" />
-                      {post.author}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-primary font-medium">
-                      <Calendar className="w-4 h-4" />
-                      {post.date}
-                    </span>
-                  </div>
+                    {/* Author & Date */}
+                    <div className="flex items-center gap-4 text-sm">
+                      <span className="flex items-center gap-1.5 text-primary font-medium">
+                        <Globe className="w-4 h-4" />
+                        {post.author}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-primary font-medium">
+                        <Calendar className="w-4 h-4" />
+                        {post.date}
+                      </span>
+                    </div>
 
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">{post.description}</p>
+                    {/* Description */}
+                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">{post.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>)}
           </div>
         </div>

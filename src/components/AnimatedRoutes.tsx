@@ -32,6 +32,7 @@ import ComputeStorage from '@/pages/solutions/ComputeStorage';
 import Infrastructure from '@/pages/solutions/Infrastructure';
 import News from '@/pages/News';
 import Careers from '@/pages/Careers';
+import Blog from '@/pages/Blog';
 import JobApplication from '@/pages/JobApplication';
 import InternshipApplication from '@/pages/InternshipApplication';
 import JobOpeningApplication from '@/pages/JobOpeningApplication';
@@ -64,6 +65,7 @@ const AnimatedRoutes = () => {
         <Route path="/solutions/enterprise-hardware" element={<PageTransition><ComputeStorage /></PageTransition>} />
         <Route path="/solutions/infrastructure" element={<PageTransition><Infrastructure /></PageTransition>} />
         <Route path="/solutions/:slug" element={<PageTransition><SolutionDetail /></PageTransition>} />
+        <Route path="/resources/blog" element={<PageTransition><Blog /></PageTransition>} />
         <Route path="/resources" element={<PageTransition><Resources /></PageTransition>} />
         <Route path="/resources/:slug" element={<PageTransition><Resources /></PageTransition>} />
         <Route path="/partners" element={<PageTransition><Partners /></PageTransition>} />
