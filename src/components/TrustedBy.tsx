@@ -44,7 +44,7 @@ const partnersRow2 = [{
 export default function TrustedBy() {
   // Duplicate the list multiple times for seamless scrolling
   const partners = [...partnersRow1, ...partnersRow2, ...partnersRow1, ...partnersRow2, ...partnersRow1, ...partnersRow2];
-  return <section className="relative py-12 border-b border-white/5 overflow-hidden bg-slate-800 rounded-3xl">
+  return <section className="relative py-12 border-b border-white/5 overflow-hidden bg-slate-800 rounded-2xl shadow-none">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
