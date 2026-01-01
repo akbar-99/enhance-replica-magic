@@ -41,13 +41,10 @@ const partnersRow2 = [{
   name: "HP",
   logo: hpLogo
 }];
-
 export default function TrustedBy() {
   // Duplicate the list multiple times for seamless scrolling
   const partners = [...partnersRow1, ...partnersRow2, ...partnersRow1, ...partnersRow2, ...partnersRow1, ...partnersRow2];
-
-  return (
-    <section className="relative bg-[#0b0c15] py-12 border-b border-white/5 overflow-hidden">
+  return <section className="relative py-12 border-b border-white/5 overflow-hidden bg-slate-800 rounded-3xl">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
@@ -58,31 +55,19 @@ export default function TrustedBy() {
 
           {/* Marquee Container */}
           <div className="flex-1 overflow-hidden relative mask-linear-fade">
-            <motion.div
-              className="flex items-center gap-12 min-w-max"
-              animate={{ x: "-50%" }}
-              transition={{
-                duration: 40,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            >
-              {partners.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  className="relative group shrink-0"
-                >
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              ))}
+            <motion.div className="flex items-center gap-12 min-w-max" animate={{
+            x: "-50%"
+          }} transition={{
+            duration: 40,
+            ease: "linear",
+            repeat: Infinity
+          }}>
+              {partners.map((partner, index) => <div key={`${partner.name}-${index}`} className="relative group shrink-0">
+                  <img src={partner.logo} alt={`${partner.name} logo`} className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110" />
+                </div>)}
             </motion.div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
